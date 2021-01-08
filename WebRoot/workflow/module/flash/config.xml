@@ -1,0 +1,31 @@
+<Root>
+<!-- 打开关闭系统加载模版编辑锁定通知消息 false或者0为关闭,其他为打开-->
+<InitMessage>0</InitMessage>
+<!-- 打开表单-->
+<OpenForm><![CDATA[horizon.open({url:horizon.paths.apppath+'/horizon/template/form/getFormTemplatePath.wf?formId=|formid|',closeCallback:'horizon.view.dataTable.fnDraw()'})]]></OpenForm>
+<!-- 打开表单(新框架)-->
+<OpenNewFrameForm><![CDATA[horizon.open({url:horizon.paths.apppath+'/horizon/template/form/getFormTemplatePath.wf?formId=|formid|',closeCallback:'horizon.view.dataTable.fnDraw()'})]]></OpenNewFrameForm>
+<!-- 打开文档-->
+<OpenDoc><![CDATA[horizon.open({url:horizon.paths.apppath+'/horizon/template/form/getFormTemplatePath.wf?dataid='+horizon.view.getRowData(this).id+'&formId=|formid|',closeCallback:'horizon.view.dataTable.fnDraw()'})]]></OpenDoc>
+<!-- 打开文档(新框架)-->
+<OpenNewFrameDoc><![CDATA[horizon.open({url:horizon.paths.apppath+'/horizon/template/form/getFormTemplatePath.wf?dataid='+horizon.view.getRowData(this).id+'&formId=|formid|',closeCallback:'horizon.view.dataTable.fnDraw()'})]]></OpenNewFrameDoc>
+<!-- 起草流程-->
+<OpenFlow><![CDATA[horizon.open({url:horizon.paths.apppath+'/horizon/workflow/support/open.wf?flowId=|flowid|'})]]></OpenFlow>
+
+<!-- 起草流程(新框架)-->
+<OpenNewFrameFlow><![CDATA[horizon.open({url:horizon.paths.apppath+'/horizon/workflow/support/open.wf?flowId=|flowid|'})]]></OpenNewFrameFlow>
+
+<!-- 打开实例-->
+<OpenWork><![CDATA[horizon.open({url:horizon.paths.apppath+'/horizon/workflow/support/open.wf?workId='+horizon.view.getRowData(this).id})]]></OpenWork>
+
+<!-- 打开实例(新框架)-->
+<OpenNewFrameWork><![CDATA[horizon.open({url:horizon.paths.apppath+'/horizon/workflow/support/open.wf?workId='+horizon.view.getRowData(this).id})]]></OpenNewFrameWork>
+<!-- 打开静态化表单-->
+<OpenStaticForm><![CDATA[window.open('|apppath|/horizon/formview/formstatic/staticjsp/|formstaticjsp|','','width=750,height=550,top='+(screen.height-300)/2+',left='+(screen.width-750)/2+',status=yes,titlebar=no,toolbar=no,scrollbars=yes,resizable=yes')]]></OpenStaticForm>
+<!-- 打开静态化表单文档-->
+<OpenStaticDoc><![CDATA[window.open('|apppath|/horizon/formview/formstatic/staticjsp/|formstaticjsp|?dataid=|a.ID|','','width=750,height=550,top='+(screen.height-300)/2+',left='+(screen.width-750)/2+',status=yes,titlebar=no,toolbar=no,scrollbars=yes,resizable=yes')]]></OpenStaticDoc>
+<!-- 数据库字段关键字校验列表-->
+<ValdateDBFields><![CDATA[ACCESS,ADD,ALL,ALTER,AND,ANY,AS,ASC,AUDIT,BETWEEN,BY,CHAR,CHECK,CLUSTER,COLUMN,COMMENT,COMPRESS,CONNECT,CREATE,CURRENT,DATE,DECIMAL,DEFAULT,DELETE,DESC,DISTINCT,DROP,ELSE,EXCLUSIVE,EXISTS,FILE,FLOAT,FOR,FROM,GRANT,GROUP,HAVING,IDENTIFIED,IMMEDIATE,IN,INCREMENT,INDEX,INITIAL,INSERT,INTEGER,INTERSECT,INTO,IS,LEVEL,LIKE,LOCK,LONG,MAXEXTENTS,MINUS,MLSLABEL,MODE,MODIFY,NOAUDIT,NOCOMPRESS,NOT,NOWAIT,NULL,NUMBER,OF,OFFLINE,ON,ONLINE,OPTION,OR,ORDER,PCTFREE,PRIOR,PRIVILEGES,PUBLIC,RAW,RENAME,RESOURCE,REVOKE,ROW,ROWID,ROWNUM,ROWS,SELECT,SESSION,SET,SHARE,SIZE,SMALLINT,START,SUCCESSFUL,SYNONYM,SYSDATE,TABLE,THEN,TO,,TRIGGER,UID,UNION,UNIQUE,UPDATE,USER,VALIDATE,VALUES,VARCHAR,VARCHAR2,VIEW,WHENEVER,WHERE,WITH]]></ValdateDBFields>
+<!-- HTML表单编辑器路径 -->
+<EditorPath>htmleditorpath/workflow/module/flash/editor/index.jsp</EditorPath>
+</Root>

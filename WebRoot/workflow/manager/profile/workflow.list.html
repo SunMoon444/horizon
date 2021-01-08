@@ -1,0 +1,668 @@
+<title>hz{workflow-config.title}</title>
+<hi18n groups="workflow-config;profile-common;base;message;validator"></hi18n>
+<div class="page-header smaller no-padding-top">
+	<h1>
+		hz{workflow-config.largeTitle}
+		<small class="hidden-xs"> 
+			<i class="ace-icon fa fa-angle-double-right"></i>
+			hz{workflow-config.smallTitle}
+		</small>
+	</h1>
+</div>
+<div id="visualFlowTable" class="profile-table">
+	<!-- 系统运行中的一些控制参数 -->
+	<div id="flow-default-container" class="flow-container">
+		<form>
+			<div class="lead">
+				hz{workflow-config.controlParameters}
+				<button type="button" class="changeset pull-right btn btn-white btn-round btn-sm  border-width-1">
+					<i class="ace-icon fa fa-pencil green"></i>&nbsp;hz{profile-common.buttonsSetUp}
+				</button>
+				<button type="button" class="reset pull-right btn btn-white btn-round btn-sm  border-width-1 hidden"
+					value='hz{profile-common.buttonsCancel}'>
+					<i class="ace-icon fa fa-undo green"></i>&nbsp;hz{profile-common.buttonsCancel}
+				</button>
+				<button type="submit" class="submit pull-right btn btn-white btn-round btn-sm  border-width-1 hidden"
+					value='hz{profile-common.buttonsSave}'>
+					<i class="ace-icon fa fa-save green"></i>&nbsp;hz{profile-common.buttonsSave}
+				</button>
+			</div>
+			<table id="cahce-default-table" class="table">
+				<tbody>
+				<colgroup>
+					<col style="width: 30%">
+					<col style="width: 70%">
+				</colgroup>
+				<tr>
+					<td>hz{workflow-config.debug}:</td>
+					<td data-id="debug" data-value="11">11</td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.isClearVersion}:</td>
+					<td data-id="IsClearVersion" data-value="23">23</td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.checkOrgExist}:</td>
+					<td data-id="CheckOrgExist" data-value="54">54</td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.autoNodeDelayTime}:</td>
+					<td data-id="AutoNodeDelayTime" data-value="5">5</td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.clearUserInfoTime}:</td>
+					<td data-id="ClearUserInfoTime" data-value="5">5</td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.maxCacheNum}:</td>
+					<td data-id="MaxCacheNum" data-value="5">5</td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.lockLimit}:</td>
+					<td data-id="LockLimit" data-value="5">5</td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.isCluster}:</td>
+					<td data-id="IsCluster" data-value="5">5</td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.isZip}:</td>
+					<td data-id="IsZip" data-value="5">5</td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.isChgSecondAuthorForMerger}:</td>
+					<td data-id="IsChgSecondAuthorForMerger" data-value="5">5</td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.isSendWhenMemChg}:</td>
+					<td data-id="IsSendWhenMemChg" data-value="5">5</td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.participants}:</td>
+					<td data-id="Participants" data-value="5">5</td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.participantsName}:</td>
+					<td data-id="ParticipantsName" data-value="5">5</td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.langSplitForTenant}:</td>
+					<td data-id="LangSplitForTenant" data-value="5">5</td>
+				</tr>
+				</tbody>
+			</table>
+			<div class="profile-form form-horizontal no-margin-bottom hidden">
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.debug}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="debug" data-value="true" value="true" class="ace" checked="checked"  />
+								<span class="lbl">&nbsp;hz{profile-common.true}</span>
+							</label>
+							<label>
+								<input type="radio" name="debug" data-value="false" value="false" class="ace"    />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.isClearVersion}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="IsClearVersion" data-value="true" value="true" class="ace" checked="checked"  />
+								<span class="lbl">&nbsp;hz{profile-common.true}</span>
+							</label>
+							<label>
+								<input type="radio" name="IsClearVersion" data-value="false" value="false" class="ace"    />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.checkOrgExist}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="CheckOrgExist" data-value="true" value="true" class="ace" checked="checked"  />
+								<span class="lbl">&nbsp;hz{profile-common.true}</span>
+							</label>
+							<label>
+								<input type="radio" name="CheckOrgExist" data-value="false" value="false" class="ace"    />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.autoNodeDelayTime}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> <input
+								name="AutoNodeDelayTime" type="text" placeholder="hz{profile-common.input}"
+								class="form-control" required maxlength="20" /> <i
+								class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.clearUserInfoTime}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> <input
+								name="ClearUserInfoTime" type="text" placeholder="hz{profile-common.input}"
+								class="form-control" required maxlength="20" /> <i
+								class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.maxCacheNum}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="MaxCacheNum" type="text" placeholder="hz{profile-common.input}" class="form-control" required maxlength="20" /> 
+								<span class="explain">hz{workflow-config.maxCacheNumTip}</span>
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.lockLimit}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> <input
+								name="LockLimit" type="text" placeholder="hz{profile-common.input}"
+								class="form-control" required maxlength="20" /> <i
+								class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.isCluster}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="IsCluster" data-value="true" value="true" class="ace" checked="checked"  />
+								<span class="lbl">&nbsp;hz{profile-common.true}</span>
+							</label>
+							<label>
+								<input type="radio" name="IsCluster" data-value="false" value="false" class="ace"    />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+							<br/>
+							<span class="explain">hz{workflow-config.isClusterTip}</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.isZip}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="IsZip" data-value="true" value="true" class="ace" checked="checked"  />
+								<span class="lbl">&nbsp;hz{profile-common.true}</span>
+							</label>
+							<label>
+								<input type="radio" name="IsZip" data-value="false" value="false" class="ace" />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.isChgSecondAuthorForMerger}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="IsChgSecondAuthorForMerger" data-value="true" value="true" class="ace" checked="checked"  />
+								<span class="lbl">&nbsp;hz{profile-common.true}</span>
+							</label>
+							<label>
+								<input type="radio" name="IsChgSecondAuthorForMerger" data-value="false" value="false" class="ace"    />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.isSendWhenMemChg}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="IsSendWhenMemChg" data-value="true" value="true" class="ace" checked="checked"  />
+								<span class="lbl">&nbsp;hz{profile-common.true}</span>
+							</label>
+							<label>
+								<input type="radio" name="IsSendWhenMemChg" data-value="false" value="false" class="ace"    />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.participants}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+								<input name="Participants" type="text" placeholder="hz{profile-common.input}"
+								class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.participantsName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="ParticipantsName" type="text" placeholder="hz{profile-common.input}" class="form-control" required  /> 
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.langSplitForTenant}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<label>
+								<input type="radio" name="LangSplitForTenant" data-value="true" value="true" class="ace" checked="checked"  />
+								<span class="lbl">&nbsp;hz{profile-common.true}</span>
+							</label>
+							<label>
+								<input type="radio" name="LangSplitForTenant" data-value="false" value="false" class="ace"    />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+							<br/>
+							<span class="explain">hz{workflow-config.langSplitForTenantTip}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<!-- end系统运行中的一些控制参数 -->
+	<!-- 流程运转中可以根据需要进行修改的一些规则执行类 -->
+	<div id="flow-default-container" class="flow-container">
+		<form>
+			<div class="lead">
+				hz{workflow-config.ruleExecutionClass}
+				<button type="button"
+					class="changeset pull-right btn btn-white btn-round btn-sm  border-width-1">
+					<i class="ace-icon fa fa-pencil green"></i>&nbsp;hz{profile-common.buttonsSetUp}
+				</button>
+				<button type="button"
+					class="reset pull-right btn btn-white btn-round btn-sm  border-width-1 hidden"
+					value='hz{profile-common.buttonsCancel}'>
+					<i class="ace-icon fa fa-undo green"></i>&nbsp;hz{profile-common.buttonsCancel}
+				</button>
+				<button type="submit"
+					class="submit pull-right btn btn-white btn-round btn-sm  border-width-1 hidden"
+					value='hz{profile-common.buttonsSave}'>
+					<i class="ace-icon fa fa-save green"></i>&nbsp;hz{profile-common.buttonsSave}
+				</button>
+			</div>
+			<table id="cahce-guava-table" class="table">
+				<tbody>
+				<colgroup>
+					<col style="width: 30%">
+					<col style="width: 70%">
+				</colgroup>
+				<tr>
+					<td>hz{workflow-config.startRulesClassName}:</td>
+					<td data-id="StartRulesClassName"></td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.checkRoleClassName}:</td>
+					<td data-id="CheckRoleClassName"></td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.relationRulesClassName}:</td>
+					<td data-id="RelationRulesClassName"></td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.trackLogClassName}:</td>
+					<td data-id="TrackLogClassName"></td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.msgInfoClassName}:</td>
+					<td data-id="MsgInfoClassName"></td>
+				</tr>
+				</tbody>
+			</table>
+			<div class="profile-form form-horizontal no-margin-bottom hidden">
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.startRulesClassName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="StartRulesClassName" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<span class="explain">hz{workflow-config.startRulesClassNameTip}</span>
+								<br/>
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.checkRoleClassName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="CheckRoleClassName" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<span class="explain">hz{workflow-config.checkRoleClassNameTip}</span>
+								<br/>
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.relationRulesClassName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="RelationRulesClassName" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<span class="explain">hz{workflow-config.relationRulesClassNameTip}</span>
+								<br/>
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.trackLogClassName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="TrackLogClassName" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<span class="explain">hz{workflow-config.trackLogClassNameTip}</span>
+								<br/>
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.msgInfoClassName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="MsgInfoClassName" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<!-- end  流程运转中可以根据需要进行修改的一些规则执行类-->
+	<!-- 需要第三方提供支持的适配器实现类  -->
+	<div id="flow-default-container" class="flow-container">
+		<form>
+			<div class="lead">
+				hz{workflow-config.debugImplementationClass}
+				<button type="button"
+					class="changeset pull-right btn btn-white btn-round btn-sm  border-width-1">
+					<i class="ace-icon fa fa-pencil green"></i>&nbsp;hz{profile-common.buttonsSetUp}
+				</button>
+				<button type="button"
+					class="reset pull-right btn btn-white btn-round btn-sm  border-width-1 hidden"
+					value='hz{profile-common.buttonsCancel}'>
+					<i class="ace-icon fa fa-undo green"></i>&nbsp;hz{profile-common.buttonsCancel}
+				</button>
+				<button type="submit"
+					class="submit pull-right btn btn-white btn-round btn-sm  border-width-1 hidden"
+					value='hz{profile-common.buttonsSave}'>
+					<i class="ace-icon fa fa-save green"></i>&nbsp;hz{profile-common.buttonsSave}
+				</button>
+			</div>
+			<table id="cahce-redis-table" class="table">
+				<tbody>
+				<colgroup>
+					<col style="width: 30%">
+					<col style="width: 70%">
+				</colgroup>
+				<tr>
+					<td>hz{workflow-config.dBAccessClassName}:</td>
+					<td data-id="DBAccessClassName"></td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.transactionClassName}:</td>
+					<td data-id="TransactionClassName"></td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.memoryClassName}:</td>
+					<td data-id="MemoryClassName"></td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.taskClassName}:</td>
+					<td data-id="TaskClassName"></td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.ruleEngineClassName}:</td>
+					<td data-id="RuleEngineClassName"></td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.langTypeClassName}:</td>
+					<td data-id="LangTypeClassName"></td>
+				</tr>
+				</tbody>
+			</table>
+			<div class="profile-form form-horizontal no-margin-bottom hidden">
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.dBAccessClassName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="DBAccessClassName" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.transactionClassName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="TransactionClassName" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.memoryClassName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="MemoryClassName" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.taskClassName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="TaskClassName" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.ruleEngineClassName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="RuleEngineClassName" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.langTypeClassName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="LangTypeClassName" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</form>
+	</div>
+	<!-- end 多租户时不需要根据租户变化的部分-->
+	<!-- 多租户时,可能会有不同实现的部分 -->
+	<div id="flow-default-container" class="flow-container">
+		<form>
+			<div class="lead">
+				hz{workflow-config.mayBeDifferentImplementation}
+				<button type="button"
+					class="changeset pull-right btn btn-white btn-round btn-sm  border-width-1">
+					<i class="ace-icon fa fa-pencil green"></i>&nbsp;hz{profile-common.buttonsSetUp}
+				</button>
+				<button type="button"
+					class="reset pull-right btn btn-white btn-round btn-sm  border-width-1 hidden"
+					value='hz{profile-common.buttonsCancel}'>
+					<i class="ace-icon fa fa-undo green"></i>&nbsp;hz{profile-common.buttonsCancel}
+				</button>
+				<button type="submit"
+					class="submit pull-right btn btn-white btn-round btn-sm  border-width-1 hidden"
+					value='hz{profile-common.buttonsSave}'>
+					<i class="ace-icon fa fa-save green"></i>&nbsp;hz{profile-common.buttonsSave}
+				</button>
+			</div>
+			<table id="cahce-memcache-table" class="table">
+				<tbody>
+				<colgroup>
+					<col style="width: 30%">
+					<col style="width: 70%">
+				</colgroup>
+				<tr>
+					<td>hz{workflow-config.flowExtendCfgClassName}:</td>
+					<td data-id="FlowExtendCfgClassName"></td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.messageMoudleClassName}:</td>
+					<td data-id="MessageMoudleClassName"></td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.todoClassName}:</td>
+					<td data-id="TodoClassName"></td>
+				</tr>
+				<tr>
+					<td>hz{appClassName}:</td>
+					<td data-id="AppClassName"></td>
+				</tr>
+				</tbody>
+			</table>
+			<div class="profile-form form-horizontal no-margin-bottom hidden">
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.flowExtendCfgClassName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="FlowExtendCfgClassName" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.messageMoudleClassName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="MessageMoudleClassName" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.todoClassName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="TodoClassName" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.appClassName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="AppClassName" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+		</form>
+	</div>
+	<!-- end 多租户时,可能会有不同实现的部分 -->
+	<!-- 多租户时,肯定会有不同实现的部分-->
+	<div id="cache-ehflow-container" class="flow-container">
+		<form>
+			<div class="lead">
+				hz{workflow-config.mustDifferentImplementation}
+				<button type="button"
+					class="changeset pull-right btn btn-white btn-round btn-sm  border-width-1">
+					<i class="ace-icon fa fa-pencil green"></i>&nbsp;hz{profile-common.buttonsSetUp}
+				</button>
+				<button type="button"
+					class="reset pull-right btn btn-white btn-round btn-sm  border-width-1 hidden"
+					value='hz{profile-common.buttonsCancel}'>
+					<i class="ace-icon fa fa-undo green"></i>&nbsp;hz{profile-common.buttonsCancel}
+				</button>
+				<button type="submit"
+					class="submit pull-right btn btn-white btn-round btn-sm  border-width-1 hidden"
+					value='hz{profile-common.buttonsSave}'>
+					<i class="ace-icon fa fa-save green"></i>&nbsp;hz{profile-common.buttonsSave}
+				</button>
+			</div>
+			<table id="cahce-ehcache-table" class="table">
+				<tbody>
+				<colgroup>
+					<col style="width: 30%">
+					<col style="width: 70%">
+				</colgroup>
+				<tr>
+					<td>hz{workflow-config.organizationClassName}:</td>
+					<td data-id="OrganizationClassName"></td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.calendarClassName}:</td>
+					<td data-id="CalendarClassName"></td>
+				</tr>
+				<tr>
+					<td>hz{workflow-config.authorityClassName}:</td>
+					<td data-id="AuthorityClassName"></td>
+				</tr>
+				</tbody>
+			</table>
+			<div class="profile-form form-horizontal no-margin-bottom hidden">
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.organizationClassName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="OrganizationClassName" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.calendarClassName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="CalendarClassName" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{workflow-config.authorityClassName}<i><i>*</i></i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="AuthorityClassName" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</form>
+	</div>
+</div>
+
+<script type="text/javascript">
+	jQuery(function($) {
+		require(
+				[ horizon.paths.assetspath + '/manager/profile/js/sys.flow.js' ],
+				function() {
+					horizon.language.plugins.validator();
+					horizon.tools.use(horizon.paths.assetspath
+							+ '/manager/profile/css/profile.css');
+					horizon.engine.profile_workflow.init();
+					$('.page-content-area').trigger('ajaxscriptsloaded');
+				});
+	});
+</script>

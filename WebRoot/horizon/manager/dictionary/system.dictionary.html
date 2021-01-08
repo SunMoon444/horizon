@@ -1,0 +1,167 @@
+<title>hz{platform-dict.sysTitle}</title>
+<hi18n  groups="platform-dict;base;message" ></hi18n>
+
+<div class="horizon-modal-container">
+    <div class="page-header smaller">
+        <h1>
+            hz{platform-dict.dictManager}
+            <small>
+                <i class="ace-icon fa fa-angle-double-right"></i>
+                hz{platform-dict.sysTitle}
+            </small>
+            <label class="pull-right pointer" data-target=".horizon-modal" data-toggle="modal">
+                <i class="ace-icon fa fa-leaf bigger-110 icon-only green"></i>
+                hz{platform-dict.dictTree}
+            </label>
+        </h1>
+    </div>
+    <div class="other-content-area">
+        <div id="systemDictionaryInfo">
+            <iframe id="systemDictionaryList" frameborder="0" src="" width="100%" class="iframeBorder"></iframe>
+        </div>
+    </div>
+    <div class="row">
+        <div class="hidden" id="systemDictionaryForm">
+            <form class="form-horizontal no-margin-bottom" id="sysDictForm">
+                <input type="hidden" name="id">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group no-margin-left no-margin-right">
+                                <label class="control-label">hz{platform-dict.supDict}</label>
+                                <div>
+                                    <input type="hidden" name="parentId">
+                                    <input class="form-control pointer dropdown-toggle" id="parentName" type="text"
+                                           required name="parentName" minlength="1" maxlength="400" placeholder=hz{message.select}
+                                           data-toggle="dropdown" data-position="auto" readonly/>
+                                    <div class="ace-scroll select-tree dropdown-menu dropdown-yellow dropdown-caret dropdown-close ">
+                                        <ul id="sysDict-tree" class="ztree"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group no-margin-left no-margin-right">
+                                <label class="control-label">hz{platform-dict.type}</label>
+                                <div>
+                                    <input type="hidden" name="dictType" value="system">
+                                    <input class="form-control" name="system" type="text" value=hz{platform-dict.sysTitle} maxlength="10"
+                                           readOnly/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group no-margin-left no-margin-right">
+                                <label class="control-label">hz{platform-dict.name}</label>
+                                <div class="form-group no-margin has-error">
+                                    <input class="form-control" name="dictName" type="text" minlength="1"
+                                           placeholder=hz{message.input} required maxlength="400"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group no-margin-left no-margin-right">
+                                <label class="control-label">hz{platform-dict.shortName}</label>
+                                <div>
+                                    <input class="form-control" maxlength="100" name="dictAbbr" placeholder=hz{message.input}
+                                           type="text" maxlength="100"/>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group no-margin-left no-margin-right">
+                                <label class="control-label">hz{platform-dict.coding}</label>
+                                <div class="form-group no-margin has-error">
+                                    <input class="form-control" minlength="1" maxlength="100" name="dictCode"
+                                           placeholder=hz{message.input} type="text" maxlength="100" required/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group no-margin-left no-margin-right">
+                                <label class="control-label">hz{platform-dict.value}</label>
+                                <div class="form-group no-margin has-error">
+                                    <input class="form-control" minlength="1" maxlength="200" name="dictValue"
+                                           placeholder=hz{message.input} type="text" maxlength="200" required/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="dictCategory" class="col-xs-12 col-sm-6 ">
+                            <div class="form-group no-margin-left no-margin-right">
+                                <label class="control-label">hz{platform-dict.category}</label>
+                                <div>
+                                    <input class="form-control" minlength="1" maxlength="200" type="text"
+                                           name="category" readOnly/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group no-margin-left no-margin-right">
+                                <label class="control-label">hz{base.status}</label>
+                                <div>
+                                    <label class="inline">
+                                        <input type="radio" class="ace" name="active" value="1" checked/>
+                                        <span class="lbl middle">hz{base.enable}</span>
+                                    </label>
+                                    <label class="inline">
+                                        <input type="radio" class="ace" value="0" name="active"/>
+                                        <span class="lbl middle">hz{base.disabled}</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group no-margin-left no-margin-right">
+                                <label class="control-label">hz{platform-dict.description}</label>
+                                <div>
+                                    <textarea id="instruction" maxlength="400" class="form-control" style="resize:none;"
+                                              name="comments" maxlength="400"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="horizon-modal modal aside aside-right aside-vc aside-fixed navbar-offset" data-body-scroll="false"
+         data-offset="true" data-placement="right" data-fixed="true" data-backdrop="invisible" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header blue">
+                    hz{platform-dict.sysTitle}
+                    <label class="pull-right">
+                        <a data-action="fixed-modal" class="pointer"><i class="ace-icon fa fa-lock bigger-160"
+                                                                        data-fixed-icon="fa-lock"
+                                                                        data-unfixed-icon="fa-unlock"></i></a>
+                    </label>
+                </div>
+                <div class="modal-body">
+                    <ul id="systemDictionary-tree" class="ztree"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hidden" id="delDialog"></div>
+<script>
+    jQuery(function ($) {
+        require([
+            horizon.paths.apppath + '/horizon/assets/manager/dictionary/js/system.dictionary.js'
+        ], function () {
+            horizon.tools.use(horizon.paths.pluginpath + '/ztree/css/zTreeStyle/zTreeStyle.css');
+            horizon.manager.systemDictionary.init();
+            $('.page-content-area').trigger('ajaxscriptsloaded');
+        });
+
+    });
+</script>

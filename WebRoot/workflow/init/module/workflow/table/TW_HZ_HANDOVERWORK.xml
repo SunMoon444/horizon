@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 流程引擎工作移交相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_HANDOVERWORK</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_HANDOVERWORK</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="OLDUSER" typename="varchar"   length="70"></fieldinfo>
+			<fieldinfo fieldname="OLDSUBJECTION" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="OLDSUBJECTIONTYPE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="NEWUSER" typename="varchar"   length="70"></fieldinfo>
+			<fieldinfo fieldname="NEWUSERID" typename="varchar"   length="70"></fieldinfo>
+			<fieldinfo fieldname="PRESERVEPERMISSIONS" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="OLDNAME" typename="varchar"   length="70"></fieldinfo>
+			<fieldinfo fieldname="NEWNAME" typename="varchar"   length="70"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_HANDOVERWORK_SUCCESS</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_HAND_SUCCESS</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="OLDUSER" typename="varchar"   length="70"></fieldinfo>
+			<fieldinfo fieldname="OLDSUBJECTION" typename="varchar"   length="32"></fieldinfo>
+            <fieldinfo fieldname="OLDSUBJECTIONTYPE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="NEWUSER" typename="varchar"   length="70"></fieldinfo>
+			<fieldinfo fieldname="NEWUSERID" typename="varchar"   length="70"></fieldinfo>
+			<fieldinfo fieldname="PRESERVEPERMISSIONS" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="DOTIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="OLDNAME" typename="varchar"   length="70"></fieldinfo>
+			<fieldinfo fieldname="NEWNAME" typename="varchar"   length="70"></fieldinfo>
+		</fieldinfos>	
+	</tablename>
+</tableinfo>

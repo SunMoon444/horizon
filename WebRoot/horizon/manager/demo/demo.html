@@ -1,0 +1,1283 @@
+<div class="horizon-modal-container">
+    <div class="other-content-area">
+        <div class="page-header smaller">
+            <h1>
+                DEMO
+                <div class="pull-right">
+                    <label class="pointer">
+                        <i class="ace-icon fa fa-arrow-left bigger-110 icon-only"></i>
+                        返回
+                    </label>
+                    <label class="pointer horizon-modal-trigger" data-target=".horizon-modal" data-toggle="modal">
+                        <i class="ace-icon fa fa-leaf bigger-110 icon-only green"></i>
+                        组织机构
+                    </label>
+                </div>
+            </h1>
+        </div>
+        <form class="form-horizontal horizon-form" role="form">
+            <div class="horizon-tab">
+                <ul class="tab">
+                    <li class="active">
+                        <a data-toggle="tab" href="javascript:void(0)" data-target="[data-pane='tab0']">
+                            一行一列
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="javascript:void(0)" data-target="[data-pane='tab1']">
+                            一行两列
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="javascript:void(0)" data-target="[data-pane='tab2']">
+                            一行三列
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="javascript:void(0)" data-target="[data-pane='tab3']">
+                            按钮
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div data-pane="tab0" class="tab-pane fade in active">
+                        <h5 class="blue">有缩进(上下)</h5>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6 col-md-offset-3">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">文本</label>
+                                            <div>
+                                                <input required="true" class="form-control" placeholder="请输入"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">下拉框(多选)</label>
+                                            <div>
+                                                <select multiple required="true" name="aac" class="form-control tag-input-style" data-placeholder="请选择">
+                                                    <option value=""></option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">下拉框</label>
+                                            <div>
+                                                <select required="true" name="aac" class="form-control" data-placeholder="请选择">
+                                                    <option value=""></option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">点击选择</label>
+                                            <div>
+                                                <input required="true" name="abc" class="form-control pointer" placeholder="请选择" readonly/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">姓名</label>
+                                            <div>
+                                                <div class="input-group input-daterange">
+                                                    <input name="a" required="true" type="text" class="form-control" placeholder="姓"/>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-plus"></i>
+                                                    </span>
+                                                    <input name="b" required="true" type="text" class="form-control" placeholder="名"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">单选框</label>
+                                            <div>
+                                                <label class="inline">
+                                                    <input required="true" name="form-field-radio" type="radio" class="ace"/>
+                                                    <span class="lbl middle"> aaa</span>
+                                                </label>
+                                                <label class="inline">
+                                                    <input required="true" name="form-field-radio" type="radio" class="ace"/>
+                                                    <span class="lbl middle"> bbb</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">多选框</label>
+                                            <div>
+                                                <label class="inline">
+                                                    <input name="form-field-radio" type="checkbox" class="ace"/>
+                                                    <span class="lbl middle"> aaa</span>
+                                                </label>
+                                                <label class="inline">
+                                                    <input name="form-field-radio" type="checkbox" class="ace"/>
+                                                    <span class="lbl middle"> bbb</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">单选框</label>
+                                            <div>
+                                                <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input type="radio" value="1">
+                                                        aaa
+                                                    </label>
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input type="radio" value="2">
+                                                        bbb
+                                                    </label>
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input type="radio" value="3">
+                                                        ccc
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">多选框</label>
+                                            <div>
+                                                <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input type="checkbox" value="1">
+                                                        aaa
+                                                    </label>
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input type="checkbox" value="2">
+                                                        bbb
+                                                    </label>
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input type="checkbox" value="3">
+                                                        ccc
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">单选框</label>
+                                            <div>
+                                                <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                                    <label class="btn btn-info col-xs-4">
+                                                        <input type="radio" value="1">
+                                                        aaa
+                                                    </label>
+                                                    <label class="btn btn-info col-xs-4">
+                                                        <input type="radio" value="2">
+                                                        bbb
+                                                    </label>
+                                                    <label class="btn btn-info col-xs-4">
+                                                        <input type="radio" value="3">
+                                                        ccc
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">多选框</label>
+                                            <div>
+                                                <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                                    <label class="btn btn-primary col-xs-4">
+                                                        <input type="checkbox" value="1">
+                                                        aaa
+                                                    </label>
+                                                    <label class="btn btn-primary col-xs-4">
+                                                        <input type="checkbox" value="2">
+                                                        bbb
+                                                    </label>
+                                                    <label class="btn btn-primary col-xs-4">
+                                                        <input type="checkbox" value="3">
+                                                        ccc
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">文本域</label>
+                                            <div>
+                                                <textarea class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h5 class="blue">有缩进(左右)</h5>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-8 col-md-offset-2">
+                                <div class="row">
+                                    <label class="control-label col-sm-3 no-padding-right nowrap" style="">文本文本文本</label>
+                                    <div class="col-sm-7">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <input class="form-control" placeholder="请输入"/>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-3 no-padding-right nowrap">下拉框下拉框</label>
+                                    <div class="col-sm-7">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <select class="form-control"></select>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-3 no-padding-right nowrap">点击选择</label>
+                                    <div class="col-sm-7">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <input class="form-control pointer" placeholder="请选择" readonly/>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-3 no-padding-right nowrap">点击选择</label>
+                                    <div class="col-sm-7">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <input class="form-control pointer" placeholder="请选择" readonly/>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-3 no-padding-right nowrap">单选框</label>
+                                    <div class="col-sm-7 radio">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="inline">
+                                                <input name="form-field-radio" type="radio" class="ace"/>
+                                                <span class="lbl middle"> aaa</span>
+                                            </label>
+                                            <label class="inline">
+                                                <input name="form-field-radio" type="radio" class="ace"/>
+                                                <span class="lbl middle"> bbb</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-3 no-padding-right nowrap">多选框</label>
+                                    <div class="col-sm-7 checkbox">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="inline">
+                                                <input name="form-field-radio" type="checkbox" class="ace"/>
+                                                <span class="lbl middle"> aaa</span>
+                                            </label>
+                                            <label class="inline">
+                                                <input name="form-field-radio" type="checkbox" class="ace"/>
+                                                <span class="lbl middle"> bbb</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-3 no-padding-right nowrap">单选框</label>
+                                    <div class="col-sm-7">
+                                        <div data-toggle="buttons" class="btn-group btn-overlap form-group no-margin-left no-margin-right width-100">
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="radio" value="1">
+                                                aaa
+                                            </label>
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="radio" value="2">
+                                                bbb
+                                            </label>
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="radio" value="3">
+                                                ccc
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-3 no-padding-right nowrap">多选框</label>
+                                    <div class="col-sm-7">
+                                        <div data-toggle="buttons" class="btn-group btn-overlap form-group no-margin-left no-margin-right width-100">
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="checkbox" value="1">
+                                                aaa
+                                            </label>
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="checkbox" value="2">
+                                                bbb
+                                            </label>
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="checkbox" value="3">
+                                                ccc
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-3 no-padding-right nowrap">单选框</label>
+                                    <div class="col-sm-7">
+                                        <div data-toggle="buttons" class="btn-group btn-overlap form-group no-margin-left no-margin-right width-100">
+                                            <label class="btn btn-primary col-xs-4">
+                                                <input type="radio" value="1">
+                                                aaa
+                                            </label>
+                                            <label class="btn btn-primary col-xs-4">
+                                                <input type="radio" value="2">
+                                                bbb
+                                            </label>
+                                            <label class="btn btn-primary col-xs-4">
+                                                <input type="radio" value="3">
+                                                ccc
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-3 no-padding-right nowrap">多选框</label>
+                                    <div class="col-sm-7">
+                                        <div data-toggle="buttons" class="btn-group btn-overlap form-group no-margin-left no-margin-right width-100">
+                                            <label class="btn btn-info col-xs-4">
+                                                <input type="checkbox" value="1">
+                                                aaa
+                                            </label>
+                                            <label class="btn btn-info col-xs-4">
+                                                <input type="checkbox" value="2">
+                                                bbb
+                                            </label>
+                                            <label class="btn btn-info col-xs-4">
+                                                <input type="checkbox" value="3">
+                                                ccc
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-3 no-padding-right nowrap">文本域</label>
+                                    <div class="col-sm-7">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <textarea class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-pane="tab1" class="tab-pane fade">
+                        <h5 class="blue">有缩进(上下)</h5>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">文本</label>
+                                            <div>
+                                                <input class="form-control" placeholder="请输入"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">下拉框</label>
+                                            <div>
+                                                <select class="form-control"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">点击选择</label>
+                                            <div>
+                                                <input class="form-control pointer" placeholder="请选择" readonly/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">姓名</label>
+                                            <div>
+                                                <div class="input-group input-daterange">
+                                                    <input type="text" class="form-control" placeholder="姓"/>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-plus"></i>
+                                                    </span>
+                                                    <input type="text" class="form-control" placeholder="名"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">单选框</label>
+                                            <div>
+                                                <label class="inline">
+                                                    <input name="form-field-radio" type="radio" class="ace"/>
+                                                    <span class="lbl middle"> aaa</span>
+                                                </label>
+                                                <label class="inline">
+                                                    <input name="form-field-radio" type="radio" class="ace"/>
+                                                    <span class="lbl middle"> bbb</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">多选框</label>
+                                            <div>
+                                                <label class="inline">
+                                                    <input name="form-field-radio" type="checkbox" class="ace"/>
+                                                    <span class="lbl middle"> aaa</span>
+                                                </label>
+                                                <label class="inline">
+                                                    <input name="form-field-radio" type="checkbox" class="ace"/>
+                                                    <span class="lbl middle"> bbb</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">单选框</label>
+                                            <div>
+                                                <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input type="radio" value="1">
+                                                        aaa
+                                                    </label>
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input type="radio" value="2">
+                                                        bbb
+                                                    </label>
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input type="radio" value="3">
+                                                        ccc
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">多选框</label>
+                                            <div>
+                                                <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input type="checkbox" value="1">
+                                                        aaa
+                                                    </label>
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input type="checkbox" value="2">
+                                                        bbb
+                                                    </label>
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input type="checkbox" value="3">
+                                                        ccc
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">单选框</label>
+                                            <div>
+                                                <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                                    <label class="btn btn-info col-xs-4">
+                                                        <input type="radio" value="1">
+                                                        aaa
+                                                    </label>
+                                                    <label class="btn btn-info col-xs-4">
+                                                        <input type="radio" value="2">
+                                                        bbb
+                                                    </label>
+                                                    <label class="btn btn-info col-xs-4">
+                                                        <input type="radio" value="3">
+                                                        ccc
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">多选框</label>
+                                            <div>
+                                                <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                                    <label class="btn btn-primary col-xs-4">
+                                                        <input type="checkbox" value="1">
+                                                        aaa
+                                                    </label>
+                                                    <label class="btn btn-primary col-xs-4">
+                                                        <input type="checkbox" value="2">
+                                                        bbb
+                                                    </label>
+                                                    <label class="btn btn-primary col-xs-4">
+                                                        <input type="checkbox" value="3">
+                                                        ccc
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">文本域</label>
+                                            <div>
+                                                <textarea class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="blue">无缩进(上下)</h5>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group no-margin-left no-margin-right">
+                                    <label class="control-label">文本</label>
+                                    <div>
+                                        <input class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group no-margin-left no-margin-right">
+                                    <label class="control-label">下拉框</label>
+                                    <div>
+                                        <select class="form-control"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group no-margin-left no-margin-right">
+                                    <label class="control-label">单选框</label>
+                                    <div>
+                                        <label class="inline">
+                                            <input name="form-field-radio" type="radio" class="ace"/>
+                                            <span class="lbl middle"> aaa</span>
+                                        </label>
+                                        <label class="inline">
+                                            <input name="form-field-radio" type="radio" class="ace"/>
+                                            <span class="lbl middle"> bbb</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group no-margin-left no-margin-right">
+                                    <label class="control-label">多选框</label>
+                                    <div>
+                                        <label class="inline">
+                                            <input name="form-field-radio" type="checkbox" class="ace"/>
+                                            <span class="lbl middle"> aaa</span>
+                                        </label>
+                                        <label class="inline">
+                                            <input name="form-field-radio" type="checkbox" class="ace"/>
+                                            <span class="lbl middle"> bbb</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group no-margin-left no-margin-right">
+                                    <label class="control-label">单选框</label>
+                                    <div>
+                                        <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="radio" value="1">
+                                                aaa
+                                            </label>
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="radio" value="2">
+                                                bbb
+                                            </label>
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="radio" value="3">
+                                                ccc
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group no-margin-left no-margin-right">
+                                    <label class="control-label">多选框</label>
+                                    <div>
+                                        <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="checkbox" value="1">
+                                                aaa
+                                            </label>
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="checkbox" value="2">
+                                                bbb
+                                            </label>
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="checkbox" value="3">
+                                                ccc
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group no-margin-left no-margin-right">
+                                    <label class="control-label">单选框</label>
+                                    <div>
+                                        <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                            <label class="btn btn-info col-xs-4">
+                                                <input type="radio" value="1">
+                                                aaa
+                                            </label>
+                                            <label class="btn btn-info col-xs-4">
+                                                <input type="radio" value="2">
+                                                bbb
+                                            </label>
+                                            <label class="btn btn-info col-xs-4">
+                                                <input type="radio" value="3">
+                                                ccc
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group no-margin-left no-margin-right">
+                                    <label class="control-label">多选框</label>
+                                    <div>
+                                        <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                            <label class="btn btn-primary col-xs-4">
+                                                <input type="checkbox" value="1">
+                                                aaa
+                                            </label>
+                                            <label class="btn btn-primary col-xs-4">
+                                                <input type="checkbox" value="2">
+                                                bbb
+                                            </label>
+                                            <label class="btn btn-primary col-xs-4">
+                                                <input type="checkbox" value="3">
+                                                ccc
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group no-margin-left no-margin-right">
+                                    <label class="control-label">文本域</label>
+                                    <div>
+                                        <textarea required="true" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h5 class="blue">有缩进(左右)</h5>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-10 col-md-offset-1">
+                                <div class="row">
+                                    <label class="control-label col-sm-2 no-padding-right nowrap" style="">文本文本文本</label>
+                                    <div class="col-sm-4">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <input name="q" required="true" class="form-control" placeholder="请输入"/>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-2 no-padding-right nowrap">下拉框下拉框</label>
+                                    <div class="col-sm-4">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <select class="form-control"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="control-label col-sm-2 no-padding-right nowrap">点击选择</label>
+                                    <div class="col-sm-4">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <input class="form-control pointer" placeholder="请选择" readonly/>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-2 no-padding-right nowrap">点击选择</label>
+                                    <div class="col-sm-4">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <input class="form-control pointer" placeholder="请选择" readonly/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="control-label col-sm-2 no-padding-right nowrap">单选框</label>
+                                    <div class="col-sm-4 radio">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="inline">
+                                                <input name="form-field-radio" type="radio" class="ace"/>
+                                                <span class="lbl middle"> aaa</span>
+                                            </label>
+                                            <label class="inline">
+                                                <input name="form-field-radio" type="radio" class="ace"/>
+                                                <span class="lbl middle"> bbb</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-2 no-padding-right nowrap">多选框</label>
+                                    <div class="col-sm-4 checkbox">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="inline">
+                                                <input name="form-field-radio" type="checkbox" class="ace"/>
+                                                <span class="lbl middle"> aaa</span>
+                                            </label>
+                                            <label class="inline">
+                                                <input name="form-field-radio" type="checkbox" class="ace"/>
+                                                <span class="lbl middle"> bbb</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="control-label col-sm-2 no-padding-right nowrap">单选框</label>
+                                    <div class="col-sm-4">
+                                        <div data-toggle="buttons" class="btn-group btn-overlap form-group no-margin-left no-margin-right width-100">
+                                            <label class="btn btn-white col-xs-4">
+                                                <input name="q1" required="true" type="radio" value="1">
+                                                aaa
+                                            </label>
+                                            <label class="btn btn-white col-xs-4">
+                                                <input name="q1" required="true" type="radio" value="2">
+                                                bbb
+                                            </label>
+                                            <label class="btn btn-white col-xs-4">
+                                                <input name="q1" required="true" type="radio" value="3">
+                                                ccc
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-2 no-padding-right nowrap">多选框</label>
+                                    <div class="col-sm-4">
+                                        <div data-toggle="buttons" class="btn-group btn-overlap form-group no-margin-left no-margin-right width-100">
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="checkbox" value="1">
+                                                aaa
+                                            </label>
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="checkbox" value="2">
+                                                bbb
+                                            </label>
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="checkbox" value="3">
+                                                ccc
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="control-label col-sm-2 no-padding-right nowrap">单选框</label>
+                                    <div class="col-sm-4">
+                                        <div data-toggle="buttons" class="btn-group btn-overlap form-group no-margin-left no-margin-right width-100">
+                                            <label class="btn btn-primary col-xs-4">
+                                                <input type="radio" value="1">
+                                                aaa
+                                            </label>
+                                            <label class="btn btn-primary col-xs-4">
+                                                <input type="radio" value="2">
+                                                bbb
+                                            </label>
+                                            <label class="btn btn-primary col-xs-4">
+                                                <input type="radio" value="3">
+                                                ccc
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-2 no-padding-right nowrap">多选框</label>
+                                    <div class="col-sm-4">
+                                        <div data-toggle="buttons" class="btn-group btn-overlap form-group no-margin-left no-margin-right width-100">
+                                            <label class="btn btn-info col-xs-4">
+                                                <input type="checkbox" value="1">
+                                                aaa
+                                            </label>
+                                            <label class="btn btn-info col-xs-4">
+                                                <input type="checkbox" value="2">
+                                                bbb
+                                            </label>
+                                            <label class="btn btn-info col-xs-4">
+                                                <input type="checkbox" value="3">
+                                                ccc
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="control-label col-sm-2 no-padding-right nowrap">文本域</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <textarea class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-pane="tab2" class="tab-pane fade">
+                        <h5 class="blue">有缩进(上下)</h5>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-4">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">文本</label>
+                                            <div>
+                                                <input class="form-control" placeholder="请输入"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-4">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">下拉框</label>
+                                            <div>
+                                                <select class="form-control"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-4">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">下拉框</label>
+                                            <div>
+                                                <select class="form-control"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-8">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">点击选择</label>
+                                            <div>
+                                                <input class="form-control pointer" placeholder="请选择" readonly/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-4">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">姓名</label>
+                                            <div>
+                                                <div class="input-group input-daterange">
+                                                    <input type="text" class="form-control" placeholder="姓"/>
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-plus"></i>
+                                                        </span>
+                                                    <input type="text" class="form-control" placeholder="名"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-4">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">单选框</label>
+                                            <div>
+                                                <label class="inline">
+                                                    <input name="form-field-radio" type="radio" class="ace"/>
+                                                    <span class="lbl middle"> aaa</span>
+                                                </label>
+                                                <label class="inline">
+                                                    <input name="form-field-radio" type="radio" class="ace"/>
+                                                    <span class="lbl middle"> bbb</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-4">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">多选框</label>
+                                            <div>
+                                                <label class="inline">
+                                                    <input name="form-field-radio" type="checkbox" class="ace"/>
+                                                    <span class="lbl middle"> aaa</span>
+                                                </label>
+                                                <label class="inline">
+                                                    <input name="form-field-radio" type="checkbox" class="ace"/>
+                                                    <span class="lbl middle"> bbb</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-4">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">多选框</label>
+                                            <div>
+                                                <label class="inline">
+                                                    <input name="form-field-radio" type="checkbox" class="ace"/>
+                                                    <span class="lbl middle"> aaa</span>
+                                                </label>
+                                                <label class="inline">
+                                                    <input name="form-field-radio" type="checkbox" class="ace"/>
+                                                    <span class="lbl middle"> bbb</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-4">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">单选框</label>
+                                            <div>
+                                                <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input type="radio" value="1">
+                                                        aaa
+                                                    </label>
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input type="radio" value="2">
+                                                        bbb
+                                                    </label>
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input type="radio" value="3">
+                                                        ccc
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-4">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">多选框</label>
+                                            <div>
+                                                <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input type="checkbox" value="1">
+                                                        aaa
+                                                    </label>
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input type="checkbox" value="2">
+                                                        bbb
+                                                    </label>
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input type="checkbox" value="3">
+                                                        ccc
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-4">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">单选框</label>
+                                            <div>
+                                                <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                                    <label class="btn btn-info col-xs-4">
+                                                        <input type="radio" value="1">
+                                                        aaa
+                                                    </label>
+                                                    <label class="btn btn-info col-xs-4">
+                                                        <input type="radio" value="2">
+                                                        bbb
+                                                    </label>
+                                                    <label class="btn btn-info col-xs-4">
+                                                        <input type="radio" value="3">
+                                                        ccc
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">文本域</label>
+                                            <div>
+                                                <textarea class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="blue">有缩进(左右)</h5>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-10 col-md-offset-1">
+                                <div class="row">
+                                    <label class="control-label col-sm-1 no-padding-right nowrap" style="">文本文本文本</label>
+                                    <div class="col-sm-3">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <input required="true" class="form-control" placeholder="请输入"/>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-1 no-padding-right nowrap">下拉框下拉框</label>
+                                    <div class="col-sm-3">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <select class="form-control"></select>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-1 no-padding-right nowrap">下拉框下拉框</label>
+                                    <div class="col-sm-3">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <select class="form-control"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="control-label col-sm-1 no-padding-right nowrap">点击选择</label>
+                                    <div class="col-sm-3">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <input class="form-control pointer" placeholder="请选择" readonly/>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-1 no-padding-right nowrap">点击选择</label>
+                                    <div class="col-sm-7">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <input class="form-control pointer" placeholder="请选择" readonly/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="control-label col-sm-1 no-padding-right nowrap">单选框</label>
+                                    <div class="col-sm-3 radio">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="inline">
+                                                <input name="form-field-radio" type="radio" class="ace"/>
+                                                <span class="lbl middle"> aaa</span>
+                                            </label>
+                                            <label class="inline">
+                                                <input name="form-field-radio" type="radio" class="ace"/>
+                                                <span class="lbl middle"> bbb</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-1 no-padding-right nowrap">多选框</label>
+                                    <div class="col-sm-3 checkbox">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="inline">
+                                                <input name="form-field-radio" type="checkbox" class="ace"/>
+                                                <span class="lbl middle"> aaa</span>
+                                            </label>
+                                            <label class="inline">
+                                                <input name="form-field-radio" type="checkbox" class="ace"/>
+                                                <span class="lbl middle"> bbb</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-sm-1 no-padding-right nowrap">多选框</label>
+                                    <div class="col-sm-3 checkbox">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="inline">
+                                                <input name="form-field-radio" type="checkbox" class="ace"/>
+                                                <span class="lbl middle"> aaa</span>
+                                            </label>
+                                            <label class="inline">
+                                                <input name="form-field-radio" type="checkbox" class="ace"/>
+                                                <span class="lbl middle"> bbb</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="control-label col-md-1 no-padding-right nowrap">单选框</label>
+                                    <div class="col-md-3">
+                                        <div data-toggle="buttons" class="btn-group btn-overlap form-group no-margin-left no-margin-right width-100">
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="radio" value="1">
+                                                aaa
+                                            </label>
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="radio" value="2">
+                                                bbb
+                                            </label>
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="radio" value="3">
+                                                ccc
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-md-1 no-padding-right nowrap">多选框</label>
+                                    <div class="col-md-7">
+                                        <div data-toggle="buttons" class="btn-group btn-overlap form-group no-margin-left no-margin-right width-100">
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="checkbox" value="1">
+                                                aaa
+                                            </label>
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="checkbox" value="2">
+                                                bbb
+                                            </label>
+                                            <label class="btn btn-white col-xs-4">
+                                                <input type="checkbox" value="3">
+                                                ccc
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="control-label col-md-1 no-padding-right nowrap">文本域</label>
+                                    <div class="col-md-11">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <textarea class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-pane="tab3" class="tab-pane fade">
+                        <p>
+                            <button class="btn btn-sm btn-white btn-round border-width-1" type="button">
+                                <i class="ace-icon fa fa-save green"></i>
+                                保存
+                            </button>
+                            <button class="btn btn-sm btn-white btn-round border-width-1" type="button">
+                                <i class="ace-icon fa fa-trash-o red"></i>
+                                删除
+                            </button>
+                            <button class="btn btn-sm btn-white btn-round border-width-1" type="button">
+                                <i class="ace-icon fa fa-times grey"></i>
+                                取消
+                            </button>
+                            <button class="btn btn-sm btn-white btn-round border-width-1" type="button">
+                                <i class="ace-icon fa fa-times grey"></i>
+                                关闭
+                            </button>
+                            <button class="btn btn-sm btn-white btn-round border-width-1" type="reset">
+                                <i class="ace-icon fa fa-undo grey"></i>
+                                重置
+                            </button>
+                            <button class="btn btn-sm btn-white btn-round border-width-1" type="button">
+                                <i class="ace-icon fa fa-arrow-left grey"></i>
+                                返回
+                            </button>
+                            <button class="btn btn-sm btn-white btn-round border-width-1" type="button">
+                                <i class="ace-icon fa fa-plus blue"></i>
+                                新建
+                            </button>
+                        </p>
+                        <p>
+                            <button class="btn btn-white btn-round border-width-1" type="button">
+                                <i class="ace-icon fa fa-save green"></i>
+                                保存
+                            </button>
+                            <button class="btn btn-white btn-round border-width-1" type="button">
+                                <i class="ace-icon fa fa-trash-o red"></i>
+                                删除
+                            </button>
+                            <button class="btn btn-white btn-round border-width-1" type="button">
+                                <i class="ace-icon fa fa-times grey"></i>
+                                取消
+                            </button>
+                            <button class="btn btn-white btn-round border-width-1" type="button">
+                                <i class="ace-icon fa fa-times grey"></i>
+                                关闭
+                            </button>
+                            <button class="btn btn-white btn-round border-width-1" type="button">
+                                <i class="ace-icon fa fa-undo grey"></i>
+                                重置
+                            </button>
+                            <button class="btn btn-white btn-round border-width-1" type="button">
+                                <i class="ace-icon fa fa-arrow-left grey"></i>
+                                返回
+                            </button>
+                            <button class="btn btn-white btn-round border-width-1" type="button">
+                                <i class="ace-icon fa fa-plus blue"></i>
+                                新建
+                            </button>
+                        </p>
+                        <p>
+                            <button class="btn btn-white btn-round border-width-1" id="dialog" type="button">
+                                dialog
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="horizon-form-actions row">
+                <div class="col-xs-12">
+                    <button class="btn btn-white btn-round border-width-1" type="submit">
+                        <i class="ace-icon fa fa-save green"></i>
+                        保存
+                    </button>
+                    <button class="btn btn-white btn-round border-width-1" type="reset">
+                        <i class="ace-icon fa fa-undo grey"></i>
+                        重置
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="horizon-modal modal aside aside-right aside-vc aside-fixed navbar-offset" data-body-scroll="false" data-offset="true" data-placement="right" data-fixed="true" data-backdrop="invisible" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header blue">
+                    组织机构
+                    <label class="pull-right hidden-sm hidden-xs">
+                        <a data-action="fixed-modal" class="pointer"><i class="ace-icon fa fa-lock bigger-160" data-fixed-icon="fa-lock" data-unfixed-icon="fa-unlock"></i></a>
+                    </label>
+                </div>
+                <div class="modal-body">
+                    树节点
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    require(['jquery', 'horizonJqueryui', 'jqueryValidateAll', 'chosenJquery'], function($) {
+        $('.page-content-area').trigger('ajaxscriptsloaded');
+        $('#dialog').click(function() {
+            $('<div>dialog</div>').dialog({
+                title: 'dialog',
+                closeText: '关闭',
+                width: $(window).width() > 500? 500 : '100%',
+                maxWidth: 500,
+                height: $(window).height() > 380? 380 : $(window).height(),
+                maxHeight: $(window).height(),
+                buttons: [
+                    {
+                        html: '确认',
+                        'class' : 'btn btn-xs btn-primary',
+                        click: function() {
+                            $(this).dialog('close');
+                        }
+                    }
+                ]
+            });
+        });
+        $('form').validate({
+            errorElement: 'div',
+            errorClass: 'help-block no-margin-bottom',
+            focusInvalid: false,
+            highlight: function (e) {
+                $(e).closest('.form-group').addClass('has-error');
+            },
+            success: function (e) {
+                $(e).closest('.form-group').removeClass('has-error');
+                $(e).remove();
+            },
+            errorPlacement: function (error, element) {
+                var $formGroup = $(element).closest('.form-group');
+                if($formGroup.find('.help-block').length) return;
+                $formGroup.append(error);
+            },
+            submitHandler: function (form) {
+                alert('validate success')
+            }
+        });
+        horizon.tools.use(horizon.paths.pluginpath + '/chosen/css/chosen.css');
+        $('select').chosen({
+            allow_single_deselect: true,
+            no_results_text: '未找到选项'
+        });
+    });
+</script>

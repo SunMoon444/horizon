@@ -1,0 +1,209 @@
+<title>hz{platform-permission-retrieval.resourcePermissionsRetrieval}</title>
+<hi18n groups="platform-permission-retrieval;base;message" ></hi18n>
+
+
+<div class="page-header smaller">
+	<h1>
+		hz{platform-permission-retrieval.permissionsRetrieval}<small> <i class="ace-icon fa fa-angle-double-right"></i>
+		hz{platform-permission-retrieval.resourcePermissionsRetrieval}
+		</small>
+	</h1>
+</div>
+
+
+ <div class="col-xs-11 tab-content" style="margin-top: 10px; border:0px">
+                <div class="col-xs-5 col-sm-4 col-md-3 col-lg-2 aceHeight">
+                    <div class="btn-group width-100 tab-content "  style="border: 0px; padding: 0 0">
+                        <div id="tt" data-toggle="dropdown" class="btn btn-white btn-sm btn-round border-width-1 width-100">
+                            <span>
+                             	   hz{platform-permission-retrieval.applicationSpace} <i class="ace-icon fa fa-angle-down icon-on-right"></i>
+                            </span>
+                        </div>
+                        <hr />
+                        <ul class="dropdown-menu dropdown-caret width-100" id="switchtab">
+                            <li class="active">
+                                <a href="javascript:void(0);" id="appSpacePermissions" data-value="TENANTOPER" data-toggle="tab" data-target="[data-pane='tab-sub-0'] ">hz{platform-permission-retrieval.applicationSpace}</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" id="orgPermissions" data-value="ORGOPER" data-toggle="tab" data-target="[data-pane='tab-sub-1']">hz{platform-permission-retrieval.organization}</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" id="sysMenuPermissions" data-value="ADMINMENUOPER" data-toggle="tab" data-target="[data-pane='tab-sub-2']">hz{platform-permission-retrieval.systemMenu}</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" id="appMenuPermissions" data-value="USERMENUOPER" data-toggle="tab" data-target="[data-pane='tab-sub-3']">hz{platform-permission-retrieval.applicationMenu}</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" id="modulePermissions" data-value="MODULEOPER" data-toggle="tab" data-target="[data-pane='tab-sub-4']">hz{platform-permission-retrieval.module}</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" id="flowPermissions" data-value="FLOWOPER" data-toggle="tab" data-target="[data-pane='tab-sub-5']">hz{platform-permission-retrieval.flow}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+               		<div class="col-xs-7 col-sm-8 col-md-9 col-lg-10 align-right">
+							<button class="btn btn-white btn-sm btn-round border-width-1"
+								type="button" id="refreshPermissions">
+								<i class="ace-icon fa fa-refresh green hidden-320"></i> hz{base.refresh}
+							</button>
+							<button class="btn btn-white btn-sm btn-round border-width-1"
+								type="button" id="openAll">
+								<i class="ace-icon fa fa-plus blue hidden-320 "></i> hz{base.expandAll}
+							</button>
+							<button class="btn btn-white btn-sm btn-round border-width-1 hidden"
+								type="button" id="collapseAll">
+								<i class="ace-icon fa fa-minus blue hidden-320"></i> hz{base.shrinkAll}
+							</button>
+						</div>
+                <div class="col-xs-12">
+                    <div class="hr hr-dotted hr-10 no-margin-bottom"></div>
+                      <div class="tab-content" id="tab" style="border: 0px;padding: 0 0">
+                        <div data-pane="tab-sub-0" class="tab-pane fade in active">
+                    <div class="col-sm-5">
+	                   		 <div class="row aceheight">
+			                        <div class="col-xs-11 label label-lg label-info arrowed-in arrowed-right">
+												<b>hz{platform-permission-retrieval.resourceTree}</b>
+								   </div>
+								</div>
+								  <div class="col-xs-11 ace-scroll searchResult">
+	                       	   		<ul id="app" class="ztree ztree-outlook no-padding ace-scroll"></ul>
+	                       	   	 </div>
+	                        </div>
+	                        <div class="col-sm-7">
+	                        	<div class="row">
+									<div class="col-xs-12 label label-lg label-success arrowed-in arrowed-right">
+										<b>hz{platform-permission-retrieval.searchResults}</b>
+									</div>
+									<div  class="col-xs-12 ace-scroll searchResult hidden" id="appRes" style="margin-top: 10px">
+									      <table id="appTable" class="table table-hover">
+									      </table>
+								  	</div>
+								</div>
+	                        </div>
+                        </div>
+                        <div data-pane="tab-sub-1" class="tab-pane fade" id="orgInfo">
+	                        <div class=" col-xs-5 col-sm-5">
+	                        	<div class="row aceheight">
+			                        <div class="col-xs-11 label label-lg label-info arrowed-in arrowed-right">
+												<b>hz{platform-permission-retrieval.resourceTree}</b>
+								   </div>
+							   </div>
+							     <div class="col-xs-11 ace-scroll searchResult searchResult">
+	                       	   		<ul id="org" class="ztree ztree-outlook no-padding"></ul>
+	                       	   </div>
+	                        </div>
+	                        <div class=" col-xs-7 col-sm-7">
+	                        	<div class="row">
+									<div class="col-xs-12 label label-lg label-success arrowed-in arrowed-right">
+										<b>hz{platform-permission-retrieval.searchResults}</b>
+									</div>
+									<div  class="col-xs-12 ace-scroll searchResult hidden" id = "orgRes" style="margin-top: 10px">
+									      <table id="orgTable" class="table table-hover">
+									      </table>
+								  </div>
+								</div>
+	                        </div>
+                        </div>
+                        <div data-pane="tab-sub-2" class="tab-pane fade" id="sysmenuInfo">
+	                        <div class="col-sm-5">
+		                        <div class="col-xs-11 label label-lg label-info arrowed-in arrowed-right">
+											<b>hz{platform-permission-retrieval.resourceTree}</b>
+							   </div>
+	                       	   <div class="col-xs-11 ace-scroll searchResult">
+	                       	   		<ul id="sysMenu" class="ztree ztree-outlook no-padding"></ul>
+	                       	   </div>
+	                        </div>
+	                        <div class="col-sm-7">
+	                        	<div class="row">
+									<div class="col-xs-12 label label-lg label-success arrowed-in arrowed-right">
+										<b>hz{platform-permission-retrieval.searchResults}</b>
+									</div>
+									<div  class="col-xs-12 ace-scroll searchResult hidden" id="sysMenuRes" style="margin-top: 10px">
+									      <table id="sysMenuTable" class="table table-hover">
+									      </table>
+								  </div>
+								</div>
+	                        </div>
+                        </div>
+                        <div data-pane="tab-sub-3" class="tab-pane fade" id="appmenuInfo">
+                        	 <div class="col-sm-5">
+		                        <div class="col-xs-11 label label-lg label-info arrowed-in arrowed-right">
+											<b>hz{platform-permission-retrieval.resourceTree}</b>
+							   </div>
+	                       	  <div class="col-xs-11 ace-scroll searchResult">
+	                       	   		<ul id="appMenu" class="ztree ztree-outlook no-padding"></ul>
+	                       	   </div>
+	                        </div>
+	                        <div class="col-sm-7">
+	                        	<div class="row">
+									<div class="col-xs-12 label label-lg label-success arrowed-in arrowed-right">
+										<b>hz{platform-permission-retrieval.searchResults}</b>
+									</div>
+									<div  class="col-xs-12 ace-scroll searchResult hidden" id="appMenuRes" style="margin-top: 10px">
+									      <table id="appMenuTable" class="table table-hover">
+									      </table>
+								  </div>
+								</div>
+	                        </div>
+                        </div>
+                        <div data-pane="tab-sub-4" class="tab-pane fade" id="moduleInfo">
+                         <div class="col-sm-5">
+		                        <div class="col-xs-11 label label-lg label-info arrowed-in arrowed-right">
+											<b>hz{platform-permission-retrieval.resourceTree}</b>
+							   </div>
+	                       	   <div class="col-xs-11 ace-scroll searchResult">
+	                       	   		<ul id="module" class="ztree ztree-outlook no-padding"></ul>
+	                       	   </div>
+	                        </div>
+	                        <div class="col-sm-7">
+	                        	<div class="row">
+									<div class="col-xs-12 label label-lg label-success arrowed-in arrowed-right">
+										<b>hz{platform-permission-retrieval.searchResults}</b>
+									</div>
+									<div  class="col-xs-12 ace-scroll searchResult hidden" id="moduleRes" style="margin-top: 10px">
+									      <table id="moduleTable" class="table table-hover">
+									      </table>
+								  </div>
+								</div>
+	                        </div>
+                        </div>
+                        <div data-pane="tab-sub-5" class="tab-pane fade" id="flowInfo">
+                            <div class="col-sm-5">
+		                        <div class="col-xs-11 label label-lg label-info arrowed-in arrowed-right">
+											<b>hz{platform-permission-retrieval.resourceTree}</b>
+							   </div>
+	                       	   <div class="col-xs-11 ace-scroll searchResult">
+	                       	   		<ul id="flow" class="ztree ztree-outlook no-padding"></ul>
+	                       	   </div>
+	                        </div>
+	                        <div class="col-sm-7">
+	                        	<div class="row">
+									<div class="col-xs-12 label label-lg label-success arrowed-in arrowed-right">
+										<b>hz{platform-permission-retrieval.searchResults}</b>
+									</div>
+									<div  class="col-xs-12 ace-scroll searchResult hidden" id="flowRes" style="margin-top: 10px">
+									      <table id="flowTable" class="table table-hover">
+
+									      </table>
+								  </div>
+								</div>
+	                        </div>
+                        </div>
+                     </div>
+
+                </div>
+            </div>
+
+
+<script type="text/javascript">
+	jQuery(function($) {
+		require([ horizon.paths.apppath
+				+ '/horizon/assets/manager/auth/js/resource.authority.js'], function() {
+			horizon.tools.use(horizon.paths.pluginpath
+					+ '/ztree/css/zTreeStyle/zTreeStyle.css');
+			horizon.manager.resourceAuthority.init();
+			$('.page-content-area').trigger('ajaxscriptsloaded');
+		});
+	});
+</script>

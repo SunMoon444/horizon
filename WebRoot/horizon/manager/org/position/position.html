@@ -1,0 +1,125 @@
+<title>hz{platform-position.largeTitle}</title>
+<hi18n groups="platform-position;base;message;selectuser;platform-validator"></hi18n>
+<div class="horizon-modal-container">
+	<div class="other-content-area">
+		<div class="page-header smaller">
+		<h1>
+            hz{platform-position.subTitle}<small>
+            <i class="ace-icon fa fa-angle-double-right"></i>
+         		 hz{platform-position.list}
+         	</small>
+            <div class="pull-right">
+                    <label class="pointer horizon-modal-trigger" data-target=".horizon-modal" data-toggle="modal">
+                        <i class="ace-icon fa fa-leaf bigger-110 icon-only green"></i>
+                       hz{platform-position.tree}
+                    </label>
+                </div>
+        </h1>
+		</div>
+		<!-- page-header -->
+		<iframe name="positionList" frameborder="0" id="positionList" src=""  width="100%" class="iframeBorder"></iframe>
+		<div class="hidden" id="positionInfo">
+			<form class="form-horizontal horizon-form" role="form" id="positionForm" target="typeList">
+				<div class="horizon-tab">
+					<div class="row">
+						<div class="col-xs-12 col-md-6 col-md-offset-3">
+							<div class="row">
+								<input type="hidden" name="id"/>
+            					<input type="hidden" name="objectType" />
+            													<div class="col-xs-12">
+									<div class="form-group no-margin-left no-margin-right">
+										<label class="control-label">hz{platform-position.categoryName}</label>
+										<div class="form-group no-margin has-error" id="positionType">
+											<input name="positionTypeId" type="hidden" >
+											<input type="text" required="true" class="form-control dropdown-toggle pointer" readonly data-toggle="dropdown" data-position="auto" id="positionTypeName" name="positionTypeName"
+												placeholder="hz{platform-position.selectCategoryName}" maxlength="255"/>
+											<div class="select-tree dropdown-menu dropdown-yellow dropdown-caret dropdown-close ">
+												<ul id="selType-tree" class="ztree"></ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12">
+									<div class="form-group no-margin-left no-margin-right">
+										<label class="control-label">hz{platform-position.parentPosition}</label>
+										<div class="form-group no-margin has-error" id="parentPosition">
+											<input name="parentId" type="hidden" >
+											<input type="text" required="true" readonly class="form-control dropdown-toggle pointer"  data-position="auto" name="parentName" id="parentName"
+												placeholder="hz{platform-position.selectParentPosition}" maxlength="100"/>
+											<div class="select-tree dropdown-menu dropdown-yellow dropdown-caret dropdown-close ">
+												<ul id="selPosi-tree" class="ztree"></ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12">
+									<div class="form-group no-margin-left no-margin-right">
+										<label class="control-label">hz{platform-position.positionName}</label>
+										<div class="form-group no-margin has-error">
+											<input  type="text" required="true" class="form-control" name="positionName"
+												placeholder="hz{platform-position.inputPositionName}" maxlength="200" />
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12">
+									<div class="form-group no-margin-left no-margin-right">
+										<label class="control-label">hz{platform-position.positionCode}</label>
+										<div class="form-group no-margin has-error">
+											<input  type="text" required="true" class="form-control" name="positionCode"
+												placeholder="hz{platform-position.inputPositionCode}" notChinese="true"  maxlength="20"/>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12">
+									<div class="form-group no-margin-left no-margin-right ">
+										<label class="control-label " >hz{platform-position.objectName}</label>
+										<div>
+											<input name="objectId" type="hidden" >
+											<input type="text" class="form-control pointer" readonly name="objectName"
+												placeholder="hz{platform-position.inputObjectName}" />
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12">
+									<div class="form-group no-margin-left no-margin-right ">
+										<label class="control-label " >hz{platform-position.orderNo}</label>
+										<div class="form-group no-margin has-error">
+											<input type="text" class="form-control"  name="orderNo"
+												placeholder="hz{platform-position.inputOrderNo}" number="true" digits="true" min="0" maxlength="9" required="true"/>
+										</div>
+									</div>
+								</div>
+							</div><!-- row -->
+						</div><!-- col-md-offset-3 -->
+					</div>
+					<!-- row -->
+				</div>
+				<!-- horizon-tab -->
+			</form>
+		</div>
+	</div><!-- other-content-area -->
+	<div class="horizon-modal modal aside aside-right aside-vc aside-fixed navbar-offset" data-body-scroll="false" data-offset="true" data-placement="right" data-fixed="true" data-backdrop="invisible" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header blue">
+                   	 hz{platform-position.tree}
+                    <label class="pull-right hidden-sm hidden-xs">
+                        <a data-action="fixed-modal" class="pointer"><i class="ace-icon fa fa-lock bigger-160" data-fixed-icon="fa-lock" data-unfixed-icon="fa-unlock"></i></a>
+                    </label>
+                </div>
+                <div class="modal-body">
+                     <ul id="position-tree" class="ztree"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- horizon-modal-container -->
+<script type="text/javascript">
+        require([horizon.paths.apppath+'/horizon/assets/manager/org/position/js/position.js',
+                 horizon.paths.apppath+'/horizon/assets/manager/org/position/js/puser.view.js'], function() {
+            horizon.language.plugins.selectuser();
+        	horizon.tools.use(horizon.paths.pluginpath + '/ztree/css/zTreeStyle/zTreeStyle.css');
+    		horizon.manager.position.init();
+            $('.page-content-area').trigger('ajaxscriptsloaded');
+        });
+</script>

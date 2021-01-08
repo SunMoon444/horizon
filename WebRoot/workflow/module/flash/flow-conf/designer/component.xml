@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Components>
+	<CheckBox id="Todo" selected="true"/>
+	<CheckBox id="Read" selected="true"/>
+	<CheckBox id="submit" selected="true"/>
+	<CheckBox id="secondSubmit" selected="true"/>
+	<CheckBox id="startflow" selected="true"/>
+	<CheckBox id="save" selected="true"/>
+	<CheckBox id="readed" selected="true"/>
+	<CheckBox id="getback" selected="true"/>
+	<CheckBox id="FreeSelect" selected="true"/>
+	<RadioButton id="Relation">
+		<RadioButton lable="Relation1" value="allParticipants" selected="true"/>
+		<RadioButton lable="Relation2" value="assignParticipants"/>
+	</RadioButton>
+</Components>

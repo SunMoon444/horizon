@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 代办设置相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_AGENT</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_AGENT</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="USERID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="USERNAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="AGENTUSERID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="AGENTUSERNAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="FLOWID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FLOWNAME" typename="varchar"   length="255"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar"   length="10"></fieldinfo>
+			<fieldinfo fieldname="BEGINDATE" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="ENDDATE" typename="varchar"   length="20"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_AGENT_LOG</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_AGENT_LOG</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="SAVETIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="OBJECTID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="FLOWID" typename="varchar" length="32"></fieldinfo>
+		</fieldinfos>		
+	</tablename>
+	<others>
+		<oracle>
+			<sql>CREATE INDEX IDX_TW_A_FLOWID ON TW_HZ_AGENT(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_AL_WOF ON TW_HZ_AGENT_LOG(WORKID,OBJECTID,FLOWID)</sql>
+		</oracle>
+		<mysql>
+			<sql>CREATE INDEX IDX_TW_A_FLOWID ON TW_HZ_AGENT(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_AL_WOF ON TW_HZ_AGENT_LOG(WORKID,OBJECTID,FLOWID)</sql>
+		</mysql>
+		<mysql8>
+			<sql>CREATE INDEX IDX_TW_A_FLOWID ON TW_HZ_AGENT(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_AL_WOF ON TW_HZ_AGENT_LOG(WORKID,OBJECTID,FLOWID)</sql>
+		</mysql8>
+		<db2>
+			<sql>CREATE INDEX IDX_TW_A_FLOWID ON TW_HZ_AGENT(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_AL_WOF ON TW_HZ_AGENT_LOG(WORKID,OBJECTID,FLOWID)</sql>
+		</db2>
+		<sqlserver>
+			<sql>CREATE INDEX IDX_TW_A_FLOWID ON TW_HZ_AGENT(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_AL_WOF ON TW_HZ_AGENT_LOG(WORKID,OBJECTID,FLOWID)</sql>
+		</sqlserver>
+		<dm>
+			<sql>CREATE INDEX IDX_TW_A_FLOWID ON TW_HZ_AGENT(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_AL_WOF ON TW_HZ_AGENT_LOG(WORKID,OBJECTID,FLOWID)</sql>
+		</dm>
+		<postgresql>
+			<sql>CREATE INDEX IDX_TW_A_FLOWID ON TW_HZ_AGENT(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_AL_WOF ON TW_HZ_AGENT_LOG(WORKID,OBJECTID,FLOWID)</sql>
+		</postgresql>
+		<highgo>
+			<sql>CREATE INDEX IDX_TW_A_FLOWID ON TW_HZ_AGENT(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_AL_WOF ON TW_HZ_AGENT_LOG(WORKID,OBJECTID,FLOWID)</sql>
+		</highgo>
+		<gbase>
+			<sql>CREATE INDEX IDX_TW_A_FLOWID ON TW_HZ_AGENT(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_AL_WOF ON TW_HZ_AGENT_LOG(WORKID,OBJECTID,FLOWID)</sql>
+		</gbase>
+		<gbase8s>
+			<sql>CREATE INDEX IDX_TW_A_FLOWID ON TW_HZ_AGENT(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_AL_WOF ON TW_HZ_AGENT_LOG(WORKID,OBJECTID,FLOWID)</sql>
+		</gbase8s>
+		<kingbase>
+			<sql>CREATE INDEX IDX_TW_A_FLOWID ON TW_HZ_AGENT(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_AL_WOF ON TW_HZ_AGENT_LOG(WORKID,OBJECTID,FLOWID)</sql>
+		</kingbase>
+		<kingbase8>
+			<sql>CREATE INDEX IDX_TW_A_FLOWID ON TW_HZ_AGENT(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_AL_WOF ON TW_HZ_AGENT_LOG(WORKID,OBJECTID,FLOWID)</sql>
+		</kingbase8>
+		<oscar>
+			<sql>CREATE INDEX IDX_TW_A_FLOWID ON TW_HZ_AGENT(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_AL_WOF ON TW_HZ_AGENT_LOG(WORKID,OBJECTID,FLOWID)</sql>
+		</oscar>
+		<upbase>
+			<sql>CREATE INDEX IDX_TW_A_FLOWID ON TW_HZ_AGENT(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_AL_WOF ON TW_HZ_AGENT_LOG(WORKID,OBJECTID,FLOWID)</sql>
+		</upbase>
+	</others>
+</tableinfo>

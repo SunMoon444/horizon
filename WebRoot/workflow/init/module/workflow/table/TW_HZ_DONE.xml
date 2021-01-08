@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 记录主办时的已办标签定义的表单字段信息 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_DONE</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_DONE</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="USERID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FORMID" typename="varchar"   length="32"></fieldinfo>		
+			<fieldinfo fieldname="FORMBUTTON" typename="lvarchar"   length="500"></fieldinfo>
+			<fieldinfo fieldname="FIELDAUTHID" typename="varchar"   length="32"></fieldinfo>			
+		</fieldinfos>
+	</tablename>
+</tableinfo>

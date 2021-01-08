@@ -1,0 +1,160 @@
+<title>hz{platform-permission-retrieval.userRightsRetrieval}</title>
+<hi18n groups="platform-permission-retrieval;base;selectuser;message" ></hi18n>
+<div class="page-header smaller">
+	<h1>
+        hz{platform-permission-retrieval.authorizedManagement}<small> <i class="ace-icon fa fa-angle-double-right"></i>
+        hz{platform-permission-retrieval.userRightsRetrieval}
+		</small>
+	</h1>
+</div>
+
+
+
+<div id="searchInfo">
+<div class="row formheight">
+		<div  class=" col-md-12">
+			<form id="userSearchForm1">
+				<div class="form-group">
+					<div class="col-xs-12 col-sm-4 col-md-offset-1 padding-12">
+						<input class="hidden" name="userId"> <input
+							class="col-sm-12 pointer" readonly="readonly" name="userName" placeholder=hz{platform-permission-retrieval.pleaseSelectUser} type="text">
+					</div>
+					<div class="pull-left padding-12">
+						<button type="button" id="search"
+							class="submit btn btn-white btn-round   border-width-1 "
+							value=hz{platform-permission-retrieval.searchFor}>
+							<i class="ace-icon fa fa-search green"></i>hz{platform-permission-retrieval.searchFor}
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<hr />
+	<div class="col-sm-3">
+		<div class="row">
+			<div class="col-xs-11 label label-lg label-info arrowed-in arrowed-right">
+				<b>hz{platform-permission-retrieval.ownRole}</b>
+			</div>
+		</div>
+
+		<div class="ace-scroll searchResult">
+			<ul class="list-unstyled spaced" id="rolelist">
+						<!-- 角色列表 -->
+			</ul>
+		</div>
+	</div>
+	<div class="col-sm-9">
+		<div class="row aceheight">
+			<div class="col-xs-11 label label-lg label-success arrowed-in arrowed-right">
+				<b>hz{platform-permission-retrieval.userPermissions}</b>
+			</div>
+	   </div>
+	 <div class="col-xs-11 tab-content" style="margin-top: 10px;border: 0px">
+                <div class="col-xs-5 col-sm-4 col-md-3 col-lg-2 aceHeight">
+                    <div   class="btn-group width-100 tab-content "  style="border: 0px; padding: 0 0">
+                       <div id="tt" data-toggle="dropdown"  disabled="disabled"
+									class="btn btn-white btn-sm btn-round border-width-1 width-100">
+									<span> hz{platform-permission-retrieval.applicationSpace} <i
+										class="ace-icon fa fa-angle-down icon-on-right"></i>
+									</span>
+								</div>
+                        <ul class="dropdown-menu dropdown-caret width-100" id="switchtab">
+                            <li>
+                                <a href="javascript:void(0);" id="appSpacePermissions" data-value="TENANTOPER" data-toggle="tab" data-target="[data-pane='tab-sub-0'] ">hz{platform-permission-retrieval.applicationSpace}</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" id="orgPermissions" data-value="ORGOPER" data-toggle="tab" data-target="[data-pane='tab-sub-1']">hz{platform-permission-retrieval.organization}</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" id="sysMenuPermissions" data-value="ADMINMENUOPER" data-toggle="tab" data-target="[data-pane='tab-sub-2']">hz{platform-permission-retrieval.systemMenu}</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" id="appMenuPermissions" data-value="USERMENUOPER" data-toggle="tab" data-target="[data-pane='tab-sub-3']">hz{platform-permission-retrieval.applicationMenu}</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" id="modulePermissions" data-value="MODULEOPER" data-toggle="tab" data-target="[data-pane='tab-sub-4']">hz{platform-permission-retrieval.module}</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" id="flowPermissions" data-value="FLOWOPER" data-toggle="tab" data-target="[data-pane='tab-sub-5']">hz{platform-permission-retrieval.flow}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                		<div class="col-xs-7 col-sm-8 col-md-9 col-lg-10 align-right">
+							<button class="btn btn-white btn-sm btn-round border-width-1"
+								type="button" id="refreshPermissions">
+								<i class="ace-icon fa fa-refresh green hidden-320"></i> hz{base.refresh}
+							</button>
+							<button class="btn btn-white btn-sm btn-round border-width-1 hidden"
+								type="button" id="openAll">
+								<i class="ace-icon fa fa-plus blue hidden-320 "></i> hz{base.expandAll}
+							</button>
+							<button class="btn btn-white btn-sm btn-round border-width-1 hidden"
+								type="button" id="collapseAll">
+								<i class="ace-icon fa fa-minus blue hidden-320"></i> hz{base.shrinkAll}
+							</button>
+						</div>
+                <div class="col-xs-12 ace-scroll searchResult">
+                    <div class="hr hr-dotted hr-10 no-margin-bottom"></div>
+                    <div class="tab-content" id="tab" style="border: 0px;padding: 0 0">
+                        <div data-pane="tab-sub-0" class="tab-pane fade in active">
+                            <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                <label class="btn btn-white col-xs-6" disabled="disabled">
+                                    <input type="checkbox" value="TEANANT_APP" >
+                                    hz{platform-permission-retrieval.applicationTools}
+                                </label>
+                                <label class="btn btn-white col-xs-6" disabled="disabled">
+                                    <input type="checkbox" value="TEANANT_MANAGE">
+                                    hz{platform-permission-retrieval.managementTools}
+                                </label>
+                            </div>
+                            <div class="space-6"></div>
+                            <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                <label class="btn btn-white col-xs-6" disabled="disabled">
+                                    <input type="checkbox" value="TEANANT_DESINGER">
+                                    hz{platform-permission-retrieval.designTools}
+                                </label>
+                                <label class="btn btn-white col-xs-6" disabled="disabled">
+                                    <input type="checkbox" value="GRANT">
+                                    hz{platform-permission-retrieval.gradingAuthorization}
+                                </label>
+                            </div>
+                        </div>
+                        <div data-pane="tab-sub-1" class="tab-pane fade" id="orgInfo">
+                            <ul id="org" class="ztree ztree-outlook no-padding"></ul>
+                        </div>
+                        <div data-pane="tab-sub-2" class="tab-pane fade" id="sysmenuInfo">
+                            <ul id="sysMenu" class="ztree ztree-outlook no-padding"></ul>
+                        </div>
+                        <div data-pane="tab-sub-3" class="tab-pane fade" id="appmenuInfo">
+                            <ul id="appMenu" class="ztree ztree-outlook no-padding"></ul>
+                        </div>
+                        <div data-pane="tab-sub-4" class="tab-pane fade" id="moduleInfo">
+                            <ul id="module" class="ztree ztree-outlook no-padding"></ul>
+                        </div>
+                        <div data-pane="tab-sub-5" class="tab-pane fade" id="flowInfo">
+                            <ul id="flow" class="ztree ztree-outlook no-padding"></ul>
+                        </div>
+                      </div>  
+                </div>
+            </div>
+	</div>
+	
+	
+            
+</div>
+<script type="text/javascript">
+	jQuery(function($) {
+		require([horizon.paths.apppath
+					+ '/horizon/assets/manager/auth/js/user.search.js'],
+				function() {
+                    horizon.language.plugins.selectuser();
+					horizon.tools.use(horizon.paths.pluginpath
+							+ '/ztree/css/zTreeStyle/zTreeStyle.css');
+					horizon.manager.usersearch.init();
+					$('.page-content-area').trigger('ajaxscriptsloaded');
+				});
+
+	});
+</script>

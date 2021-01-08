@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 待办事宜相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_TEMPTODO</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_TEMPTODO</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SENDTYPE" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="SENDOBJ" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="SENDNUM" typename="number"></fieldinfo>
+			<fieldinfo fieldname="ACTIONNUM" typename="number"></fieldinfo>
+			<fieldinfo fieldname="ACTIVE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SENDTIME" typename="varchar"   length="20"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_TODO_SUCCESS</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_TODO_SUCCESS</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SENDTYPE" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="SENDOBJ" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="SENDNUM" typename="number"></fieldinfo>
+			<fieldinfo fieldname="ACTIONNUM" typename="number"></fieldinfo>
+			<fieldinfo fieldname="ACTIVE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SENDTIME" typename="varchar"   length="20"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+</tableinfo>

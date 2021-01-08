@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 流程交互相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_MUTUAL</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_MUTUAL</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="SERVERNAME" typename="varchar" length="100"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar" length="10"></fieldinfo>
+			<fieldinfo fieldname="CLASSNAME" typename="lvarchar" length="500"></fieldinfo>
+			<fieldinfo fieldname="SORTNUM" typename="number"></fieldinfo>
+		</fieldinfos>
+	</tablename>	
+</tableinfo>

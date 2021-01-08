@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 工作日历相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_ATTENDANCE_SET</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_CALENDAR_SET</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="START_Y" typename="varchar"   length="4"></fieldinfo>
+			<fieldinfo fieldname="START_M" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="END_Y" typename="varchar"   length="4"></fieldinfo>
+			<fieldinfo fieldname="END_M" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="ORGANID" typename="lvarchar"   length="500"></fieldinfo>
+			<fieldinfo fieldname="HOUR_START" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="MIN_START" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="HOUR_END" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="MIN_END" typename="varchar"   length="2"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_ATTENDANCE_WORKDAY</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_CALENDAR_DAY</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="F_YEAR" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="F_MONTH" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="CREATEDATE" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="SBEGINTIME" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="SENDTIME" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="XBEGINTIME" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="XENDTIME" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="UNITID" typename="lvarchar" length="500"></fieldinfo>
+			<fieldinfo fieldname="F_DATE" typename="varchar" length="50"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<others>
+		<oracle>
+			<sql>CREATE INDEX IDX_TW_AW_YMDC ON TW_HZ_ATTENDANCE_WORKDAY(UNITID,F_YEAR,F_MONTH,F_DATE,CREATEDATE)</sql>
+		</oracle>
+		<mysql>
+			<sql>CREATE INDEX IDX_TW_AW_YMDC ON TW_HZ_ATTENDANCE_WORKDAY(UNITID,F_YEAR,F_MONTH,F_DATE,CREATEDATE)</sql>
+		</mysql>
+		<mysql8>
+			<sql>CREATE INDEX IDX_TW_AW_YMDC ON TW_HZ_ATTENDANCE_WORKDAY(UNITID,F_YEAR,F_MONTH,F_DATE,CREATEDATE)</sql>
+		</mysql8>
+		<db2>
+			<sql>CREATE INDEX IDX_TW_AW_YMDC ON TW_HZ_ATTENDANCE_WORKDAY(UNITID,F_YEAR,F_MONTH,F_DATE,CREATEDATE)</sql>
+		</db2>
+		<sqlserver>
+			<sql>CREATE INDEX IDX_TW_AW_YMDC ON TW_HZ_ATTENDANCE_WORKDAY(UNITID,F_YEAR,F_MONTH,F_DATE,CREATEDATE)</sql>
+		</sqlserver>
+		<dm>
+			<sql>CREATE INDEX IDX_TW_AW_YMDC ON TW_HZ_ATTENDANCE_WORKDAY(UNITID,F_YEAR,F_MONTH,F_DATE,CREATEDATE)</sql>
+		</dm>
+		<postgresql>
+			<sql>CREATE INDEX IDX_TW_AW_YMDC ON TW_HZ_ATTENDANCE_WORKDAY(UNITID,F_YEAR,F_MONTH,F_DATE,CREATEDATE)</sql>
+		</postgresql>
+		<highgo>
+			<sql>CREATE INDEX IDX_TW_AW_YMDC ON TW_HZ_ATTENDANCE_WORKDAY(UNITID,F_YEAR,F_MONTH,F_DATE,CREATEDATE)</sql>
+		</highgo>
+		<gbase>
+			<sql>CREATE INDEX IDX_TW_AW_YMDC ON TW_HZ_ATTENDANCE_WORKDAY(UNITID,F_YEAR,F_MONTH,F_DATE,CREATEDATE)</sql>
+		</gbase>
+		<kingbase>
+			<sql>CREATE INDEX IDX_TW_AW_YMDC ON TW_HZ_ATTENDANCE_WORKDAY(UNITID,F_YEAR,F_MONTH,F_DATE,CREATEDATE)</sql>
+		</kingbase>
+		<kingbase8>
+			<sql>CREATE INDEX IDX_TW_AW_YMDC ON TW_HZ_ATTENDANCE_WORKDAY(UNITID,F_YEAR,F_MONTH,F_DATE,CREATEDATE)</sql>
+		</kingbase8>
+		<oscar>
+			<sql>CREATE INDEX IDX_TW_AW_YMDC ON TW_HZ_ATTENDANCE_WORKDAY(UNITID,F_YEAR,F_MONTH,F_DATE,CREATEDATE)</sql>
+		</oscar>
+		<upbase>
+			<sql>CREATE INDEX IDX_TW_AW_YMDC ON TW_HZ_ATTENDANCE_WORKDAY(UNITID,F_YEAR,F_MONTH,F_DATE,CREATEDATE)</sql>
+		</upbase>
+	</others>
+</tableinfo>

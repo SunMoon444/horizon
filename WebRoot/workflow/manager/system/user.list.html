@@ -1,0 +1,73 @@
+<title>hz{user-list.title}</title>
+<hi18n groups="user-list;base;message;datatables;validator" ></hi18n>
+<div class="page-header smaller">
+	<h1>
+		hz{user-list.title}
+		<small class="hidden-xs">
+            <i class="ace-icon fa fa-angle-double-right"></i>
+         	hz{user-list.smallTitle}
+        </small>
+		<div class="embed-toggle-sidebar-container hidden-md hidden-lg pull-right">
+            <button class="navbar-toggle toggle-sidebar" type="button" data-target="#toggle-sidebar">
+                <span class="sr-only">Toggle横向菜单</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button class="navbar-toggle toggle-sidebar2" type="button" data-target="#toggle-sidebar2" >
+                <span class="sr-only">Toggle左侧菜单</span>
+                <i class="ace-icon fa fa-dashboard bigger-110"></i>
+            </button>
+        </div>
+	</h1>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+        <table id="myDatatable" class="table table-hover"></table>
+    </div>
+</div>
+<div class="hidden" id="userInfo">
+	<div class="space-6"></div>
+	<form class="form-horizontal no-margin-bottom" id="userInfoForm">
+		<input type="hidden" name="id"/>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{user-list.userName}:</label>
+					<div class="col-xs-12 col-sm-5">
+						<input class="col-xs-12 form-control" name="userName" type="text" maxlength="100" required>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{user-list.password}:</label>
+					<div class="col-xs-12 col-sm-5">
+						<input class="col-xs-12 form-control" id="password" name="password" type="password" minlength="6" maxlength="16" required>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{user-list.confirmPassword}:</label>
+					<div class="col-xs-12 col-sm-5">
+						<input class="col-xs-12 form-control" name="repassword"  type="password" minlength="6" maxlength="16" required>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="hidden" id="systemList-dialog"></div>
+<!-- /.page-header -->
+<!-- page specific plugin scripts -->
+<script type="text/javascript">
+jQuery(function($) {
+    require([horizon.paths.assetspath + '/manager/system/js/user.list.js'], function() {
+    	horizon.language.plugins.datatables();
+    	horizon.language.plugins.validator();
+        horizon.engine.userlist.initTable();
+        $('.page-content-area').trigger('ajaxscriptsloaded');
+    });
+});
+</script>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd "
+	     version="2.5">
+	<!--Spring 配置文件加载 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/workflow-conf/workflow-context.xml
+		</param-value>
+	</context-param>
+	<!--Spring 监听 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.horizon.core.listener.HorizonWorkflowStartupListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.horizon.core.context.ContextListener</listener-class>
+	</listener>
+	<filter>
+		<filter-name>SetCharacterEncoding</filter-name>
+		<filter-class>com.horizon.filter.encoding.SetCharacterEncodingFilter</filter-class>
+		<!-- 用户请求和响应的编码设置程序 -->
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>SetCharacterEncoding</filter-name>
+		<url-pattern>*.wf</url-pattern>
+	</filter-mapping>
+	<!-- 系统和上下文过滤器：检查系统启动状态以及Session过期判断-->
+	<filter>
+		<filter-name>WorkflowContextFilter</filter-name>
+		<filter-class>com.horizon.filter.WorkflowContextFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>WorkflowContextFilter</filter-name>
+		<url-pattern>*.wf</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>WorkflowContextFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+
+	<!--Flex 与Java通信加载 -->
+	<servlet>
+		<servlet-name>messageBroker</servlet-name>
+		<servlet-class>flex.messaging.MessageBrokerServlet</servlet-class>
+		<init-param>
+			<param-name>services.configuration.file</param-name>
+			<param-value>/WEB-INF/workflow-conf/flex/services-config.xml
+			</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>messageBroker</servlet-name>
+		<url-pattern>/messagebroker/*</url-pattern>
+	</servlet-mapping>
+    
+	<!--SpringMVC 加载 -->
+	<servlet>
+		<servlet-name>SpringMVC</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/workflow-conf/workflow-web.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SpringMVC</servlet-name>
+		<url-pattern>*.wf</url-pattern>
+	</servlet-mapping>
+
+	<!-- 流程License加载 -->
+	<servlet>
+		<servlet-name>workflow</servlet-name>
+		<servlet-class>com.horizon.wf.config.LoadConfig</servlet-class>		
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>workflow</servlet-name>
+		<url-pattern>/workflow.hz</url-pattern>
+	</servlet-mapping>
+
+	<session-config>
+		<session-timeout>30</session-timeout>
+		<!-- 用户无请求时的会话过期时间（单位：分钟） -->
+	</session-config>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+		<!-- 欢迎页面设置：注意存在顺序优先级的问题 -->
+	</welcome-file-list>
+
+	<jsp-config>
+		<taglib>
+			<taglib-uri>http://www.horizon.cn/taglib/path</taglib-uri>
+			<taglib-location>/WEB-INF/htlds/horizon.tld
+			</taglib-location>
+		</taglib>
+	</jsp-config>
+</web-app>

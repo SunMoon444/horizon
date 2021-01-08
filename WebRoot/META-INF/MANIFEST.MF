@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Timestamp: 2020-09-10T08:46:57Z-7.4.13
+Implementation-Title: horizon-war Webapp
+Implementation-Version: 7.4
+Implementation-Vendor-Id: com.horizon
+Built-By: mm
+Build-Jdk: 1.6.0_22
+Created-By: Apache Maven 3.2.2
+Implementation-URL: http://maven.apache.org
+Archiver-Version: Plexus Archiver
+

@@ -1,0 +1,130 @@
+<title>hz{flow-log.largeTitle}</title>
+<hi18n groups="base;flow-log;datatables" data-id="flowlog"></hi18n>
+<div class="horizon-modal-container">
+	<div class="other-content-area">
+		<div class="page-header smaller">
+			<h1>
+				hz{flow-log.largeTitle} 
+				<small class="hidden-xs"> 
+					<i class="ace-icon fa fa-angle-double-right"></i>
+					hz{flow-log.viewProcessLog}
+				</small>
+				<div class="pull-right">
+					<label class="pointer horizon-modal-trigger" data-target=".horizon-modal" data-toggle="modal"> 
+						<i class="ace-icon fa fa-leaf bigger-110 icon-only green"></i>
+						hz{base.flowtree}
+					</label>
+				</div>
+				<div class="embed-toggle-sidebar-container hidden-md hidden-lg pull-right">
+					<button class="navbar-toggle toggle-sidebar" type="button"
+						data-target="#toggle-sidebar">
+						<span class="sr-only">Toggle横向菜单</span> <span class="icon-bar"></span>
+						<span class="icon-bar"></span> <span class="icon-bar"></span>
+					</button>
+					<button class="navbar-toggle toggle-sidebar2" type="button"
+						data-target="#toggle-sidebar2">
+						<span class="sr-only">Toggle左侧菜单</span> <i
+							class="ace-icon fa fa-dashboard bigger-110"></i>
+					</button>
+				</div>
+			</h1>
+		</div>
+		<div class="row">
+			<div class="col-xs-12" id="flowlogdata-container">
+				<table id="flowLogDatatable" class="table table-hover"></table>
+			</div>
+		</div>
+		<div id="infoFormContainer" class="hidden">
+			<form class="form-horizontal no-margin-bottom" id="flowLogForm">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 control-label">
+								hz{flow-log.formTitle}:</label>
+							<div class="col-xs-12 col-sm-7">
+								<input class="col-sm-12" name="title" readonly type="text">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 control-label">hz{flow-log.formFlowID}:</label>
+							<div class="col-xs-12 col-sm-7">
+								<input class="col-sm-12" name="flowId" readonly type="text">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 control-label">hz{flow-log.formFlowName}:</label>
+							<div class="col-xs-12 col-sm-7">
+								<input class="col-sm-12" name="flowName" readonly type="text">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 control-label">hz{flow-log.formNodeId}:</label>
+							<div class="col-xs-12 col-sm-7">
+								<input class="col-sm-12" name="nodeId" readonly type="text">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 control-label">hz{flow-log.formNodeName}:</label>
+							<div class="col-xs-12 col-sm-7">
+								<input class="col-sm-12" name="name" readonly type="text">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 control-label">hz{flow-log.formOperator}:</label>
+							<div class="col-xs-12 col-sm-7">
+								<input class="col-sm-12" name="userName" readonly type="text">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 control-label">hz{flow-log.formOperationName}:</label>
+							<div class="col-xs-12 col-sm-7">
+								<input class="col-sm-12" name="actionName" readonly type="text">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 control-label">hz{flow-log.formOperatingTime}:</label>
+							<div class="col-xs-12 col-sm-7">
+								<input class="col-sm-12" name="actionTime" readonly type="text">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 control-label">hz{flow-log.formCompletionTime}:</label>
+							<div class="col-xs-12 col-sm-7">
+								<input class="col-sm-12" name="doTime" readonly type="text">
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="horizon-modal modal aside aside-right aside-vc aside-fixed navbar-offset"
+		data-body-scroll="false" data-offset="true" data-placement="right"
+		data-fixed="true" data-backdrop="invisible" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header blue">
+					hz{base.flowtree} <label class="pull-right hidden-sm hidden-xs"> <a
+						data-action="fixed-modal" class="pointer"><i
+							class="ace-icon fa fa-lock bigger-160" data-fixed-icon="fa-lock"
+							data-unfixed-icon="fa-unlock"></i></a>
+					</label>
+				</div>
+				<div class="modal-body">
+					<ul id="flow-tree"></ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="flowlog-dialog" class="hidden"></div>
+<script type="text/javascript">
+jQuery(function($) {
+    require([horizon.paths.assetspath + '/manager/flow/js/flow.log.js'], function() {
+        horizon.language.plugins.datatables();
+        horizon.engine.flowLog.initTable();
+        horizon.engine.flowLog.initFlowTree();
+        $('.page-content-area').trigger('ajaxscriptsloaded');
+    });
+});
+</script>

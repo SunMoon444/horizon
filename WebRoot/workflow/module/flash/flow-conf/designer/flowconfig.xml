@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowConf>
+	<Exceptions>
+		<MsgType>Read;Mail;Msg;SMS;IM</MsgType>
+	</Exceptions>
+	<SendMsgType>
+		<Item id="Todo">
+
+		</Item>
+	</SendMsgType>
+	<!-- 表单标签图片阵列图路径,不包含上下文。 width:每组图片的宽度，height：每组图片的高度 -->
+	<FormIcon width="202" height="118">/resource/skins/|stylepath|/images/workflow/02/wf_tag.png</FormIcon>
+	<!-- 自定义操作对应图片路径，系统从指定路径获取所有图片文件（图片执行jpg,gif,bmp,png格式其他格式忽略） -->
+	<ButtonIcon>/resource/skins/|stylepath|/css/img/button/form/</ButtonIcon>
+	<!-- 规则编辑器页面 -->
+	<RuleEditorPath>/workflow/module/rule/rule.editor.index.htm</RuleEditorPath>
+	<!-- 流程测试页面 -->
+	<TestFlowPath>/horizon/workflow/support/open.wf</TestFlowPath>
+	<!--<TestFlowPath>/horizon/workflowframe/publishframe/xmlwork.index.example.jsp</TestFlowPath>-->
+	<!-- 自动测试页面路径 -->
+	<AutoTestFlowPath>/horizon/module/flash/flow/test.wf</AutoTestFlowPath>
+	<!-- 外部表单解析格式样例页面地址 -->
+	<FormExamplePath>/workflow/module/flash/jsp/self.form.template.jsp.html</FormExamplePath>
+	<!-- 打开流程设计器jsp路径 -->
+	<FlowDesignerPath>/module/flash/HorizonWorkflow</FlowDesignerPath>
+	<!-- 打开流程实例图jsp路径 -->
+	<FlowSummaryPath>/module/flash/HorizonSummaryInstance</FlowSummaryPath>
+	<!-- 打开流程实例定义修改界面jsp路径 -->
+	<FlowInstancePath>/module/flash/HorizonInstance</FlowInstancePath>
+	<!-- 打开流程跟踪图jsp路径 -->
+	<FlowMapPath>/module/flash/ShowFlowMap</FlowMapPath>
+	<!-- 自动测试流程jsp路径 -->
+	<AutoFlowTestPath>/module/flash/HorizonFlowTest</AutoFlowTestPath>
+	<!-- 打开模块设计器jsp路径 -->
+	<ModuleDesignerPath>/module/flash/HorizonDesigner</ModuleDesignerPath>
+	<!-- 实例列表打开路径,路径中使用|flowid|来获取对应的流程id -->
+	<WorklistUrl>/horizon/formview/view/viewtemplate/manager.view.template.normal.jsp?viewid=HZM94ojoUVJvG4qjkTlG5oSh46VyX5gP&amp;flowid=|flowid|
+	</WorklistUrl>
+
+	<!-- 路由关系定义data值不可为0[目标节点历史办理人]和10[流程启动者] -->
+	<Relations>
+		<!-- <Relation data="0">目标节点历史办理人</Relation> -->
+		<Relation data="1">同部门人员</Relation>
+		<Relation data="2">直接部门领导</Relation>
+		<Relation data="3">所有上级领导</Relation>
+		<Relation data="4">直接下属</Relation>
+		<Relation data="5">所有下属</Relation>
+		<Relation data="6">上级主管领导</Relation>
+		<!-- <Relation data="7">领导对应秘书</Relation> -->
+		<!-- <Relation data="8">秘书对应领导</Relation> -->
+		<Relation data="9">上一级部门所有人员(含子部门)</Relation>
+		<!-- <Relation data="10">流程启动者</Relation> -->
+		<Relation data="16">上一级部门所有人员(不含子部门)</Relation>
+		<Relation data="15">部门接口人</Relation>
+		<Relation data="17">上级岗位</Relation>
+		<Relation data="18">上级岗位人员</Relation>
+		<Relation data="19">下级岗位</Relation>
+		<Relation data="20">下级岗位人员</Relation>
+		
+		<!-- <Relation data="101">相对岗位</Relation> -->
+		<!-- <Relation data="102">相对岗位成员</Relation> -->
+
+	</Relations>
+
+	<!-- 图标浮动提示&#xa; -->
+	<ImgTooltip>
+		<Start>开始节点(只能有一个)</Start>
+		<End>结束节点&#xa;只允许有入口线</End>
+		<Single>单一签核节点</Single>
+		<Everyone>多人单一签核节点</Everyone>
+		<Parallel>多人处理节点</Parallel>
+		<Order>多人顺序节点</Order>
+		<Condition>条件判断节点</Condition>
+		<Cluster>引擎交互节点&#xa;只允许有一条出口线</Cluster>
+		<Unit>合并节点&#xa;只允许有一条出口线</Unit>
+		<Robot>自动节点&#xa;只允许有一条出口线</Robot>
+		<Line>画线</Line>
+	</ImgTooltip>
+	<LimitTypes>
+		<LimitType data="0">工作日</LimitType>
+		<LimitType data="1">自然天</LimitType>
+	</LimitTypes>
+	<DesignerClassName>com.horizon.designer.wf.impl.Permission4DesignerImpl</DesignerClassName>
+</FlowConf>

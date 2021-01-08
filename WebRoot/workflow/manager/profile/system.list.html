@@ -1,0 +1,785 @@
+<title>hz{system-config.title}</title>
+<hi18n groups="system-config;profile-common;base;message;validator;item-list"></Hi18n>
+<div class="page-header smaller no-padding-top">
+	<h1>
+		hz{profile-common.largeTitle}
+		<small class="hidden-xs"> 
+		<i class="ace-icon fa fa-angle-double-right"></i>
+			hz{system-config.smallTitle}
+		</small>
+	</h1>
+</div>
+<div id="visualSysTable" class="profile-table">
+	<!-- 系统运行中的一些控制参数 -->
+	<div id="sys-default-container" class="profile-container">
+		<form>
+			<div class="lead">
+				hz{system-config.systemProperties}
+				<button type="button" class="changeset pull-right btn btn-white btn-round btn-sm  border-width-1">
+					<i class="ace-icon fa fa-pencil green"></i>&nbsp;hz{profile-common.buttonsSetUp}
+				</button>
+				<button type="button" class="reset pull-right btn btn-white btn-round btn-sm  border-width-1 hidden"
+					value='hz{profile-common.buttonsCancel}'>
+					<i class="ace-icon fa fa-undo green"></i>&nbsp;hz{profile-common.buttonsCancel}
+				</button>
+				<button type="submit" class="submit pull-right btn btn-white btn-round btn-sm  border-width-1 hidden"
+					value='hz{profile-common.buttonsSave}'>
+					<i class="ace-icon fa fa-save green"></i>&nbsp;hz{profile-common.buttonsSave}
+				</button>
+			</div>
+			<table id="cahce-default-table" class="table">
+				<tbody>
+				<colgroup>
+					<col style="width: 30%">
+					<col style="width: 70%">
+				</colgroup>
+				<tr>
+					<td>hz{system-config.sysPath}:</td>
+					<td data-id="sys.path" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.assetsPath}:</td>
+					<td data-id="assets.path" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.frontPath}:</td>
+					<td data-id="front.path" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.commonPath}:</td>
+					<td data-id="common.path" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.initPath}:</td>
+					<td data-id="init.path" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.initModulePath}:</td>
+					<td data-id="init.module.path" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.urlPrefix}:</td>
+					<td data-id="url.prefix" data-value=""></td>
+				</tr>
+				
+				<tr>
+					<td>hz{system-config.urlSuffix}:</td>
+					<td data-id="url.suffix" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.viewPrefix}:</td>
+					<td data-id="view.prefix" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.viewSuffix}:</td>
+					<td data-id="view.suffix" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.layoutEngine}:</td>
+					<td data-id="layout.engine" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.layoutFixedModal}:</td>
+					<td data-id="layout.fixedModal" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.embedded}:</td>
+					<td data-id="embed" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.maxUploadSize}:</td>
+					<td data-id="maxUploadSizeTmp" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.fileFormat}:</td>
+					<td data-id="fileFormat" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.imgFormat}:</td>
+					<td data-id="imgFormat" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.saveType}:</td>
+					<td data-id="saveType" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.storePath}:</td>
+					<td data-id="store.path" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.fileNeedEncode}:</td>
+					<td data-id="file.isNeedEncode" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.initFlag}:</td>
+					<td data-id="initFlag" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.realtimeFlag}:</td>
+					<td data-id="realtimeflag" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.keepTime}:</td>
+					<td data-id="keeptime" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.sessionExceptiveURL}:</td>
+					<td data-id="sessionExceptiveURL" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.workflowFixedModal}:</td>
+					<td data-id="workflow.fixedModal" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.workflowMessageType}:</td>
+					<td data-id="workflow.messageType" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.workflowAutoFirstNode}:</td>
+					<td data-id="workflow.autoFirstNode" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.workflowOpenDefAuthor}:</td>
+					<td data-id="workflow.openDefAuthor" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.workflowUnCommitData}:</td>
+					<td data-id="workflow.unCommitData" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.workflowRejectSelectAuthor}:</td>
+					<td data-id="workflow.reject.selectAuthor" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.workflowJumprejectSelectAuthor}:</td>
+					<td data-id="workflow.jumpreject.selectAuthor" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.workflowFreesubmitAxis}:</td>
+					<td data-id="workflow.freesubmit.axis" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.workflowUnValidate}:</td>
+					<td data-id="workflow.unValidate" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.workflowImport}:</td>
+					<td data-id="workflow.import" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.workflowAuthorParsingToUser}:</td>
+					<td data-id="workflow.authorParsingToUser" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.workflowAuthorParsingType}:</td>
+					<td data-id="workflow.authorParsingType" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.tokenTimeOut}:</td>
+					<td data-id="token.timeout" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.batchNumber}:</td>
+					<td data-id="batch.number" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.errorPage500}:</td>
+					<td data-id="errorpage500" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.product}:</td>
+					<td data-id="product" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{system-config.runMode}:</td>
+					<td data-id="run.mode" data-value=""></td>
+				</tr>
+				</tbody>
+			</table>
+		
+			<div class="profile-form form-horizontal no-margin-bottom hidden">
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.sysPath}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="sys.path" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+								<span class="explain">hz{system-config.updateConfigTip}</span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.assetsPath}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="assets.path" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+								<span class="explain">hz{system-config.updateConfigTip}</span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.frontPath}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="front.path" type="text" placeholder="hz{profile-common.input}"class="form-control" required  />
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+								<span class="explain">hz{system-config.updateConfigTip}</span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.commonPath}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="common.path" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+								<span class="explain">hz{system-config.updateConfigTip}</span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.initPath}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="init.path" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+								<span class="explain">hz{system-config.updateConfigTip}</span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.initModulePath}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="init.module.path" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+								<span class="explain">hz{system-config.updateConfigTip}</span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.urlPrefix}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="url.prefix" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+								<span class="explain">hz{system-config.updateConfigTip}</span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.urlSuffix}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="url.suffix" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+								<span class="explain">hz{system-config.updateConfigTip}</span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.viewPrefix}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="view.prefix" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+								<span class="explain">hz{system-config.updateConfigTip}</span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.viewSuffix}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="view.suffix" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+								<span class="explain">hz{system-config.updateConfigTip}</span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 control-label">hz{system-config.layoutEngine}<i>*</i>:</label>
+					<div class="col-xs-12 col-sm-6">
+						<select name="layout.engine" class="form-control chosen" required>
+							<option value="top">top</option>
+							<option value="top-left">top-left</option>
+							<option value="top-left-hoversubmenu">top-left-hoversubmenu</option>
+							<option value="left">left</option>
+							<option value="left-hoversubmenu">left-hoversubmenu</option>
+							<option value="bottom-left">bottom-left</option>
+							<option value="bottom-left-hoversubmenu">bottom-left-hoversubmenu</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 control-label">hz{system-config.layoutFixedModal}<i>*</i>:</label>
+					<div class="col-xs-12 col-sm-6 radio">
+						<label>
+							<input type="radio" name="layout.fixedModal" data-value="true" value="true" class="ace" checked="checked"  />
+							<span class="lbl">&nbsp;hz{profile-common.true}</span>
+						</label>
+						<label>
+							<input type="radio" name="layout.fixedModal" data-value="false" value="false" class="ace"    />
+							<span class="lbl">&nbsp;hz{profile-common.false} </span>
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.embedded}:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="embed" type="text" placeholder="hz{profile-common.input}"class="form-control"   /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+								<span class="explain">hz{system-config.embeddedTip}</span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.maxUploadSize}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding">
+							<input name="maxUploadSize" type="hidden" />
+ 							<input name="maxUploadSizeTmp" type="text" placeholder="hz{profile-common.input}"class="form-control"
+ 									  required maxlength="10" number="true" min='0'  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.fileFormat}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="fileFormat" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.imgFormat}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="imgFormat" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+					<label class="col-xs-12 col-sm-4 control-label">hz{system-config.saveType}<i>*</i>:</label>
+					<div class="col-xs-12 col-sm-6 radio">
+						<label>
+							<input type="radio" name="saveType" data-value="0" value="0" class="ace"  checked="checked" />
+							<span class="lbl">hz{system-config.saveType0}</span>
+						</label>
+						<label>
+							<input type="radio" name="saveType" data-value="1" value="1" class="ace"    />
+							<span class="lbl">hz{system-config.saveType1}</span>
+						</label>
+					</div>
+				</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.storePath}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="store.path" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.fileNeedEncode}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="file.isNeedEncode" data-value="true" value="true" class="ace" checked="checked"  />
+								<span class="lbl">&nbsp;hz{profile-common.true}</span>
+							</label>
+							<label>
+								<input type="radio" name="file.isNeedEncode" data-value="false" value="false" class="ace"    />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 control-label">hz{system-config.initFlag}<i>*</i>:</label>
+					<div class="col-xs-12 col-sm-6 radio">
+						<label>
+							<input type="radio" name="initFlag" data-value="1" value="1" class="ace"  checked="checked" />
+							<span class="lbl">hz{system-config.initFlag1}</span>
+						</label>
+						<label>
+							<input type="radio" name="initFlag" data-value="3" value="3" class="ace"    />
+							<span class="lbl">hz{system-config.initFlag3}</span>
+						</label>
+						<label>
+							<span class="explain">hz{system-config.updateConfigTip}</span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 control-label">hz{system-config.realtimeFlag}<i>*</i>:</label>
+					<div class="col-xs-12 col-sm-6 radio">
+						<label>
+							<input type="radio" name="realtimeflag" data-value="0" value="0" class="ace"  checked="checked" />
+							<span class="lbl">hz{system-config.realtimeFlag0}</span>
+						</label>
+						<label>
+							<input type="radio" name="realtimeflag" data-value="1" value="1" class="ace"    />
+							<span class="lbl">hz{system-config.realtimeFlag1}</span>
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.keepTime}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="keeptime" type="text" placeholder="hz{profile-common.input}"class="form-control"
+										 required maxlength="10" number="true" min='0' />
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+								<span class="explain">hz{system-config.keepTimeTip}</span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.sessionExceptiveURL}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="sessionExceptiveURL" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+								<span class="explain">hz{system-config.exceptiveURLTip}</span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 control-label">hz{system-config.workflowFixedModal}<i>*</i>:</label>
+					<div class="col-xs-12 col-sm-6 radio">
+						<label>
+							<input type="radio" name="workflow.fixedModal" data-value="true" value="true" class="ace" checked="checked"  />
+							<span class="lbl">&nbsp;hz{profile-common.true}</span>
+						</label>
+						<label>
+							<input type="radio" name="workflow.fixedModal" data-value="false" value="false" class="ace"    />
+							<span class="lbl">&nbsp;hz{profile-common.false} </span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 control-label">hz{system-config.workflowMessageType}:</label>
+					<div class="col-xs-12 col-sm-6 checkbox">
+						<input type="hidden" value="" name="workflow.messageType" />
+						<label>
+							<input type="checkbox" name="workflow.messageTypeTmp" data-value="Mail" value="Mail" class="ace"  />
+							<span class="lbl">&nbsp;hz{system-config.workflowMessageTypeMail}</span>
+						</label>
+						<label>
+							<input type="checkbox" name="workflow.messageTypeTmp" data-value="Msg" value="Msg" class="ace"    />
+							<span class="lbl">&nbsp;hz{system-config.workflowMessageTypeMsg}</span>
+						</label>
+						<label>
+							<input type="checkbox" name="workflow.messageTypeTmp" data-value="SMS" value="SMS" class="ace"	/>
+							<span class="lbl">&nbsp;hz{system-config.workflowMessageTypeSms}</span>
+						</label>
+						<label>
+							<input type="checkbox" name="workflow.messageTypeTmp" data-value="IM" value="IM" class="ace"    />
+							<span class="lbl">&nbsp;hz{system-config.workflowMessageTypeIm}</span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 control-label">hz{system-config.workflowAutoFirstNode}<i>*</i>:</label>
+					<div class="col-xs-12 col-sm-6 radio">
+						<label>
+							<input type="radio" name="workflow.autoFirstNode" data-value="true" value="true" class="ace" checked="checked"  />
+							<span class="lbl">&nbsp;hz{profile-common.true}</span>
+						</label>
+						<label>
+							<input type="radio" name="workflow.autoFirstNode" data-value="false" value="false" class="ace"    />
+							<span class="lbl">&nbsp;hz{profile-common.false} </span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 control-label">hz{system-config.workflowOpenDefAuthor}<i>*</i>:</label>
+					<div class="col-xs-12 col-sm-6 radio">
+						<label>
+							<input type="radio" name="workflow.openDefAuthor" data-value="true" value="true" class="ace" checked="checked"  />
+							<span class="lbl">&nbsp;hz{profile-common.true}</span>
+						</label>
+						<label>
+							<input type="radio" name="workflow.openDefAuthor" data-value="false" value="false" class="ace"    />
+							<span class="lbl">&nbsp;hz{profile-common.false} </span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 control-label">hz{system-config.workflowUnCommitData}<i>*</i>:</label>
+					<div class="col-xs-12 col-sm-6 radio">
+						<label>
+							<input type="radio" name="workflow.unCommitData" data-value="true" value="true" class="ace" checked="checked"  />
+							<span class="lbl">&nbsp;hz{profile-common.true}</span>
+						</label>
+						<label>
+							<input type="radio" name="workflow.unCommitData" data-value="false" value="false" class="ace"    />
+							<span class="lbl">&nbsp;hz{profile-common.false} </span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 control-label">hz{system-config.workflowRejectSelectAuthor}<i>*</i>:</label>
+					<div class="col-xs-12 col-sm-6 radio">
+						<label>
+							<input type="radio" name="workflow.reject.selectAuthor" data-value="true" value="true" class="ace" checked="checked"  />
+							<span class="lbl">&nbsp;hz{profile-common.true}</span>
+						</label>
+						<label>
+							<input type="radio" name="workflow.reject.selectAuthor" data-value="false" value="false" class="ace"    />
+							<span class="lbl">&nbsp;hz{profile-common.false} </span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 control-label">hz{system-config.workflowJumprejectSelectAuthor}<i>*</i>:</label>
+					<div class="col-xs-12 col-sm-6 radio">
+						<label>
+							<input type="radio" name="workflow.jumpreject.selectAuthor" data-value="true" value="true" class="ace" checked="checked"  />
+							<span class="lbl">&nbsp;hz{profile-common.true}</span>
+						</label>
+						<label>
+							<input type="radio" name="workflow.jumpreject.selectAuthor" data-value="false" value="false" class="ace"    />
+							<span class="lbl">&nbsp;hz{profile-common.false} </span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 control-label">hz{system-config.workflowFreesubmitAxis}<i>*</i>:</label>
+					<div class="col-xs-12 col-sm-6 radio">
+						<label>
+							<input type="radio" name="workflow.freesubmit.axis" data-value="true" value="true" class="ace" checked="checked"  />
+							<span class="lbl">&nbsp;hz{profile-common.true}</span>
+						</label>
+						<label>
+							<input type="radio" name="workflow.freesubmit.axis" data-value="false" value="false" class="ace"    />
+							<span class="lbl">&nbsp;hz{profile-common.false} </span>
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.workflowUnValidate}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="workflow.unValidate" type="text" placeholder="hz{profile-common.input}"class="form-control" required  /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+								<span class="explain">hz{system-config.unValidateTip}</span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.workflowImport}:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="workflow.import" type="text" placeholder="hz{profile-common.input}"class="form-control"   /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 control-label">hz{system-config.workflowAuthorParsingToUser}<i>*</i>:</label>
+					<div class="col-xs-12 col-sm-6 radio">
+						<label>
+							<input type="radio" name="workflow.authorParsingToUser" data-value="true" value="true" class="ace" checked="checked"  />
+							<span class="lbl">&nbsp;hz{profile-common.true}</span>
+						</label>
+						<label>
+							<input type="radio" name="workflow.authorParsingToUser" data-value="false" value="false" class="ace"    />
+							<span class="lbl">&nbsp;hz{profile-common.false} </span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 control-label">hz{system-config.workflowAuthorParsingType}:</label>
+					<div class="col-xs-12 col-sm-6 checkbox">
+						<input type="hidden" value="" name="workflow.authorParsingType" />
+						<label>
+							<input type="checkbox" name="workflow.authorParsingTypeTmp" data-value="D" value="D" class="ace"  />
+							<span class="lbl">&nbsp;hz{item-list.subjectTypeSubdept}</span>
+						</label>
+						<label>
+							<input type="checkbox" name="workflow.authorParsingTypeTmp" data-value="P" value="P" class="ace"   />
+							<span class="lbl">&nbsp;hz{item-list.subjectTypePost}</span>
+						</label>
+						<label>
+							<input type="checkbox" name="workflow.authorParsingTypeTmp" data-value="G" value="G" class="ace"	/>
+							<span class="lbl">&nbsp;hz{item-list.subjectTypeGroup}</span>
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.tokenTimeOut}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="token.timeout" type="text" placeholder="hz{profile-common.input}"class="form-control" 
+										required maxlength="10" number="true" min='0' /> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.batchNumber}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding">
+							<input name="batch.number" type="text" placeholder="hz{profile-common.input}" class="form-control" number="true" required/>
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+								<span class="explain">hz{system-config.batchNumberHelp}</span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.errorPage500}:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding"> 
+							<input name="errorpage500" type="text" placeholder="hz{profile-common.input}" class="form-control"/> 
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+								<span class="explain">hz{system-config.updateConfigTip}</span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.product}:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding">
+							<input name="product" type="text" placeholder="hz{profile-common.input}" readOnly class="form-control"/>
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.runMode}:</label>
+						<div class="col-xs-12 col-sm-6">
+							<span class="input-icon col-xs-12 no-padding">
+							<input name="run.mode" type="text" placeholder="hz{profile-common.input}" readOnly class="form-control"/>
+								<i class="ace-icon glyphicon glyphicon-pencil"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div id="language-container" class="profile-container">
+		<form id="form-language">
+			<div class="lead">
+				hz{system-config.languageLanguageSet}
+				<button  type="button" class="changeset pull-right btn btn-white btn-round btn-sm  border-width-1">
+					<i class="ace-icon fa fa-pencil green"></i>&nbsp;hz{profile-common.buttonsSetUp}
+				</button>
+				<button type="button" class="reset pull-right btn btn-white btn-round btn-sm  border-width-1 hidden" value='hz{profile-common.buttonsCancel}'>
+					<i class="ace-icon fa fa-undo green"></i>&nbsp;hz{profile-common.buttonsCancel}
+				</button>
+				<button type="submit" id="confirm"
+					class="submit pull-right btn btn-white btn-round btn-sm  border-width-1  hidden"
+					value='hz{profile-common.buttonsSave}'>
+					<i class="ace-icon fa fa-save green"></i>&nbsp;hz{profile-common.buttonsSave}
+				</button>
+				<div id="upload"
+					class="submit1 pull-right btn btn-white btn-round btn-sm  border-width-1 hidden">
+					<i class="ace-icon fa fa-save green"></i>&nbsp;hz{system-config.languageButtonsUpLoad}
+				</div>
+			</div>
+			<table id="cahce-default-table" class="table">
+			<tbody>
+			<colgroup>
+				<col style="width: 30%">
+				<col style="width: 70%">
+			</colgroup>
+			<tr>
+				<td>hz{system-config.languageRegisteredLanguage}：</td>
+				<td data-id="language" data-value=""></td>
+			</tr>
+			<tr>
+				<td>hz{system-config.languageNowLanguage}：</td>
+				<td data-id="localeVal" data-value=""></td>
+			</tr>
+			</tbody>
+			</table>
+			<div class="profile-form form-horizontal no-margin-bottom  hidden">
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.languageSelectLanguage}：</label>
+						<div class="col-xs-12 col-sm-6">
+							<select id="langSelect" class="form-control chosen">
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+		<form id="form-language_file" enctype="multipart/form-data" method="post">
+			
+			<div class="profile-form form-horizontal no-margin-bottom hidden">
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{system-config.languageUploadPacket}：</label>
+						<div class="col-xs-12 col-sm-6 ">
+							<input id="file" name="file" type="file" >
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<script type="text/javascript">
+	jQuery(function($) {
+		require(
+				[ horizon.paths.assetspath + '/manager/profile/js/sys.visual.js'  ],
+				function() {
+					horizon.language.plugins.validator();
+					horizon.tools.use(horizon.paths.assetspath
+							+ '/manager/profile/css/profile.css');
+					horizon.engine.profile_sys.init();
+					$('.page-content-area').trigger('ajaxscriptsloaded');
+				});
+	});
+</script>

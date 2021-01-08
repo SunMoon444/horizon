@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 会签操作相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_HUIQIAN_RECORD</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_HUIQIAN_RECORD</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TYPE" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="TO_AUTH_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TO_SUBJECTION_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TO_SUBJECTION_TYPE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="TO_AUTHNAME" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FROM_AUTH_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FROM_SUBJECTION_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FROM_SUBJECTION_TYPE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="FROM_AUTHNAME" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="AUTH_NO" typename="number"></fieldinfo>
+			<fieldinfo fieldname="AGENT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="number"></fieldinfo>
+			<fieldinfo fieldname="AUTH_VERSION" typename="number"></fieldinfo>
+			<fieldinfo fieldname="OLD_VERSION" typename="number"></fieldinfo>					
+		</fieldinfos>	
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_HUIQIAN_RECORD_VER</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_HUIQIAN_RECORD_VER</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="RECORDID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TYPE" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="TO_AUTH_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TO_SUBJECTION_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TO_SUBJECTION_TYPE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="TO_AUTHNAME" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FROM_AUTH_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FROM_SUBJECTION_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FROM_SUBJECTION_TYPE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="FROM_AUTHNAME" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="AUTH_NO" typename="number"></fieldinfo>
+			<fieldinfo fieldname="AGENT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="number"></fieldinfo>
+			<fieldinfo fieldname="AUTH_VERSION" typename="number"></fieldinfo>
+			<fieldinfo fieldname="OLD_VERSION" typename="number"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number"></fieldinfo>					
+		</fieldinfos>	
+	</tablename>
+</tableinfo>

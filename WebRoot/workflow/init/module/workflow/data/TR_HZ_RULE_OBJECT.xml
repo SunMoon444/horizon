@@ -1,0 +1,284 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:Locale="zh-CN">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="tr_hz_rule_object">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:string" minOccurs="0" />
+                <xs:element name="OBJECTTYPE" type="xs:string" minOccurs="0" />
+                <xs:element name="OBJECTNAME" type="xs:string" minOccurs="0" />
+                <xs:element name="OBJECTCODE" type="xs:string" minOccurs="0" />
+                <xs:element name="OBJECTINPUT" type="xs:string" minOccurs="0" />
+                <xs:element name="RETURNTYPE" type="xs:string" minOccurs="0" />
+				<xs:element name="VALIDOBJ" type="xs:string" minOccurs="0" />
+                <xs:element name="VALIDBDS" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <tr_hz_rule_object>
+    <ID>HZ2881c040ebc84a0140ec120d240140</ID>
+    <OBJECTTYPE>实例信息获取</OBJECTTYPE>
+    <OBJECTNAME>节点状态</OBJECTNAME>
+    <OBJECTCODE>nodeStatus</OBJECTCODE>
+    <OBJECTINPUT><![CDATA[<form class="form-horizontal" id="nodeStatus-form">
+                <label class="col-sm-3 control-label no-padding-right">选择节点：</label>
+                <div class="col-sm-7">
+                    <select name="nodeidStatus" id="nodeidStatus" class="chosen-select form-control"></select>
+                </div>
+            </form>]]></OBJECTINPUT>
+    <RETURNTYPE>String</RETURNTYPE>
+    <VALIDOBJ>nodeStatusValue</VALIDOBJ>
+    <VALIDBDS><![CDATA[equal,unequal]]></VALIDBDS>
+  </tr_hz_rule_object>
+  <tr_hz_rule_object>
+    <ID>HZ2881be45fe9a9c0145fe9bbba40003</ID>
+    <OBJECTTYPE>实例信息获取</OBJECTTYPE>
+    <OBJECTNAME>分支全部到达</OBJECTNAME>
+    <OBJECTCODE>simpleMerge</OBJECTCODE>
+    <OBJECTINPUT><![CDATA[<div id="simpleMerge-container">
+    	本对象返回所有分支是否到达合并网关，全部到达返回true，否则返回false。
+    	<div class="space-6"></div>
+    	<small class="red pull-right">只能应用在合并网关节点的相关规则</small>
+    </div>]]></OBJECTINPUT>
+    <RETURNTYPE>String</RETURNTYPE>
+    <VALIDOBJ>booleanString</VALIDOBJ>
+    <VALIDBDS><![CDATA[equal,unequal]]></VALIDBDS>
+  </tr_hz_rule_object>
+  <tr_hz_rule_object>
+    <ID>HZ2881be45fee24e0145fee3385f0003</ID>
+    <OBJECTTYPE>实例信息获取</OBJECTTYPE>
+    <OBJECTNAME>是否到达合并节点</OBJECTNAME>
+    <OBJECTCODE>trackReached</OBJECTCODE>
+    <OBJECTINPUT><![CDATA[<form class="form-horizontal" id="trackReached-form">
+                <label class="col-sm-3 control-label no-padding-right">选择节点：</label>
+                <div class="col-sm-7">
+                    <select name="mergeNodeid" id="mergeNodeid" class="chosen-select form-control"></select>
+               		<div class="space-6 col-xs-12"></div>
+    				<p class="red pull-right">只能应用在合并节点的相关规则</p>
+                </div>
+            </form>]]></OBJECTINPUT>
+    <RETURNTYPE>String</RETURNTYPE>
+    <VALIDOBJ>booleanString</VALIDOBJ>
+    <VALIDBDS><![CDATA[equal,unequal]]></VALIDBDS>
+  </tr_hz_rule_object>
+  <tr_hz_rule_object>
+    <ID>HZ2881be40ed81950140ed85a6200002</ID>
+    <OBJECTTYPE>实例信息获取</OBJECTTYPE>
+    <OBJECTNAME>流程变量</OBJECTNAME>
+    <OBJECTCODE>varValue</OBJECTCODE>
+    <OBJECTINPUT><![CDATA[<form class="form-horizontal" id="varValue-form">
+                <label class="col-sm-3 control-label no-padding-right">流程变量：</label>
+                <div class="col-sm-7">
+                    <select name="varid" id="varid" class="chosen-select form-control"></select>
+                </div>
+            </form>]]></OBJECTINPUT>
+    <RETURNTYPE>String</RETURNTYPE>
+    <VALIDOBJ><![CDATA[stringConstant,formFieldValue]]></VALIDOBJ>
+    <VALIDBDS><![CDATA[equal,unequal,in,unin]]></VALIDBDS>
+  </tr_hz_rule_object>
+  <tr_hz_rule_object>
+    <ID>HZ2881be405c864b01405c93526d0075</ID>
+    <OBJECTTYPE>业务数据获取</OBJECTTYPE>
+    <OBJECTNAME>表单字段（字符串）</OBJECTNAME>
+    <OBJECTCODE>formFieldValue</OBJECTCODE>
+    <OBJECTINPUT><![CDATA[<form class="form-horizontal" id="formFieldValue-form">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">表单：</label>
+                    <div class="col-sm-6">
+                        <select name="formnameVal" id="formnameVal"
+                                class="chosen-select form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">字段：</label>
+                    <div class="col-sm-6">
+                        <select name="fieldnameVal" id="fieldnameVal" class="chosen-select form-control"></select>
+                        <input name="fieldnameVal2" id="fieldnameVal2" class="form-control" style="display: none;" />
+                    </div>
+                </div>
+            </form>]]></OBJECTINPUT>
+    <RETURNTYPE>String</RETURNTYPE>
+    <VALIDOBJ><![CDATA[stringConstant,formFieldValue]]></VALIDOBJ>
+    <VALIDBDS><![CDATA[in,unin,equal,unequal]]></VALIDBDS>
+  </tr_hz_rule_object>
+  <tr_hz_rule_object>
+    <ID>HZ2881ea467e881001468545eb550982</ID>
+    <OBJECTTYPE>业务数据获取</OBJECTTYPE>
+    <OBJECTNAME>表单字段（数字）</OBJECTNAME>
+    <OBJECTCODE>formFieldNum</OBJECTCODE>
+    <OBJECTINPUT><![CDATA[<form class="form-horizontal" id="formFieldNum-form">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">表单：</label>
+                    <div class="col-sm-6">
+                        <select name="formnameNum" id="formnameNum" class="chosen-select form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">字段：</label>
+                    <div class="col-sm-6">
+                        <select name="fieldnameNum" id="fieldnameNum" class="chosen-select form-control"></select>
+                        <input name="fieldnameNum2" id="fieldnameNum2" class="form-control" style="display: none;" />
+                    </div>
+                </div>
+            </form>]]></OBJECTINPUT>
+    <RETURNTYPE>Number</RETURNTYPE>
+    <VALIDOBJ><![CDATA[formFieldNum,numConstant]]></VALIDOBJ>
+    <VALIDBDS><![CDATA[eq,uneq,dy,xy,dydy,xydy]]></VALIDBDS>
+  </tr_hz_rule_object>
+  <tr_hz_rule_object>
+    <ID>HZ2881be405c864b01405c93dace0079</ID>
+    <OBJECTTYPE>常量输入</OBJECTTYPE>
+    <OBJECTNAME>字符串</OBJECTNAME>
+    <OBJECTCODE>stringConstant</OBJECTCODE>
+    <OBJECTINPUT><![CDATA[<form class="form-horizontal" id="StringConstant-form">
+				  <textarea></textarea>
+				</form>]]></OBJECTINPUT>
+    <RETURNTYPE>String</RETURNTYPE>
+    <VALIDOBJ><![CDATA[stringConstant,formFieldValue,varValue]]></VALIDOBJ>
+    <VALIDBDS><![CDATA[in,unin,equal,unequal]]></VALIDBDS>
+  </tr_hz_rule_object>
+  <tr_hz_rule_object>
+    <ID>HZ2881ea467e8810014684e09746089e</ID>
+    <OBJECTTYPE>常量输入</OBJECTTYPE>
+    <OBJECTNAME>数字</OBJECTNAME>
+    <OBJECTCODE>numConstant</OBJECTCODE>
+    <OBJECTINPUT><![CDATA[<form class="form-horizontal" id="NumConstant-form">
+				  <textarea></textarea>
+				</form>]]></OBJECTINPUT>
+    <RETURNTYPE>Number</RETURNTYPE>
+    <VALIDOBJ><![CDATA[formFieldNum,numConstant]]></VALIDOBJ>
+    <VALIDBDS><![CDATA[eq,uneq,dy,xy,dydy,xydy]]></VALIDBDS>
+  </tr_hz_rule_object>
+  <tr_hz_rule_object>
+    <ID>HZ2881be45ff226b0145ff30d4090063</ID>
+    <OBJECTTYPE>常量输入</OBJECTTYPE>
+    <OBJECTNAME>布尔值（字符串）</OBJECTNAME>
+    <OBJECTCODE>booleanString</OBJECTCODE>
+    <OBJECTINPUT><![CDATA[<form id="booleanString-form" class="form-horizontal">
+        <div class="radio row">
+	  <label class="col-xs-12">
+                <input type="radio" name="booleanValue" class="ace" value="true" checked>
+                <span class="lbl">  真</span>
+            </label>
+            <label class="col-xs-12">
+                <input type="radio" name="booleanValue" class="ace" value="false">
+                <span class="lbl">  假</span>
+            </label>
+	    </div>
+    </form>]]></OBJECTINPUT>
+    <RETURNTYPE>String</RETURNTYPE>
+    <VALIDOBJ><![CDATA[trackReached,simpleMerge]]></VALIDOBJ>
+    <VALIDBDS><![CDATA[equal,unequal]]></VALIDBDS>
+  </tr_hz_rule_object>
+  <tr_hz_rule_object>
+    <ID>HZ2881c0437a26b201437a2f22630079</ID>
+    <OBJECTTYPE>常量输入</OBJECTTYPE>
+    <OBJECTNAME>布尔值</OBJECTNAME>
+    <OBJECTCODE>boolean</OBJECTCODE>
+    <OBJECTINPUT><![CDATA[<form id="boolean-form" class="form-horizontal">
+        <div class="radio row">
+            <label class="col-xs-12">
+                <input type="radio" name="booleanValue" class="ace" value="true" checked>
+                <span class="lbl"> 真</span>
+            </label>
+	    <label class="col-xs-12">
+                <input type="radio" name="booleanValue" class="ace" value="false">
+                <span class="lbl"> 假</span>
+            </label>
+        </div>
+    </form>]]></OBJECTINPUT>
+    <RETURNTYPE>Boolean</RETURNTYPE>
+  </tr_hz_rule_object>
+  <tr_hz_rule_object>
+    <ID>HZ2881be45ff3a0a0145ff3bba2c00cb</ID>
+    <OBJECTTYPE>常量输入</OBJECTTYPE>
+    <OBJECTNAME>节点状态值</OBJECTNAME>
+    <OBJECTCODE>nodeStatusValue</OBJECTCODE>
+    <OBJECTINPUT><![CDATA[<form id="NodeStatusValue-form" class="form-horizontal">
+        <div class="radio row">
+            <label class="col-xs-12">
+                <input type="radio" name="NodeStatusValue" class="ace" value="current" txt="当前活动节点" checked>
+                <span class="lbl">  当前活动节点</span>
+            </label>
+            <label class="col-xs-12">
+                <input type="radio" name="NodeStatusValue" class="ace" value="active" txt="其他活动节点">
+                <span class="lbl">  其他活动节点</span>
+            </label>
+            <label class="col-xs-12">
+                <input type="radio" name="NodeStatusValue" class="ace" value="done" txt="已办节点">
+                <span class="lbl">  已办节点</span>
+            </label>
+            <label class="col-xs-12">
+                <input type="radio" name="NodeStatusValue" class="ace" value="blank" txt="尚未到达的节点">
+                <span class="lbl">  尚未到达的节点</span>
+            </label>
+	    <label class="col-xs-12">
+                <input type="radio" name="NodeStatusValue" class="ace" value="jumped" txt="跳过节点">
+                <span class="lbl">  跳过节点</span>
+            </label>
+        </div>
+    </form>]]></OBJECTINPUT>
+    <RETURNTYPE>String</RETURNTYPE>
+    <VALIDOBJ><![CDATA[nodeStatus]]></VALIDOBJ>
+    <VALIDBDS><![CDATA[equal,unequal]]></VALIDBDS>
+  </tr_hz_rule_object>
+  <tr_hz_rule_object>
+    <ID>HZ2881be405c864b01405c9543bd007f</ID>
+    <OBJECTTYPE>办理人设置</OBJECTTYPE>
+    <OBJECTNAME>组织机构</OBJECTNAME>
+    <OBJECTCODE>orgSelected</OBJECTCODE>
+    <OBJECTINPUT><![CDATA[<form class="form-horizontal" id="orgSelected-form"><!-- 组织机构 -->
+	<label class="col-sm-3 control-label no-padding-right">选择人员：</label>
+    <div class="col-sm-7">
+    	 <input type="text" name="orgname"  style="cursor: pointer;" readonly class="form-control"/>
+    	 <input type="hidden" name="orgid" />
+	</div>
+	</form>]]></OBJECTINPUT>
+    <RETURNTYPE>Org</RETURNTYPE>
+    <VALIDOBJ><![CDATA[orgSelected,orgRelation]]></VALIDOBJ>
+    <VALIDBDS><![CDATA[in,unin,equal,unequal]]></VALIDBDS>
+  </tr_hz_rule_object>
+  <tr_hz_rule_object>
+    <ID>HZ2881be405c864b01405c9543bd008f</ID>
+    <OBJECTTYPE>办理人设置</OBJECTTYPE>
+    <OBJECTNAME>相对关系</OBJECTNAME>
+    <OBJECTCODE>orgRelation</OBJECTCODE>
+    <OBJECTINPUT><![CDATA[<form class="form-horizontal" id="orgRelation-form">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">相对节点：</label>
+                    <div class="col-sm-5">
+                        <select name="node" id="node" class="chosen-select form-control">
+                            <option value="1" selected>上一节点</option>
+                            <option value="2">指定节点</option>
+                            <option value="0">无</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 no-padding-left">
+                        <select name="relativeNodeid" id="relativeNodeid" class="chosen-select form-control" style="display: none"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">相对基准：</label>
+                    <div class="col-sm-5">
+                        <select name="base" id="base" class="chosen-select form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">相对关系：</label>
+                    <div class="col-sm-5">
+                        <select name="relation" id="relation" class="chosen-select form-control"></select>
+                    </div>
+                </div>
+            </form>]]></OBJECTINPUT>
+    <RETURNTYPE>Org</RETURNTYPE>
+    <VALIDOBJ><![CDATA[orgSelected,orgRelation]]></VALIDOBJ>
+    <VALIDBDS><![CDATA[in,unin,equal,unequal]]></VALIDBDS>
+  </tr_hz_rule_object>
+</NewDataSet>

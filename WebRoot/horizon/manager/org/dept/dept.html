@@ -1,0 +1,224 @@
+<title>hz{platform-dept.largeTitle}</title>
+<hi18n groups="platform-dept;base;message;selectuser;platform-validator"></hi18n>
+<div class="horizon-modal-container">
+    <div class="other-content-area">
+        <div class="page-header smaller">
+        <h1>
+            hz{platform-dept.largeTitle}<small>
+            <i class="ace-icon fa fa-angle-double-right"></i>
+         		hz{platform-dept.subTitle}
+         	</small>
+            <div class="pull-right">
+                    <label class="pointer hidden" id="return">
+                        <i class="ace-icon fa fa-arrow-left bigger-110 icon-only"></i>
+                        hz{base.back}
+                    </label>
+                    <label class="pointer horizon-modal-trigger" data-target=".horizon-modal" data-toggle="modal">
+                        <i class="ace-icon fa fa-leaf bigger-110 icon-only green"></i>
+                        hz{platform-dept.tree}
+                    </label>
+                </div>
+        </h1>
+        </div>
+        <div class="row">
+			<div class="col-xs-12">
+				<iframe name="deptList" frameborder="0" id="deptList" src="" width="100%"
+					class="iframeBorder"></iframe>
+			</div>
+		</div>
+	<div id="deptInfo" class="hidden">
+            <div class="horizon-tab" id='myTab'>
+                <ul class="tab">
+                    <li class="active" id="liDept">
+                        <a data-toggle="tab" href="javascript:void(0)" data-target="[data-pane='baseInfo']">
+                          hz{platform-dept.baseInfo}
+                        </a>
+                    </li>
+                    <li id="liPosi">
+                        <a data-toggle="tab" href="javascript:void(0)" data-target="[data-pane='posiInfo']">
+                            hz{platform-dept.positionInfo}
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div data-pane="baseInfo" class="tab-pane fade in active">
+                    <form class="form-horizontal horizon-form" role="form" id="deptForm">
+        				 <input type="hidden" name="id"/>
+			 			<input type="hidden" name="orderNo">
+                        <div class="row">
+                            <div class="col-xs-12 ">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-dept.deptName}</label>
+                                            <div class="has-error form-group no-margin">
+                                                <input type="text" name="deptName" class="form-control  " placeholder="hz{base.inputPlaceholder}" minlength="3" maxlength="50" required/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-dept.deptCode}</label>
+                                            <div class="has-error form-group no-margin">
+                                                <input type="text" name="deptCode" class="form-control " placeholder="hz{base.inputPlaceholder}" notChinese="true" minlength="3" maxlength="20" required/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-dept.parentName}</label>
+                                            <div class="has-error form-group no-margin">
+                                            	<div class="input-group input-daterange">
+                                            	<input type="hidden" name="parentId"/>
+                                                <input type="text" name="parentName" class="form-control pointer" readonly placeholder="hz{platform-dept.selectParent}" minlength="3" maxlength="50" required/>
+                                                <span class="input-group-addon pointer" id="setnode">hz{platform-dept.setRoot}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-dept.shortName}</label>
+                                            <div>
+                                                <input type="text" name="shortName" class="form-control " placeholder="hz{base.inputPlaceholder}"  maxlength="50" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-dept.no1Leader}</label>
+                                            <div>
+                                            	<input type="hidden" name="no1LeaderId"/>
+                                                <input type="text" name="no1LeaderName" class="form-control pointer" readonly placeholder="hz{platform-dept.inputNo1Leader}"  maxlength="100" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                     <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label  class="control-label">hz{platform-dept.humanInter}</label>
+                                            <div>
+                                            	<input type="hidden" name="humanInterId"/>
+                                                <input type="text" name="humanInterName" class="form-control pointer" readonly placeholder="hz{platform-dept.inputHumanInter}"  />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-dept.upLeader}</label>
+                                            <div>
+                                            	<input type="hidden" name="upLeaderId"/>
+                                                <input type="text" name="upLeaderName" class="form-control pointer" readonly placeholder="hz{platform-dept.inputUpLeader}"  maxlength="100" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                     <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-dept.admin}</label>
+                                            <div>
+                                            	 <input type="hidden" name="adminId"/>
+                                                <input  type="text" name="adminName" class="form-control pointer" readonly placeholder="hz{platform-dept.inputAdmin}"  />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <label class="control-label">hz{platform-dept.type}</label>
+                                                <div  data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                                    <label class="btn btn-white col-xs-6 btn-primary active">
+                                                        <input name="unit"  type="radio" value="0" />
+                                                        <span class="lbl middle">hz{platform-dept.dept}</span>
+                                                    </label>
+                                                    <label class="btn btn-white col-xs-6">
+                                                        <input name="unit" type="radio" value="1"/>
+                                                        <span class="lbl middle">hz{platform-dept.unit}</span>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-dept.deptRemark}</label>
+                                            <div>
+                                                <textarea class="form-control" style="resize: none" name="deptRemark" placeholder="hz{base.inputPlaceholder}" rows="2" maxlength="200"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="horizon-form-actions row">
+                          <div class="col-xs-12">
+	                        <button class="btn btn-white btn-round border-width-1 hidden" id="up" 
+									type="button">
+									<i class="ace-icon fa fa-angle-double-up green"></i> hz{base.up}
+							</button>
+							<button class="btn btn-white btn-round border-width-1 hidden"  id="down"
+								type="button">
+								<i class="ace-icon fa fa-angle-double-down green"></i> hz{base.down}
+							</button>
+							<button class="btn btn-white btn-round border-width-1" id="save"
+								type="submit">
+								<i class="ace-icon fa fa-save green"></i> hz{base.save}
+							</button>
+							<button  id="replacement" class="btn btn-white btn-round border-width-1" type="button">
+                                <i class="ace-icon fa fa-undo grey"></i>hz{base.reset}
+                            </button>
+                          </div>
+						</div>
+						 </form>
+                    </div>
+         			<div data-pane="posiInfo" class="tab-pane fade">
+						<iframe name="posiList" frameborder="0" id="posiList" src="" width="100%" class="iframeBorder"></iframe>
+					</div>
+                </div>
+            </div>
+      </div>
+     
+      <div class="row hidden" id="puser">
+			<div class="col-xs-12">
+				 <iframe name="puserList" id="puserList" frameborder="0" src="" width="100%" class="iframeBorder" ></iframe>
+			</div>
+		</div>
+      
+    </div>
+    <div class="horizon-modal modal aside aside-right aside-vc aside-fixed navbar-offset" data-body-scroll="false" data-offset="true" data-placement="right" data-fixed="true" data-backdrop="invisible" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header blue">
+                    hz{platform-dept.tree}
+                    <label class="pull-right hidden-sm hidden-xs">
+                        <a data-action="fixed-modal" class="pointer"><i class="ace-icon fa fa-lock bigger-160" data-fixed-icon="fa-lock" data-unfixed-icon="fa-unlock"></i></a>
+                    </label>
+                </div>
+                <div class="modal-body">
+                 <ul id="dept-tree" class="ztree"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    require([
+             horizon.paths.apppath+'/horizon/assets/manager/org/dept/js/select.dept.js',
+             horizon.paths.apppath+'/horizon/assets/manager/org/dept/js/update.dept.js'],
+            function() {
+             horizon.language.plugins.selectuser();
+             horizon.tools.use(horizon.paths.pluginpath + '/ztree/css/zTreeStyle/zTreeStyle.css');
+	    	 horizon.manager.dept.init();
+        $('.page-content-area').trigger('ajaxscriptsloaded');
+    });
+</script>

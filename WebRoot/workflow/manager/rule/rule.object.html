@@ -1,0 +1,131 @@
+<style>
+	textarea {
+		resize: none;
+		width: 100%
+	}
+</style>
+<title>hz{rule-object.largeTitle}</title>
+<hi18n  groups="rule-object;base;message;datatables;validator;selectuser" data-id="ruleobject"></hi18n>
+<div class="page-header smaller no-padding-top">
+	<h1>
+		 hz{rule-object.largeTitle}
+        <small class="hidden-xs">
+            <i class="ace-icon fa fa-angle-double-right"></i>
+		    hz{rule-object.subTitle}
+		</small>
+		<div class="embed-toggle-sidebar-container hidden-md hidden-lg pull-right">
+            <button class="navbar-toggle toggle-sidebar" type="button" data-target="#toggle-sidebar">
+                <span class="sr-only">Toggle横向菜单</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button class="navbar-toggle toggle-sidebar2" type="button" data-target="#toggle-sidebar2" >
+                <span class="sr-only">Toggle左侧菜单</span>
+                <i class="ace-icon fa fa-dashboard bigger-110"></i>
+            </button>
+        </div>
+	</h1>
+</div>
+<div class="row">
+	<div class="col-xs-12" id="ruledata-container">
+		<table id="ruleobjectDatatable" class="table table-hover"></table>
+	</div>
+</div>
+<div id="ruleObjectFormContainer" class="hidden">
+    <form class="form-horizontal no-margin-bottom" id="ruleObjectForm">
+        <div class="space-4">
+            <input type="hidden" name="id"/>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-2 control-label">hz{rule-object.objectName} </label>
+                    <div class="col-xs-12 col-sm-8">
+						<span class="input-icon col-xs-12 no-padding">
+					        <input name="objectName" type="text"  data-type="text" placeholder='hz{rule-object.pleaseInput}' class="form-control" required maxlength="200"/>
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-2 control-label">hz{rule-object.objectCode} </label>
+                    <div class="col-xs-12 col-sm-8">
+						<span class="input-icon col-xs-12 no-padding">
+					        <input name="objectCode" type="text" data-type="text" placeholder='hz{rule-object.pleaseInput}' class="form-control" required maxlength="200"/>
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-2 control-label">hz{rule-object.applicableObject}</label>
+                    <div class="col-xs-12 col-sm-8">
+                        <select multiple class="chosen-select form-control tag-input-style" name="validObj" data-placeholder='hz{rule-object.pleaseSelect}'>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-2 control-label">hz{rule-object.applicableOperator}</label>
+                    <div class="col-xs-12 col-sm-8">
+						<select multiple name="validBds" class="chosen-select form-control tag-input-style" data-placeholder='hz{rule-object.pleaseSelect}'>
+							<option value="in">hz{rule-object.contain}</option>
+							<option value="unin">hz{rule-object.notInclude}</option>
+							<option value="equal">hz{rule-object.equal}</option>
+							<option value="unequal">hz{rule-object.charNotEqual}</option>
+							<option value="eq">==</option>
+							<option value="uneq">!=</option>
+							<option value="dy">hz{rule-object.greaterThan}</option>
+							<option value="xy">hz{rule-object.lessThan}</option>
+							<option value="dydy">hz{rule-object.greaterThanEqual}</option>
+							<option value="xydy">hz{rule-object.lessThanEqual}</option>
+						</select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-2 control-label">hz{rule-object.objectClass}</label>
+                    <div class="col-xs-12 col-sm-8">
+                        <select name="objectType" class="form-control" required>
+                            <option value="" >hz{rule-object.pleaseSelect}</option>
+                            <option value="业务数据获取">hz{rule-object.businessDataAcquisition}</option>
+                            <option value="实例信息获取">hz{rule-object.caseInformationAcquisition}</option>
+                            <option value="办理人设置">hz{rule-object.transactorSetting}</option>
+                            <option value="常量输入">hz{rule-object.constantInput}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-2 control-label">hz{rule-object.returnValueType}</label>
+                    <div class="col-xs-12 col-sm-8">
+                        <select name="returnType" id="returnType" class="form-control" required>
+                            <option value="" >hz{rule-object.pleaseSelect}</option>
+                            <option value="String">hz{rule-object.string}</option>
+                            <option value="Boolean">hz{rule-object.boolean}</option>
+                            <option value="Number">hz{rule-object.number}</option>
+                            <option value="DataTime">hz{rule-object.dateTime}</option>
+                            <option value="Org">hz{rule-object.organization}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-2 control-label">hz{rule-object.objectScript}</label>
+                    <div class="col-xs-12 col-sm-8">
+                    	<textarea class="col-xs-12" name="objectInput" placeholder='hz{rule-object.enterHTMLScript}' rows="5" required maxlength="4000"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="hidden" id="ruleobject-dialog"></div>
+<script type="text/javascript">
+    jQuery(function($) {
+        require([horizon.paths.assetspath + '/manager/rule/js/rule.object.js'], function() {
+        	horizon.language.plugins.datatables();
+        	horizon.language.plugins.validator();
+        	horizon.language.plugins.selectuser();
+        	horizon.tools.use(horizon.paths.pluginpath + '/chosen/css/chosen.css');
+            horizon.engine.ruleobject.init();
+            $('.page-content-area').trigger('ajaxscriptsloaded');
+        });
+    });
+</script>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 工作日历以及意见表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TZ_OA_ATTENDANCE_SET_AUTH</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_ATTENDANCESET_SET_AUTH</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="DATA_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_ID" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_TYPE" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="NO" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar"  length="100"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TZ_OA_ATTENDANCE_SET</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TZ_OA_ATTENDANCE_SET</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="START_Y" typename="varchar"   length="4"></fieldinfo>
+			<fieldinfo fieldname="START_M" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="END_Y" typename="varchar"   length="4"></fieldinfo>
+			<fieldinfo fieldname="END_M" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="ORGANID" typename="lvarchar"   length="500"></fieldinfo>
+			<fieldinfo fieldname="HOUR_START" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="MIN_START" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="HOUR_END" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="MIN_END" typename="varchar"   length="2"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TZ_OA_ATTENDANCE_WORKDAY</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TZ_OA_WORKDAY</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="F_YEAR" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="F_MONTH" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="CREATEDATE" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="SBEGINTIME" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="SENDTIME" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="XBEGINTIME" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="XENDTIME" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="UNITID" typename="lvarchar" length="1024"></fieldinfo>
+			<fieldinfo fieldname="F_DATE" typename="varchar" length="50"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TZ_OA_OPINION_EXTEND</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TZ_OA_OPINION_EXTEND</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="DATA_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="COLUMN_NAME" typename="varchar" length="200"></fieldinfo>
+			<fieldinfo fieldname="OPINION_TEXT" typename="lvarchar" length="2000"></fieldinfo>
+			<fieldinfo fieldname="OPINION_TYPE" typename="varchar" length="1"></fieldinfo>
+			<fieldinfo fieldname="OPINION_PICTURE_ID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="USER_ID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="USER_NAME" typename="varchar" length="100"></fieldinfo>
+			<fieldinfo fieldname="SAVE_TIME" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="ATTACHMENT_ID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="ATTACHMENT_NAME" typename="varchar" length="200"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar" length="10"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+</tableinfo>

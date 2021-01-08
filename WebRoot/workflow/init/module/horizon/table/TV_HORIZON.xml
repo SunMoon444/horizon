@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 归档处理相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TV_HORIZON_CONFIG</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TV_HORIZON_CONFIG</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="ARCHIVE_USER" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="TABLE_SPACE" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="ARCHIVE_TYPE" typename="varchar"   length="1"></fieldinfo>
+		</fieldinfos>	
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TV_HORIZON_LOG</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TV_HORIZON_LOG</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="ARCHIVENAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="ARCHIVETIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="ARCHIVETYPE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="ARCHIVECONDITIONS" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="ARCHIVEAMOUNT" typename="varchar"   length="50"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TV_HORIZON_RELATION</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TV_HORIZON_RELATION</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="TTMAPID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="MAPTYPE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="SOURCEVALUE" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="DESTFIELD" typename="varchar"   length="50"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TV_HORIZON_WORKFLOW</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TV_HORIZON_WORKFLOW</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="SOURCETABLE" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="DESTTABLE" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="ARCHIVENAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="APPTABLETYPE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="COLUMNNAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="INTERVALNUM" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="ARCHIVETYPE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="ATTACHMENT" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="OPINION" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="FLOWRECORD" typename="varchar"   length="1"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+</tableinfo>

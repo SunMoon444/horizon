@@ -1,0 +1,129 @@
+<hi18n groups="message;homepage;base;instance-monitor;statis-common;flowstatus;datatables;"></hi18n>
+<div class="horizon-box-grid row">
+    <div class="horizon-box smaller col-xs-12 homepage">
+        <div class="row no-margin">
+            <div class="col-xs-6 col-sm-4 col-md-2 no-padding">
+                <div class="horizon-count">
+                    <div class="horizon-count-icon">
+                        <i class="ace-icon fa fa-flag blue"></i>
+                    </div>
+                    <div class="horizon-count-content">
+                        <div class="horizon-count-num blue" id="instance">0</div>
+                        <div class="horizon-count-text">hz{homepage.allInstance}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-2 no-padding">
+                <div class="horizon-count">
+                    <div class="horizon-count-icon">
+                        <i class="ace-icon fa fa-user green"></i>
+                    </div>
+                    <div class="horizon-count-content">
+                        <div class="horizon-count-num green" id="approve">0</div>
+                        <div class="horizon-count-text">hz{homepage.approveInstance}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-2 no-padding">
+                <div class="horizon-count">
+                    <div class="horizon-count-icon">
+                        <i class="ace-icon fa fa-circle-o grey"></i>
+                    </div>
+                    <div class="horizon-count-content">
+                        <div class="horizon-count-num grey" id="finish">0</div>
+                        <div class="horizon-count-text">hz{homepage.finishInstance}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-2 no-padding">
+                <div class="horizon-count">
+                    <div class="horizon-count-icon">
+                        <i class="ace-icon fa fa-clock-o purple"></i>
+                    </div>
+                    <div class="horizon-count-content">
+                        <div class="horizon-count-num purple" id="consume">0</div>
+                        <div class="horizon-count-text">hz{homepage.consumeSum}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-2 no-padding">
+                <div class="horizon-count">
+                    <div class="horizon-count-icon">
+                        <i class="ace-icon fa fa-exclamation-triangle red"></i>
+                    </div>
+                    <div class="horizon-count-content">
+                        <div class="horizon-count-num red" id="extended">0</div>
+                        <div class="horizon-count-text">hz{homepage.extendedInstance}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-2 no-padding">
+                <div class="horizon-count">
+                    <div class="horizon-count-icon">
+                        <i class="ace-icon fa fa-reply orange"></i>
+                    </div>
+                    <div class="horizon-count-content">
+                        <div class="horizon-count-num orange" id="back">0</div>
+                        <div class="horizon-count-text">hz{homepage.backCount}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="horizon-box col-xs-12 col-sm-6">
+        <h5 class="header lighter no-border no-margin">hz{homepage.instanceMonitor}</h5>
+        <div id="instance-monitoring" ></div>
+    </div>
+    <div class="horizon-box col-xs-12 col-sm-6">
+        <h5 class="header lighter no-border no-margin">hz{homepage.exceptionMonitor}</h5>
+        <div id="exception-monitor-chart"></div>
+    </div>
+    <div class="horizon-box col-xs-12 col-sm-6">
+        <h5 class="header lighter no-border no-margin">
+           hz{homepage.memoryInstance}
+            <div class="pull-right">
+                <button type="button" class="horizon-btn btn btn-default btn-sm" id="remove">
+                    <i class="ace-icon fa fa-trash red no-margin"></i>
+                </button>
+                <button type="button" class="horizon-btn btn btn-default btn-sm" id="refresh">
+                    <i class="ace-icon fa fa-refresh green no-margin"></i>
+                </button>
+            </div>
+        </h5>
+        <div class="widget-box transparent">
+            <div class="widget-body">
+                <div class="widget-main no-padding">
+                    <table id="myDatatable" class="table table-hover"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="horizon-box col-xs-12 col-sm-6">
+		<h5 class="header lighter no-border no-margin">hz{homepage.statusMonitor}</h5>
+		<div id="flow-status-chart"></div>
+	</div>
+	<div class="horizon-box col-xs-12">
+		<h5 class="header lighter no-border no-margin">
+			hz{homepage.systemInstanceMonitor}
+			<div class="pull-right" id="menMonitor">
+				<label id="realtime" class="btn btn-primary btn-sm btn-round border-width-1">
+					hz{homepage.realMonitor}
+				</label> 
+				<label id="rt_his" class="btn btn-white btn-sm btn-round border-width-1">
+					hz{homepage.historyMonitor}
+				</label>
+			</div>
+		</h5>
+		<div id="time-charts"></div>
+	    <div id="history-charts" class="hidden"></div>
+	</div>
+</div>
+<div id="deleteDialog" class="hidden"> </div>
+<div id="deleteAllDialog" class="hidden"> </div>
+<script>
+    require(['jquery', horizon.paths.assetspath + '/manager/home/home.js'], function($) {
+    	horizon.language.plugins.datatables();
+        horizon.engine.home.init();
+        $('.page-content-area').trigger('ajaxscriptsloaded');
+    });
+</script>

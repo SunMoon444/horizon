@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <title>流程运行测试</title>
+    <link rel="stylesheet" href="../../plugins/bootstrap/bootstrap/css/bootstrap.css?HorzonWorkflow" />
+    <link rel="stylesheet" href="../../plugins/bootstrap/bootstrap/css/font-awesome.css" />
+    <link rel="stylesheet" href="../../plugins/jquery/jquery-ui/css/jquery-ui.css?HorzonWorkflow" />
+    <link rel="stylesheet" href="../../plugins/bootstrap/ace/css/ace-fonts.css" />
+    <link rel="stylesheet" href="../../plugins/bootstrap/ace/css/ace.css?HorzonWorkflow" class="ace-main-stylesheet main-stylesheet" id="main-ace-style" />
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="../../plugins/bootstrap/ace/css/ace-part2.css" class="ace-main-stylesheet" />
+    <link rel="stylesheet" href="../../plugins/bootstrap/ace/css/ace-ie.css" />
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="../../plugins/ztree/css/zTreeStyle/zTreeStyle.css?HorzonWorkflow"/>
+    <link rel="stylesheet" href="../../assets/common/css/horizon.base.css?HorzonWorkflow" />
+    <link rel="icon" type="image/png" href="../../assets/common/img/favicon.png" />
+    <style>
+        body {
+            margin: 0;
+            overflow:hidden;
+        }
+    </style>
+    <!--[if lte IE 8]>
+    <script src="../../plugins/old-browser/html5shiv.js"></script>
+    <script src="../../plugins/old-browser/respond.js"></script>
+    <![endif]-->
+
+    <script src="../../assets/common/js/horizon.base.js"></script>
+    <!--[if !IE]> -->
+    <script type="text/javascript" language="JavaScript" src="../../plugins/jquery/jquery-base/jquery.js"></script>
+    <!-- <![endif]-->
+    <!--[if IE]>
+    <script type="text/javascript" language="JavaScript" src="../../plugins/jquery/jquery-base/jquery1x.js"></script>
+    <![endif]-->
+    <script type="text/javascript" language="JavaScript" src="../../plugins/bootstrap/ace/ace.js"></script>
+    <script type="text/javascript" language="JavaScript" src="../../plugins/jquery/jquery-ui/jquery-ui.js"></script>
+    <script type="text/javascript" language="JavaScript" src="../../plugins/ztree/jquery.ztree.min.js"></script>
+    <script type="text/javascript" language="JavaScript" src="../../assets/common/js/horizon.jqueryui.js"></script>
+    <script type="text/javascript" language="JavaScript" src="../../plugins/bootstrap/ace/js/elements.scroller.js"></script>
+    <script type="text/javascript" language="JavaScript" src="../../assets/common/js/horizon.selectuser.js"></script>
+    <script type="text/javascript" language="javascript" src="../../assets/module/flash/js/AC_OETags.js"></script>
+    <script type="text/javascript" language="javascript" src="../../assets/module/flash/js/HorizonWorkflow.js"></script>
+    <script>
+        jQuery(function($) {
+            $('#HorizonFlowTest').height($(window).height());
+            $(window).resize(function() {
+                $('#HorizonFlowTest').height($(window).height());
+            });
+        });
+
+        var info = {};
+        jQuery.ajax({
+            url: horizon.tools.formatUrl('/system/info'),
+            dataType: 'json',
+            async: false,
+            cache: false,
+            success: function (data) {
+                info = data;
+            }
+        });
+
+        // -----------------------------------------------------------------------------
+        // Globals
+        // Major version of Flash required
+        var requiredMajorVersion = 10;
+        // Minor version of Flash required
+        var requiredMinorVersion = 0;
+        // Minor version of Flash required
+        var requiredRevision = 124;
+        // -----------------------------------------------------------------------------
+
+        //返回上下文路径
+        function getContextPath(){
+            return horizon.paths.apppath;
+        }
+        //返回配置文件路径
+        function getConfigPathSWF(){
+            return horizon.paths.syspath.substring(horizon.paths.apppath.length) + '/module/flash/flow-conf/designer/';
+        }
+        //设计元素的图片路径,默认返回空时,在当前目录下的assets/image/下查找
+        function getImgPathForFlex(){
+            return horizon.paths.syspath.substring(horizon.paths.apppath.length) + '/module/flash';
+        }
+        //返回租户id
+        function getTenantid(){
+            return info.tenantCode;
+        }
+        //返回数据源标识
+        function getIdentifier(){
+            return info.dbIdentifier;
+        }
+        //返回是否允许显示路由条件的提示符号1=显示,0=不显示
+        function showMsgForLineName(){
+            return "1";
+        }
+        //objName回写对象名称，seltype 单选多选，onlyuser只选择人员，
+        //freeselect是否允许自由选择，initvalue定义的列表
+        var backObjName="";
+        function selectUserflowSWF(objName,seltype,onlyuser,freeselect,initvalue,uname,uid)
+        {
+            var option = {
+                idField: 'userid',
+                cnField: 'username',
+                isFlow: true,
+                fnClose: function() {
+                    backSelUser();
+                }
+            };
+            if(seltype == '1') {
+                option['multiple'] = false;
+            }
+            if(onlyuser == '1') {
+                //只能选择人
+                option['selectDept'] = false;
+                option['selectPosition'] = false;
+                option['selectRole'] = false;
+                option['selectGroup'] = false;
+                option['selectUser'] = true;
+            }else if(onlyuser == '2') {
+                //不能选择人
+                option['selectUser'] = false;
+            }
+            if(!freeselect) {
+                //不允许自由选择
+                option['dept'] = false;
+                option['position'] = false;
+                option['role'] = false;
+                option['group'] = false;
+                option['search'] = false;
+            }
+            if(initvalue) {
+                option['flowUser'] = {
+                    id: initvalue,
+                    name: ''
+                };
+            }
+            backObjName = objName;
+            $('#username').val(uname);
+            $('#userid').val(uid);
+            $.horizon.selectUser(option);
+        }
+        function backSelUser(){
+            var usernames = document.getElementById("username").value;
+            var userids   = document.getElementById("userid").value;
+
+            HorizonFlowTest.setSelectUserResult(backObjName,usernames,userids);
+
+        }
+        //选择认领人
+        function selectClaimUserSWF(subjectionid,subjectiontype){
+            var option = {
+                idField: 'userid',
+                cnField: 'username',
+                isFlow: true,
+                multiple: false,
+                selectDept: false,
+                selectPosition: false,
+                selectGroup: false,
+                selectRole: false,
+                selectUser: true,
+                fnClose: function() {
+                    backClaimUser();
+                }
+            };
+            if(subjectiontype=="D" || subjectiontype =="S") {
+                option['dept'] = subjectionid;
+                option['position'] = false;
+                option['role'] = false;
+                option['group'] = false;
+            }
+            else if(subjectiontype=="R"){
+                option['dept'] = false;
+                option['position'] = false;
+                option['role'] = subjectionid;
+                option['group'] = false;
+            }
+            else if(subjectiontype=="G"){
+                option['dept'] = false;
+                option['position'] = false;
+                option['role'] = false;
+                option['group'] = subjectionid;
+            }
+            else if(subjectiontype=="P"){
+                option['dept'] = false;
+                option['position'] = subjectionid;
+                option['role'] = false;
+                option['group'] = false;
+            }
+            $('#username').val('');
+            $('#userid').val('');
+            $.horizon.selectUser(option);
+
+        }
+        function backClaimUser(){
+            var usernames = document.getElementById("username").value;
+            var userids   = document.getElementById("userid").value;
+            HorizonFlowTest.selectClaimUserResult(usernames,userids);
+        }
+
+        /**
+         * 流程测试需要的参数
+         */
+        function getWorkflowParam(){
+            var flowid = horizon.tools.getQueryString('flowid'),
+                identifier = horizon.tools.getQueryString('identifier'),
+                tenantCode = horizon.tools.getQueryString('tenantCode'),
+                userid = horizon.tools.getQueryString('userid');
+            flowid = flowid ? flowid : '';
+            identifier = identifier ? identifier : info.dbIdentifier;
+            tenantCode = tenantCode ? tenantCode : info.tenantCode;
+            userid = userid ? userid : info.userId;
+
+            return 'flowid=' + flowid + '&identifier=' + identifier + '&tenantCode=' + tenantCode+ '&userid=' + userid;
+        }
+
+    </script>
+</head>
+<body scroll="no">
+    <script language="JavaScript" type="text/javascript">
+        <!--
+        // Version check for the Flash Player that has the ability to start Player Product Install (6.0r65)
+        var hasProductInstall = DetectFlashVer(6, 0, 65);
+
+        // Version check based upon the values defined in globals
+        var hasRequestedVersion = DetectFlashVer(requiredMajorVersion, requiredMinorVersion, requiredRevision);
+
+        if ( hasProductInstall && !hasRequestedVersion ) {
+            // DO NOT MODIFY THE FOLLOWING FOUR LINES
+            // Location visited after installation is complete if installation is required
+            var MMPlayerType = (isIE == true) ? "ActiveX" : "PlugIn";
+            var MMredirectURL = encodeURI(window.location);//特殊字符转码
+            document.title = document.title.slice(0, 47) + " - Flash Player Installation";
+            var MMdoctitle = document.title;
+
+            AC_FL_RunContent(
+                    "src", "playerProductInstall",
+                    "FlashVars", "MMredirectURL="+MMredirectURL+'&MMplayerType='+MMPlayerType+'&MMdoctitle='+MMdoctitle+"",
+                    "width", "100%",
+                    "height", "100%",
+                    "align", "middle",
+                    "wmode","transparent",
+                    "id", "HorizonFlowTest",
+                    "quality", "high",
+                    "bgcolor", "#869ca7",
+                    "name", "HorizonFlowTest",
+                    "allowScriptAccess","sameDomain",
+                    "type", "application/x-shockwave-flash",
+                    "pluginspage", "http://www.adobe.com/go/getflashplayer"
+            );
+        } else if (hasRequestedVersion) {
+            // if we've detected an acceptable version
+            // embed the Flash Content SWF when all tests are passed
+            AC_FL_RunContent(
+                    "src", horizon.paths.syspath + "/module/flash/HorizonFlowTest",
+                    "width", "100%",
+                    "height", "100%",
+                    "align", "middle",
+                    "wmode","transparent",
+                    "id", "HorizonFlowTest",
+                    "quality", "high",
+                    "bgcolor", "#869ca7",
+                    "name", "HorizonFlowTest",
+                    "allowScriptAccess","sameDomain",
+                    "type", "application/x-shockwave-flash",
+                    "pluginspage", "http://www.adobe.com/go/getflashplayer"
+            );
+        } else {  // flash is too old or we can't detect the plugin
+            var alternateContent = 'Alternate HTML content should be placed here. '
+                    + 'This content requires the Adobe Flash Player. '
+                    + '<a href=http://www.adobe.com/go/getflash/>Get Flash</a>';
+            document.write(alternateContent);  // insert non-flash content
+        }
+        // -->
+    </script>
+    <noscript>
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                id="HorizonFlowTest" width="100%" height="100%"
+                codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
+            <param name="movie" value="HorizonFlowTest.swf" />
+            <param name="wmode" value="transparent">
+            <param name="quality" value="high" />
+            <param name="bgcolor" value="#869ca7" />
+            <param name="allowScriptAccess" value="sameDomain" />
+            <embed src="HorizonFlowTest.swf" quality="high" bgcolor="#869ca7"
+                   width="100%" height="100%" name="HorizonFlowTest" align="middle"
+                   play="true"
+                   loop="false"
+                   quality="high"
+                   allowScriptAccess="sameDomain"
+                   type="application/x-shockwave-flash"
+                   pluginspage="http://www.adobe.com/go/getflashplayer">
+            </embed>
+        </object>
+    </noscript>
+    <div style="display:none">
+        <input type="text" id="userid" name="userid" /><!--选择人员临时域-->
+        <input type="text" id="username" name="username" />
+        <input type="text" id="inituser" name="inituser" />
+    </div>
+</body>
+</html>

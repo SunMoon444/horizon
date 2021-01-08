@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_SYSUSER</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_SYSUSER</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="USERNAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="PASSWORD" typename="varchar"   length="100"></fieldinfo>
+		</fieldinfos>		
+	</tablename>
+</tableinfo>

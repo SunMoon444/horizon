@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 流程引擎定时任务相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_TASK</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_TASK</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="FLOWID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FLOWNAME" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="NODENAME" typename="varchar"   length="255"></fieldinfo>
+			<fieldinfo fieldname="RECEIVETIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="STARTTIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="NODELIMITDATE" typename="number"></fieldinfo>
+			<fieldinfo fieldname="NODELIMITTYPE" typename="varchar"   length="10"></fieldinfo>
+			<fieldinfo fieldname="WARINGDATE" typename="number"></fieldinfo>
+			<fieldinfo fieldname="WARINGTYPE" typename="varchar"   length="10"></fieldinfo>
+			<fieldinfo fieldname="DOOVERPASS" typename="number"></fieldinfo>
+			<fieldinfo fieldname="REMSGNUM" typename="number" ></fieldinfo>
+			<fieldinfo fieldname="REDONENUM" typename="number"></fieldinfo>
+			<fieldinfo fieldname="FLOWSTATUS" typename="number"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="number" ></fieldinfo>
+			<fieldinfo fieldname="DOTYPE" typename="number"></fieldinfo>
+			<fieldinfo fieldname="TITLE" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="FLOWLIMITDATE" typename="number"></fieldinfo>
+			<fieldinfo fieldname="FLOWLIMITTYPE" typename="varchar"   length="10"></fieldinfo>
+			<fieldinfo fieldname="NODELIMITTIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="FLOWLIMITTIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="NODETYPE" typename="number"  ></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_TASK_LOG</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_TASK_LOG</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="NODENAME" typename="varchar" length="255"></fieldinfo>
+			<fieldinfo fieldname="REMSGDATE" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="REMSGNODE" typename="varchar" length="255"></fieldinfo>
+			<fieldinfo fieldname="SENDER" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="RECEIVER" typename="lvarchar" length="500"></fieldinfo>
+			<fieldinfo fieldname="MEMO" typename="clob" ></fieldinfo>
+			<fieldinfo fieldname="TITLE" typename="varchar" length="255"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar" length="32"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_TASK_TRIGGER</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_TASK_TRIGGER</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="TRIGGER_TYPE" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="EXECNUM" typename="number"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="INTERFACE_CLASS" typename="varchar" length="200"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar" length="2" ></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_TASK_TRIGGER_LOG</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_TASK_TRIGGER_LOG</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="TRIGGER_TYPE" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="TRIGGER_TIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="EXECNUM" typename="number"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="INTERFACE_CLASS" typename="varchar" length="200"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar" length="2" ></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_ROBOT_TASK</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_ROBOT_TASK</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="CLASSNAME" typename="lvarchar" length="500"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar" length="10" ></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<others>
+		<oracle>
+			<sql>CREATE INDEX IDX_TW_TA_WORKID ON TW_HZ_TASK(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_TA_FLOWID ON TW_HZ_TASK(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_TL_WORKID ON TW_HZ_TASK_LOG(WORKID)</sql>
+		</oracle>
+		<mysql>
+			<sql>CREATE INDEX IDX_TW_TA_WORKID ON TW_HZ_TASK(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_TA_FLOWID ON TW_HZ_TASK(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_TL_WORKID ON TW_HZ_TASK_LOG(WORKID)</sql>
+		</mysql>
+		<mysql8>
+			<sql>CREATE INDEX IDX_TW_TA_WORKID ON TW_HZ_TASK(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_TA_FLOWID ON TW_HZ_TASK(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_TL_WORKID ON TW_HZ_TASK_LOG(WORKID)</sql>
+		</mysql8>
+		<db2>
+			<sql>CREATE INDEX IDX_TW_TA_WORKID ON TW_HZ_TASK(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_TA_FLOWID ON TW_HZ_TASK(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_TL_WORKID ON TW_HZ_TASK_LOG(WORKID)</sql>
+		</db2>
+		<sqlserver>
+			<sql>CREATE INDEX IDX_TW_TA_WORKID ON TW_HZ_TASK(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_TA_FLOWID ON TW_HZ_TASK(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_TL_WORKID ON TW_HZ_TASK_LOG(WORKID)</sql>
+		</sqlserver>
+		<dm>
+			<sql>CREATE INDEX IDX_TW_TA_WORKID ON TW_HZ_TASK(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_TA_FLOWID ON TW_HZ_TASK(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_TL_WORKID ON TW_HZ_TASK_LOG(WORKID)</sql>
+		</dm>
+		<postgresql>
+			<sql>CREATE INDEX IDX_TW_TA_WORKID ON TW_HZ_TASK(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_TA_FLOWID ON TW_HZ_TASK(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_TL_WORKID ON TW_HZ_TASK_LOG(WORKID)</sql>
+		</postgresql>
+		<highgo>
+			<sql>CREATE INDEX IDX_TW_TA_WORKID ON TW_HZ_TASK(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_TA_FLOWID ON TW_HZ_TASK(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_TL_WORKID ON TW_HZ_TASK_LOG(WORKID)</sql>
+		</highgo>
+		<gbase>
+			<sql>CREATE INDEX IDX_TW_TA_WORKID ON TW_HZ_TASK(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_TA_FLOWID ON TW_HZ_TASK(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_TL_WORKID ON TW_HZ_TASK_LOG(WORKID)</sql>
+		</gbase>
+		<gbase8s>
+			<sql>CREATE INDEX IDX_TW_TA_WORKID ON TW_HZ_TASK(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_TA_FLOWID ON TW_HZ_TASK(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_TL_WORKID ON TW_HZ_TASK_LOG(WORKID)</sql>
+		</gbase8s>
+		<kingbase>
+			<sql>CREATE INDEX IDX_TW_TA_WORKID ON TW_HZ_TASK(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_TA_FLOWID ON TW_HZ_TASK(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_TL_WORKID ON TW_HZ_TASK_LOG(WORKID)</sql>
+		</kingbase>
+		<kingbase8>
+			<sql>CREATE INDEX IDX_TW_TA_WORKID ON TW_HZ_TASK(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_TA_FLOWID ON TW_HZ_TASK(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_TL_WORKID ON TW_HZ_TASK_LOG(WORKID)</sql>
+		</kingbase8>
+		<oscar>
+			<sql>CREATE INDEX IDX_TW_TA_WORKID ON TW_HZ_TASK(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_TA_FLOWID ON TW_HZ_TASK(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_TL_WORKID ON TW_HZ_TASK_LOG(WORKID)</sql>
+		</oscar>
+		<upbase>
+			<sql>CREATE INDEX IDX_TW_TA_WORKID ON TW_HZ_TASK(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_TA_FLOWID ON TW_HZ_TASK(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_TL_WORKID ON TW_HZ_TASK_LOG(WORKID)</sql>
+		</upbase>
+	</others>
+</tableinfo>

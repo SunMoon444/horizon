@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 附件信息相关表结构定义 -->
+<tableinfo>
+    <tablename>
+        <!-- 表名 -->
+        <name>TA_HORIZON_INFO</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TA_HORIZON_INFO</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="FILE_NAME" typename="varchar"   length="200"></fieldinfo>
+            <fieldinfo fieldname="SAVE_NAME" typename="varchar"   length="100"></fieldinfo>
+            <fieldinfo fieldname="EXTENTION" typename="varchar"   length="10"></fieldinfo>
+            <fieldinfo fieldname="FILE_SIZE" typename="varchar" length="10"></fieldinfo>
+            <fieldinfo fieldname="ORDER_NO" typename="number"   length="3"></fieldinfo>
+            <fieldinfo fieldname="OBJECT_ID" typename="varchar"   length="32"></fieldinfo>
+            <fieldinfo fieldname="ACTIVE" typename="varchar"   length="1"></fieldinfo>
+            <fieldinfo fieldname="SAVE_TYPE" typename="varchar"   length="1"></fieldinfo>
+            <fieldinfo fieldname="SAVE_TIME" typename="varchar"   length="30"></fieldinfo>
+            <fieldinfo fieldname="SAVE_PATH" typename="lvarchar"   length="500"></fieldinfo>
+            <fieldinfo fieldname="USER_ID" typename="varchar"   length="32"></fieldinfo>
+            <fieldinfo fieldname="TABLE_NAME" typename="varchar"   length="100"></fieldinfo>
+            <fieldinfo fieldname="COLUMN_NAME" typename="varchar"   length="100"></fieldinfo>
+            <fieldinfo fieldname="FILE_CONTENT_ID" typename="varchar"   length="32"></fieldinfo>
+            <fieldinfo fieldname="COMMENTS" typename="varchar"   length="200"></fieldinfo>
+            <fieldinfo fieldname="VIEW_FILE_NAME" typename="varchar"   length="200"></fieldinfo>
+            <fieldinfo fieldname="FIELD_NAME" typename="varchar"   length="100"></fieldinfo>
+            <fieldinfo fieldname="STATUS" typename="varchar"   length="3"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TA_HORIZON_BLOB</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TA_HORIZON_BLOB</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="OBJECT_ID" typename="varchar"   length="32"></fieldinfo>
+            <fieldinfo fieldname="BLOB_CONTENT" typename="blob"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TA_HORIZON_CLOB</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TA_HORIZON_CLOB</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="OBJECT_ID" typename="varchar"   length="32"></fieldinfo>
+            <fieldinfo fieldname="CLOB_CONTENT" typename="clob"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+</tableinfo>

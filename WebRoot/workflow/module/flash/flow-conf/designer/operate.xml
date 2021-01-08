@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operates>
+	<!-- type 1提交 2退回  3拿回 -->
+	<!-- applicablenode适用节点:流程全局global 开始节点start 结束节点 end 人工节点 task 自动节点 robot 事件节点event 判定节点(废弃)condition 引擎交互 cluster 网关gateway-->
+	<!-- applicablenode在节点大类下有操作不支持其中节点小类时，用~[type1][type2]标识,只有某个节点支持时使用~(type1) -->
+	<operate name="启动流程" id="startflow">
+		<type>1</type>
+		<implClass>com.horizon.wf.action.ActionSubmitFirst</implClass>
+		<applicablenode>start</applicablenode>
+		<reName>启动流程</reName>
+		<memo>启动流程</memo>
+	</operate>	
+	<operate name="提交" id="submit">
+		<type>1</type>
+		<implClass>com.horizon.wf.action.ActionSubmit</implClass>
+		<applicablenode>task</applicablenode>
+		<reName>提交</reName>
+		<memo>正常状态下的提交</memo>
+	</operate>
+	<operate name="协办提交" id="secondSubmit">
+		<type>1</type>
+		<implClass>com.horizon.wf.action.ActionSubmitNotLeave</implClass>
+		<applicablenode>task</applicablenode>
+		<reName>协办提交</reName>
+		<memo>协办状态下的提交</memo>
+	</operate>
+	<operate name="内部提交" id="innerSubmit">
+		<type>1</type>
+		<implClass>com.horizon.wf.action.ActionSubmitForProgressively</implClass>
+		<applicablenode>task~(50)</applicablenode>
+		<reName>内部提交</reName>
+		<memo>不离开节点内部循环时提交</memo>
+	</operate>
+
+	<operate name="自由提交" id="freesubmit">
+		<type>1</type>
+		<implClass>com.horizon.wf.action.ActionSubmitForFree</implClass>
+		<applicablenode>task~[30]</applicablenode>
+		<reName>自由提交</reName>
+		<memo>在没有定义下一节点的情况下执行提交,系统自动创建一个节点</memo>
+	</operate>
+
+	<!-- 人工合并和逐级审批不能会签 -->
+	<operate name="会签提交" id="huiqianSubmit">
+		<type>1</type>
+		<implClass>com.horizon.wf.action.ActionSubmitHuiqian</implClass>
+		<applicablenode>task~[30][50]</applicablenode>
+		<reName>会签提交</reName>
+		<memo>会签状态下的提交</memo>
+	</operate>
+	<!-- 只有流程状态为退回时,退回提交出现 -->
+	<operate name="退回提交" id="rejectSubmit">
+		<type>1</type>
+		<implClass>com.horizon.wf.action.ActionSubmitForReject</implClass>
+		<applicablenode>task</applicablenode>
+		<reName>退回提交</reName>
+		<memo>退回状态下的提交</memo>
+	</operate>
+	<!-- 人工合并和逐级审批不能会签 -->
+	<operate name="会签" id="huiqian">
+		<type>2</type>
+		<implClass>com.horizon.wf.action.ActionHuiQian</implClass>
+<!-- 中括号中的数字表示例外节点类型,圆括号中的数字表示仅适应的节点类型
+		public static final int Node_Single = 10; //单人处理节点(单一,多人单一)
+		public static final int Node_Multi_Single = 11;//多人单一节点
+		public static final int Node_Multi = 20; //多人并行处理节点
+		public static final int Node_Order = 25; //多人顺序处理节点
+		public static final int Node_Merger = 30;//人工合并节点
+		public static final int Node_Progressively = 50;//逐级审批节点
+-->
+		<applicablenode>task~[30][50]</applicablenode>
+		<reName>发起会签</reName>
+		<memo>发起会签</memo>
+	</operate>
+	<!-- 只有顺签节点 -->
+	<operate name="前加签" id="jiaqianBefore">
+		<type>7</type>
+		<implClass>com.horizon.wf.action.ActionJiaQianBefore</implClass>
+		<applicablenode>task~(25)</applicablenode>
+		<reName>前加签</reName>
+		<memo>前加签</memo>
+	</operate>
+	<!-- 只有多人节点 -->
+	<operate name="减签" id="reduceAuthor">
+		<type>7</type>
+		<implClass>com.horizon.wf.action.ActionReduceAuthor</implClass>
+		<applicablenode>task~(20)(25)</applicablenode>
+		<reName>减签</reName>
+		<memo>减少办理人</memo>
+	</operate>
+	<!-- 只有多人节点 -->
+	<operate name="加签" id="jiaqian">
+		<type>7</type>
+		<implClass>com.horizon.wf.action.ActionJiaQian</implClass>
+ 		<applicablenode>task~(20)(25)</applicablenode><!--例外，单人节点不允许加签操作 -->
+		<reName>加签</reName>
+		<memo>添加办理人</memo>
+	</operate>
+	<operate name="退回" id="reject">
+		<type>3</type>
+		<implClass>com.horizon.wf.action.ActionReject</implClass>
+		<applicablenode>task</applicablenode>
+		<reName>退回</reName>
+		<memo>退回到之前的办理节点</memo>
+	</operate>
+	<operate name="任意退回" id="jumpreject">
+		<type>3</type>
+		<implClass>com.horizon.wf.action.ActionRejectByJump</implClass>
+		<applicablenode>task</applicablenode>
+		<reName>任意退回</reName>
+		<memo>任意退回到之前的办理节点</memo>
+	</operate>
+	<operate name="内部退回" id="innerreject">
+		<type>3</type>
+		<implClass>com.horizon.wf.action.ActionRejectForInner</implClass>
+		<applicablenode>task~(25)(50)</applicablenode>
+		<reName>内部退回</reName>
+		<memo>节点内部退回</memo>
+	</operate>
+	<operate name="补发" id="reissue">
+		<type>7</type>
+		<implClass>com.horizon.wf.action.ActionReissue</implClass>
+		<applicablenode>task~(20)(25)</applicablenode>
+		<reName>补发</reName>
+		<memo>办理人补发</memo>
+	</operate>
+	<operate name="分支补发" id="reissuerouter">
+		<type>7</type>
+		<implClass>com.horizon.wf.action.ActionReissueRouter</implClass>
+		<applicablenode>task~[30]</applicablenode>
+		<reName>分支补发</reName>
+		<memo>分支补发</memo>
+	</operate>
+	<operate name="拿回" id="getback">
+		<type>4</type>
+		<implClass>com.horizon.wf.action.ActionGetBack</implClass>
+ 		<applicablenode>task</applicablenode><!--例外：人工合并节点不允许拿回task~[30] -->
+		<reName>拿回</reName>
+		<memo>从当前办理节点拿回</memo>
+	</operate>
+	<operate name="暂存" id="save">
+		<type>5</type>
+		<implClass>com.horizon.wf.action.ActionSave</implClass>
+		<applicablenode>task</applicablenode>
+		<reName>暂存</reName>
+		<memo>保存表单数据</memo>
+	</operate>
+	<operate name="跳转" id="goto">
+		<type>7</type>
+		<implClass>com.horizon.wf.action.ActionGoto</implClass>
+		<applicablenode>task,subflow</applicablenode>
+		<reName>跳转</reName>
+		<memo>跳转到其他办理节点</memo>
+	</operate>
+	
+	<operate name="转办" id="move">
+		<type>7</type>
+		<implClass>com.horizon.wf.action.ActionMove</implClass>
+		<applicablenode>task</applicablenode>
+		<reName>转办</reName>
+		<memo>送其他人办理</memo>
+	</operate>
+	<operate name="撤办" id="cancel">
+		<type>6</type>
+		<implClass>com.horizon.wf.action.ActionCancel</implClass>
+		<applicablenode>task;event;robot;gateway;cluster</applicablenode>
+		<reName>撤办</reName>
+		<memo>撤销办理</memo>
+	</operate>
+	<operate name="暂停" id="pause">
+		<type>8</type>
+		<implClass>com.horizon.wf.action.ActionPause</implClass>
+		<applicablenode>task;event;robot;gateway;cluster</applicablenode>
+		<reName>暂停</reName>
+		<memo>流程暂停流转</memo>
+	</operate>
+	<operate name="替换处理人" id="replace">
+		<type>9</type>
+		<implClass>com.horizon.wf.action.ActionReplaceAuthor</implClass>
+		<applicablenode>task</applicablenode>
+		<reName>替换处理人</reName>
+		<memo>替换当前节点的办理人</memo>
+	</operate>
+	<operate name="终止" id="stop">
+		<type>10</type>
+		<implClass>com.horizon.wf.action.ActionStop</implClass>
+		<applicablenode>task;event;robot;gateway;cluster</applicablenode>
+		<reName>终止</reName>
+		<memo>流程终止</memo>
+	</operate>
+	<operate name="阅知" id="addreader">
+		<type>11</type>
+		<implClass>com.horizon.wf.action.ActionAddReader</implClass>
+		<applicablenode>task;event;gateway;robot;end;cluster;subflow</applicablenode>
+		<reName>发送阅知</reName>
+		<memo>发送阅知</memo>
+	</operate>
+	<operate name="已阅" id="readed">
+		<type>13</type>
+		<implClass>com.horizon.wf.action.ActionReaded</implClass>
+		<applicablenode>task;event;robot;end;gateway;cluster;subflow</applicablenode>
+		<reName>已阅</reName>
+		<memo>标识待阅文件已阅</memo>
+	</operate>
+	<operate name="催办" id="urge">
+		<type>14</type>
+		<implClass>com.horizon.wf.action.ActionReMsg</implClass>
+		<applicablenode>task</applicablenode>
+		<reName>催办</reName>
+		<memo>发起催办</memo>
+	</operate>
+	<operate name="启动子流程" id="subflow">
+		<type>12</type>
+		<!-- <implClass>com.horizon.wf.action.ActionStartSubFlow</implClass> -->
+		<implClass>com.horizon.wf.action.ActionStartMultiSubFlow</implClass>
+		<applicablenode>task</applicablenode>
+		<reName>启动子流程</reName>
+		<memo>发起一个子流程实例</memo>
+	</operate>
+</operates>

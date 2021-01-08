@@ -1,0 +1,52 @@
+<title>hz{platform-log.systemArchiveLog}</title>
+<hi18n  groups="platform-log;base;message" ></hi18n>
+
+<div class="horizon-modal-container">
+    <div class="page-header smaller">
+        <h1>
+            hz{platform-log.sysManager}
+            <small>
+                <i class="ace-icon fa fa-angle-double-right"></i>
+                hz{platform-log.systemLogArchive}
+            </small>
+        </h1>
+    </div>
+    <div class="horizon-modal-container">
+        <div id="loginArchivingInfo" class="log-iframe-container">
+            <div>
+                <iframe name="loginArchivingList" frameborder="0" id="loginArchivingList" src="" width="100%"
+                        class="iframeBorder"></iframe>
+            </div>
+        </div>
+        <div class="hidden log-iframe-container" id="logOtherArchivingInfo">
+            <iframe name="logOtherArchivingList" frameborder="0" id="logOtherArchivingList" src="" width="100%"
+                    class="iframeBorder"></iframe>
+        </div>
+    </div>
+    <div class="hidden other-content-area log-iframe-container" id="lookLogInfo">
+        <form class="form-horizontal" id="logForm" role="form">
+            <div class="space-4">
+                <input type="hidden" name="logType"/>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="dialog"></div>
+<script>
+    jQuery(function ($) {
+        require(
+            [
+                horizon.paths.apppath
+                + '/horizon/assets/manager/log/js/log.archiving.js'
+            ],
+            function () {
+                horizon.tools.use(horizon.paths.pluginpath
+                    + '/ztree/css/zTreeStyle/zTreeStyle.css');
+                horizon.manager.logarchiving.init();
+                horizon.tools.use(horizon.paths.apppath
+                    + '/horizon/plugins/iconPicker/css/bootstrap-iconpicker.css');
+                $('.page-content-area').trigger('ajaxscriptsloaded');
+            });
+
+    });
+</script>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 流程日志相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_LOG</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_LOG</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="FLOWID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="FLOWNAME" typename="varchar" length="255"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="NODENAME" typename="varchar" length="255"></fieldinfo>
+			<fieldinfo fieldname="USERID" typename="varchar" length="70"></fieldinfo>
+			<fieldinfo fieldname="USERNAME" typename="varchar" length="255"></fieldinfo>
+			<fieldinfo fieldname="ACTIONTIME" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="ACTION" typename="varchar" length="100"></fieldinfo>
+			<fieldinfo fieldname="ACTIONNAME" typename="varchar" length="200"></fieldinfo>
+			<fieldinfo fieldname="COMMENTS" typename="clob" ></fieldinfo>
+			<fieldinfo fieldname="DOTIME" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="LIMITTIME" typename="varchar" length="10"></fieldinfo>
+			<fieldinfo fieldname="TITLE" typename="lvarchar" length="1000"></fieldinfo>
+			<fieldinfo fieldname="MEMO" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="SXCOMMENTS" typename="lvarchar" length="340"></fieldinfo>
+			<fieldinfo fieldname="DOTIMEMIN" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="ISOVER" typename="varchar" length="10"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="NEXTNODEIDS" typename="varchar" length="100"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<others>
+		<oracle>
+			<sql>CREATE INDEX IDX_TW_L_FW ON TW_HZ_LOG(FLOWID,WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_USERID ON TW_HZ_LOG(USERID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_NF ON TW_HZ_LOG(NODEID,FLOWID)</sql>
+		</oracle>
+		<mysql>
+			<sql>CREATE INDEX IDX_TW_L_FW ON TW_HZ_LOG(FLOWID,WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_USERID ON TW_HZ_LOG(USERID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_NF ON TW_HZ_LOG(NODEID,FLOWID)</sql>
+		</mysql>
+		<mysql8>
+			<sql>CREATE INDEX IDX_TW_L_FW ON TW_HZ_LOG(FLOWID,WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_USERID ON TW_HZ_LOG(USERID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_NF ON TW_HZ_LOG(NODEID,FLOWID)</sql>
+		</mysql8>
+		<db2>
+			<sql>CREATE INDEX IDX_TW_L_FW ON TW_HZ_LOG(FLOWID,WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_USERID ON TW_HZ_LOG(USERID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_NF ON TW_HZ_LOG(NODEID,FLOWID)</sql>
+		</db2>
+		<sqlserver>
+			<sql>CREATE INDEX IDX_TW_L_FW ON TW_HZ_LOG(FLOWID,WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_USERID ON TW_HZ_LOG(USERID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_NF ON TW_HZ_LOG(NODEID,FLOWID)</sql>
+		</sqlserver>
+		<dm>
+			<sql>CREATE INDEX IDX_TW_L_FW ON TW_HZ_LOG(FLOWID,WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_USERID ON TW_HZ_LOG(USERID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_NF ON TW_HZ_LOG(NODEID,FLOWID)</sql>
+		</dm>
+		<postgresql>
+			<sql>CREATE INDEX IDX_TW_L_FW ON TW_HZ_LOG(FLOWID,WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_USERID ON TW_HZ_LOG(USERID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_NF ON TW_HZ_LOG(NODEID,FLOWID)</sql>
+		</postgresql>
+		<highgo>
+			<sql>CREATE INDEX IDX_TW_L_FW ON TW_HZ_LOG(FLOWID,WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_USERID ON TW_HZ_LOG(USERID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_NF ON TW_HZ_LOG(NODEID,FLOWID)</sql>
+		</highgo>
+		<gbase>
+			<sql>CREATE INDEX IDX_TW_L_FW ON TW_HZ_LOG(FLOWID,WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_USERID ON TW_HZ_LOG(USERID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_NF ON TW_HZ_LOG(NODEID,FLOWID)</sql>
+		</gbase>
+		<gbase8s>
+			<sql>CREATE INDEX IDX_TW_L_FW ON TW_HZ_LOG(FLOWID,WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_USERID ON TW_HZ_LOG(USERID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_NF ON TW_HZ_LOG(NODEID,FLOWID)</sql>
+		</gbase8s>
+		<kingbase>
+			<sql>CREATE INDEX IDX_TW_L_FW ON TW_HZ_LOG(FLOWID,WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_USERID ON TW_HZ_LOG(USERID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_NF ON TW_HZ_LOG(NODEID,FLOWID)</sql>
+		</kingbase>
+		<kingbase8>
+			<sql>CREATE INDEX IDX_TW_L_FW ON TW_HZ_LOG(FLOWID,WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_USERID ON TW_HZ_LOG(USERID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_NF ON TW_HZ_LOG(NODEID,FLOWID)</sql>
+		</kingbase8>
+		<oscar>
+			<sql>CREATE INDEX IDX_TW_L_FW ON TW_HZ_LOG(FLOWID,WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_USERID ON TW_HZ_LOG(USERID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_NF ON TW_HZ_LOG(NODEID,FLOWID)</sql>
+		</oscar>
+		<upbase>
+			<sql>CREATE INDEX IDX_TW_L_FW ON TW_HZ_LOG(FLOWID,WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_USERID ON TW_HZ_LOG(USERID)</sql>
+			<sql>CREATE INDEX IDX_TW_L_NF ON TW_HZ_LOG(NODEID,FLOWID)</sql>
+		</upbase>
+	</others>
+</tableinfo>

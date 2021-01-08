@@ -1,0 +1,53 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+    <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:Locale="zh-CN">
+            <xs:complexType>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:element name="TO_HORIZON_DEPT">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="ID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="DEPT_NAME" type="xs:string" minOccurs="0"/>
+                                <xs:element name="DEPT_LEVEL" type="xs:decimal" minOccurs="0"/>
+                                <xs:element name="DEPT_CODE" type="xs:string" minOccurs="0"/>
+                                <xs:element name="PARENT_ID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="ORDER_NO" type="xs:decimal" minOccurs="0"/>
+                                <xs:element name="CREATEDATE" type="xs:string" minOccurs="0"/>
+                                <xs:element name="LEADER" type="xs:string" minOccurs="0"/>
+                                <xs:element name="DEPT_REMARK" type="xs:string" minOccurs="0"/>
+                                <xs:element name="COMMENTS" type="xs:string" minOccurs="0"/>
+                                <xs:element name="DN" type="xs:string" minOccurs="0"/>
+                                <xs:element name="IS_INDEPENDENT" type="xs:decimal" minOccurs="0"/>
+                                <xs:element name="ADMIN_ID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="DESIGNER_ID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="SEC_ID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="SHORT_NAME" type="xs:string" minOccurs="0"/>
+                                <xs:element name="DEPT_GRADE" type="xs:string" minOccurs="0"/>
+                                <xs:element name="LDAP_UNID" type="xs:string" minOccurs="0"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:choice>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+    <TO_HORIZON_DEPT>
+        <ID>root_node_id</ID>
+        <DEPT_NAME>部门导航</DEPT_NAME>
+        <DEPT_CODE>100000</DEPT_CODE>
+        <CREATEDATE>2008-12-09 09:09:54</CREATEDATE>
+        <ORDER_NO>0</ORDER_NO>
+    </TO_HORIZON_DEPT>
+    <TO_HORIZON_DEPT>
+        <ID>HZ28e7f51e816d28011e816da7f1001f</ID>
+        <DEPT_NAME>慧正通软</DEPT_NAME>
+        <DEPT_LEVEL>0</DEPT_LEVEL>
+        <DEPT_CODE>01</DEPT_CODE>
+        <PARENT_ID>root_node_id</PARENT_ID>
+        <ORDER_NO>17</ORDER_NO>
+        <CREATEDATE>2008-12-29 14:28:13</CREATEDATE>
+        <IS_INDEPENDENT>1</IS_INDEPENDENT>
+    </TO_HORIZON_DEPT>
+</NewDataSet>

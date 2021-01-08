@@ -1,0 +1,49 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="TO_HORIZON_ROLE">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:string" minOccurs="0" />
+                <xs:element name="ROLE_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="ROLE_CODE" type="xs:string" minOccurs="0" />
+                <xs:element name="ROLE_TYPE" type="xs:string" minOccurs="0" />
+                <xs:element name="ORDER_NO" type="xs:decimal" minOccurs="0" />
+                <xs:element name="COMMENTS" type="xs:string" minOccurs="0" />
+                <xs:element name="SIMPLE_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="CREATE_TIME" type="xs:string" minOccurs="0" />
+                <xs:element name="IS_PRIVATE" type="xs:decimal" minOccurs="0" />
+                <xs:element name="PARENT_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="ROLE_CLASS" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <TO_HORIZON_ROLE>
+    <ID>SYSTEM_ADMINISTRATOR</ID>
+    <ROLE_NAME>系统管理员角色</ROLE_NAME>
+    <ROLE_CODE>SYSTEM_ADMINISTRATOR</ROLE_CODE>
+    <ROLE_TYPE>sys</ROLE_TYPE>
+    <ORDER_NO>0</ORDER_NO>
+    <COMMENTS>系统管理员角色：请勿随意删除</COMMENTS>
+    <CREATE_TIME>2011-06-16 13:00:00</CREATE_TIME>
+    <IS_PRIVATE>0</IS_PRIVATE>
+    <ROLE_CLASS>system_manager</ROLE_CLASS>
+  </TO_HORIZON_ROLE>
+  <TO_HORIZON_ROLE>
+    <ID>users</ID>
+    <ROLE_NAME>普通用户</ROLE_NAME>
+    <ROLE_CODE>users</ROLE_CODE>
+    <ROLE_TYPE>app</ROLE_TYPE>
+    <ORDER_NO>0</ORDER_NO>
+    <CREATE_TIME>2014-08-19 14:07:15</CREATE_TIME>
+    <IS_PRIVATE>0</IS_PRIVATE>
+    <ROLE_CLASS>public_user</ROLE_CLASS>
+  </TO_HORIZON_ROLE>
+</NewDataSet>

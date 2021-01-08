@@ -1,0 +1,152 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+    <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+            <xs:complexType>
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                    <xs:element name="TK_HORIZON_JOB">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="ID" type="xs:string" minOccurs="0" />
+                                <xs:element name="NAME" type="xs:string" minOccurs="0" />
+                                <xs:element name="SCHED_NAME" type="xs:string" minOccurs="0" />
+                                <xs:element name="JOB_NAME" type="xs:string" minOccurs="0" />
+                                <xs:element name="JOB_GROUP" type="xs:string" minOccurs="0" />
+                                <xs:element name="JOB_CLASS" type="xs:string" minOccurs="0" />
+                                <xs:element name="DBIDENTIFIER" type="xs:string" minOccurs="0" />
+                                <xs:element name="JOBRUNRECORDFLAG" type="xs:string" minOccurs="0" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="TK_HORIZON_TRIGGER">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="ID" type="xs:string" minOccurs="0" />
+                                <xs:element name="NAME" type="xs:string" minOccurs="0" />
+                                <xs:element name="TRIGGER_NAME" type="xs:string" minOccurs="0" />
+                                <xs:element name="TRIGGER_GROUP" type="xs:string" minOccurs="0" />
+                                <xs:element name="TRIGGER_TYPE" type="xs:string" minOccurs="0" />
+                                <xs:element name="START_TIME" type="xs:string" minOccurs="0" />
+                                <xs:element name="END_TIME" type="xs:string" minOccurs="0" />
+                                <xs:element name="REPEAT_INTERVAL" type="xs:string" minOccurs="0" />
+                                <xs:element name="INTERVAL_TYPE" type="xs:string" minOccurs="0" />
+                                <xs:element name="REPEAT_COUNT" type="xs:string" minOccurs="0" />
+                                <xs:element name="CRON_EXPRESS" type="xs:string" minOccurs="0" />
+                                <xs:element name="DBIDENTIFIER" type="xs:string" minOccurs="0" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="TK_QRTZ_JOB_DETAILS">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="SCHED_NAME" type="xs:string" minOccurs="0" />
+                                <xs:element name="JOB_NAME" type="xs:string" minOccurs="0" />
+                                <xs:element name="JOB_GROUP" type="xs:string" minOccurs="0" />
+                                <xs:element name="JOB_CLASS_NAME" type="xs:string" minOccurs="0" />
+                                <xs:element name="IS_DURABLE" type="xs:string" minOccurs="0" />
+                                <xs:element name="IS_NONCONCURRENT" type="xs:string" minOccurs="0" />
+                                <xs:element name="IS_UPDATE_DATA" type="xs:string" minOccurs="0" />
+                                <xs:element name="REQUESTS_RECOVERY" type="xs:string" minOccurs="0" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="TK_QRTZ_TRIGGERS">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="SCHED_NAME" type="xs:string" minOccurs="0" />
+                                <xs:element name="TRIGGER_NAME" type="xs:string" minOccurs="0" />
+                                <xs:element name="TRIGGER_GROUP" type="xs:string" minOccurs="0" />
+                                <xs:element name="JOB_NAME" type="xs:string" minOccurs="0" />
+                                <xs:element name="JOB_GROUP" type="xs:string" minOccurs="0" />
+                                <xs:element name="NEXT_FIRE_TIME" type="xs:decimal" minOccurs="0" />
+                                <xs:element name="PREV_FIRE_TIME" type="xs:decimal" minOccurs="0" />
+                                <xs:element name="PRIORITY" type="xs:decimal" minOccurs="0" />
+                                <xs:element name="TRIGGER_STATE" type="xs:string" minOccurs="0" />
+                                <xs:element name="TRIGGER_TYPE" type="xs:string" minOccurs="0" />
+                                <xs:element name="START_TIME" type="xs:decimal" minOccurs="0" />
+                                <xs:element name="END_TIME" type="xs:decimal" minOccurs="0" />
+                                <xs:element name="MISFIRE_INSTR" type="xs:decimal" minOccurs="0" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="TK_QRTZ_CRON_TRIGGERS">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="SCHED_NAME" type="xs:string" minOccurs="0" />
+                                <xs:element name="TRIGGER_NAME" type="xs:string" minOccurs="0" />
+                                <xs:element name="TRIGGER_GROUP" type="xs:string" minOccurs="0" />
+                                <xs:element name="CRON_EXPRESSION" type="xs:string" minOccurs="0" />
+                                <xs:element name="TIME_ZONE_ID" type="xs:string" minOccurs="0" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="TKR_HORIZON_TRIGGER_JOB">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="ID" type="xs:string" minOccurs="0" />
+                                <xs:element name="TRIGGER_ID" type="xs:string" minOccurs="0" />
+                                <xs:element name="JOB_ID" type="xs:string" minOccurs="0" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:choice>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+    <TK_HORIZON_JOB>
+        <ID>HZ2882c34e487998014e487999c10005</ID>
+        <NAME>日志归档</NAME>
+        <SCHED_NAME>HorizonTaskScheduler</SCHED_NAME>
+        <JOB_NAME>LOGAUTORUNTASK</JOB_NAME>
+        <JOB_GROUP>SYSTEMTASK</JOB_GROUP>
+        <JOB_CLASS>com.horizon.platform.log.service.executer.AutoArchivingExecuterTask</JOB_CLASS>
+        <DBIDENTIFIER>system</DBIDENTIFIER>
+        <JOBRUNRECORDFLAG>0</JOBRUNRECORDFLAG>
+    </TK_HORIZON_JOB>
+    <TK_HORIZON_TRIGGER>
+        <ID>HZ2880f75e1985a0015e1985a11b0000</ID>
+        <NAME>日志归档触发器</NAME>
+        <TRIGGER_NAME>SYSLOGACRINGTRIGGER</TRIGGER_NAME>
+        <TRIGGER_GROUP>SYSTEMTRIGGER</TRIGGER_GROUP>
+        <TRIGGER_TYPE>1</TRIGGER_TYPE>
+        <CRON_EXPRESS>0 0 2 1/1 * ?</CRON_EXPRESS>
+        <DBIDENTIFIER>system</DBIDENTIFIER>
+    </TK_HORIZON_TRIGGER>
+    <TK_QRTZ_JOB_DETAILS>
+        <SCHED_NAME>HorizonTaskScheduler</SCHED_NAME>
+        <JOB_NAME>LOGAUTORUNTASK</JOB_NAME>
+        <JOB_GROUP>SYSTEMTASK</JOB_GROUP>
+        <JOB_CLASS_NAME>com.horizon.platform.log.service.executer.AutoArchivingExecuterTask</JOB_CLASS_NAME>
+        <IS_DURABLE>0</IS_DURABLE>
+        <IS_NONCONCURRENT>0</IS_NONCONCURRENT>
+        <IS_UPDATE_DATA>0</IS_UPDATE_DATA>
+        <REQUESTS_RECOVERY>0</REQUESTS_RECOVERY>
+    </TK_QRTZ_JOB_DETAILS>
+    <TK_QRTZ_TRIGGERS>
+        <SCHED_NAME>HorizonTaskScheduler</SCHED_NAME>
+        <TRIGGER_NAME>SYSLOGACRINGTRIGGER_LOGAUTORUNTASK_SYSTEMTASK</TRIGGER_NAME>
+        <TRIGGER_GROUP>SYSTEMTRIGGER</TRIGGER_GROUP>
+        <JOB_NAME>LOGAUTORUNTASK</JOB_NAME>
+        <JOB_GROUP>SYSTEMTASK</JOB_GROUP>
+        <NEXT_FIRE_TIME>1519840800000</NEXT_FIRE_TIME>
+        <PREV_FIRE_TIME>-1</PREV_FIRE_TIME>
+        <PRIORITY>5</PRIORITY>
+        <TRIGGER_STATE>WAITING</TRIGGER_STATE>
+        <TRIGGER_TYPE>CRON</TRIGGER_TYPE>
+        <START_TIME>1519786422000</START_TIME>
+        <END_TIME>0</END_TIME>
+        <MISFIRE_INSTR>0</MISFIRE_INSTR>
+    </TK_QRTZ_TRIGGERS>
+    <TK_QRTZ_CRON_TRIGGERS>
+        <SCHED_NAME>HorizonTaskScheduler</SCHED_NAME>
+        <TRIGGER_NAME>SYSLOGACRINGTRIGGER_LOGAUTORUNTASK_SYSTEMTASK</TRIGGER_NAME>
+        <TRIGGER_GROUP>SYSTEMTRIGGER</TRIGGER_GROUP>
+        <CRON_EXPRESSION>0 0 2 1/1 * ?</CRON_EXPRESSION>
+        <TIME_ZONE_ID>Asia/Shanghai</TIME_ZONE_ID>
+    </TK_QRTZ_CRON_TRIGGERS>
+    <TKR_HORIZON_TRIGGER_JOB>
+        <ID>HZ2880f75e1988a3015e1988a3220000</ID>
+        <TRIGGER_ID>HZ2880f75e1985a0015e1985a11b0000</TRIGGER_ID>
+        <JOB_ID>HZ2882c34e487998014e487999c10005</JOB_ID>
+    </TKR_HORIZON_TRIGGER_JOB>
+</NewDataSet>

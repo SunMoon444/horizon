@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 系统日志相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TG_HORIZON_DEF</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TG_HORIZON_DEF</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="LOG_TYPE" typename="varchar"   length="40"></fieldinfo>
+			<fieldinfo fieldname="MODULE_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="LOG_NAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="OPER_URL" typename="lvarchar"   length="500"></fieldinfo>
+			<fieldinfo fieldname="ACTIVE" typename="varchar"   length="40"></fieldinfo>
+			<fieldinfo fieldname="SAVE_CYCLE" typename="varchar"   length="40"></fieldinfo>
+			<fieldinfo fieldname="CYCLE_VALUE" typename="varchar"   length="10"></fieldinfo>
+			<fieldinfo fieldname="SAVE_TYPE" typename="varchar"   length="40"></fieldinfo>
+			<fieldinfo fieldname="COMMENTS" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="RECORD_ORIDATA" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="EXEC_ORDER" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="OPERATE_TYPE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="LOG_KEY" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="LOG_CONDITION" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="LOG_CONTEXT" typename="varchar"   length="255"></fieldinfo>
+			<fieldinfo fieldname="SERVICE_NAME" typename="varchar"   length="50"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TG_HORIZON_LOGIN_ARCHIVE</name>
+	    <!--&lt;!&ndash; 主键名称 &ndash;&gt;-->
+	    <!--<pkname>PK_TG_HORIZON_LOGIN_ARCHIVE</pkname>-->
+		<!--&lt;!&ndash; 主键，格式如(ID,NAME) &ndash;&gt;-->
+		<!--<pk>(ID)</pk>   -->
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="LOGIN_NAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="REAL_NAME" typename="varchar" length="100"></fieldinfo>
+			<fieldinfo fieldname="LOGIN_TYPE" typename="varchar" length="1"></fieldinfo>
+			<fieldinfo fieldname="LOGIN_TIME" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="LOGIN_RESULT" typename="varchar" length="1"></fieldinfo>
+			<fieldinfo fieldname="IP" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="LOGDEF_ID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="DEPT_NAME" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="BACK_USERID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="BACK_USERNAME" typename="varchar" length="100"></fieldinfo>
+			<fieldinfo fieldname="BACK_TIME" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="LOG_CONTEXT" typename="varchar" length="255"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TG_HORIZON_LOGIN</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TG_HORIZON_LOGIN</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="LOGIN_NAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="REAL_NAME" typename="varchar" length="100"></fieldinfo>
+			<fieldinfo fieldname="LOGIN_TYPE" typename="varchar" length="1"></fieldinfo>
+			<fieldinfo fieldname="LOGIN_TIME" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="LOGIN_RESULT" typename="varchar" length="1"></fieldinfo>
+			<fieldinfo fieldname="IP" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="LOGDEF_ID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="DEPT_NAME" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="LOG_CONTEXT" typename="varchar" length="255"></fieldinfo>
+			<fieldinfo fieldname="INVALID_TIME" typename="varchar" length="20"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TG_HORIZON_SQL_ARCHIVE</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TG_HORIZON_SQL_ARCHIVE</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="LOG_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="OPER_TYPE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="TABLE_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SQLLOG_SQL" typename="lvarchar"   length="1000"></fieldinfo>
+			<fieldinfo fieldname="SQL_PARAMETER" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="CREATE_TIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="ORDER_NO" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="BACK_USERID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="BACK_USERNAME" typename="varchar" length="100"></fieldinfo>
+			<fieldinfo fieldname="BACK_TIME" typename="varchar" length="20"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TG_HORIZON_SQL</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TG_HORIZON_SQL</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="LOG_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="OPER_TYPE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="TABLE_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SQLLOG_SQL" typename="lvarchar"   length="1000"></fieldinfo>
+			<fieldinfo fieldname="SQL_PARAMETER" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="CREATE_TIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="ORDER_NO" typename="varchar"   length="100"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TG_HORIZON_TOTAL</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TG_HORIZON_TOTAL</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="LOGDEF_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="USER_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="USER_NAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="DEPT_NAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="IP" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="OPER_TIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="OPER_RESULT" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="HTTP_REQUEST" typename="lvarchar"   length="2000"></fieldinfo>
+			<fieldinfo fieldname="HTTP_BYTES" typename="varchar"   length="30"></fieldinfo>
+			<fieldinfo fieldname="HTTP_REFERRER" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="USER_AGENT" typename="lvarchar"   length="500"></fieldinfo>
+			<fieldinfo fieldname="MODULE_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="MODULE_NAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="LOG_NAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="LOG_NAME_TYPE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="OPERATE_TYPE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="LOG_CONTEXT" typename="varchar"   length="255"></fieldinfo>
+			<fieldinfo fieldname="INVALID_TIME" typename="varchar"   length="20"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TG_HORIZON_TOTAL_ARCHIVE</name>
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="LOGDEF_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="USER_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="USER_NAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="DEPT_NAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="IP" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="OPER_TIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="OPER_RESULT" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="HTTP_REQUEST" typename="lvarchar"   length="2000"></fieldinfo>
+			<fieldinfo fieldname="HTTP_BYTES" typename="varchar"   length="30"></fieldinfo>
+			<fieldinfo fieldname="HTTP_REFERRER" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="USER_AGENT" typename="lvarchar"   length="500"></fieldinfo>
+			<fieldinfo fieldname="MODULE_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="MODULE_NAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="LOG_NAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="LOG_NAME_TYPE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="OPERATE_TYPE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="BACK_USERID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="BACK_USERNAME" typename="varchar" length="100"></fieldinfo>
+			<fieldinfo fieldname="BACK_TIME" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="LOG_CONTEXT" typename="varchar" length="255"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 登陆锁定 -->
+	    <name>TG_HORIZON_LOGINLOCK</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TG_HORIZON_LOGINLOCK</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"  length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="LOGIN_NAME" typename="varchar"  length="50"></fieldinfo>
+			<fieldinfo fieldname="FAILURE_TIME" typename="varchar"  length="20"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<others>
+		<oracle>
+			<sql>CREATE INDEX IDX_TG_L_INVALID_TIME ON TG_HORIZON_LOGIN(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_T_INVALID_TIME ON TG_HORIZON_TOTAL(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_L_LOGIN_NAME ON TG_HORIZON_LOGINLOCK(LOGIN_NAME)</sql>
+		</oracle>
+		<mysql>
+			<sql>CREATE INDEX IDX_TG_L_INVALID_TIME ON TG_HORIZON_LOGIN(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_T_INVALID_TIME ON TG_HORIZON_TOTAL(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_L_LOGIN_NAME ON TG_HORIZON_LOGINLOCK(LOGIN_NAME)</sql>
+		</mysql>
+		<mysql8>
+			<sql>CREATE INDEX IDX_TG_L_INVALID_TIME ON TG_HORIZON_LOGIN(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_T_INVALID_TIME ON TG_HORIZON_TOTAL(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_L_LOGIN_NAME ON TG_HORIZON_LOGINLOCK(LOGIN_NAME)</sql>
+		</mysql8>
+		<db2>
+			<sql>CREATE INDEX IDX_TG_L_INVALID_TIME ON TG_HORIZON_LOGIN(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_T_INVALID_TIME ON TG_HORIZON_TOTAL(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_L_LOGIN_NAME ON TG_HORIZON_LOGINLOCK(LOGIN_NAME)</sql>
+		</db2>
+		<sqlserver>
+			<sql>CREATE INDEX IDX_TG_L_INVALID_TIME ON TG_HORIZON_LOGIN(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_T_INVALID_TIME ON TG_HORIZON_TOTAL(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_L_LOGIN_NAME ON TG_HORIZON_LOGINLOCK(LOGIN_NAME)</sql>
+		</sqlserver>
+		<dm>
+			<sql>CREATE INDEX IDX_TG_L_INVALID_TIME ON TG_HORIZON_LOGIN(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_T_INVALID_TIME ON TG_HORIZON_TOTAL(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_L_LOGIN_NAME ON TG_HORIZON_LOGINLOCK(LOGIN_NAME)</sql>
+		</dm>
+		<postgresql>
+			<sql>CREATE INDEX IDX_TG_L_INVALID_TIME ON TG_HORIZON_LOGIN(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_T_INVALID_TIME ON TG_HORIZON_TOTAL(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_L_LOGIN_NAME ON TG_HORIZON_LOGINLOCK(LOGIN_NAME)</sql>
+		</postgresql>
+		<highgo>
+			<sql>CREATE INDEX IDX_TG_L_INVALID_TIME ON TG_HORIZON_LOGIN(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_T_INVALID_TIME ON TG_HORIZON_TOTAL(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_L_LOGIN_NAME ON TG_HORIZON_LOGINLOCK(LOGIN_NAME)</sql>
+		</highgo>
+		<gbase>
+			<sql>CREATE INDEX IDX_TG_L_INVALID_TIME ON TG_HORIZON_LOGIN(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_T_INVALID_TIME ON TG_HORIZON_TOTAL(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_L_LOGIN_NAME ON TG_HORIZON_LOGINLOCK(LOGIN_NAME)</sql>
+		</gbase>
+		<gbase8s>
+			<sql>CREATE INDEX IDX_TG_L_INVALID_TIME ON TG_HORIZON_LOGIN(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_T_INVALID_TIME ON TG_HORIZON_TOTAL(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_L_LOGIN_NAME ON TG_HORIZON_LOGINLOCK(LOGIN_NAME)</sql>
+		</gbase8s>
+		<kingbase>
+			<sql>CREATE INDEX IDX_TG_L_INVALID_TIME ON TG_HORIZON_LOGIN(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_T_INVALID_TIME ON TG_HORIZON_TOTAL(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_L_LOGIN_NAME ON TG_HORIZON_LOGINLOCK(LOGIN_NAME)</sql>
+		</kingbase>
+		<kingbase8>
+			<sql>CREATE INDEX IDX_TG_L_INVALID_TIME ON TG_HORIZON_LOGIN(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_T_INVALID_TIME ON TG_HORIZON_TOTAL(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_L_LOGIN_NAME ON TG_HORIZON_LOGINLOCK(LOGIN_NAME)</sql>
+		</kingbase8>
+		<oscar>
+			<sql>CREATE INDEX IDX_TG_L_INVALID_TIME ON TG_HORIZON_LOGIN(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_T_INVALID_TIME ON TG_HORIZON_TOTAL(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_L_LOGIN_NAME ON TG_HORIZON_LOGINLOCK(LOGIN_NAME)</sql>
+		</oscar>
+		<upbase>
+			<sql>CREATE INDEX IDX_TG_L_INVALID_TIME ON TG_HORIZON_LOGIN(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_T_INVALID_TIME ON TG_HORIZON_TOTAL(INVALID_TIME)</sql>
+			<sql>CREATE INDEX IDX_TG_L_LOGIN_NAME ON TG_HORIZON_LOGINLOCK(LOGIN_NAME)</sql>
+		</upbase>
+	</others>
+</tableinfo>

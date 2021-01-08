@@ -1,0 +1,753 @@
+<tableinfo>
+    <others>
+        <db2>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_module_design as
+                (
+                select m.id as appid,m.id as typeid, 'TS_HORIZON_MODULE' as app_type
+                from  ts_horizon_module m
+                where 1=1
+
+                union all
+                select md.appid,md.typeid, md.app_type
+                from tsr_horizon_module_design md
+
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM'
+                from tsr_horizon_module_design md,tf_horizon_form f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM_GRAPHICS'
+                from tsr_horizon_module_design md, TF_HORIZON_FORM_GRAPHICS f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_form f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,TF_HORIZON_FORM_GRAPHICS f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fv.id ,'TF_HORIZON_VIEW_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_view v, tf_horizon_view_button fv
+                where fv.viewid =v.id
+                and v.id=md.typeid
+                and md.app_type = 'TF_HORIZON_VIEW'
+
+                union all
+                select md.id as appid,mu.id ,'TS_HORIZON_MENU'  from ts_horizon_module md,ts_horizon_menu mu
+                where mu.appid =md.id
+                )
+                ]]>
+            </sql>
+        </db2>
+        <dm>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_module_design as
+                (
+                select m.id as appid,m.id as typeid, 'TS_HORIZON_MODULE' as app_type
+                from  ts_horizon_module m
+                where 1=1
+
+                union all
+                select md.appid,md.typeid, md.app_type
+                from tsr_horizon_module_design md
+
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM'
+                from tsr_horizon_module_design md,tf_horizon_form f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM_GRAPHICS'
+                from tsr_horizon_module_design md, TF_HORIZON_FORM_GRAPHICS f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_form f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,TF_HORIZON_FORM_GRAPHICS f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fv.id ,'TF_HORIZON_VIEW_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_view v, tf_horizon_view_button fv
+                where fv.viewid =v.id
+                and v.id=md.typeid
+                and md.app_type = 'TF_HORIZON_VIEW'
+
+                union all
+                select md.id as appid,mu.id ,'TS_HORIZON_MENU'  from ts_horizon_module md,ts_horizon_menu mu
+                where mu.appid =md.id
+                )
+                ]]>
+            </sql>
+        </dm>
+        <gbase>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_module_design as
+                select m.id as appid,m.id as typeid, 'TS_HORIZON_MODULE' as app_type
+                from  ts_horizon_module m
+                where 1=1
+
+                union all
+                select md.appid,md.typeid, md.app_type
+                from tsr_horizon_module_design md
+
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM'
+                from tsr_horizon_module_design md,tf_horizon_form f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM_GRAPHICS'
+                from tsr_horizon_module_design md, TF_HORIZON_FORM_GRAPHICS f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_form f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,TF_HORIZON_FORM_GRAPHICS f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fv.id ,'TF_HORIZON_VIEW_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_view v, tf_horizon_view_button fv
+                where fv.viewid =v.id
+                and v.id=md.typeid
+                and md.app_type = 'TF_HORIZON_VIEW'
+
+                union all
+                select md.id as appid,mu.id ,'TS_HORIZON_MENU'  from ts_horizon_module md,ts_horizon_menu mu
+                where mu.appid =md.id
+                
+                ]]>
+            </sql>
+        </gbase>
+        <gbase8s>
+            <sql>
+                <![CDATA[
+                create view vf_horizon_module_design as
+                    select appid,typeid,app_type from (
+                    select md.appid,md.typeid, md.app_type
+                    from tsr_horizon_module_design md
+
+                    union all
+                    select m.id as appid,m.id as typeid, 'TS_HORIZON_MODULE' as app_type
+                    from  ts_horizon_module m
+                    where 1=1
+
+                     union all
+                     select md.appid,f.id, 'TF_HORIZON_FORM'
+                     from tsr_horizon_module_design md,tf_horizon_form f
+                     where f.tableid = md.typeid
+                     and md.app_type = 'TF_HORIZON_TABLE'
+
+                     union all
+                     select md.appid,f.id, 'TF_HORIZON_FORM_GRAPHICS'
+                     from tsr_horizon_module_design md, TF_HORIZON_FORM_GRAPHICS f
+                     where f.tableid = md.typeid
+                     and md.app_type = 'TF_HORIZON_TABLE'
+
+                     union all
+                     select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                     from tsr_horizon_module_design md,tf_horizon_form f, tf_horizon_form_button fb
+                     where fb.formid =f.id
+                     and f.tableid=md.typeid
+                     and md.app_type = 'TF_HORIZON_TABLE'
+
+                     union all
+                     select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                     from tsr_horizon_module_design md,TF_HORIZON_FORM_GRAPHICS f, tf_horizon_form_button fb
+                     where fb.formid =f.id
+                     and f.tableid=md.typeid
+                     and md.app_type = 'TF_HORIZON_TABLE'
+
+                     union all
+                     select md.appid,fv.id ,'TF_HORIZON_VIEW_BUTTON'
+                     from tsr_horizon_module_design md,tf_horizon_view v, tf_horizon_view_button fv
+                     where fv.viewid =v.id
+                     and v.id=md.typeid
+                     and md.app_type = 'TF_HORIZON_VIEW'
+
+                     union all
+                     select md.id as appid,mu.id ,'TS_HORIZON_MENU'  from ts_horizon_module md,ts_horizon_menu mu
+                     where mu.appid =md.id)
+                ]]>
+            </sql>
+        </gbase8s>
+        <kingbase>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_module_design as
+
+                select m.id as appid,m.id as typeid, 'TS_HORIZON_MODULE' as app_type
+                from  ts_horizon_module m
+                where 1=1
+
+                union all
+                select md.appid,md.typeid, md.app_type
+                from tsr_horizon_module_design md
+
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM'
+                from tsr_horizon_module_design md,tf_horizon_form f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM_GRAPHICS'
+                from tsr_horizon_module_design md, TF_HORIZON_FORM_GRAPHICS f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_form f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,TF_HORIZON_FORM_GRAPHICS f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fv.id ,'TF_HORIZON_VIEW_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_view v, tf_horizon_view_button fv
+                where fv.viewid =v.id
+                and v.id=md.typeid
+                and md.app_type = 'TF_HORIZON_VIEW'
+
+                union all
+                select md.id as appid,mu.id ,'TS_HORIZON_MENU'  from ts_horizon_module md,ts_horizon_menu mu
+                where mu.appid =md.id
+                
+                ]]>
+            </sql>
+        </kingbase>
+        <kingbase8>
+            <sql>
+                <![CDATA[
+                create or replace view vf_horizon_module_design as
+
+                select m.id as appid,m.id as typeid, 'TS_HORIZON_MODULE' as app_type
+                from  ts_horizon_module m
+                where 1=1
+
+                union all
+                select md.appid,md.typeid, md.app_type
+                from tsr_horizon_module_design md
+
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM'
+                from tsr_horizon_module_design md,tf_horizon_form f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM_GRAPHICS'
+                from tsr_horizon_module_design md, TF_HORIZON_FORM_GRAPHICS f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_form f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,TF_HORIZON_FORM_GRAPHICS f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fv.id ,'TF_HORIZON_VIEW_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_view v, tf_horizon_view_button fv
+                where fv.viewid =v.id
+                and v.id=md.typeid
+                and md.app_type = 'TF_HORIZON_VIEW'
+
+                union all
+                select md.id as appid,mu.id ,'TS_HORIZON_MENU'  from ts_horizon_module md,ts_horizon_menu mu
+                where mu.appid =md.id
+
+                ]]>
+            </sql>
+        </kingbase8>
+        <mysql>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_module_design as
+
+                select m.id as appid,m.id as typeid, 'TS_HORIZON_MODULE' as app_type
+                from  ts_horizon_module m
+                where 1=1
+
+                union all
+                select md.appid,md.typeid, md.app_type
+                from tsr_horizon_module_design md
+
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM'
+                from tsr_horizon_module_design md,tf_horizon_form f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM_GRAPHICS'
+                from tsr_horizon_module_design md, TF_HORIZON_FORM_GRAPHICS f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_form f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,TF_HORIZON_FORM_GRAPHICS f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fv.id ,'TF_HORIZON_VIEW_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_view v, tf_horizon_view_button fv
+                where fv.viewid =v.id
+                and v.id=md.typeid
+                and md.app_type = 'TF_HORIZON_VIEW'
+
+                union all
+                select md.id as appid,mu.id ,'TS_HORIZON_MENU'  from ts_horizon_module md,ts_horizon_menu mu
+                where mu.appid =md.id
+                
+                ]]>
+            </sql>
+        </mysql>
+        <mysql8>
+            <sql>
+                <![CDATA[
+                create or replace view vf_horizon_module_design as
+
+                select m.id as appid,m.id as typeid, 'TS_HORIZON_MODULE' as app_type
+                from  ts_horizon_module m
+                where 1=1
+
+                union all
+                select md.appid,md.typeid, md.app_type
+                from tsr_horizon_module_design md
+
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM'
+                from tsr_horizon_module_design md,tf_horizon_form f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM_GRAPHICS'
+                from tsr_horizon_module_design md, TF_HORIZON_FORM_GRAPHICS f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_form f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,TF_HORIZON_FORM_GRAPHICS f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fv.id ,'TF_HORIZON_VIEW_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_view v, tf_horizon_view_button fv
+                where fv.viewid =v.id
+                and v.id=md.typeid
+                and md.app_type = 'TF_HORIZON_VIEW'
+
+                union all
+                select md.id as appid,mu.id ,'TS_HORIZON_MENU'  from ts_horizon_module md,ts_horizon_menu mu
+                where mu.appid =md.id
+
+                ]]>
+            </sql>
+        </mysql8>
+        <oracle>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_module_design as
+                (
+                select m.id as appid,m.id as typeid, 'TS_HORIZON_MODULE' as app_type
+                from  ts_horizon_module m
+                where 1=1
+
+                union all
+                select md.appid,md.typeid, md.app_type
+                from tsr_horizon_module_design md
+
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM'
+                from tsr_horizon_module_design md,tf_horizon_form f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM_GRAPHICS'
+                from tsr_horizon_module_design md, TF_HORIZON_FORM_GRAPHICS f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_form f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,TF_HORIZON_FORM_GRAPHICS f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fv.id ,'TF_HORIZON_VIEW_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_view v, tf_horizon_view_button fv
+                where fv.viewid =v.id
+                and v.id=md.typeid
+                and md.app_type = 'TF_HORIZON_VIEW'
+
+                union all
+                select md.id as appid,mu.id ,'TS_HORIZON_MENU'  from ts_horizon_module md,ts_horizon_menu mu
+                where mu.appid =md.id
+                )
+                ]]>
+            </sql>
+        </oracle>
+        <postgresql>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_module_design as
+
+                select m.id as appid,m.id as typeid, 'TS_HORIZON_MODULE' as app_type
+                from  ts_horizon_module m
+                where 1=1
+
+                union all
+                select md.appid,md.typeid, md.app_type
+                from tsr_horizon_module_design md
+
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM'
+                from tsr_horizon_module_design md,tf_horizon_form f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM_GRAPHICS'
+                from tsr_horizon_module_design md, TF_HORIZON_FORM_GRAPHICS f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_form f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,TF_HORIZON_FORM_GRAPHICS f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fv.id ,'TF_HORIZON_VIEW_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_view v, tf_horizon_view_button fv
+                where fv.viewid =v.id
+                and v.id=md.typeid
+                and md.app_type = 'TF_HORIZON_VIEW'
+
+                union all
+                select md.id as appid,mu.id ,'TS_HORIZON_MENU'  from ts_horizon_module md,ts_horizon_menu mu
+                where mu.appid =md.id
+                ]]>
+            </sql>
+        </postgresql>
+        <highgo>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_module_design as
+
+                select m.id as appid,m.id as typeid, 'TS_HORIZON_MODULE' as app_type
+                from  ts_horizon_module m
+                where 1=1
+
+                union all
+                select md.appid,md.typeid, md.app_type
+                from tsr_horizon_module_design md
+
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM'
+                from tsr_horizon_module_design md,tf_horizon_form f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM_GRAPHICS'
+                from tsr_horizon_module_design md, TF_HORIZON_FORM_GRAPHICS f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_form f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,TF_HORIZON_FORM_GRAPHICS f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fv.id ,'TF_HORIZON_VIEW_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_view v, tf_horizon_view_button fv
+                where fv.viewid =v.id
+                and v.id=md.typeid
+                and md.app_type = 'TF_HORIZON_VIEW'
+
+                union all
+                select md.id as appid,mu.id ,'TS_HORIZON_MENU'  from ts_horizon_module md,ts_horizon_menu mu
+                where mu.appid =md.id
+                ]]>
+            </sql>
+        </highgo>
+        <sqlserver>
+            <sql>
+            <![CDATA[
+                create view vf_horizon_module_design as
+                (
+                select m.id as appid,m.id as typeid, 'TS_HORIZON_MODULE' as app_type
+                from  ts_horizon_module m
+                where 1=1
+
+                union all
+                select md.appid,md.typeid, md.app_type
+                from tsr_horizon_module_design md
+
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM'
+                from tsr_horizon_module_design md,tf_horizon_form f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM_GRAPHICS'
+                from tsr_horizon_module_design md, TF_HORIZON_FORM_GRAPHICS f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_form f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,TF_HORIZON_FORM_GRAPHICS f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fv.id ,'TF_HORIZON_VIEW_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_view v, tf_horizon_view_button fv
+                where fv.viewid =v.id
+                and v.id=md.typeid
+                and md.app_type = 'TF_HORIZON_VIEW'
+
+                union all
+                select md.id as appid,mu.id ,'TS_HORIZON_MENU'  from ts_horizon_module md,ts_horizon_menu mu
+                where mu.appid =md.id
+                )
+                ]]>
+            </sql>
+        </sqlserver>
+        <oscar>
+            <sql>
+            <![CDATA[
+             create or replace view vf_horizon_module_design as
+				(
+				select m.id as appid,m.id as typeid, 'TS_HORIZON_MODULE' as app_type
+				from  ts_horizon_module m
+				where 1=1
+				union all
+				
+				select md.appid,md.typeid, md.app_type
+				from tsr_horizon_module_design md
+				union all
+				
+				select md.appid,f.id, 'TF_HORIZON_FORM'
+				from tsr_horizon_module_design md,tf_horizon_form f
+				where f.tableid = md.typeid
+				and md.app_type = 'TF_HORIZON_TABLE'
+				union all
+				
+				select md.appid,f.id, 'TF_HORIZON_FORM_GRAPHICS'
+				from tsr_horizon_module_design md, TF_HORIZON_FORM_GRAPHICS f
+				where f.tableid = md.typeid
+				and md.app_type = 'TF_HORIZON_TABLE'
+				union all
+				
+				select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+				from tsr_horizon_module_design md,tf_horizon_form f, tf_horizon_form_button fb
+				where fb.formid =f.id
+				and f.tableid=md.typeid
+				and md.app_type = 'TF_HORIZON_TABLE'
+				union all
+				
+				select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+				from tsr_horizon_module_design md,TF_HORIZON_FORM_GRAPHICS f, tf_horizon_form_button fb
+				where fb.formid =f.id
+				and f.tableid=md.typeid
+			    and md.app_type = 'TF_HORIZON_TABLE'
+			    union all
+			    
+				select md.appid,fv.id ,'TF_HORIZON_VIEW_BUTTON'
+				from tsr_horizon_module_design md,tf_horizon_view v, tf_horizon_view_button fv
+				where fv.viewid =v.id
+				and v.id=md.typeid
+				and md.app_type = 'TF_HORIZON_VIEW'
+				union all  
+				 
+				select md.id as appid,mu.id ,'TS_HORIZON_MENU'  from ts_horizon_module md,ts_horizon_menu mu 
+				where mu.appid =md.id
+				)
+                ]]>
+            </sql>
+        </oscar>
+        <upbase>
+            <sql>
+                <![CDATA[
+                create or replace view vf_horizon_module_design as
+
+                select m.id as appid,m.id as typeid, 'TS_HORIZON_MODULE' as app_type
+                from  ts_horizon_module m
+                where 1=1
+
+                union all
+                select md.appid,md.typeid, md.app_type
+                from tsr_horizon_module_design md
+
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM'
+                from tsr_horizon_module_design md,tf_horizon_form f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,f.id, 'TF_HORIZON_FORM_GRAPHICS'
+                from tsr_horizon_module_design md, TF_HORIZON_FORM_GRAPHICS f
+                where f.tableid = md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_form f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fb.id, 'TF_HORIZON_FORM_BUTTON'
+                from tsr_horizon_module_design md,TF_HORIZON_FORM_GRAPHICS f, tf_horizon_form_button fb
+                where fb.formid =f.id
+                and f.tableid=md.typeid
+                and md.app_type = 'TF_HORIZON_TABLE'
+                union all
+
+                select md.appid,fv.id ,'TF_HORIZON_VIEW_BUTTON'
+                from tsr_horizon_module_design md,tf_horizon_view v, tf_horizon_view_button fv
+                where fv.viewid =v.id
+                and v.id=md.typeid
+                and md.app_type = 'TF_HORIZON_VIEW'
+
+                union all
+                select md.id as appid,mu.id ,'TS_HORIZON_MENU'  from ts_horizon_module md,ts_horizon_menu mu
+                where mu.appid =md.id
+                ]]>
+            </sql>
+        </upbase>
+    </others>
+</tableinfo>

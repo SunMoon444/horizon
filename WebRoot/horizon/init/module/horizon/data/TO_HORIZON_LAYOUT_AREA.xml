@@ -1,0 +1,60 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="TO_HORIZON_LAYOUT_AREA">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:string" minOccurs="0" />
+                <xs:element name="SEQUENCE" type="xs:string" minOccurs="0" />
+                <xs:element name="XS" type="xs:string" minOccurs="0" />
+                <xs:element name="SM" type="xs:string" minOccurs="0" />
+                <xs:element name="MD" type="xs:string" minOccurs="0" />
+                <xs:element name="LG" type="xs:string" minOccurs="0" />
+                <xs:element name="LAYEROUT_ID" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <TO_HORIZON_LAYOUT_AREA>
+    <ID>HZ2882c0581ed27d01581ee8fe090023</ID>
+    <SEQUENCE>1</SEQUENCE>
+    <XS>12</XS>
+    <SM>12</SM>
+    <MD>12</MD>
+    <LG>6</LG>
+    <LAYEROUT_ID>HZ2882c0581ed27d01581ee8fe090027</LAYEROUT_ID>
+  </TO_HORIZON_LAYOUT_AREA>
+  <TO_HORIZON_LAYOUT_AREA>
+    <ID>HZ2882c0581ed27d01581ee8fe090024</ID>
+    <SEQUENCE>2</SEQUENCE>
+    <XS>12</XS>
+    <SM>12</SM>
+    <MD>12</MD>
+    <LG>6</LG>
+    <LAYEROUT_ID>HZ2882c0581ed27d01581ee8fe090027</LAYEROUT_ID>
+  </TO_HORIZON_LAYOUT_AREA>
+  <TO_HORIZON_LAYOUT_AREA>
+    <ID>HZ2882c0581ed27d01581ee8fe090025</ID>
+    <SEQUENCE>3</SEQUENCE>
+    <XS>12</XS>
+    <SM>12</SM>
+    <MD>12</MD>
+    <LG>6</LG>
+    <LAYEROUT_ID>HZ2882c0581ed27d01581ee8fe090027</LAYEROUT_ID>
+  </TO_HORIZON_LAYOUT_AREA>
+  <TO_HORIZON_LAYOUT_AREA>
+    <ID>HZ2882c0581ed27d01581ee8fe090026</ID>
+    <SEQUENCE>4</SEQUENCE>
+    <XS>12</XS>
+    <SM>12</SM>
+    <MD>12</MD>
+    <LG>6</LG>
+    <LAYEROUT_ID>HZ2882c0581ed27d01581ee8fe090027</LAYEROUT_ID>
+  </TO_HORIZON_LAYOUT_AREA>
+</NewDataSet>

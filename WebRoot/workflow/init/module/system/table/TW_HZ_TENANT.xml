@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_TENANT</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_TENANT</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="TENANTNAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="TENANTCODE" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="JNDI_NAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="DATABASETYPE" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="IDENTIFIER" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="ORGANIZATION" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="ADAPTER_IDENTITY" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="AUTHORITY" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="CALENDAR" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="CONNECTION_TYPE" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="DRIVER_CLASS" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="IS_DEFAULT" typename="varchar"   length="10"></fieldinfo>
+			<fieldinfo fieldname="LOB_BUFFERSIZE" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="LOB_PROCESSORCLASS" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="JDBC_URL" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="USER_NAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="PASSWORD" typename="varchar"   length="100"></fieldinfo>	
+			<fieldinfo fieldname="MAXPOOLSIZE" typename="varchar"   length="100"></fieldinfo>	
+			<fieldinfo fieldname="MINPOOLSIZE" typename="varchar"   length="100"></fieldinfo>	
+			<fieldinfo fieldname="INITIALPOOLSIZE" typename="varchar"   length="100"></fieldinfo>	
+			<fieldinfo fieldname="MAXIDELTIME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="DB_CONNECTION_TYPE" typename="varchar"   length="100"></fieldinfo> <!-- jndi/spring -->						
+		</fieldinfos>		
+	</tablename>
+	<others>
+		<oracle>
+			<sql>CREATE INDEX IDX_TW_T_TENANTCODE ON TW_HZ_TENANT(TENANTCODE)</sql>
+			<sql>CREATE INDEX IDX_TW_T_IDENTIFIER ON TW_HZ_TENANT(IDENTIFIER)</sql>
+			<sql>CREATE INDEX IDX_TW_T_TENANTNAME ON TW_HZ_TENANT(TENANTNAME)</sql>
+		</oracle>
+		<mysql>
+			<sql>CREATE INDEX IDX_TW_T_TENANTCODE ON TW_HZ_TENANT(TENANTCODE)</sql>
+			<sql>CREATE INDEX IDX_TW_T_IDENTIFIER ON TW_HZ_TENANT(IDENTIFIER)</sql>
+			<sql>CREATE INDEX IDX_TW_T_TENANTNAME ON TW_HZ_TENANT(TENANTNAME)</sql>
+		</mysql>
+		<mysql8>
+			<sql>CREATE INDEX IDX_TW_T_TENANTCODE ON TW_HZ_TENANT(TENANTCODE)</sql>
+			<sql>CREATE INDEX IDX_TW_T_IDENTIFIER ON TW_HZ_TENANT(IDENTIFIER)</sql>
+			<sql>CREATE INDEX IDX_TW_T_TENANTNAME ON TW_HZ_TENANT(TENANTNAME)</sql>
+		</mysql8>
+		<db2>
+			<sql>CREATE INDEX IDX_TW_T_TENANTCODE ON TW_HZ_TENANT(TENANTCODE)</sql>
+			<sql>CREATE INDEX IDX_TW_T_IDENTIFIER ON TW_HZ_TENANT(IDENTIFIER)</sql>
+			<sql>CREATE INDEX IDX_TW_T_TENANTNAME ON TW_HZ_TENANT(TENANTNAME)</sql>
+		</db2>
+		<sqlserver>
+			<sql>CREATE INDEX IDX_TW_T_TENANTCODE ON TW_HZ_TENANT(TENANTCODE)</sql>
+			<sql>CREATE INDEX IDX_TW_T_IDENTIFIER ON TW_HZ_TENANT(IDENTIFIER)</sql>
+			<sql>CREATE INDEX IDX_TW_T_TENANTNAME ON TW_HZ_TENANT(TENANTNAME)</sql>
+		</sqlserver>
+		<dm>
+			<sql>CREATE INDEX IDX_TW_T_TENANTCODE ON TW_HZ_TENANT(TENANTCODE)</sql>
+			<sql>CREATE INDEX IDX_TW_T_IDENTIFIER ON TW_HZ_TENANT(IDENTIFIER)</sql>
+			<sql>CREATE INDEX IDX_TW_T_TENANTNAME ON TW_HZ_TENANT(TENANTNAME)</sql>
+		</dm>
+		<postgresql>
+			<sql>CREATE INDEX IDX_TW_T_TENANTCODE ON TW_HZ_TENANT(TENANTCODE)</sql>
+			<sql>CREATE INDEX IDX_TW_T_IDENTIFIER ON TW_HZ_TENANT(IDENTIFIER)</sql>
+			<sql>CREATE INDEX IDX_TW_T_TENANTNAME ON TW_HZ_TENANT(TENANTNAME)</sql>
+		</postgresql>
+		<highgo>
+			<sql>CREATE INDEX IDX_TW_T_TENANTCODE ON TW_HZ_TENANT(TENANTCODE)</sql>
+			<sql>CREATE INDEX IDX_TW_T_IDENTIFIER ON TW_HZ_TENANT(IDENTIFIER)</sql>
+			<sql>CREATE INDEX IDX_TW_T_TENANTNAME ON TW_HZ_TENANT(TENANTNAME)</sql>
+		</highgo>
+		<gbase>
+			<sql>CREATE INDEX IDX_TW_T_TENANTCODE ON TW_HZ_TENANT(TENANTCODE)</sql>
+			<sql>CREATE INDEX IDX_TW_T_IDENTIFIER ON TW_HZ_TENANT(IDENTIFIER)</sql>
+			<sql>CREATE INDEX IDX_TW_T_TENANTNAME ON TW_HZ_TENANT(TENANTNAME)</sql>
+		</gbase>
+		<gbase8s>
+			<sql>CREATE INDEX IDX_TW_T_TENANTCODE ON TW_HZ_TENANT(TENANTCODE)</sql>
+			<sql>CREATE INDEX IDX_TW_T_IDENTIFIER ON TW_HZ_TENANT(IDENTIFIER)</sql>
+			<sql>CREATE INDEX IDX_TW_T_TENANTNAME ON TW_HZ_TENANT(TENANTNAME)</sql>
+		</gbase8s>
+		<kingbase>
+			<sql>CREATE INDEX IDX_TW_T_TENANTCODE ON TW_HZ_TENANT(TENANTCODE)</sql>
+			<sql>CREATE INDEX IDX_TW_T_IDENTIFIER ON TW_HZ_TENANT(IDENTIFIER)</sql>
+			<sql>CREATE INDEX IDX_TW_T_TENANTNAME ON TW_HZ_TENANT(TENANTNAME)</sql>
+		</kingbase>
+		<kingbase8>
+			<sql>CREATE INDEX IDX_TW_T_TENANTCODE ON TW_HZ_TENANT(TENANTCODE)</sql>
+			<sql>CREATE INDEX IDX_TW_T_IDENTIFIER ON TW_HZ_TENANT(IDENTIFIER)</sql>
+			<sql>CREATE INDEX IDX_TW_T_TENANTNAME ON TW_HZ_TENANT(TENANTNAME)</sql>
+		</kingbase8>
+		<oscar>
+			<sql>CREATE INDEX IDX_TW_T_TENANTCODE ON TW_HZ_TENANT(TENANTCODE)</sql>
+			<sql>CREATE INDEX IDX_TW_T_IDENTIFIER ON TW_HZ_TENANT(IDENTIFIER)</sql>
+			<sql>CREATE INDEX IDX_TW_T_TENANTNAME ON TW_HZ_TENANT(TENANTNAME)</sql>
+		</oscar>
+		<upbase>
+			<sql>CREATE INDEX IDX_TW_T_TENANTCODE ON TW_HZ_TENANT(TENANTCODE)</sql>
+			<sql>CREATE INDEX IDX_TW_T_IDENTIFIER ON TW_HZ_TENANT(IDENTIFIER)</sql>
+			<sql>CREATE INDEX IDX_TW_T_TENANTNAME ON TW_HZ_TENANT(TENANTNAME)</sql>
+		</upbase>
+	</others>
+</tableinfo>

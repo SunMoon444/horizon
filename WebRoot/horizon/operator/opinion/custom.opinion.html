@@ -1,0 +1,59 @@
+<hi18n groups="platform-opinion;base;message"></hi18n>
+<title>hz{platform-opinion.personalSettings}</title>
+<div class="horizon-modal-container modal-fixed">
+	<div class="page-header smaller">
+		<h1>hz{platform-opinion.customOpinion}</h1>
+	</div>
+    <div class="row">
+		<div class="col-xs-12">
+			<div class="col-xs-12 col-sm-8">
+				<div id="task-tab" class="tab-pane active">
+					<h4 class="smaller lighter green">
+						<i class="ace-icon fa fa-list"></i>
+						hz{platform-opinion.customOpinionList}
+					</h4>
+					<form id='opinionForm'>
+						<div class="input-group">
+							<input placeholder="hz{platform-opinion.inputOpinion}" type="text" class="form-control" name="comments" />
+							<input type="hidden" name="id" />
+							<span class="input-group-btn">
+								<button class="btn btn-sm btn-info no-radius" id="newopinion" type="button" >
+									hz{base.save}
+								</button>
+							</span>
+						</div>
+					</form>	
+					<div class="list ace-scroll widget-main padding-10 no-padding-left no-padding-right">
+						<ul id="tasks" class="item-list widget-main padding-1 no-padding-left no-padding-right">	
+						</ul>
+					</div>				
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-4">
+				<h4 class="widget-title blue smaller">
+					<i class="ace-icon fa fa-pencil-square-o"></i>
+					hz{platform-opinion.personalSignature}
+				</h4>
+				 <form class="form-horizontal horizon-form" enctype = "multipart/form-data" id="fileUp">
+	               	<div id="dropzone" class="align-center widget-main padding-30 no-padding-top" >
+	               		<input type="hidden" name="fileId" />
+					  	<span class="profile-picture" style="display: inline-block; width: 143px; height: 158px;">
+					     	<label class="ace-file-multiple">
+					        	<input type="file" name="signature" />
+					     	</label>
+	 			  		</span>
+	              	</div>
+             	</form>
+        	</div>
+		</div>
+	</div>
+</div>
+<div class="hidden" id="dialog"></div>
+<script>
+    require(['jquery',
+             horizon.paths.apppath+'/horizon/assets/operator/opinion/js/custom.opinion.js'],
+        function($) {
+            horizon.manager.opinion.init();
+            $('.page-content-area').trigger('ajaxscriptsloaded');
+        });
+</script>

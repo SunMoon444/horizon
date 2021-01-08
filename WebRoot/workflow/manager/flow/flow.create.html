@@ -1,0 +1,115 @@
+<title>hz{flow-create.title}</title>
+<hi18n groups="base;message;flow-create;datatables"></hi18n>
+<div class="horizon-modal-container">
+	<div class="other-content-area">
+		<div class="page-header smaller">
+			<h1>
+				hz{flow-create.title} 
+				<small class="hidden-xs"> 
+					<i class="ace-icon fa fa-angle-double-right"></i>
+					hz{flow-create.smallTitle}
+				</small>
+				<div class="pull-right">
+                    <label class="pointer hidden" id="fullscreen">
+                        <i class="ace-icon fa fa-arrows-alt"></i>
+                        hz{flow-create.fullScreen}
+                    </label>
+					<label class="pointer horizon-modal-trigger" data-target=".horizon-modal" data-toggle="modal">
+                        <i class="ace-icon fa fa-leaf bigger-110 icon-only green"></i>
+						hz{base.flowtree}
+					</label>
+				</div>
+				<div class="embed-toggle-sidebar-container hidden-md hidden-lg pull-right">
+					<button class="navbar-toggle toggle-sidebar" type="button"
+						data-target="#toggle-sidebar">
+						<span class="sr-only">Toggle横向菜单</span> <span class="icon-bar"></span>
+						<span class="icon-bar"></span> <span class="icon-bar"></span>
+					</button>
+					<button class="navbar-toggle toggle-sidebar2" type="button"
+						data-target="#toggle-sidebar2">
+						<span class="sr-only">Toggle左侧菜单</span> <i
+							class="ace-icon fa fa-dashboard bigger-110"></i>
+					</button>
+				</div>
+			</h1>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 hidden" id="flowframe-container">
+				<div id="flowframe-widget-box" class="widget-box no-border no-margin">
+					<div class="widget-header widget-header-flat hidden">
+						<h5 class="widget-title">hz{flow-create.title}</h5>
+						<div class="widget-toolbar">
+							<a data-action="fullscreen" class="pointer orange2">
+								<i class="ace-icon fa fa-expand"></i>
+							</a>
+						</div>
+					</div>
+					<div class="widget-body">
+						<iframe name="flowframe" id="flowframe" src="" scrolling="no"
+							frameborder="0" height="620px" width="100%"></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12" id="flowdata-container">
+				<table id="flowdataDatatable" class="table table-hover"></table>
+			</div>
+		</div>
+		<div class="history-container hidden profile-feed"></div>
+		<div class="profile-widget hidden">
+			<div class="profile-activity clearfix col-xs-12">
+				<div class="col-xs-12 col-sm-1">
+					<span class="pull-left thumbicon btn-info no-hover"></span>
+				</div>
+				<div class="clearfix pull-left col-xs-12 col-sm-10 no-padding-left">
+					<div class="grid2">
+						<div class="title nowrap">
+							<i class="fa fa-user green bigger-120"></i>
+                            <span class="bigger-120 blue"></span>
+						</div>
+						<div class="time">
+							<i class="ace-icon fa fa-clock-o bigger-110"></i> <span></span>
+						</div>
+					</div>
+					<div class="grid2">
+						<div class="title">
+							<i class="glyphicon glyphicon-edit green"></i> 
+								<span class="bigger-120 blue"></span>
+						</div>
+						<div class="time">
+							<i class="ace-icon fa fa-clock-o bigger-110"></i> <span></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="horizon-modal modal aside aside-right aside-vc aside-fixed navbar-offset"
+		data-body-scroll="false" data-offset="true" data-placement="right"
+		data-fixed="true" data-backdrop="invisible" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header blue">
+					hz{base.flowtree} <label class="pull-right hidden-sm hidden-xs"> <a
+						data-action="fixed-modal" class="pointer"><i
+							class="ace-icon fa fa-lock bigger-160" data-fixed-icon="fa-lock"
+							data-unfixed-icon="fa-unlock"></i></a>
+					</label>
+				</div>
+				<div class="modal-body">
+					<ul id="flow-tree"></ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- page specific plugin scripts -->
+<script type="text/javascript">
+jQuery(function($) {
+	require([horizon.paths.assetspath + '/manager/flow/js/flow.create.js'], function() {
+        horizon.language.plugins.datatables();
+	    horizon.engine.flowcreate.init();
+	    $('.page-content-area').trigger('ajaxscriptsloaded');
+	});
+});
+</script>

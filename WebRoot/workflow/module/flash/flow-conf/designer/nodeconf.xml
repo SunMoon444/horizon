@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Nodes>
+	<Start>
+		<Node name="人工开始" id="userStart">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeStartImpl</implClass>
+			<type>0</type>
+			<priority>1</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0001;WFE_0070</exceptioncode>
+			<desc>由用户手动发起流程</desc>
+		</Node>
+		<Node name="定时开始" id="timerStart">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeStartImpl</implClass>
+			<type>1</type>
+			<priority>1</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0001;WFE_0070</exceptioncode>
+			<desc>由定时任务后台发起流程</desc>
+		</Node>
+		<Node name="信号开始" id="signalStart">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeStartImpl</implClass>
+			<type>2</type>
+			<priority>1</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0001;WFE_0070</exceptioncode>
+			<desc>当捕获到信号时后台发起流程</desc>
+		</Node>
+		<Node name="消息开始" id="messageStart">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeStartImpl</implClass>
+			<type>3</type>
+			<priority>1</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0001;WFE_0070</exceptioncode>
+			<desc>当接收到消息时后台发起流程,参数来自于流程变量</desc>
+		</Node>
+	</Start>
+	<Task>
+		<!--type 10 单人 20 多人  30合并 25顺序 50内部循环   为了在定制工具显示用 -->
+		<Node name="单人活动" id="solo">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeSingleImpl</implClass>
+			<type>10</type>
+			<priority>3</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0010;WFE_0230;WFE_0140;WFE_0060;WFE_0070;WFE_0080;WFE_0090;WFE_0120</exceptioncode>
+			<desc>办理人只能选择一个</desc>
+		</Node>
+		<Node name="多人单一" id="san">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeMultiSingleImpl</implClass>
+			<type>11</type>
+			<priority>4</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0010;WFE_0230;WFE_0140;WFE_0060;WFE_0070;WFE_0080;WFE_0090;WFE_0120</exceptioncode>
+			<desc>办理人可以选择多个，但只允许一个人办理</desc>
+		</Node>
+		<Node name="多人并行" id="parallel">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeMultiImpl</implClass>
+			<type>20</type>
+			<priority>5</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0010;WFE_0230;WFE_0140;WFE_0060;WFE_0070;WFE_0080;WFE_0090;WFE_0120</exceptioncode>
+			<desc>办理人可以选择多个，多个办理人都要进行办理</desc>
+		</Node>	
+		<Node name="多人顺序" id="order">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeOrderImpl</implClass>
+			<type>25</type>
+			<priority>6</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0010;WFE_0230;WFE_0140;WFE_0060;WFE_0070;WFE_0080;WFE_0090;WFE_0120</exceptioncode>
+			<desc>办理人可以选择多个，多个办理人都要进行办理，并且有顺序要求</desc>
+		</Node>
+		<Node name="人工合并" id="userMerger">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeMergerImpl</implClass>
+			<type>30</type>
+			<priority>6</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0010;WFE_0230;WFE_0140;WFE_0060;WFE_0070;WFE_0080;WFE_0090;WFE_0120</exceptioncode>
+			<desc>人工合并节点</desc>
+		</Node>
+		<Node name="内部循环" id="innerloop">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeProgressivelyImpl</implClass>
+			<type>50</type>
+			<priority>9</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0010;WFE_0230;WFE_0140;WFE_0060;WFE_0070;WFE_0080;WFE_0090;WFE_0120</exceptioncode><!-- WFE_0150; -->
+			<desc>内部循环</desc>
+		</Node>
+	</Task>
+	<End>
+		<Node name="当前路径结束" id="trackEnd">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeEndImpl</implClass>
+			<type>100</type>
+			<priority>100</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0060;WFE_0160</exceptioncode>
+			<desc>结束节点</desc>
+		</Node>
+		<Node name="实例结束" id="instanceEnd">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeEndImpl</implClass>
+			<type>101</type>
+			<priority>101</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0060;WFE_0160</exceptioncode>
+			<desc>结束节点</desc>
+		</Node>
+	</End>
+	<Event>
+		<Node name="中间事件" id="intermediateEvent">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeAutoImpl</implClass>
+			<type>81</type>
+			<priority>90</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0230;WFE_0020;WFE_0030</exceptioncode>
+			<desc>中间事件</desc>
+		</Node>
+		<Node name="定时事件" id="taskEvent">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeAutoImpl</implClass>
+			<type>82</type>
+			<priority>91</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0230;WFE_0020;WFE_0030</exceptioncode>
+			<desc>定时事件</desc>
+		</Node>
+		<Node name="消息捕获" id="messageEvent">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeAutoImpl</implClass>
+			<type>83</type>
+			<priority>92</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0230;WFE_0020;WFE_0030</exceptioncode>
+			<desc>消息捕获</desc>
+		</Node>
+		<Node name="信号抛出" id="signalThrowEvent">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeAutoImpl</implClass>
+			<type>84</type>
+			<priority>93</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0230;WFE_0020;WFE_0030</exceptioncode>
+			<desc>信号抛出</desc>
+		</Node>
+		<Node name="信号捕获" id="signalCatchEvent">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeAutoImpl</implClass>
+			<type>85</type>
+			<priority>94</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0230;WFE_0020;WFE_0030</exceptioncode>
+			<desc>信号捕获</desc>
+		</Node>
+	</Event>
+	<Gateway>
+		<Node name="分支" id="split">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeConditionImpl</implClass>
+			<type>71</type>
+			<priority>110</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0230;WFE_0040</exceptioncode>
+			<desc>分支</desc>
+		</Node>
+		<Node name="合并" id="merge">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.GateWayMergeImpl</implClass>
+			<type>72</type>
+			<priority>111</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0230;WFE_0040</exceptioncode>
+			<desc>合并</desc>
+		</Node>
+	</Gateway>
+	<Robot>
+		<Node name="自动程序" id="auto">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeAutoImpl</implClass>
+			<type>41</type>
+			<priority>9</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0230;WFE_0120;WFE_0200</exceptioncode>
+			<desc>自动程序</desc>
+		</Node>
+	</Robot>
+	<SubFlow>
+		<Node name="子流程" id="subflow">
+			<img></img>
+			<implClass>com.horizon.wf.expand.node.NodeSubFlowImpl</implClass>
+			<type>60</type>
+			<priority>9</priority>
+			<extendAtt></extendAtt>
+			<exceptioncode>WFE_0120</exceptioncode>
+			<desc>子流程</desc>
+		</Node>
+	</SubFlow>
+</Nodes>

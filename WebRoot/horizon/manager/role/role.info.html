@@ -1,0 +1,227 @@
+<title>hz{platform-role.largeTitle}</title>
+<hi18n groups="platform-role;base;message;datatables;selectuser;validator"></hi18n>
+<div class="page-header smaller">
+    <h1>
+        hz{platform-role.smallTitle}
+        <small>
+            <i class="ace-icon fa fa-angle-double-right"></i>
+            hz{platform-role.subTitle}
+        </small>
+        <div class="pull-right">
+            <label class="pointer hidden" data-action="back">
+                <i class="ace-icon fa fa-arrow-left bigger-110 icon-only"></i>
+                hz{base.back}
+            </label>
+        </div>
+    </h1>
+</div>
+<div class="role-container">
+    <div id="roleList">
+        <table class="table table-hover"></table>
+    </div>
+    <div id="roleInfo" class="hidden">
+        <div class="horizon-tab">
+            <ul class="tab">
+                <li>
+                    <a data-toggle="tab" data-target="[data-pane='baseInfo']" href="javascript:void(0)">
+                        hz{platform-role.roleInfo}
+                    </a>
+                </li>
+                <li>
+                    <a data-toggle="tab" data-target="[data-pane='userInfo']" href="javascript:void(0)">
+                        hz{platform-role.userInfo}
+                    </a>
+                </li>
+                <li>
+                    <a data-toggle="tab" data-target="[data-pane='authInfo']" href="javascript:void(0)" id="reload">
+                        hz{platform-role.anthInfo}
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content no-padding-bottom">
+                <div data-pane="baseInfo" class="tab-pane fade">
+                    <form class="form-horizontal horizon-form" role="form" id="roleForm">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                                <div class="row">
+                                    <input type="hidden" name="id" />
+                                      <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-role.roleClassName}</label>
+                                             <div class="form-group no-margin">
+                                                <input type="hidden" name="roleClass" />
+                                                <input type="text" class="form-control" name="roleClassName" disabled="disabled"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-role.roleName}</label>
+                                            <div class="form-group no-margin has-error">
+                                                <input type="text" required="true" class="form-control" placeholder="hz{platform-role.inputRoleName}" name="roleName" minlength="3" maxlength="50"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-role.roleCode}</label>
+                                            <div class="form-group no-margin has-error">
+                                                <input type="text" required="true" class="form-control" placeholder="hz{platform-role.inputRoleCode}" name="roleCode" notChinese="true" minlength="3" maxlength="20" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                  
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-role.parentRole}</label>
+                                            <div>
+                                                <select name="parentId" class="form-control">
+                                                    <option value="">hz{message.select}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-role.simpleName}</label>
+                                            <div>
+                                                <input name="simpleName" class="form-control" placeholder="hz{platform-role.inputSimpleName}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="horizon-form-actions row">
+                            <div class="col-xs-12">
+                                <button class="btn btn-white btn-round border-width-1" type="submit">
+                                    <i class="ace-icon fa fa-save green"></i>
+                                    hz{base.save}
+                                </button>
+                                <button class="btn btn-white btn-round border-width-1" type="reset">
+                                    <i class="ace-icon fa fa-undo grey"></i>
+                                   hz{base.reset}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div data-pane="userInfo" class="tab-pane fade">
+                    <iframe src="" width="100%" frameborder="0" class="iframeBorder block"></iframe>
+                </div>
+                <div data-pane="authInfo" class="tab-pane fade">
+                    <div class="row auth-operate">
+                        <div class="col-xs-5 col-sm-4 col-md-3 col-lg-2">
+                            <div class="btn-group width-100 auth-group">
+                                <div data-toggle="dropdown" class="btn btn-white btn-sm btn-round border-width-1 width-100">
+                                    <span></span>
+                                    <i class="ace-icon fa fa-angle-down icon-on-right"></i>
+                                </div>
+                                <ul class="dropdown-menu dropdown-light-blue dropdown-caret width-100">
+                                    <li>
+                                        <a data-toggle="tab" data-target="[data-pane='app']" href="javascript:void(0);">
+                                            hz{platform-role.tabApp}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" data-target="[data-pane='org']" href="javascript:void(0);">
+                                            hz{platform-role.tabOrg}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" data-target="[data-pane='sysMenu']" href="javascript:void(0);">
+                                            hz{platform-role.tabSystemMenu}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" data-target="[data-pane='appMenu']" href="javascript:void(0);">
+                                            hz{platform-role.tabAppMenu}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" data-target="[data-pane='module']" href="javascript:void(0);">
+                                            hz{platform-role.tabModule}
+                                        </a>
+                                    </li>
+                                    <li data-value="FLOWOPER">
+                                        <a data-toggle="tab" data-target="[data-pane='rootFlow']" href="javascript:void(0);">
+                                            hz{platform-role.tabFlow}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-7 col-sm-8 col-md-9 col-lg-10 align-right">
+                            <button data-action="refresh" class="btn btn-white btn-sm btn-round border-width-1" type="button" >
+                                <i class="ace-icon fa fa-refresh green hidden-320"></i> hz{base.refresh}
+                            </button>
+                            <button data-action="collapse" data-collapse="collapsed"
+                                    data-icon-collapse="fa-minus" data-icon-collapsed="fa-plus"
+                                    data-text-collapse="hz{base.shrinkAll}"
+                                    data-text-collapsed="hz{base.expandAll}"
+                                    class="btn btn-white btn-sm btn-round border-width-1" type="button">
+                                <i class="ace-icon fa fa-plus blue hidden-320"></i> <span>hz{base.expandAll}</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="tab-content">
+                                <div data-pane="app" class="tab-pane fade in active">
+                                    <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                        <label class="btn btn-white col-xs-6">
+                                            <input type="checkbox" name="tenant" value="TEANANT_APP"/> hz{platform-role.authSelectApp}
+                                        </label>
+                                        <label class="btn btn-white col-xs-6" >
+                                            <input type="checkbox" name="manage" value="TEANANT_MANAGE"/> hz{platform-role.authSelectManage}
+                                        </label>
+                                    </div>
+                                    <div class="space-6"></div>
+                                    <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                        <label class="btn btn-white col-xs-6">
+                                            <input type="checkbox" name="design" value="TEANANT_DESINGER"/> hz{platform-role.authSelectDesinger}
+                                        </label>
+                                        <label class="btn btn-white col-xs-6">
+                                            <input type="checkbox" name="grant" value="GRANT"/> hz{platform-role.authSelectGrant}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div data-pane="org" class="tab-pane fade">
+                                    <ul id="org" class="ztree ztree-outlook no-padding"></ul>
+                                </div>
+                                <div data-pane="sysMenu" class="tab-pane fade">
+                                    <ul id="sysMenu" class="ztree ztree-outlook no-padding"></ul>
+                                </div>
+                                <div data-pane="appMenu" class="tab-pane fade">
+                                    <ul id="appMenu" class="ztree ztree-outlook no-padding"></ul>
+                                </div>
+                                <div data-pane="module" class="tab-pane fade">
+                                    <ul id="module" class="ztree ztree-outlook no-padding"></ul>
+                                </div>
+                                <div data-pane="rootFlow" class="tab-pane fade">
+                                    <ul id="rootFlow" class="ztree ztree-outlook no-padding"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hidden" id="delUserDialog"></div>
+<div class="hidden" id="startContainDialog"></div>
+<script>
+    require([
+        'jquery',
+        horizon.paths.apppath + '/horizon/assets/manager/role/js/role.info.js'
+    ],
+    function($) {
+        horizon.language.plugins.selectuser();
+        horizon.language.plugins.datatables();
+        horizon.language.plugins.validator();
+        horizon.tools.use(horizon.paths.pluginpath + '/ztree/css/zTreeStyle/zTreeStyle.css');
+        horizon.manager.role.init();
+        $('.page-content-area').trigger('ajaxscriptsloaded');
+    });
+</script>

@@ -1,0 +1,386 @@
+/*实现接口提示样式*/
+.explain{
+    white-space: nowrap;  /*强制span不换行*/
+    font-size: 10px;
+    color:#0080ff;
+}
+
+.hidden-platform {
+    display: none !important;
+    visibility: hidden !important;
+}
+.input-group-addon {
+    border-left: none;
+    border-right: none;
+}
+textarea {
+    resize: none;
+}
+.timeline-container.timeline-style2.noline .timeline-item:before {
+    display: none;
+}
+@media (min-width: 768px) {
+    .form-horizontal .control-label {
+        padding-bottom: 2px;
+    }
+}
+/* 慧正样式 */
+.horizon-form .chosen-container-single,
+.horizon-form .chosen-container-multi {
+    width: 100% !important;
+}
+.horizon-form .chosen-container-single .chosen-single {
+    border-radius: 0 !important;
+    height: 34px;
+    line-height: 32px;
+}
+.horizon-form .chosen-container-multi .chosen-choices {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.horizon-form .ace-spinner,
+.horizon-form .ace-spinner .spinbox-input {
+    width: 100% !important;
+    height: 34px !important;
+}
+.horizon-form .ace-spinner .spinbox-buttons > .btn {
+    height: 17px;
+}
+.horizon-form .ace-spinner .spinbox-buttons > .btn + .btn {
+    height: 16px;
+}
+.horizon-form .horizon-form-actions {
+    display: block;
+    background-color: #FBFBFB;
+    border-top: 1px solid #f3f5f9;
+    margin-top: 10px;
+    padding: 9px 0 10px;
+    text-align: right;
+}
+@media (min-width: 768px) {
+    .horizon-list {
+        min-height: 344px;
+    }
+}
+.horizon-list .horizon-list-item {
+    display: block;
+    background: #fbfbfb;
+    padding: 10px;
+    line-height: 22px;
+    border-radius: 5px;
+    -webkit-transition: .3s linear background;
+    transition: .3s linear background;
+    margin-bottom: 6px;
+    position: relative;
+}
+.horizon-list-item:hover {
+    background: #f0f6fb;
+    color: #333;
+    cursor: pointer;
+}
+.horizon-list-item .item-info {
+    margin-right: 80px;
+}
+.horizon-list-item.has-tip .item-info {
+    margin-right: 130px;
+}
+.horizon-list-item .item-title {
+    font-size: 14px;
+    color: #333;
+}
+.horizon-list-item .item-title,
+.horizon-list-item .item-text {
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.horizon-list-item .item-tip {
+    position: absolute;
+    top: 0;
+    right: 100px;
+    height: 64px;
+    line-height: 64px;
+    color: #b6c8ce;
+}
+.horizon-list-item .item-datetime {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    width: 80px;
+    text-align: right;
+    color: #333;
+}
+.horizon-list-item .item-date {
+    color: #999;
+}
+.horizon-list .timeline-container {
+    padding-top: 0;
+}
+.horizon-list .timeline-container .timeline-item {
+    padding-bottom: 0;
+}
+.horizon-list .timeline-style2 .timeline-item:before {
+    width: 1px;
+}
+.horizon-list .timeline-style2 .timeline-indicator {
+    width: 13px;
+    height: 13px;
+    left: 84px;
+}
+.horizon-pills {
+    list-style: none;
+    margin: -6px 0 0 -6px;
+}
+.horizon-pills li {
+    float: left;
+    padding: 6px 0 0 6px;
+    display: block;
+}
+.horizon-pills li a {
+    min-width: 70px;
+    display: block;
+    padding: 15px 10px;
+    background: #fbfbfb;
+    text-align: center;
+    border-radius: 5px;
+    color: #666;
+    font-size: 12px;
+    -webkit-transition: .3s linear all;
+    transition: .3s linear all;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.horizon-pills li a .ace-icon,
+.horizon-pills li a .img-icon {
+    color: #b6c8ce;
+    display: block;
+    margin: 0 auto;
+    font-size: 20px;
+    height: 24px;
+    line-height: 24px;
+    -webkit-transition: .3s linear color;
+    transition: .3s linear color;
+}
+.horizon-pills li a:hover {
+    color: #3e88c5;
+    background: #f0f6fb;
+}
+.horizon-pills a:hover .ace-icon {
+    color: #3e88c5;
+}
+.horizon-task-modal .modal-dialog {
+    height: 0 !important;
+}
+.horizon-task-modal.in .modal-dialog,
+.horizon-task-modal.in .modal-content,
+.horizon-task-modal.in .modal-body,
+.horizon-task-modal.in .horizon-task-widget,
+.horizon-task-modal.in .horizon-task-widget .widget-body,
+.horizon-task-modal.in .horizon-task-widget .widget-body .tab-content,
+.horizon-task-modal.in .horizon-task-widget .widget-body .tab-content .tab-pane
+{
+    height: 100% !important;
+    max-height: 100%;
+}
+.horizon-task-modal.in .horizon-task-widget .widget-body {
+    margin-top: -40px;
+    padding-top: 40px;
+}
+.horizon-task-modal .horizon-task-trigger {
+    width: 54px;
+    height: 54px;
+    line-height: 52px;
+    background: #FFF;
+    filter: alpha(opacity=60);
+    background: rgba(255, 255, 255, 0.6);
+    position: fixed !important;
+    bottom: 35px !important;;
+    right: 10px !important;
+    left: auto !important;
+    border: 1px solid #f3f5f9;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-size: 34px;
+    color: #3e88c5;
+    -webkit-transition: .3s linear all;
+    transition: .3s linear all;
+}
+.horizon-task-modal .horizon-task-trigger:hover {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+.horizon-task-modal .horizon-task-trigger .task-num {
+    position: absolute;
+    right: 2px;
+    top: 4px;
+    line-height: 16px;
+}
+.horizon-widget-container {
+    margin: -12px 0 12px -12px;
+}
+.horizon-widget-container .horizon-layout-area {
+    min-height: 200px;
+}
+.horizon-widget-container .widget-placeholder,
+.horizon-widget-container .widget-box {
+    margin: 12px 0 0 12px;
+}
+.horizon-widget-container .widget-box.fullscreen {
+    margin: 0;
+}
+.horizon-widget-container .widget-box.fullscreen .widget-body {
+    height: 100% !important;
+    margin-top: -39px;
+    padding-top: 39px;
+}
+.horizon-widget-container .widget-box.fullscreen a[data-action="collapse"],
+.horizon-widget-container .widget-box.collapsed a[data-action="fullscreen"] {
+    display: none;
+}
+@media (min-width: 992px) {
+    .horizon-form-actions {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom:0;
+        z-index: 99;
+        margin: 0;
+    }
+    body[data-fixed-modal="true"] .horizon-modal-container .horizon-form-actions {
+        right: 210px;
+    }
+    .horizon-form {
+        padding-bottom: 54px;
+    }
+    .sidebar + .main-content .horizon-form-actions,
+    .sidebar + .main-content .sidebar + .main-content .horizon-form-actions,
+    .hidden-sidebar2 .sidebar + .main-content .sidebar.menu-min + .main-content .horizon-form-actions {
+        left: 190px;
+    }
+    .sidebar.menu-min + .main-content .horizon-form-actions,
+    .sidebar + .main-content .sidebar.menu-min + .main-content .horizon-form-actions,
+    .hidden-sidebar2 .sidebar.menu-min + .main-content .sidebar.menu-min + .main-content .horizon-form-actions {
+        left: 60px;
+    }
+    .sidebar.h-sidebar + .main-content .horizon-form-actions,
+    .hidden-sidebar2 .sidebar.h-sidebar + .main-content .sidebar.menu-min + .main-content .horizon-form-actions {
+        left: 0;
+    }
+    .horizon-list-item .item-tip {
+        right: 110px;
+    }
+    .horizon-list-item.has-tip .item-info {
+        margin-right: 140px;
+    }
+}
+
+.ztree.ztree-outlook * {
+    font-size: 10pt;
+}
+.ztree.ztree-outlook li {
+    line-height: 30px;
+}
+.ztree.ztree-outlook li a {
+    width: 100%;
+    height: 30px;
+    padding-top: 0;
+    position: relative;
+}
+.ztree.ztree-outlook li a:hover {
+    text-decoration: none;
+    background-color: #F0F6FB;
+}
+.ztree.ztree-outlook li a span.button.switch {
+    visibility: hidden;
+}
+.ztree.showIcon li a span.button.switch {
+    visibility: visible;
+}
+.ztree.ztree-outlook li a.curSelectedNode {
+    background-color: #F0F6FB;
+    border: 0;
+    height: 30px;
+}
+.ztree.ztree-outlook li span {
+    line-height: 26px;
+}
+.ztree.ztree-outlook li span.button.switch {
+    width: 20px;
+    height: 20px;
+    margin-top: -6px;
+}
+.ztree.ztree-outlook li span.auth {
+    position: absolute;
+    right: 0;
+}
+.ztree.ztree-outlook li span.auth label {
+    margin-left: 10px;
+}
+.ztree.ztree-outlook li span.auth label input {
+    margin-right: 6px;
+}
+.ztree.ztree-outlook li a.level0 span {
+    font-weight: bold;
+}
+.ztree.ztree-outlook li span.button,
+.ztree.ztree-outlook li span.button.noline_open,
+.ztree.ztree-outlook li span.button.noline_close {
+    border: none;
+    background-image: url("../img/ztree_outlook.png");
+    background-color: inherit;
+}
+.ztree.ztree-outlook li span.button.noline_open:before,
+.ztree.ztree-outlook li span.button.noline_open:after,
+.ztree.ztree-outlook li span.button.noline_close:before,
+.ztree.ztree-outlook li span.button.noline_close:after {
+    display: none;
+}
+.ztree.ztree-outlook li span.button.noline_open {
+    background-position: 0 0;
+}
+.ztree.ztree-outlook li span.button.noline_close {
+    background-position: -18px 0;
+}
+.ztree.ztree-outlook li span.button.noline_open.level0 {
+    background-position: 0 -18px;
+}
+.ztree.ztree-outlook li span.button.noline_close.level0 {
+    background-position: -18px -18px;
+}
+@media (min-width: 992px) {
+    .ztree.ztree-outlook li span.auth {
+        right: 30px;
+    }
+    .ztree.ztree-outlook li span.auth label {
+        margin-left: 20px;
+    }
+}
+
+.select-tree{
+   width: 96%;
+   height: 210px;
+   left: 12px !important;
+   top: 82%  !important;
+   overflow: auto;
+   overflow-y: hidden;
+}
+.iframeBorder {
+    border: 1px solid #F3F5F9;
+}
+.logForm12 {
+	padding-right: 36px;
+}
+.scroll-x {
+    overflow-x: auto;
+}
+.scroll-y {
+    overflow-y: auto;
+}
+.iconpicker span {
+	display: none;
+}

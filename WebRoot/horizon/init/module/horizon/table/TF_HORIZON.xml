@@ -1,0 +1,931 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 模块定制表单视图相关表结构定义 -->
+<tableinfo>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_DYNAMICTABLE_SORT</name>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="DATAID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="SORTORDER" typename="number" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="PARENTID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="FORMID" typename="varchar" length="32"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_FORM_GRAPHICS_DIV</name>
+        <!-- 主键名称 -->
+        <pkname>PK_FORM_GRAPHICS_DIV</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="FIELDNO" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="FLOWFORMID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="DIVNAME" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="DIVTOP" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="DIVLEFT" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="WIDTH" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="HEIGHT" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="NOTE" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="ROWVERSION" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="FIELDID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="TABLESQL" typename="lvarchar" length="2048"></fieldinfo>
+            <fieldinfo fieldname="TABLESTYLE" typename="lvarchar" length="4000"></fieldinfo>
+            <fieldinfo fieldname="TABLEROWNUM" typename="number" length="10"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+
+
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_FORM_BUTTON</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TF_HORIZON_FORM_BUTTON</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="TABLEID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="BUTTON_NAME" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="BUTTON_LINK" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="FUNC" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="SCRIPT" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="BUTTON_ORDER" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="FORMID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="BUTTON_TYPE" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="ROWVERSION" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="BUTTON_HTML" typename="lvarchar" length="1000"></fieldinfo>
+            <fieldinfo fieldname="BUTTON_ICON" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="BUTTON_STYLE" typename="varchar" length="200"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_FORM</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TF_HORIZON_FORM</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="TABLEID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="FORM_NO" typename="varchar" length="50"></fieldinfo>
+            <fieldinfo fieldname="FORM_NAME" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="NOTE" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="USEHTML" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="ROWVERSION" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="ISFLOW" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="JSSCRIPT" typename="lvarchar" length="4000"></fieldinfo>
+            <fieldinfo fieldname="SAVEXSL" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="ISSAVELOCAL" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="ISSUBFORM" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="OPENPATH" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="TYPE" typename="varchar" length="255"></fieldinfo>
+            <fieldinfo fieldname="SHOW_TITLE" typename="varchar" length="10"></fieldinfo>
+            <fieldinfo fieldname="TITLE_POSITION" typename="varchar" length="10"></fieldinfo>
+            <fieldinfo fieldname="CSS" typename="lvarchar" length="4000"></fieldinfo>
+            <fieldinfo fieldname="WIDGETTITLEPOSITION" typename="varchar" length="10"></fieldinfo>
+            <fieldinfo fieldname="LAYOUT" typename="clob"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_FORM_GRAPHICS</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TF_HORIZON_FORM_GRAPHICS</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="FLOWFORMNO" typename="varchar" length="50"></fieldinfo>
+            <fieldinfo fieldname="FLOWFORMNAME" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="TABLEID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="TABLENAME" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="WIDTH" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="HEIGHT" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="FILENAME" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="NOTE" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="PRINTSTYLE" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="BACKPIC" typename="blob"></fieldinfo>
+            <fieldinfo fieldname="SERVERPATH" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="ROWVERSION" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="ISFLOW" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="JSSCRIPT" typename="lvarchar" length="3000"></fieldinfo>
+            <fieldinfo fieldname="ISSUBFORM" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="ISSAVELOCAL" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="OPENPATH" typename="varchar" length="200"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_FORM_HTML</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TF_HORIZON_FORM_HTML</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="FORMID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="ROWVERSION" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="NOTE" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="HTMLCODE" typename="blob"></fieldinfo>
+            <fieldinfo fieldname="DATA_TYPE" typename="varchar" length="50"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_FORM_STATIC</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TF_HORIZON_FORM_STATIC</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="FORMID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="TABLEID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="STATIC_NAME" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="ISFLOW" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="EDITFIELD" typename="lvarchar" length="4000"></fieldinfo>
+            <fieldinfo fieldname="CHECKFIELD" typename="lvarchar" length="4000"></fieldinfo>
+            <fieldinfo fieldname="HIDDENFIELD" typename="lvarchar" length="4000"></fieldinfo>
+            <fieldinfo fieldname="READFIELD" typename="lvarchar" length="4000"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_FORM_TEMPLATE</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TF_HORIZON_FORM_TEMPLATE</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="FORMTEMPLATE_NAME" typename="lvarchar" length="500"></fieldinfo>
+            <fieldinfo fieldname="FORMTEMPLATE_PATH" typename="lvarchar" length="500"></fieldinfo>
+            <fieldinfo fieldname="FORMTEMPLATE_NO" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="FORMTEMPLATE_NOTE" typename="lvarchar" length="1000"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_OPINION</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TF_HORIZON_OPINION</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="COMMENTS" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="USERID" typename="varchar" length="32"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_TABLE</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TF_HORIZON_TABLE</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="TABLENAME" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="TABLE_NAME" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="NOTE" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="TABLE_TYPE" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="ROWVERSION" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="DBIDENTIFIER" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="ISTHIRDDB" typename="number" length="10" defaultvalue="0"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_TABLE_MAXIMUM</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TF_HORIZON_TABLE_MAXIMUM</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="MAXNO" typename="number" length="10"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_TEMPLATE</name>
+        <!-- 主键名称 -->
+        <pkname>PK_VIEW_TEMPLATE</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="TEMPLATE_NAME" typename="lvarchar" length="500"></fieldinfo>
+            <fieldinfo fieldname="TEMPLATE_PATH" typename="lvarchar" length="500"></fieldinfo>
+            <fieldinfo fieldname="TEMPLATE_NO" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="TEMPLATE_TYPE" typename="varchar" length="50"></fieldinfo>
+            <fieldinfo fieldname="TEMPLATE_NOTE" typename="lvarchar" length="1000"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_VIEW_BUTTON</name>
+        <!-- 主键名称 -->
+        <pkname>PK_VIEW_BUTTON</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="VIEWID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="BUTTON_NAME" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="FUNC" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="SCRIPT" typename="lvarchar" length="3000"></fieldinfo>
+            <fieldinfo fieldname="BUTTON_LINK" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="BUTTON_ORDER" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="ROWVERSION" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="BUTTON_TYPE" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="BUTTON_HTML" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="BUTTON_ICON" typename="varchar" length="200"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_VIEW_FIELD</name>
+        <!-- 主键名称 -->
+        <pkname>PK_VIEW_FIELD</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="VIEWID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="FIELDNAME" typename="lvarchar" length="2048"></fieldinfo>
+            <fieldinfo fieldname="FIELD_LINK" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="ALIGN" typename="varchar" length="20"></fieldinfo>
+            <fieldinfo fieldname="STYLE" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="FIELD_NAME" typename="lvarchar" length="1000"></fieldinfo>
+            <fieldinfo fieldname="FUNC" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="ASNAME" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="NOTE" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="TITLE" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="DICNO" typename="varchar" length="50"></fieldinfo>
+            <fieldinfo fieldname="FIELD_USER" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="FIELD_ORDER" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="ORDERABLE" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="DISPLAY" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="ROWVERSION" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="QUERYTYPE" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="FIELDWIDTH" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="FIELDSTRLENGTH" typename="varchar" length="10"></fieldinfo>
+            <fieldinfo fieldname="FIELDLENGTH" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="REPLACETEXTLIST" typename="lvarchar" length="4000"></fieldinfo>
+            <fieldinfo fieldname="REPLACERANGE" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="ISADVANCEDSEARCH" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="ISSIMPLESEARCH" typename="number" length="10"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_VIEW_GROUP</name>
+        <!-- 主键名称 -->
+        <pkname>PK_VIEW_GROUP</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="QUERY_NAME" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="VIEWID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="QUERY_GROUP" typename="lvarchar" length="500"></fieldinfo>
+            <fieldinfo fieldname="DEFAULTORDER" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="PARENT_GROUPID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="NOTE" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="ROWVERSION" typename="varchar" length="10"></fieldinfo>
+            <fieldinfo fieldname="PARENT_GROUPNAME" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="GROUPLEVEL" typename="varchar" length="200"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_VIEW_LIGERCOLUMN</name>
+        <!-- 主键名称 -->
+        <pkname>PK_VIEW_LIGERCOLUMN</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="TITLE" typename="lvarchar" length="1000"></fieldinfo>
+            <fieldinfo fieldname="VIEW_ID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="COLUMN_WIDTH" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="HIDEFLAG" typename="varchar" length="2"></fieldinfo>
+            <fieldinfo fieldname="USERID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="ORDER_NO" typename="varchar" length="100"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_VIEW_TYPE</name>
+        <!-- 主键名称 -->
+        <pkname>PK_VIEW_TYPE</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="VIEWOPEN" typename="number"></fieldinfo>
+            <fieldinfo fieldname="VIEWMODEL" typename="number"></fieldinfo>
+            <fieldinfo fieldname="VIEWROLE" typename="lvarchar" length="1000"></fieldinfo>
+            <fieldinfo fieldname="VIEWROLEID" typename="lvarchar" length="1000"></fieldinfo>
+            <fieldinfo fieldname="VIEWSORT" typename="number"></fieldinfo>
+            <fieldinfo fieldname="VIEWWHERESHOW" typename="lvarchar" length="1000"></fieldinfo>
+            <fieldinfo fieldname="TABLEID" typename="varchar" length="32"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_VIEW</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TF_HORIZON_VIEW</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="VIEW_NO" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="VIEW_SEQUENCE" typename="number" length="10" defaultvalue="0"></fieldinfo>
+            <fieldinfo fieldname="VIEW_NAME" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="VIEW_FROM" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="VIEW_WHERE" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="FILENAME" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="VIEW_CHECKBOX" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="VIEW_ORDER" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="CHECKTYPE" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="FILTEFLAG" typename="varchar" length="1"></fieldinfo>
+            <fieldinfo fieldname="DATASORTID" typename="varchar" length="10"></fieldinfo>
+            <fieldinfo fieldname="ROWVERSION" typename="varchar" length="10"></fieldinfo>
+            <fieldinfo fieldname="VIEW_GROUP" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="GROUPTYPE" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="QUERYSET" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="GROUPFIELD" typename="lvarchar" length="1000"></fieldinfo>
+            <fieldinfo fieldname="LINENUM" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="ENABLEQUERY" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="JSSCRIPT" typename="lvarchar" length="3000"></fieldinfo>
+            <fieldinfo fieldname="DBIDENTIFIER" typename="varchar" length="100"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_WORKFORM_FIELDAUTH</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TF_HORIZON_FIELDAUTH</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="FORMID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="TABLEID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="AUTH_NAME" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="AUTH_CODE" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="EDITFIELD" typename="clob"></fieldinfo>
+            <fieldinfo fieldname="CHECKFIELD" typename="clob"></fieldinfo>
+            <fieldinfo fieldname="HIDDENFIELD" typename="clob"></fieldinfo>
+            <fieldinfo fieldname="READFIELD" typename="clob"></fieldinfo>
+            <fieldinfo fieldname="AUTHFLAG" typename="varchar" length="10"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TFR_HORIZON_FORM_SUB</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TFR_FORM_SUB</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="FORMID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="SUBFORMID" typename="varchar" length="32"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TFR_HORIZON_FORM_TABLE</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TFR_FORM_TABLE</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="FORMID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="RTABLENAME" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="RFIELDNAME" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="TABLEID" typename="varchar" length="32"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_DISPLAY_TYPE</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TF_HORIZON_DISPLAY_TYPE</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="NAME" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="VALUE" typename="varchar" length="10"></fieldinfo>
+            <fieldinfo fieldname="FLAG" typename="varchar" length="50"></fieldinfo>
+            <fieldinfo fieldname="ORDERNO" typename="number" length="10"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_FORM_FIELD</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TF_HORIZON_FORM_FIELD</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="FORMID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="FIELDID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="FIELD_NAME" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="INPUTTYPE" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="NOTE" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="DICTID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="ALLOWNULL" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="FIELD_ORDER" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="SELECTTYPE" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="DEFAULTVALUE" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="DICTNAME" typename="lvarchar" length="1000"></fieldinfo>
+            <fieldinfo fieldname="DOCCODERULE" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="ONCLICK" typename="lvarchar" length="4000"></fieldinfo>
+            <fieldinfo fieldname="ONCHANGE" typename="lvarchar" length="4000"></fieldinfo>
+            <fieldinfo fieldname="ONBLUR" typename="lvarchar" length="4000"></fieldinfo>
+            <fieldinfo fieldname="ALLOWNEWVALUE" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="SIGNFLAG" typename="number" length="10" defaultvalue="0"></fieldinfo>
+            <fieldinfo fieldname="ENCRYPTFLAG" typename="number" length="10" defaultvalue="0"></fieldinfo>
+            <fieldinfo fieldname="DICTLIST" typename="clob"></fieldinfo>
+            <fieldinfo fieldname="SIERALTYPE" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="TXTLINENUM" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="ISDEFRELATION" typename="number" length="10" defaultvalue="0"></fieldinfo>
+            <fieldinfo fieldname="RFIELDID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="FIELDDBSOURCE" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="SQLVALUE" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="F0" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="F1" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="F2" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="F3" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="F4" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="RFIELDNAME" typename="varchar" length="50"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_FORM_MRTABLE</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TF_HORIZON_FORM_MRTABLE</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="RELATION_TITLE" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="TABLENAME" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="RTABLE_NAME" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="SUBTABLE_NAME" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="MRFIELD" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="SUBRFIELD" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="MPKFIELD" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="SUBPKFIELD" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="NOTE" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="F0" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="F1" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="F2" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="F3" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="F4" typename="varchar" length="100"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_NUMBER_FORMAT</name>
+        <!-- 主键名称 -->
+        <pkname>PK_NUMBER_FORMAT</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="SERIAL_NO" typename="varchar" length="50"></fieldinfo>
+            <fieldinfo fieldname="SERIAL_NAME" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="SERIAL_STYLE" typename="varchar" length="50"></fieldinfo>
+            <fieldinfo fieldname="SERIALLENGTH" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="FIELDMAP" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="NOTE" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="TABLENAME" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="ROWVERSION" typename="number" length="10"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_NUMBER_MAX</name>
+        <!-- 主键名称 -->
+        <pkname>PK_HORIZON_NUMBER_MAX</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="SERIALKEY" typename="lvarchar" length="500"></fieldinfo>
+            <fieldinfo fieldname="MAXNO" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="SERIALNO" typename="lvarchar" length="500"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_TABLE_FIELD</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TABLE_FIELD</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="TABLEID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="FIELDNAME" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="FIELD_NAME" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="DATATYPE" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="INPUTTYPE" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="ISREALFIELD" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="NOTE" typename="lvarchar" length="1024"></fieldinfo>
+            <fieldinfo fieldname="DICTID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="ALLOWNULL" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="FIELD_ORDER" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="SELECTTYPE" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="DEFAULTVALUE" typename="varchar" length="200"></fieldinfo>
+            <fieldinfo fieldname="LENGTH" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="ROWVERSION" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="DICTNAME" typename="lvarchar" length="1000"></fieldinfo>
+            <fieldinfo fieldname="PARENTFIELD" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="DOCCODERULE" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="RETURNFUN" typename="lvarchar" length="4000"></fieldinfo>
+            <fieldinfo fieldname="ONCLICK" typename="lvarchar" length="4000"></fieldinfo>
+            <fieldinfo fieldname="ONCHANGE" typename="lvarchar" length="4000"></fieldinfo>
+            <fieldinfo fieldname="ONBLUR" typename="lvarchar" length="4000"></fieldinfo>
+            <fieldinfo fieldname="ALLOWNEWVALUE" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="SIGNFLAG" typename="number" length="10" defaultvalue="0"></fieldinfo>
+            <fieldinfo fieldname="ENCRYPTFLAG" typename="number" length="10" defaultvalue="0"></fieldinfo>
+            <fieldinfo fieldname="DICTLIST" typename="clob"></fieldinfo>
+            <fieldinfo fieldname="SIERALTYPE" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="TXTLINENUM" typename="number" length="10"></fieldinfo>
+            <fieldinfo fieldname="ISDEFRELATION" typename="number" length="10" defaultvalue="0"></fieldinfo>
+            <fieldinfo fieldname="RFIELDID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="FIELDDBSOURCE" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="SQLVALUE" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="F0" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="F1" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="F2" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="F3" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="F4" typename="varchar" length="100"></fieldinfo>
+            <fieldinfo fieldname="RFIELDNAME" typename="varchar" length="50"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TFR_HORIZON_FIELD_FORM</name>
+        <!-- 主键名称 -->
+        <pkname>PK_FIELD_FORM</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="TABLEID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="FIELDID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="MAP_MODE" typename="varchar" length="20"></fieldinfo>
+            <fieldinfo fieldname="FORMID" typename="varchar" length="32"></fieldinfo>
+            <fieldinfo fieldname="ROWVERSION" typename="number" length="10"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+    <tablename>
+        <!-- 表名 -->
+        <name>TF_HORIZON_FIELD_HISTORY</name>
+        <!-- 主键名称 -->
+        <pkname>PK_FIELD_HISTORY</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"/>
+            <fieldinfo fieldname="CREATOR" typename="varchar" length="32"/>
+            <fieldinfo fieldname="CREATOR_NAME" typename="varchar" length="200"/>
+            <fieldinfo fieldname="MODIFICATOR" typename="varchar" length="32"/>
+            <fieldinfo fieldname="MODIFICATOR_NAME" typename="varchar" length="200"/>
+            <fieldinfo fieldname="MODIFIED" typename="varchar" length="30"/>
+            <fieldinfo fieldname="HISTORY" typename="clob" />
+            <fieldinfo fieldname="FORM_ID" typename="varchar" length="32"/>
+            <fieldinfo fieldname="DATA_ID" typename="varchar" length="32"/>
+            <fieldinfo fieldname="CREATED" typename="varchar" length="30"/>
+        </fieldinfos>
+    </tablename>
+    <others>
+        <oracle>
+            <sql>CREATE INDEX IDX_TF_F_TABLEID ON TF_HORIZON_FORM (TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FG_TABLEID ON TF_HORIZON_FORM_GRAPHICS(TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FB_FORMID ON TF_HORIZON_FORM_BUTTON(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_VB_VIEWID ON TF_HORIZON_VIEW_BUTTON(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_TF_TF ON TF_HORIZON_TABLE_FIELD(TABLEID,FIELDNAME)</sql>
+            <sql>CREATE INDEX IDX_TF_T_TABLENAME ON TF_HORIZON_TABLE(TABLENAME)</sql>
+            <sql>CREATE INDEX IDX_TF_VF_VIEWID ON TF_HORIZON_VIEW_FIELD(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_VG_VIEWID ON TF_HORIZON_VIEW_GROUP(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_WF_FORMID ON TF_HORIZON_WORKFORM_FIELDAUTH(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FS_FORMID ON TFR_HORIZON_FORM_SUB(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FF_FORMID ON TF_HORIZON_FORM_FIELD(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FGD_FLOWFORMID ON TF_HORIZON_FORM_GRAPHICS_DIV(FLOWFORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FORMID ON TFR_HORIZON_FIELD_FORM(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FIELDID ON TFR_HORIZON_FIELD_FORM(FIELDID)</sql>
+            <sql>CREATE INDEX IDX_TF_FH_FD ON TF_HORIZON_FIELD_HISTORY(FORM_ID,DATA_ID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FT_FORMID ON TFR_HORIZON_FORM_TABLE(FORMID)</sql>
+        </oracle>
+        <mysql>
+            <sql>CREATE INDEX IDX_TF_F_TABLEID ON TF_HORIZON_FORM (TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FG_TABLEID ON TF_HORIZON_FORM_GRAPHICS(TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FB_FORMID ON TF_HORIZON_FORM_BUTTON(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_VB_VIEWID ON TF_HORIZON_VIEW_BUTTON(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_TF_TF ON TF_HORIZON_TABLE_FIELD(TABLEID,FIELDNAME)</sql>
+            <sql>CREATE INDEX IDX_TF_T_TABLENAME ON TF_HORIZON_TABLE(TABLENAME)</sql>
+            <sql>CREATE INDEX IDX_TF_VF_VIEWID ON TF_HORIZON_VIEW_FIELD(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_VG_VIEWID ON TF_HORIZON_VIEW_GROUP(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_WF_FORMID ON TF_HORIZON_WORKFORM_FIELDAUTH(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FS_FORMID ON TFR_HORIZON_FORM_SUB(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FF_FORMID ON TF_HORIZON_FORM_FIELD(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FGD_FLOWFORMID ON TF_HORIZON_FORM_GRAPHICS_DIV(FLOWFORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FORMID ON TFR_HORIZON_FIELD_FORM(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FIELDID ON TFR_HORIZON_FIELD_FORM(FIELDID)</sql>
+            <sql>CREATE INDEX IDX_TF_FH_FD ON TF_HORIZON_FIELD_HISTORY(FORM_ID,DATA_ID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FT_FORMID ON TFR_HORIZON_FORM_TABLE(FORMID)</sql>
+        </mysql>
+        <mysql8>
+            <sql>CREATE INDEX IDX_TF_F_TABLEID ON TF_HORIZON_FORM (TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FG_TABLEID ON TF_HORIZON_FORM_GRAPHICS(TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FB_FORMID ON TF_HORIZON_FORM_BUTTON(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_VB_VIEWID ON TF_HORIZON_VIEW_BUTTON(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_TF_TF ON TF_HORIZON_TABLE_FIELD(TABLEID,FIELDNAME)</sql>
+            <sql>CREATE INDEX IDX_TF_T_TABLENAME ON TF_HORIZON_TABLE(TABLENAME)</sql>
+            <sql>CREATE INDEX IDX_TF_VF_VIEWID ON TF_HORIZON_VIEW_FIELD(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_VG_VIEWID ON TF_HORIZON_VIEW_GROUP(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_WF_FORMID ON TF_HORIZON_WORKFORM_FIELDAUTH(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FS_FORMID ON TFR_HORIZON_FORM_SUB(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FORMID ON TFR_HORIZON_FIELD_FORM(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FF_FORMID ON TF_HORIZON_FORM_FIELD(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FGD_FLOWFORMID ON TF_HORIZON_FORM_GRAPHICS_DIV(FLOWFORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FIELDID ON TFR_HORIZON_FIELD_FORM(FIELDID)</sql>
+            <sql>CREATE INDEX IDX_TF_FH_FD ON TF_HORIZON_FIELD_HISTORY(FORM_ID,DATA_ID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FT_FORMID ON TFR_HORIZON_FORM_TABLE(FORMID)</sql>
+        </mysql8>
+        <db2>
+            <sql>CREATE INDEX IDX_TF_F_TABLEID ON TF_HORIZON_FORM (TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FG_TABLEID ON TF_HORIZON_FORM_GRAPHICS(TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FB_FORMID ON TF_HORIZON_FORM_BUTTON(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_VB_VIEWID ON TF_HORIZON_VIEW_BUTTON(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_TF_TF ON TF_HORIZON_TABLE_FIELD(TABLEID,FIELDNAME)</sql>
+            <sql>CREATE INDEX IDX_TF_T_TABLENAME ON TF_HORIZON_TABLE(TABLENAME)</sql>
+            <sql>CREATE INDEX IDX_TF_VF_VIEWID ON TF_HORIZON_VIEW_FIELD(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_VG_VIEWID ON TF_HORIZON_VIEW_GROUP(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_WF_FORMID ON TF_HORIZON_WORKFORM_FIELDAUTH(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FS_FORMID ON TFR_HORIZON_FORM_SUB(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FF_FORMID ON TF_HORIZON_FORM_FIELD(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FGD_FLOWFORMID ON TF_HORIZON_FORM_GRAPHICS_DIV(FLOWFORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FORMID ON TFR_HORIZON_FIELD_FORM(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FIELDID ON TFR_HORIZON_FIELD_FORM(FIELDID)</sql>
+            <sql>CREATE INDEX IDX_TF_FH_FD ON TF_HORIZON_FIELD_HISTORY(FORM_ID,DATA_ID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FT_FORMID ON TFR_HORIZON_FORM_TABLE(FORMID)</sql>
+        </db2>
+        <sqlserver>
+            <sql>CREATE INDEX IDX_TF_F_TABLEID ON TF_HORIZON_FORM (TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FG_TABLEID ON TF_HORIZON_FORM_GRAPHICS(TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FB_FORMID ON TF_HORIZON_FORM_BUTTON(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_VB_VIEWID ON TF_HORIZON_VIEW_BUTTON(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_TF_TF ON TF_HORIZON_TABLE_FIELD(TABLEID,FIELDNAME)</sql>
+            <sql>CREATE INDEX IDX_TF_T_TABLENAME ON TF_HORIZON_TABLE(TABLENAME)</sql>
+            <sql>CREATE INDEX IDX_TF_VF_VIEWID ON TF_HORIZON_VIEW_FIELD(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_VG_VIEWID ON TF_HORIZON_VIEW_GROUP(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_WF_FORMID ON TF_HORIZON_WORKFORM_FIELDAUTH(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FS_FORMID ON TFR_HORIZON_FORM_SUB(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FF_FORMID ON TF_HORIZON_FORM_FIELD(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FGD_FLOWFORMID ON TF_HORIZON_FORM_GRAPHICS_DIV(FLOWFORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FORMID ON TFR_HORIZON_FIELD_FORM(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FIELDID ON TFR_HORIZON_FIELD_FORM(FIELDID)</sql>
+            <sql>CREATE INDEX IDX_TF_FH_FD ON TF_HORIZON_FIELD_HISTORY(FORM_ID,DATA_ID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FT_FORMID ON TFR_HORIZON_FORM_TABLE(FORMID)</sql>
+        </sqlserver>
+        <dm>
+            <sql>CREATE INDEX IDX_TF_F_TABLEID ON TF_HORIZON_FORM (TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FG_TABLEID ON TF_HORIZON_FORM_GRAPHICS(TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FB_FORMID ON TF_HORIZON_FORM_BUTTON(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_VB_VIEWID ON TF_HORIZON_VIEW_BUTTON(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_TF_TF ON TF_HORIZON_TABLE_FIELD(TABLEID,FIELDNAME)</sql>
+            <sql>CREATE INDEX IDX_TF_T_TABLENAME ON TF_HORIZON_TABLE(TABLENAME)</sql>
+            <sql>CREATE INDEX IDX_TF_VF_VIEWID ON TF_HORIZON_VIEW_FIELD(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_VG_VIEWID ON TF_HORIZON_VIEW_GROUP(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_WF_FORMID ON TF_HORIZON_WORKFORM_FIELDAUTH(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FS_FORMID ON TFR_HORIZON_FORM_SUB(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FF_FORMID ON TF_HORIZON_FORM_FIELD(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FGD_FLOWFORMID ON TF_HORIZON_FORM_GRAPHICS_DIV(FLOWFORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FORMID ON TFR_HORIZON_FIELD_FORM(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FIELDID ON TFR_HORIZON_FIELD_FORM(FIELDID)</sql>
+            <sql>CREATE INDEX IDX_TF_FH_FD ON TF_HORIZON_FIELD_HISTORY(FORM_ID,DATA_ID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FT_FORMID ON TFR_HORIZON_FORM_TABLE(FORMID)</sql>
+        </dm>
+        <postgresql>
+            <sql>CREATE INDEX IDX_TF_F_TABLEID ON TF_HORIZON_FORM (TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FG_TABLEID ON TF_HORIZON_FORM_GRAPHICS(TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FB_FORMID ON TF_HORIZON_FORM_BUTTON(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_VB_VIEWID ON TF_HORIZON_VIEW_BUTTON(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_TF_TF ON TF_HORIZON_TABLE_FIELD(TABLEID,FIELDNAME)</sql>
+            <sql>CREATE INDEX IDX_TF_T_TABLENAME ON TF_HORIZON_TABLE(TABLENAME)</sql>
+            <sql>CREATE INDEX IDX_TF_VF_VIEWID ON TF_HORIZON_VIEW_FIELD(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_VG_VIEWID ON TF_HORIZON_VIEW_GROUP(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_WF_FORMID ON TF_HORIZON_WORKFORM_FIELDAUTH(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FS_FORMID ON TFR_HORIZON_FORM_SUB(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FF_FORMID ON TF_HORIZON_FORM_FIELD(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FGD_FLOWFORMID ON TF_HORIZON_FORM_GRAPHICS_DIV(FLOWFORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FORMID ON TFR_HORIZON_FIELD_FORM(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FIELDID ON TFR_HORIZON_FIELD_FORM(FIELDID)</sql>
+            <sql>CREATE INDEX IDX_TF_FH_FD ON TF_HORIZON_FIELD_HISTORY(FORM_ID,DATA_ID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FT_FORMID ON TFR_HORIZON_FORM_TABLE(FORMID)</sql>
+        </postgresql>
+        <highgo>
+            <sql>CREATE INDEX IDX_TF_F_TABLEID ON TF_HORIZON_FORM (TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FG_TABLEID ON TF_HORIZON_FORM_GRAPHICS(TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FB_FORMID ON TF_HORIZON_FORM_BUTTON(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_VB_VIEWID ON TF_HORIZON_VIEW_BUTTON(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_TF_TF ON TF_HORIZON_TABLE_FIELD(TABLEID,FIELDNAME)</sql>
+            <sql>CREATE INDEX IDX_TF_T_TABLENAME ON TF_HORIZON_TABLE(TABLENAME)</sql>
+            <sql>CREATE INDEX IDX_TF_VF_VIEWID ON TF_HORIZON_VIEW_FIELD(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_VG_VIEWID ON TF_HORIZON_VIEW_GROUP(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_WF_FORMID ON TF_HORIZON_WORKFORM_FIELDAUTH(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FS_FORMID ON TFR_HORIZON_FORM_SUB(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FF_FORMID ON TF_HORIZON_FORM_FIELD(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FGD_FLOWFORMID ON TF_HORIZON_FORM_GRAPHICS_DIV(FLOWFORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FORMID ON TFR_HORIZON_FIELD_FORM(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FIELDID ON TFR_HORIZON_FIELD_FORM(FIELDID)</sql>
+            <sql>CREATE INDEX IDX_TF_FH_FD ON TF_HORIZON_FIELD_HISTORY(FORM_ID,DATA_ID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FT_FORMID ON TFR_HORIZON_FORM_TABLE(FORMID)</sql>
+        </highgo>
+        <gbase>
+            <sql>CREATE INDEX IDX_TF_F_TABLEID ON TF_HORIZON_FORM (TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FG_TABLEID ON TF_HORIZON_FORM_GRAPHICS(TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FB_FORMID ON TF_HORIZON_FORM_BUTTON(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_VB_VIEWID ON TF_HORIZON_VIEW_BUTTON(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_TF_TF ON TF_HORIZON_TABLE_FIELD(TABLEID,FIELDNAME)</sql>
+            <sql>CREATE INDEX IDX_TF_T_TABLENAME ON TF_HORIZON_TABLE(TABLENAME)</sql>
+            <sql>CREATE INDEX IDX_TF_VF_VIEWID ON TF_HORIZON_VIEW_FIELD(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_VG_VIEWID ON TF_HORIZON_VIEW_GROUP(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_WF_FORMID ON TF_HORIZON_WORKFORM_FIELDAUTH(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FS_FORMID ON TFR_HORIZON_FORM_SUB(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FF_FORMID ON TF_HORIZON_FORM_FIELD(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FGD_FLOWFORMID ON TF_HORIZON_FORM_GRAPHICS_DIV(FLOWFORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FORMID ON TFR_HORIZON_FIELD_FORM(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FIELDID ON TFR_HORIZON_FIELD_FORM(FIELDID)</sql>
+            <sql>CREATE INDEX IDX_TF_FH_FD ON TF_HORIZON_FIELD_HISTORY(FORM_ID,DATA_ID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FT_FORMID ON TFR_HORIZON_FORM_TABLE(FORMID)</sql>
+        </gbase>
+        <gbase8s>
+            <sql>CREATE INDEX IDX_TF_F_TABLEID ON TF_HORIZON_FORM (TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FG_TABLEID ON TF_HORIZON_FORM_GRAPHICS(TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FB_FORMID ON TF_HORIZON_FORM_BUTTON(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_VB_VIEWID ON TF_HORIZON_VIEW_BUTTON(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_TF_TF ON TF_HORIZON_TABLE_FIELD(TABLEID,FIELDNAME)</sql>
+            <sql>CREATE INDEX IDX_TF_T_TABLENAME ON TF_HORIZON_TABLE(TABLENAME)</sql>
+            <sql>CREATE INDEX IDX_TF_VF_VIEWID ON TF_HORIZON_VIEW_FIELD(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_VG_VIEWID ON TF_HORIZON_VIEW_GROUP(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_WF_FORMID ON TF_HORIZON_WORKFORM_FIELDAUTH(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FS_FORMID ON TFR_HORIZON_FORM_SUB(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FF_FORMID ON TF_HORIZON_FORM_FIELD(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FGD_FLOWFORMID ON TF_HORIZON_FORM_GRAPHICS_DIV(FLOWFORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FORMID ON TFR_HORIZON_FIELD_FORM(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FIELDID ON TFR_HORIZON_FIELD_FORM(FIELDID)</sql>
+            <sql>CREATE INDEX IDX_TF_FH_FD ON TF_HORIZON_FIELD_HISTORY(FORM_ID,DATA_ID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FT_FORMID ON TFR_HORIZON_FORM_TABLE(FORMID)</sql>
+        </gbase8s>
+        <kingbase>
+            <sql>CREATE INDEX IDX_TF_F_TABLEID ON TF_HORIZON_FORM (TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FG_TABLEID ON TF_HORIZON_FORM_GRAPHICS(TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FB_FORMID ON TF_HORIZON_FORM_BUTTON(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_VB_VIEWID ON TF_HORIZON_VIEW_BUTTON(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_TF_TF ON TF_HORIZON_TABLE_FIELD(TABLEID,FIELDNAME)</sql>
+            <sql>CREATE INDEX IDX_TF_T_TABLENAME ON TF_HORIZON_TABLE(TABLENAME)</sql>
+            <sql>CREATE INDEX IDX_TF_VF_VIEWID ON TF_HORIZON_VIEW_FIELD(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_VG_VIEWID ON TF_HORIZON_VIEW_GROUP(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_WF_FORMID ON TF_HORIZON_WORKFORM_FIELDAUTH(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FS_FORMID ON TFR_HORIZON_FORM_SUB(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FF_FORMID ON TF_HORIZON_FORM_FIELD(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FGD_FLOWFORMID ON TF_HORIZON_FORM_GRAPHICS_DIV(FLOWFORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FORMID ON TFR_HORIZON_FIELD_FORM(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FIELDID ON TFR_HORIZON_FIELD_FORM(FIELDID)</sql>
+            <sql>CREATE INDEX IDX_TF_FH_FD ON TF_HORIZON_FIELD_HISTORY(FORM_ID,DATA_ID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FT_FORMID ON TFR_HORIZON_FORM_TABLE(FORMID)</sql>
+        </kingbase>
+        <kingbase8>
+            <sql>CREATE INDEX IDX_TF_F_TABLEID ON TF_HORIZON_FORM (TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FG_TABLEID ON TF_HORIZON_FORM_GRAPHICS(TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FB_FORMID ON TF_HORIZON_FORM_BUTTON(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_VB_VIEWID ON TF_HORIZON_VIEW_BUTTON(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_TF_TF ON TF_HORIZON_TABLE_FIELD(TABLEID,FIELDNAME)</sql>
+            <sql>CREATE INDEX IDX_TF_T_TABLENAME ON TF_HORIZON_TABLE(TABLENAME)</sql>
+            <sql>CREATE INDEX IDX_TF_VF_VIEWID ON TF_HORIZON_VIEW_FIELD(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_VG_VIEWID ON TF_HORIZON_VIEW_GROUP(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_WF_FORMID ON TF_HORIZON_WORKFORM_FIELDAUTH(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FS_FORMID ON TFR_HORIZON_FORM_SUB(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FF_FORMID ON TF_HORIZON_FORM_FIELD(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FGD_FLOWFORMID ON TF_HORIZON_FORM_GRAPHICS_DIV(FLOWFORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FORMID ON TFR_HORIZON_FIELD_FORM(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FIELDID ON TFR_HORIZON_FIELD_FORM(FIELDID)</sql>
+            <sql>CREATE INDEX IDX_TF_FH_FD ON TF_HORIZON_FIELD_HISTORY(FORM_ID,DATA_ID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FT_FORMID ON TFR_HORIZON_FORM_TABLE(FORMID)</sql>
+        </kingbase8>
+        <oscar>
+            <sql>CREATE INDEX IDX_TF_F_TABLEID ON TF_HORIZON_FORM (TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FG_TABLEID ON TF_HORIZON_FORM_GRAPHICS(TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FB_FORMID ON TF_HORIZON_FORM_BUTTON(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_VB_VIEWID ON TF_HORIZON_VIEW_BUTTON(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_TF_TF ON TF_HORIZON_TABLE_FIELD(TABLEID,FIELDNAME)</sql>
+            <sql>CREATE INDEX IDX_TF_T_TABLENAME ON TF_HORIZON_TABLE(TABLENAME)</sql>
+            <sql>CREATE INDEX IDX_TF_VF_VIEWID ON TF_HORIZON_VIEW_FIELD(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_VG_VIEWID ON TF_HORIZON_VIEW_GROUP(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_WF_FORMID ON TF_HORIZON_WORKFORM_FIELDAUTH(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FS_FORMID ON TFR_HORIZON_FORM_SUB(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FF_FORMID ON TF_HORIZON_FORM_FIELD(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FGD_FLOWFORMID ON TF_HORIZON_FORM_GRAPHICS_DIV(FLOWFORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FORMID ON TFR_HORIZON_FIELD_FORM(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FIELDID ON TFR_HORIZON_FIELD_FORM(FIELDID)</sql>
+            <sql>CREATE INDEX IDX_TF_FH_FD ON TF_HORIZON_FIELD_HISTORY(FORM_ID,DATA_ID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FT_FORMID ON TFR_HORIZON_FORM_TABLE(FORMID)</sql>
+        </oscar>
+        <upbase>
+            <sql>CREATE INDEX IDX_TF_F_TABLEID ON TF_HORIZON_FORM (TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FG_TABLEID ON TF_HORIZON_FORM_GRAPHICS(TABLEID)</sql>
+            <sql>CREATE INDEX IDX_TF_FB_FORMID ON TF_HORIZON_FORM_BUTTON(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_VB_VIEWID ON TF_HORIZON_VIEW_BUTTON(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_TF_TF ON TF_HORIZON_TABLE_FIELD(TABLEID,FIELDNAME)</sql>
+            <sql>CREATE INDEX IDX_TF_T_TABLENAME ON TF_HORIZON_TABLE(TABLENAME)</sql>
+            <sql>CREATE INDEX IDX_TF_VF_VIEWID ON TF_HORIZON_VIEW_FIELD(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_VG_VIEWID ON TF_HORIZON_VIEW_GROUP(VIEWID)</sql>
+            <sql>CREATE INDEX IDX_TF_WF_FORMID ON TF_HORIZON_WORKFORM_FIELDAUTH(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FS_FORMID ON TFR_HORIZON_FORM_SUB(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FF_FORMID ON TF_HORIZON_FORM_FIELD(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TF_FGD_FLOWFORMID ON TF_HORIZON_FORM_GRAPHICS_DIV(FLOWFORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FORMID ON TFR_HORIZON_FIELD_FORM(FORMID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FF_FIELDID ON TFR_HORIZON_FIELD_FORM(FIELDID)</sql>
+            <sql>CREATE INDEX IDX_TF_FH_FD ON TF_HORIZON_FIELD_HISTORY(FORM_ID,DATA_ID)</sql>
+            <sql>CREATE INDEX IDX_TFR_FT_FORMID ON TFR_HORIZON_FORM_TABLE(FORMID)</sql>
+        </upbase>
+    </others>
+</tableinfo>

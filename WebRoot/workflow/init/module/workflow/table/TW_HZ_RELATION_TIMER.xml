@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_RELATION_TIMER</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_RELATION_TIMER</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TASKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="SAVETIME" typename="varchar"   length="25"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_RELATION_TIMER_LOG</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_RETIMER_LOG</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TASKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="SAVETIME" typename="varchar"   length="25"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+</tableinfo>

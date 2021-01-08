@@ -1,0 +1,110 @@
+<title>hz{platform-positiontype.largeTitle}</title>
+<hi18n groups="platform-positiontype;base;message;platform-validator"></hi18n>
+<div class="horizon-modal-container">
+	<div class="other-content-area">
+		<div class="page-header smaller">
+		<h1>
+            hz{platform-positiontype.subTitle}<small>
+            <i class="ace-icon fa fa-angle-double-right"></i>
+         		 hz{platform-positiontype.typeList}
+         	</small>
+            <div class="pull-right">
+                    <label class="pointer horizon-modal-trigger" data-target=".horizon-modal" data-toggle="modal">
+                        <i class="ace-icon fa fa-leaf bigger-110 icon-only green"></i>
+                        hz{platform-positiontype.typeTree}
+                    </label>
+                </div>
+        </h1>
+		</div>
+		<!-- page-header -->
+		<iframe name="typeList" id="typeList" src="" frameborder="0" width="100%" class="iframeBorder"></iframe>
+		<div class="hidden" id="positiontypeInfo">
+			<form class="form-horizontal" role="form" id="positiontypeForm">
+				<div class="horizon-tab">
+					<div class="row">
+						<div class="col-xs-12 col-md-6 col-md-offset-3">
+							<div class="row">
+								<input type="hidden" name="id"/>
+								<div class="col-xs-12">
+									<div class="form-group no-margin-left no-margin-right">
+										<label class="control-label">hz{platform-positiontype.categoryName}</label>
+										<div class="form-group no-margin has-error">
+											<input type="text" required="true" class="form-control" name="categoryName"
+												placeholder="hz{platform-positiontype.inputCategoryName}" maxlength="255"/>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12">
+									<div class="form-group no-margin-left no-margin-right">
+										<label class="control-label">hz{platform-positiontype.parentType}</label>
+										<div class="form-group no-margin has-error" id="parentType">
+											<input name="parentId" type="hidden" >
+											<input type="text" readonly required="true"  class="form-control dropdown-toggle pointer" data-toggle="dropdown" data-position="auto" id="parentName" name="parentName"
+												placeholder="hz{platform-positiontype.selectParentType}" maxlength="255"/>
+											<div class="select-tree dropdown-menu dropdown-yellow dropdown-caret dropdown-close ">
+												<ul id="selectType-tree" class="ztree"></ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12">
+									<div class="form-group no-margin-left no-margin-right">
+										<label class="control-label">hz{platform-positiontype.categoryCode}</label>
+										<div class="form-group no-margin has-error">
+											<input type="text" required="true" class="form-control" name="categoryCode"
+												placeholder="hz{platform-positiontype.inputCategoryCode}" notChinese="true" maxlength="255"/>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-xs-12">
+									<div class="form-group no-margin-left no-margin-right">
+										<label class="control-label">hz{platform-positiontype.orderNo}</label>
+										<div  class="form-group no-margin has-error">
+											<input type="text" class=" form-control" name="orderNo" required="true"
+												placeholder="hz{platform-positiontype.inputOrderNo}" number="true" digits="true" min="0" maxlength="9"/>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12">
+									<div class="form-group no-margin-left no-margin-right">
+										<label class="control-label"> hz{platform-positiontype.comments}</label>
+										<div>
+											<textarea class="form-control" style="resize: none" maxlength="200" rows="2" name="comments"></textarea>
+										</div>
+									</div>
+								</div>
+							</div><!-- row -->
+						</div><!-- col-md-offset-3 -->
+					</div>
+					<!-- row -->
+				</div>
+				<!-- horizon-tab -->
+			</form>
+		</div>
+	</div><!-- other-content-area -->
+	<div class="horizon-modal modal aside aside-right aside-vc aside-fixed navbar-offset" data-body-scroll="false" data-offset="true" data-placement="right" data-fixed="true" data-backdrop="invisible" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header blue">
+                   	  hz{platform-positiontype.typeTree}
+                    <label class="pull-right hidden-sm hidden-xs">
+                        <a data-action="fixed-modal" class="pointer"><i class="ace-icon fa fa-lock bigger-160" data-fixed-icon="fa-lock" data-unfixed-icon="fa-unlock"></i></a>
+                    </label>
+                </div>
+                <div class="modal-body">
+                     <ul id="type-tree" class="ztree"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- horizon-modal-container -->
+<script type="text/javascript">
+    jQuery(function($) {
+        require([horizon.paths.apppath+'/horizon/assets/manager/org/position/type/js/positiontype.js'], function() {
+        	horizon.tools.use(horizon.paths.pluginpath + '/ztree/css/zTreeStyle/zTreeStyle.css'),
+    		horizon.manager.positiontype.init();
+            $('.page-content-area').trigger('ajaxscriptsloaded');
+        });
+    });
+</script>

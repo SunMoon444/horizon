@@ -1,0 +1,365 @@
+<title>hz{platform-config.title}</title>
+<hi18n groups="platform-config;base;message;validator"></Hi18n>
+<div class="page-header smaller no-padding-top">
+    <h1>
+        hz{platform-config.largeTitle}
+        <small class="hidden-xs">
+            <i class="ace-icon fa fa-angle-double-right"></i>
+            hz{platform-config.smallTitle}
+        </small>
+    </h1>
+</div>
+<div id="visualSysTable" class="profile-table">
+    <!-- 系统运行中的一些控制参数 -->
+    <div id="sys-default-container" class="profile-container">
+        <form>
+            <div class="lead">
+                hz{platform-config.platformProperties}
+                <button type="button" class="changeset pull-right btn btn-white btn-round btn-sm  border-width-1">
+                    <i class="ace-icon fa fa-pencil green"></i>&nbsp;hz{platform-config.buttonsSetUp}
+                </button>
+                <button type="button" class="reset pull-right btn btn-white btn-round btn-sm  border-width-1 hidden"
+                        value='hz{platform-config.buttonsCancel}'>
+                    <i class="ace-icon fa fa-undo green"></i>&nbsp;hz{platform-config.buttonsCancel}
+                </button>
+                <button type="submit" class="submit pull-right btn btn-white btn-round btn-sm  border-width-1 hidden"
+                        value='hz{platform-config.buttonsSave}'>
+                    <i class="ace-icon fa fa-save green"></i>&nbsp;hz{platform-config.buttonsSave}
+                </button>
+            </div>
+            <table id="cahce-default-table" class="table">
+                <tbody>
+                <colgroup>
+                    <col style="width: 30%">
+                    <col style="width: 70%">
+                </colgroup>
+                <tr>
+                    <td>hz{platform-config.authInituthCheck}:</td>
+                    <td data-id="authInit.authCheck" data-value=""></td>
+                </tr>
+                <tr>
+                    <td>hz{platform-config.strongPwdAuth}:</td>
+                    <td data-id="passwordsafe.strongPwdAuth" data-value=""></td>
+                </tr>
+                <tr>
+                    <td>hz{platform-config.pwdTimerUpdate}:</td>
+                    <td data-id="passwordsafe.pwdTimerUpdate" data-value=""></td>
+                </tr>
+                <tr>
+                    <td>hz{platform-config.secretlevelsafe}:</td>
+                    <td data-id="secretlevelsafe" data-value=""></td>
+                </tr>
+                <tr>
+                    <td>hz{platform-config.authInitFlowStart}:</td>
+                    <td data-id="authInit.flowStart" data-value=""></td>
+                </tr>
+                <tr>
+                    <td>hz{platform-config.attachmentDeletion}:</td>
+                    <td data-id="attachment.delete" data-value=""></td>
+                </tr>
+                <tr>
+                    <td>hz{platform-config.attachmentVersion}:</td>
+                    <td data-id="attachment.version" data-value=""></td>
+                </tr>
+                <tr>
+                    <td>hz{platform-config.allowRepeatLogin}:</td>
+                    <td data-id="allow.repeat.login" data-value=""></td>
+                </tr>
+                <tr>
+                    <td>hz{platform-config.validateCode}:</td>
+                    <td data-id="validate.code" data-value=""></td>
+                </tr>
+                <tr>
+                    <td>hz{platform-config.pwdUpdatePeriod}:</td>
+                    <td data-id="passwordsafe.pwdUpdatePeriod" data-value=""></td>
+                </tr>
+
+                <tr>
+					<td>hz{platform-config.layoutManager}:</td>
+					<td data-id="layout.manager" data-value=""></td>
+				</tr>
+				<tr>
+					<td>hz{platform-config.layoutOperator}:</td>
+					<td data-id="layout.operator" data-value=""></td>
+				</tr>
+                <tr>
+                    <td>hz{platform-config.solveAccountLock}:</td>
+                    <td data-id="solve.account.lock" data-value=""></td>
+                </tr>
+                <tr>
+                    <td>hz{platform-config.failureCountLock}:</td>
+                    <td data-id="failure.count.lock" data-value=""></td>
+                </tr>
+                <tr>
+                    <td>hz{platform-config.autoUnlockTime}:</td>
+                    <td data-id="auto.unlock.time" data-value=""></td>
+                </tr>
+                <tr>
+                    <td>hz{platform-config.addFailureTime}:</td>
+                    <td data-id="add.failure.time" data-value=""></td>
+                </tr>
+                <tr>
+                    <td>hz{platform-config.manageUrl}:</td>
+                    <td data-id="manage.url" data-value=""></td>
+                </tr>
+                <tr>
+                    <td>hz{platform-config.operatorUrl}:</td>
+                    <td data-id="operator.url" data-value=""></td>
+                </tr>
+                <tr>
+                    <td>hz{platform-config.logExecuteLen}:</td>
+                    <td data-id="log.execute.len" data-value=""></td>
+                </tr>
+                <tr>
+                    <td>hz{platform-config.formGraphic}:</td>
+                    <td data-id="form.graphic" data-value=""></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="profile-form form-horizontal no-margin-bottom hidden">
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 control-label">hz{platform-config.authInituthCheck}<i>*</i>:</label>
+                    <div class="col-xs-12 col-sm-6 radio">
+                        <label>
+                            <input type="radio" name="authInit.authCheck" data-value="true" value="true" class="ace" checked="checked"  />
+                            <span class="lbl">&nbsp;hz{platform-config.open}</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="authInit.authCheck" data-value="false" value="false" class="ace"    />
+                            <span class="lbl">&nbsp;hz{base.close} </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 control-label">hz{platform-config.strongPwdAuth}<i>*</i>:</label>
+                    <div class="col-xs-12 col-sm-6 radio">
+                        <label>
+                            <input type="radio" name="passwordsafe.strongPwdAuth" data-value="true" value="true" class="ace" checked="checked"  />
+                            <span class="lbl">&nbsp;hz{platform-config.open}</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="passwordsafe.strongPwdAuth" data-value="false" value="false" class="ace"    />
+                            <span class="lbl">&nbsp;hz{base.close} </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 control-label">hz{platform-config.pwdTimerUpdate}<i>*</i>:</label>
+                    <div class="col-xs-12 col-sm-6 radio">
+                        <label>
+                            <input type="radio" name="passwordsafe.pwdTimerUpdate" data-value="true" value="true" class="ace" checked="checked"  />
+                            <span class="lbl">&nbsp;hz{platform-config.open}</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="passwordsafe.pwdTimerUpdate" data-value="false" value="false" class="ace"    />
+                            <span class="lbl">&nbsp;hz{base.close} </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 control-label">hz{platform-config.secretlevelsafe}<i>*</i>:</label>
+                    <div class="col-xs-12 col-sm-6 radio">
+                        <label>
+                            <input type="radio" name="secretlevelsafe" data-value="true" value="true" class="ace" checked="checked"  />
+                            <span class="lbl">&nbsp;hz{platform-config.open}</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="secretlevelsafe" data-value="false" value="false" class="ace"    />
+                            <span class="lbl">&nbsp;hz{base.close} </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 control-label">hz{platform-config.authInitFlowStart}<i>*</i>:</label>
+                    <div class="col-xs-12 col-sm-6 radio">
+                        <label>
+                            <input type="radio" name="authInit.flowStart" data-value="true" value="true" class="ace" checked="checked"  />
+                            <span class="lbl">&nbsp;hz{platform-config.open}</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="authInit.flowStart" data-value="false" value="false" class="ace"    />
+                            <span class="lbl">&nbsp;hz{base.close} </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 control-label">hz{platform-config.attachmentDeletion}<i>*</i>:</label>
+                    <div class="col-xs-12 col-sm-6 radio">
+                        <label>
+                            <input type="radio" name="attachment.delete" data-value="true" value="true" class="ace" checked="checked"  />
+                            <span class="lbl">&nbsp;hz{platform-config.open}</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="attachment.delete" data-value="false" value="false" class="ace"    />
+                            <span class="lbl">&nbsp;hz{base.close} </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 control-label">hz{platform-config.attachmentVersion}<i>*</i>:</label>
+                    <div class="col-xs-12 col-sm-6 radio">
+                        <label>
+                            <input type="radio" name="attachment.version" data-value="true" value="true" class="ace" checked="checked"  />
+                            <span class="lbl">&nbsp;hz{platform-config.open}</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="attachment.version" data-value="false" value="false" class="ace"    />
+                            <span class="lbl">&nbsp;hz{base.close} </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 control-label">hz{platform-config.allowRepeatLogin}<i>*</i>:</label>
+                    <div class="col-xs-12 col-sm-6 radio">
+                        <label>
+                            <input type="radio" name="allow.repeat.login" data-value="true" value="true" class="ace" checked="checked"  />
+                            <span class="lbl">&nbsp;hz{platform-config.permit}</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="allow.repeat.login" data-value="false" value="false" class="ace"    />
+                            <span class="lbl">&nbsp;hz{platform-config.refusal} </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 control-label">hz{platform-config.validateCode}<i>*</i>:</label>
+                    <div class="col-xs-12 col-sm-6 radio">
+                        <label>
+                            <input type="radio" name="validate.code" data-value="true" value="true" class="ace" checked="checked"  />
+                            <span class="lbl">&nbsp;hz{platform-config.open}</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="validate.code" data-value="false" value="false" class="ace"    />
+                            <span class="lbl">&nbsp;hz{base.close} </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 control-label">hz{platform-config.pwdUpdatePeriod}<i>*</i>:</label>
+                    <div class="col-xs-12 col-sm-6">
+                        <span class="input-icon col-xs-12 no-padding">
+                        <input name="passwordsafe.pwdUpdatePeriod" type="text" placeholder="hz{message.input}" number="true" digits="true" class="form-control" number="true" required  />
+                            <i class="ace-icon glyphicon glyphicon-pencil"></i>
+                        </span>
+                    </div>
+                </div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 control-label">hz{platform-config.layoutManager}<i>*</i>:</label>
+					<div class="col-xs-12 col-sm-6">
+						<select name="layout.manager" class="form-control chosen" required>
+							<option value="top">top</option>
+							<option value="top-left">top-left</option>
+							<option value="top-left-hoversubmenu">top-left-hoversubmenu</option>
+							<option value="left">left</option>
+							<option value="left-hoversubmenu">left-hoversubmenu</option>
+							<option value="bottom-left">bottom-left</option>
+							<option value="bottom-left-hoversubmenu">bottom-left-hoversubmenu</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 control-label">hz{platform-config.layoutOperator}<i>*</i>:</label>
+					<div class="col-xs-12 col-sm-6">
+						<select name="layout.operator" class="form-control chosen" required>
+							<option value="top">top</option>
+							<option value="top-left">top-left</option>
+							<option value="top-left-hoversubmenu">top-left-hoversubmenu</option>
+							<option value="left">left</option>
+							<option value="left-hoversubmenu">left-hoversubmenu</option>
+							<option value="bottom-left">bottom-left</option>
+							<option value="bottom-left-hoversubmenu">bottom-left-hoversubmenu</option>
+						</select>
+					</div>
+				</div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 control-label">hz{platform-config.solveAccountLock}<i>*</i>:</label>
+                    <div class="col-xs-12 col-sm-6">
+                        <select name="solve.account.lock" class="form-control chosen" required>
+                            <option value="0">hz{platform-config.unlock}</option>
+                            <option value="1">hz{platform-config.autoUnlock}</option>
+                            <option value="2">hz{platform-config.adminUnlock}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 control-label">hz{platform-config.failureCountLock}<i>*</i>:</label>
+                    <div class="col-xs-12 col-sm-6">
+                        <span class="input-icon col-xs-12 no-padding">
+                        <input name="failure.count.lock" type="text" placeholder="hz{message.input}" number="true" digits="true" class="form-control" required  />
+                            <i class="ace-icon glyphicon glyphicon-pencil"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 control-label">hz{platform-config.autoUnlockTime}<i>*</i>:</label>
+                    <div class="col-xs-12 col-sm-6">
+                        <span class="input-icon col-xs-12 no-padding">
+                        <input name="auto.unlock.time" type="text" placeholder="hz{message.input}" number="true" digits="true" class="form-control" required  />
+                            <i class="ace-icon glyphicon glyphicon-pencil"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 control-label">hz{platform-config.addFailureTime}<i>*</i>:</label>
+                    <div class="col-xs-12 col-sm-6">
+                        <span class="input-icon col-xs-12 no-padding">
+                        <input name="add.failure.time" type="text" placeholder="hz{message.input}" number="true" digits="true" class="form-control" required  />
+                            <i class="ace-icon glyphicon glyphicon-pencil"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 control-label">hz{platform-config.manageUrl}<i>*</i>:</label>
+                    <div class="col-xs-12 col-sm-6">
+                        <span class="input-icon col-xs-12 no-padding">
+                        <input name="manage.url" type="text" placeholder="hz{message.input}"class="form-control" required  />
+                            <i class="ace-icon glyphicon glyphicon-pencil"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 control-label">hz{platform-config.operatorUrl}<i>*</i>:</label>
+                    <div class="col-xs-12 col-sm-6">
+                        <span class="input-icon col-xs-12 no-padding">
+                        <input name="operator.url" type="text" placeholder="hz{message.input}"class="form-control" required  />
+                            <i class="ace-icon glyphicon glyphicon-pencil"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 control-label">hz{platform-config.logExecuteLen}<i>*</i>:</label>
+                    <div class="col-xs-12 col-sm-6">
+                        <span class="input-icon col-xs-12 no-padding">
+                        <input name="log.execute.len" type="text" placeholder="hz{message.input}"class="form-control" number="true" digits="true" required  />
+                            <i class="ace-icon glyphicon glyphicon-pencil"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 control-label">hz{platform-config.formGraphic}<i>*</i>:</label>
+                    <div class="col-xs-12 col-sm-6">
+                        <span class="input-icon col-xs-12 no-padding">
+                        <input name="form.graphic" type="text" placeholder="hz{message.input}"class="form-control" required  />
+                            <i class="ace-icon glyphicon glyphicon-pencil"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    jQuery(function($) {
+        require(
+            [ horizon.paths.apppath + '/horizon/assets/manager/profile/js/platform.visual.js'  ],
+            function() {
+                horizon.language.plugins.validator();
+                horizon.tools.use(horizon.paths.apppath + '/horizon/assets/manager/profile/css/profile.css');
+                horizon.engine.platform_profile_sys.init();
+                $('.page-content-area').trigger('ajaxscriptsloaded');
+            });
+    });
+</script>

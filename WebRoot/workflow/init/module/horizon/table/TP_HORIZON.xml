@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 权限设置表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TP_HORIZON_DATA_ORG</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_HORIZON_DATA_ORG</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="DATAID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="DATATYPE" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="UNITID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="ROWVERSION" typename="number"   length="10" defaultvalue="1"></fieldinfo>
+			<fieldinfo fieldname="TYPE" typename="varchar"   length="1"></fieldinfo>
+		</fieldinfos>
+	</tablename>	
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TP_HORIZON_DEPT</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TP_HORIZON_DEPT</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="RES_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="RES_TYPE" typename="number"   length="6"></fieldinfo>
+			<fieldinfo fieldname="RES_GROUP_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="VERIFY_TYPE" typename="number"   length="1" ></fieldinfo>
+			<fieldinfo fieldname="BIZ_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="BIZ_TYPE" typename="varchar"   length="32"></fieldinfo>
+		</fieldinfos>
+	</tablename>	
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TP_HORIZON_GROUP</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TP_HORIZON_GROUP</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="RES_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="RES_TYPE" typename="number"   length="6"></fieldinfo>
+			<fieldinfo fieldname="RES_GROUP_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="VERIFY_TYPE" typename="number"   length="1" ></fieldinfo>
+			<fieldinfo fieldname="BIZ_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="BIZ_TYPE" typename="varchar"   length="32"></fieldinfo>
+		</fieldinfos>
+	</tablename>	
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TP_HORIZON_ROLE</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TP_HORIZON_ROLE</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="RES_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="RES_TYPE" typename="number"   length="2"></fieldinfo>
+			<fieldinfo fieldname="RES_GROUP_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="VERIFY_TYPE" typename="number"   length="1" ></fieldinfo>
+			<fieldinfo fieldname="BIZ_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="BIZ_TYPE" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar"   length="2"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TP_HORIZON_USER</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TP_HORIZON_USER</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="RES_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="RES_TYPE" typename="number"   length="6"></fieldinfo>
+			<fieldinfo fieldname="RES_GROUP_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="VERIFY_TYPE" typename="number"   length="1" ></fieldinfo>
+			<fieldinfo fieldname="BIZ_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="BIZ_TYPE" typename="varchar"   length="32"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TP_HORIZON_RECORD</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TP_HORIZON_RECORD</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="TABLENAME" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="FIELDNAME" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="USERTYPE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="USERID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="MERGETYPE" typename="number"   length="10" ></fieldinfo>
+			<fieldinfo fieldname="RECID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="AUTH_ORDER" typename="number"   length="10"></fieldinfo>
+			<fieldinfo fieldname="USERNAME" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="ROWVERSION" typename="number"   length="10"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TP_HORIZON_RESOURCE_GROUP</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_RESOURCE_GROUP</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="RES_GROUP_NAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="RES_GROUP_CODE" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="ORDER_NO" typename="number"   length="10"></fieldinfo>
+			<fieldinfo fieldname="COMMENTS" typename="varchar"   length="200"></fieldinfo>
+		</fieldinfos>
+	</tablename>	
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TP_HORIZON_RESOURCE</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TP_HORIZON_RESOURCE</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="RES_NAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="RES_TYPE" typename="number"   length="6"></fieldinfo>
+			<fieldinfo fieldname="RES_CODE" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="ORDER_NO" typename="number"   length="10"></fieldinfo>
+			<fieldinfo fieldname="COMMENTS" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="RES_URL" typename="lvarchar"   length="500"></fieldinfo>
+		</fieldinfos>
+	</tablename>	
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TP_HORIZON_ROLE_EXCEPT</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TP_HORIZON_ROLE_EXCEPT</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="USER_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="ROLE_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="ORDER_NO" typename="number"   length="10"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TP_HORIZON_URL</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TP_HORIZON_URL</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="AUTH_TITLE" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="URL" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="PARAM_NAMES" typename="lvarchar"   length="1024"></fieldinfo>
+			<fieldinfo fieldname="PARAM_VALUES" typename="lvarchar"   length="1024"></fieldinfo>
+			<fieldinfo fieldname="RESOURCE_CODE" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="REGGROUP_CODE" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="SOURCE_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SOURCE_TYPE" typename="varchar"   length="10"></fieldinfo>
+			<fieldinfo fieldname="AUTH_TYPE" typename="varchar"   length="10"></fieldinfo>
+			<fieldinfo fieldname="CREATE_TIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="ACTIVE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="FORM_ACTIVE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="AUTH_COMMENTS" typename="varchar"   length="200"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TP_USER_SECRETLEVEL</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TP_USER_SECRETLEVEL</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="USERID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SECRETLEVEL" typename="varchar"   length="10"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar"   length="10"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TPR_HORIZON_BIZ_DATA</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TPR_HORIZON_BIZ_DATA</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="BIZ_RES_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="RESGROUP_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="BIZ_DATA_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="BIZ_TYPE" typename="varchar"   length="32"></fieldinfo>
+		</fieldinfos>
+	</tablename>	
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TPR_HORIZON_OBJ_RESOURCE</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TPR_HORIZON_OBJ_RESOURCE</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_TYPE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="RES_OBJECT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="RES_TYPE" typename="number"   length="6"></fieldinfo>
+			<fieldinfo fieldname="ORDER_NO" typename="number"   length="10"></fieldinfo>
+			<fieldinfo fieldname="VERIFY_TYPE" typename="number"   length="2"></fieldinfo>
+			<fieldinfo fieldname="ISDISABLE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="BIZ_ID" typename="varchar"   length="32"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TPR_HORIZON_OBJ_ROLE</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TPR_HORIZON_OBJ_ROLE</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="ROLE_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_ID" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_TYPE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="ORDER_NO" typename="number"   length="10"></fieldinfo>
+			<fieldinfo fieldname="VERIFY_TYPE" typename="number"   length="1"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar"   length="10"></fieldinfo>
+		</fieldinfos>
+	</tablename>	
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TPR_HORIZON_RESOURCE_GROUP</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TPR_HORIZON_RESOURCE_GROUP</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="RES_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="RES_GROUP_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="ORDER_NO" typename="number"   length="10"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TPR_HORIZON_RESOURCE_ORG</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TPR_HORIZON_RESOURCE_ORG</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="RES_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="RES_TYPE" typename="number"   length="2"></fieldinfo>
+			<fieldinfo fieldname="ORG_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="CREATOR_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="CREATE_TIME" typename="varchar"   length="32"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<others>
+		<oracle>
+			<sql>CREATE INDEX IDX_TPR_OR_ROLE_ID ON TPR_HORIZON_OBJ_ROLE(ROLE_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_RES_ID ON TP_HORIZON_ROLE(RES_ID)</sql>
+			<sql>CREATE INDEX IDX_TPR_OR_OBJECT_ID ON TPR_HORIZON_OBJ_ROLE(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_OBJECT_ID ON TP_HORIZON_ROLE(OBJECT_ID)</sql>
+		</oracle>
+		<mysql>
+			<sql>CREATE INDEX IDX_TPR_OR_ROLE_ID ON TPR_HORIZON_OBJ_ROLE(ROLE_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_RES_ID ON TP_HORIZON_ROLE(RES_ID)</sql>
+			<sql>CREATE INDEX IDX_TPR_OR_OBJECT_ID ON TPR_HORIZON_OBJ_ROLE(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_OBJECT_ID ON TP_HORIZON_ROLE(OBJECT_ID)</sql>
+		</mysql>
+		<mysql8>
+			<sql>CREATE INDEX IDX_TPR_OR_ROLE_ID ON TPR_HORIZON_OBJ_ROLE(ROLE_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_RES_ID ON TP_HORIZON_ROLE(RES_ID)</sql>
+			<sql>CREATE INDEX IDX_TPR_OR_OBJECT_ID ON TPR_HORIZON_OBJ_ROLE(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_OBJECT_ID ON TP_HORIZON_ROLE(OBJECT_ID)</sql>
+		</mysql8>
+		<db2>
+			<sql>CREATE INDEX IDX_TPR_OR_ROLE_ID ON TPR_HORIZON_OBJ_ROLE(ROLE_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_RES_ID ON TP_HORIZON_ROLE(RES_ID)</sql>
+			<sql>CREATE INDEX IDX_TPR_OR_OBJECT_ID ON TPR_HORIZON_OBJ_ROLE(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_OBJECT_ID ON TP_HORIZON_ROLE(OBJECT_ID)</sql>
+		</db2>
+		<sqlserver>
+			<sql>CREATE INDEX IDX_TPR_OR_ROLE_ID ON TPR_HORIZON_OBJ_ROLE(ROLE_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_RES_ID ON TP_HORIZON_ROLE(RES_ID)</sql>
+			<sql>CREATE INDEX IDX_TPR_OR_OBJECT_ID ON TPR_HORIZON_OBJ_ROLE(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_OBJECT_ID ON TP_HORIZON_ROLE(OBJECT_ID)</sql>
+		</sqlserver>
+		<dm>
+			<sql>CREATE INDEX IDX_TPR_OR_ROLE_ID ON TPR_HORIZON_OBJ_ROLE(ROLE_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_RES_ID ON TP_HORIZON_ROLE(RES_ID)</sql>
+			<sql>CREATE INDEX IDX_TPR_OR_OBJECT_ID ON TPR_HORIZON_OBJ_ROLE(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_OBJECT_ID ON TP_HORIZON_ROLE(OBJECT_ID)</sql>
+		</dm>
+		<postgresql>
+			<sql>CREATE INDEX IDX_TPR_OR_ROLE_ID ON TPR_HORIZON_OBJ_ROLE(ROLE_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_RES_ID ON TP_HORIZON_ROLE(RES_ID)</sql>
+			<sql>CREATE INDEX IDX_TPR_OR_OBJECT_ID ON TPR_HORIZON_OBJ_ROLE(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_OBJECT_ID ON TP_HORIZON_ROLE(OBJECT_ID)</sql>
+		</postgresql>
+		<highgo>
+			<sql>CREATE INDEX IDX_TPR_OR_ROLE_ID ON TPR_HORIZON_OBJ_ROLE(ROLE_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_RES_ID ON TP_HORIZON_ROLE(RES_ID)</sql>
+			<sql>CREATE INDEX IDX_TPR_OR_OBJECT_ID ON TPR_HORIZON_OBJ_ROLE(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_OBJECT_ID ON TP_HORIZON_ROLE(OBJECT_ID)</sql>
+		</highgo>
+		<gbase>
+			<sql>CREATE INDEX IDX_TPR_OR_ROLE_ID ON TPR_HORIZON_OBJ_ROLE(ROLE_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_RES_ID ON TP_HORIZON_ROLE(RES_ID)</sql>
+			<sql>CREATE INDEX IDX_TPR_OR_OBJECT_ID ON TPR_HORIZON_OBJ_ROLE(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_OBJECT_ID ON TP_HORIZON_ROLE(OBJECT_ID)</sql>
+		</gbase>
+		<gbase8s>
+			<sql>CREATE INDEX IDX_TPR_OR_ROLE_ID ON TPR_HORIZON_OBJ_ROLE(ROLE_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_RES_ID ON TP_HORIZON_ROLE(RES_ID)</sql>
+			<sql>CREATE INDEX IDX_TPR_OR_OBJECT_ID ON TPR_HORIZON_OBJ_ROLE(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_OBJECT_ID ON TP_HORIZON_ROLE(OBJECT_ID)</sql>
+		</gbase8s>
+		<kingbase>
+			<sql>CREATE INDEX IDX_TPR_OR_ROLE_ID ON TPR_HORIZON_OBJ_ROLE(ROLE_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_RES_ID ON TP_HORIZON_ROLE(RES_ID)</sql>
+			<sql>CREATE INDEX IDX_TPR_OR_OBJECT_ID ON TPR_HORIZON_OBJ_ROLE(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_OBJECT_ID ON TP_HORIZON_ROLE(OBJECT_ID)</sql>
+		</kingbase>
+		<kingbase8>
+			<sql>CREATE INDEX IDX_TPR_OR_ROLE_ID ON TPR_HORIZON_OBJ_ROLE(ROLE_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_RES_ID ON TP_HORIZON_ROLE(RES_ID)</sql>
+			<sql>CREATE INDEX IDX_TPR_OR_OBJECT_ID ON TPR_HORIZON_OBJ_ROLE(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_OBJECT_ID ON TP_HORIZON_ROLE(OBJECT_ID)</sql>
+		</kingbase8>
+		<oscar>
+			<sql>CREATE INDEX IDX_TPR_OR_ROLE_ID ON TPR_HORIZON_OBJ_ROLE(ROLE_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_RES_ID ON TP_HORIZON_ROLE(RES_ID)</sql>
+			<sql>CREATE INDEX IDX_TPR_OR_OBJECT_ID ON TPR_HORIZON_OBJ_ROLE(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_OBJECT_ID ON TP_HORIZON_ROLE(OBJECT_ID)</sql>
+		</oscar>
+		<upbase>
+			<sql>CREATE INDEX IDX_TPR_OR_ROLE_ID ON TPR_HORIZON_OBJ_ROLE(ROLE_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_RES_ID ON TP_HORIZON_ROLE(RES_ID)</sql>
+			<sql>CREATE INDEX IDX_TPR_OR_OBJECT_ID ON TPR_HORIZON_OBJ_ROLE(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TP_R_OBJECT_ID ON TP_HORIZON_ROLE(OBJECT_ID)</sql>
+		</upbase>
+	</others>
+</tableinfo>

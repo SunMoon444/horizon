@@ -1,0 +1,133 @@
+<style>
+	textarea {
+		resize: none
+	}
+</style>
+<title>hz{job-list.title}</title>
+<hi18n groups="base;message;job-list;datatables;validator" ></hi18n>
+<div class="page-header smaller">
+	<h1>
+		hz{job-list.largeTitle}
+		<small class="hidden-xs"> 
+			<i class="ace-icon fa fa-angle-double-right"></i>
+			hz{job-list.title}
+		</small>
+	    <div class="embed-toggle-sidebar-container hidden-md hidden-lg pull-right">
+            <button class="navbar-toggle toggle-sidebar" type="button" data-target="#toggle-sidebar">
+                <span class="sr-only">Toggle横向菜单</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button class="navbar-toggle toggle-sidebar2" type="button" data-target="#toggle-sidebar2" >
+                <span class="sr-only">Toggle左侧菜单</span>
+                <i class="ace-icon fa fa-dashboard bigger-110"></i>
+            </button>
+        </div>
+	</h1>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+        <table id="myTable" class="table table-hover"></table>
+    </div>
+</div>
+<div class="hidden" id="myInfo">
+    <form class="form-horizontal no-margin-bottom" id="myForm">
+        <div class="space-4">
+            <input type="hidden" name="id"/>
+        </div>
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-3 control-label">hz{job-list.taskName}:</label>
+				<div class="col-xs-12 col-sm-7">
+					<input class="no-margin col-sm-12 form-control" name="name" type="text" maxlength="200" required>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-3 control-label">hz{job-list.taskCode}:</label>
+				<div class="col-xs-12 col-sm-7">
+					<input class="no-margin col-sm-12 form-control" name="jobName" type="text" maxlength="200" required>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-3 control-label">hz{job-list.taskBlockCode}:</label>
+				<div class="col-xs-12 col-sm-7">
+					<input class="no-margin col-sm-12 form-control" name="jobGroup" type="text" maxlength="200" required>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12">
+				<label class="col-xs-12 col-sm-3 control-label">小提示:</label>
+				<p class=" col-xs-12 col-sm-7 text-primary">该需继承AbstractEntityTaskAdapter父类</p>
+		</div>
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-3 control-label">hz{job-list.fullClassName}:</label>
+				<div class="col-xs-12 col-sm-7">
+					<input class="no-margin col-sm-12 form-control" name="jobClass" type="text" maxlength="250" required >
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-3 control-label">hz{job-list.taskTrigger}:</label>
+				<div class="col-xs-12 col-sm-7 jobTriggers">
+					<select multiple class="chosen-select form-control tag-input-style" name="jobTriggers" data-placeholder='hz{job-list.pleaseSelect}' required>
+                    </select>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-3 control-label">hz{job-list.taskParameter}:</label>
+				<div class="col-xs-12 col-sm-7">
+					<textarea class="no-margin col-sm-12 form-control" name="jobPara" placeholder='hz{job-list.parameterFormat}:paraN=valueN' rows="3" maxlength="250"></textarea>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-3 control-label">hz{job-list.taskRunRecord}:</label>
+				<div class="col-xs-12 col-sm-7">
+					<select name="jobRunRecordFlag" class="form-control" required>
+						<option value="0">hz{job-list.no}</option>
+						<option value="1">hz{job-list.yes}</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 keepdays">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-3 control-label">hz{job-list.recordRetentionDays}</label>
+				<div class="col-xs-12 col-sm-7">
+					<input class="no-margin col-sm-12 form-control" name="keepRunRecordDays" type="text" maxlength="10" required>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-3 control-label">hz{job-list.taskDescription}</label>
+				<div class="col-xs-12 col-sm-7">
+					<textarea class="no-margin col-sm-12 form-control" name="description" rows="3" maxlength="250"></textarea>
+				</div>
+			</div>
+		</div>
+    </form>
+</div>
+<div class="hidden" id="myDialog"></div>
+<script type="text/javascript">
+    jQuery(function($) {
+        require([horizon.paths.assetspath + '/manager/task/js/job.list.js'], function() {
+        	horizon.language.plugins.datatables();
+        	horizon.language.plugins.validator();
+        	horizon.tools.use(horizon.paths.pluginpath + '/chosen/css/chosen.css');
+            horizon.engine.job.initTable();
+    		horizon.engine.job.initForm();
+            $('.page-content-area').trigger('ajaxscriptsloaded');
+        });
+    });
+</script>

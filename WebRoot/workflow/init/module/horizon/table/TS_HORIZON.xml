@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 工作列表相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TS_HORIZON_DESIGNER_OPT</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TS_HORIZON_DESIGNER_OPT</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="USERID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="USERNAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="ANIMALACTIVE" typename="varchar"   length="10"></fieldinfo>
+			<fieldinfo fieldname="CREATETIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="UPDATETIME" typename="varchar"   length="20"></fieldinfo>
+		</fieldinfos>
+	</tablename>	
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TS_HORIZON_DICTIONARY</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TS_HORIZON_DICTIONARY</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="PARENT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="DICT_CODE" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="DICT_NAME" typename="varchar"   length="255"></fieldinfo>
+			<fieldinfo fieldname="DICT_VALUE" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="ORDER_NO" typename="number"   length="30"></fieldinfo>
+			<fieldinfo fieldname="ACTIVE" typename="number"  length="1"></fieldinfo>
+			<fieldinfo fieldname="COMMENTS" typename="lvarchar"  length="400"></fieldinfo>
+			<fieldinfo fieldname="DICT_TYPE" typename="varchar"  length="10"></fieldinfo>
+			<fieldinfo fieldname="DICT_ABBR" typename="varchar"  length="100"></fieldinfo>
+			<fieldinfo fieldname="DICT_SQL" typename="lvarchar"  length="1000"></fieldinfo>
+			<fieldinfo fieldname="DICT_PINYIN" typename="lvarchar"  length="500"></fieldinfo>
+			<fieldinfo fieldname="DICT_JIANPIN" typename="varchar"  length="100"></fieldinfo>
+			<fieldinfo fieldname="IS_CATEGORY" typename="varchar"  length="10"></fieldinfo>
+			<fieldinfo fieldname="FILE_ID" typename="varchar"  length="32"></fieldinfo>
+			<fieldinfo fieldname="CATEGORY" typename="varchar"  length="200"></fieldinfo>
+			<fieldinfo fieldname="DICT_CUSTOM" typename="lvarchar"  length="400"></fieldinfo>
+			<fieldinfo fieldname="IDENTIFIER" typename="varchar"  length="100"></fieldinfo>
+		</fieldinfos>
+	</tablename>	
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TS_HORIZON_DOMAIN</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TS_HORIZON_DOMAIN</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="TITLE" typename="lvarchar"   length="1000"></fieldinfo>
+			<fieldinfo fieldname="CREATED" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="MODIFIED" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="CREATOR" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="MODIFICATOR" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="RECYCLE" typename="varchar"  length="2"></fieldinfo>
+			<fieldinfo fieldname="PATH" typename="lvarchar"  length="1000"></fieldinfo>
+			<fieldinfo fieldname="USER_NUMBER" typename="lvarchar"  length="1000"></fieldinfo>
+			<fieldinfo fieldname="DEFAULTDB" typename="lvarchar"  length="1000"></fieldinfo>
+		</fieldinfos>
+	</tablename>	
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TS_HORIZON_EVENT</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TS_HORIZON_EVENT</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="OBJTYPE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="OBJID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="EVENTNAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="NOTE" typename="lvarchar"   length="1024"></fieldinfo>
+			<fieldinfo fieldname="EVENTCODE" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="ROWVERSION" typename="number"  length="10"></fieldinfo>
+			<fieldinfo fieldname="EVENTTYPE" typename="lvarchar"  length="1000"></fieldinfo>
+		</fieldinfos>
+	</tablename>	
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TS_HORIZON_MENU_PIC</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TS_HORIZON_MENU_PIC</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="F_NO" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="F_NAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="F_ICON" typename="blob"   ></fieldinfo>
+			<fieldinfo fieldname="F_ICON_OVER" typename="blob" ></fieldinfo>
+			<fieldinfo fieldname="F_ICON_DOWN" typename="blob"></fieldinfo>
+			<fieldinfo fieldname="ROWVERSION" typename="varchar"  length="2"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TS_HORIZON_MENU</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TS_HORIZON_MENU</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="ORDER_NO" typename="number"   length="10"></fieldinfo>
+			<fieldinfo fieldname="MENU_NAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="MENU_IDENTITY" typename="varchar"  length="50"></fieldinfo>
+			<fieldinfo fieldname="MENU_LINK" typename="lvarchar"  length="2000"></fieldinfo>
+			<fieldinfo fieldname="FUNC" typename="varchar"  length="200"></fieldinfo>
+			<fieldinfo fieldname="NOTE" typename="lvarchar"  length="1024"></fieldinfo>
+			<fieldinfo fieldname="TOPLINK" typename="varchar"  length="200"></fieldinfo>
+			<fieldinfo fieldname="TARGET" typename="varchar"  length="20"></fieldinfo>
+			<fieldinfo fieldname="FLAG" typename="number"  length="10"></fieldinfo>
+			<fieldinfo fieldname="PARENT_ID" typename="varchar"  length="32"></fieldinfo>
+			<fieldinfo fieldname="ROWVERSION" typename="number"  length="10"></fieldinfo>
+			<fieldinfo fieldname="URLTYPE" typename="varchar"  length="100"></fieldinfo>
+			<fieldinfo fieldname="MENU_LEVEL" typename="number"  length="10"></fieldinfo>
+			<fieldinfo fieldname="MENU_CODE" typename="varchar"  length="100"></fieldinfo>
+			<fieldinfo fieldname="ACTIVE" typename="number"  length="1"></fieldinfo>
+			<fieldinfo fieldname="IS_PRIVATE" typename="number"  length="1"></fieldinfo>
+			<fieldinfo fieldname="CELLNODULNAME" typename="lvarchar"  length="2000"></fieldinfo>
+			<fieldinfo fieldname="MENU_IMG" typename="varchar"  length="100"></fieldinfo>
+			<fieldinfo fieldname="MENU_CATEGORY" typename="varchar"  length="10"></fieldinfo>
+			<fieldinfo fieldname="APPID" typename="varchar"  length="32"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TS_HORIZON_FILES_PATHS</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_DILES_PATHS</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FILE_PATH" typename="lvarchar"   length="1024"></fieldinfo>
+			<fieldinfo fieldname="ISUSED" typename="varchar"   length="1"></fieldinfo>
+		</fieldinfos>
+	</tablename>	
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TS_HORIZON_MESSAGE_RECEIVE</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TS_HORIZON_MESSAGE_RECEIVE</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="ALERTID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="USERID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="USERNAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="RECEIVETIMELONG" typename="long" ></fieldinfo>
+			<fieldinfo fieldname="RECEIVETIME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="RECEIVEFLAG" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="READTIME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="UNITID" typename="varchar"   length="32"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TS_HORIZON_MESSAGE</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TS_HORIZON_MESSAGE</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="SENDUSERID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SENDUSERNAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="RECEIVEUSERID" typename="lvarchar"   length="4000"></fieldinfo>
+			<fieldinfo fieldname="RECEIVEUSERNAME" typename="lvarchar"   length="4000"></fieldinfo>
+			<fieldinfo fieldname="ALERTTYPE" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="RECEIVEPHONE" typename="lvarchar"   length="1500"></fieldinfo>
+			<fieldinfo fieldname="SENDMODE" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="SENDTIMELONG" typename="long" ></fieldinfo>
+			<fieldinfo fieldname="SENDTIME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="ALERTTEXT" typename="lvarchar"   length="1024"></fieldinfo>
+			<fieldinfo fieldname="UNITID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="ALERTURL" typename="lvarchar"   length="1024"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TS_HORIZON_MODULE</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TS_HORIZON_MODULE</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="APP_NAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="DESCRIPTION" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="DATASORTID" typename="number"   length="10"></fieldinfo>
+			<fieldinfo fieldname="ROWVERSION" typename="number"   length="3"></fieldinfo>
+			<fieldinfo fieldname="TITLE" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="CREATETIME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="UPDATETIME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="FINISHTIME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="CREATOR" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="F0" typename="lvarchar"   length="1024"></fieldinfo>
+			<fieldinfo fieldname="F1" typename="lvarchar"   length="1024"></fieldinfo>
+			<fieldinfo fieldname="F2" typename="lvarchar"   length="1024"></fieldinfo>
+		</fieldinfos>
+	</tablename>	
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TS_HORIZON_PERSONAL_CONFIG</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TS_HORIZON_PERSONAL_CONFIG</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="USERID" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="MRSY" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="QMTP" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="XAXISOFFSET" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="YAXISOFFSET" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="ROLEID" typename="varchar"   length="34"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TS_HORIZON_QNAVIGATION</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TS_HORIZON_NAVIGATION</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="ORDER_NO" typename="number"   length="10,0"></fieldinfo>
+			<fieldinfo fieldname="QNAV_NAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="URL" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="OPENTYPE" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="IMGPATH" typename="varchar"   length="150"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TS_HORIZON_SEARCH_CONFIG</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TS_HORIZON_SEAARCONFIG</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="MODULENAME" typename="varchar"   length="25"></fieldinfo>
+			<fieldinfo fieldname="TABLENAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="OPENLINK" typename="varchar"   length="250"></fieldinfo>
+			<fieldinfo fieldname="MODULEID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TITLE" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="AUTHOR" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="ARTICLE_BODY" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="BEGINTIME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="AUTHORITY" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="ISPUBLIC" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="ISFILE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="SERCHTYPE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="SERCHSQL" typename="lvarchar"   length="1000"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TS_HORIZON_SERVER</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TS_HORIZON_SERVER</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="SERVER_NAME" typename="lvarchar"   length="1000"></fieldinfo>
+			<fieldinfo fieldname="SERVER_CODE" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="CREATED" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="MODIFIED" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="CREATOR" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="MODIFICATOR" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="RECYCLE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="SERVER_URI" typename="lvarchar"   length="1000"></fieldinfo>
+			<fieldinfo fieldname="SERVER_ADMIN" typename="lvarchar"   length="1000"></fieldinfo>
+			<fieldinfo fieldname="SERVER_USERTYPE" typename="lvarchar"   length="1000"></fieldinfo>
+			<fieldinfo fieldname="ORG_DB" typename="lvarchar"   length="1000"></fieldinfo>
+			<fieldinfo fieldname="ORG_DEPTSYN" typename="lvarchar"   length="1000"></fieldinfo>
+			<fieldinfo fieldname="ORG_USERSYN" typename="lvarchar"   length="1000"></fieldinfo>
+			<fieldinfo fieldname="ISCURRENT" typename="lvarchar"   length="1000"></fieldinfo>
+			<fieldinfo fieldname="SERVER_DNS" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar"   length="10"></fieldinfo>
+			<fieldinfo fieldname="LINK_STATUS" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="DEPT_ROOT_ID" typename="varchar"   length="60"></fieldinfo>
+			<fieldinfo fieldname="SYS_ADMIN" typename="varchar"   length="60"></fieldinfo>
+		</fieldinfos>
+	</tablename>	
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TS_HORIZON_SYSTEM_PARAMETER</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TS_HORIZON_SYSTEM_PARAMETER</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="PARAM_NAME" typename="lvarchar"   length="500"></fieldinfo>
+			<fieldinfo fieldname="PARAM_VALUE" typename="lvarchar"   length="500"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TS_HORIZON_TENANT</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TS_HORIZON_TENANT</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID"                  typename="varchar"   length="32" isnull="0"></fieldinfo>                  
+			<fieldinfo fieldname="TENANT_NAME"         typename="varchar"   length="100" isnull="0"></fieldinfo>         
+			<fieldinfo fieldname="TENANT_CODE"         typename="varchar"   length="100" isnull="0"></fieldinfo>         
+			<fieldinfo fieldname="DBCONN"               typename="varchar"   length="100" ></fieldinfo>              
+			<fieldinfo fieldname="DBTYPE"               typename="varchar"   length="100" isnull="0"></fieldinfo>              
+			<fieldinfo fieldname="IDENTIFIER"           typename="varchar"   length="100" isnull="0"></fieldinfo>          
+			<fieldinfo fieldname="CONNECTION_TYPE"      typename="varchar"   length="100" isnull="0"></fieldinfo>     
+			<fieldinfo fieldname="DRIVER_CLASS"         typename="varchar"   length="200" ></fieldinfo>        
+			<fieldinfo fieldname="IS_DEFAULTDB"         typename="varchar"   length="10" ></fieldinfo>        
+			<fieldinfo fieldname="LOB_BUFFERSIZE"       typename="varchar"   length="100" ></fieldinfo>      
+			<fieldinfo fieldname="LOB_PROCESSORCLASS"   typename="varchar"   length="200" ></fieldinfo>  
+			<fieldinfo fieldname="DB_URL"               typename="varchar"   length="200" ></fieldinfo>              
+			<fieldinfo fieldname="USER_NAME"            typename="varchar"   length="100" ></fieldinfo>           
+			<fieldinfo fieldname="USER_PASSWORD"        typename="varchar"   length="100" ></fieldinfo>       
+			<fieldinfo fieldname="DB_MAXPOOLSIZE"       typename="varchar"   length="100" ></fieldinfo>      
+			<fieldinfo fieldname="DB_MINPOOLSIZE"       typename="varchar"   length="100" ></fieldinfo>      
+			<fieldinfo fieldname="DB_INITIALPOOLSIZE"   typename="varchar"   length="100" ></fieldinfo>  
+			<fieldinfo fieldname="DB_MAXIDELTIME"       typename="varchar"   length="100" ></fieldinfo>      
+			<fieldinfo fieldname="DB_CONNECTION_TYPE"   typename="varchar"   length="100" isnull="0"></fieldinfo>  
+			<fieldinfo fieldname="TENANT_ADMIN"         typename="varchar"   length="32" ></fieldinfo>        
+			<fieldinfo fieldname="DOMAIN_ID"            typename="varchar"   length="32" ></fieldinfo>               
+		</fieldinfos>
+	</tablename>	
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TSR_HORIZON_MODULE_ADMIN</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TSR_HORIZON_MODULE_ADMIN</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="APPID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="USERID" typename="varchar"   length="34"></fieldinfo>
+			<fieldinfo fieldname="ROWVERSION" typename="number"   length="10"></fieldinfo>
+			<fieldinfo fieldname="USERNAME" typename="lvarchar"   length="1000"></fieldinfo>
+		</fieldinfos>
+	</tablename>	
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TSR_HORIZON_MODULE_DEPT</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TSR_HORIZON_MODULE_DEPT</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="APPID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="DEPTID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="DEPTNAME" typename="lvarchar"   length="1000"></fieldinfo>
+			<fieldinfo fieldname="ROWVERSION" typename="number"   length="10"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TSR_HORIZON_MODULE_DESIGN</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TSR_HORIZON_MODULE_DESIGN</pkname> 
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="APPID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="APP_TYPE" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="TYPEID" typename="varchar"   length="32"></fieldinfo>
+		</fieldinfos>
+	</tablename>	
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TSR_HORIZON_MODULE_SHARE</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TSR_HORIZON_MODULE_SHARE</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="APPID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TENANTCODE" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TENANTNAME" typename="varchar"   length="200"></fieldinfo>
+		</fieldinfos>
+	</tablename>	
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TSR_HORIZON_TENANT_MODULE</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TSR_HORIZON_TENANT_MODULE</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="USSD_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FUN_TYPE" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TENANT_CODE" typename="varchar"   length="100"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<others>
+		<oracle>
+			<sql>CREATE INDEX IDX_TS_PARENT_ID ON TS_HORIZON_DICTIONARY(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_DICT_CODE ON TS_HORIZON_DICTIONARY(DICT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TS_M_PARENT_ID ON TS_HORIZON_MENU(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_M_MENU_CODE ON TS_HORIZON_MENU(MENU_CODE)</sql>
+			<sql>CREATE INDEX IDX_TSR_MD_TA ON TSR_HORIZON_MODULE_DESIGN (TYPEID,APPID)</sql>
+			<sql>CREATE INDEX IDX_TS_E_OBJID ON TS_HORIZON_EVENT(OBJID)</sql>
+		</oracle>
+		<mysql>
+			<sql>CREATE INDEX IDX_TS_PARENT_ID ON TS_HORIZON_DICTIONARY(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_DICT_CODE ON TS_HORIZON_DICTIONARY(DICT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TS_M_PARENT_ID ON TS_HORIZON_MENU(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_M_MENU_CODE ON TS_HORIZON_MENU(MENU_CODE)</sql>
+			<sql>CREATE INDEX IDX_TSR_MD_TA ON TSR_HORIZON_MODULE_DESIGN (TYPEID,APPID)</sql>
+			<sql>CREATE INDEX IDX_TS_E_OBJID ON TS_HORIZON_EVENT(OBJID)</sql>
+		</mysql>
+		<mysql8>
+			<sql>CREATE INDEX IDX_TS_PARENT_ID ON TS_HORIZON_DICTIONARY(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_DICT_CODE ON TS_HORIZON_DICTIONARY(DICT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TS_M_PARENT_ID ON TS_HORIZON_MENU(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_M_MENU_CODE ON TS_HORIZON_MENU(MENU_CODE)</sql>
+			<sql>CREATE INDEX IDX_TSR_MD_TA ON TSR_HORIZON_MODULE_DESIGN (TYPEID,APPID)</sql>
+			<sql>CREATE INDEX IDX_TS_E_OBJID ON TS_HORIZON_EVENT(OBJID)</sql>
+		</mysql8>
+		<db2>
+			<sql>CREATE INDEX IDX_TS_PARENT_ID ON TS_HORIZON_DICTIONARY(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_DICT_CODE ON TS_HORIZON_DICTIONARY(DICT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TS_M_PARENT_ID ON TS_HORIZON_MENU(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_M_MENU_CODE ON TS_HORIZON_MENU(MENU_CODE)</sql>
+			<sql>CREATE INDEX IDX_TSR_MD_TA ON TSR_HORIZON_MODULE_DESIGN (TYPEID,APPID)</sql>
+			<sql>CREATE INDEX IDX_TS_E_OBJID ON TS_HORIZON_EVENT(OBJID)</sql>
+		</db2>
+		<sqlserver>
+			<sql>CREATE INDEX IDX_TS_PARENT_ID ON TS_HORIZON_DICTIONARY(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_DICT_CODE ON TS_HORIZON_DICTIONARY(DICT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TS_M_PARENT_ID ON TS_HORIZON_MENU(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_M_MENU_CODE ON TS_HORIZON_MENU(MENU_CODE)</sql>
+			<sql>CREATE INDEX IDX_TSR_MD_TA ON TSR_HORIZON_MODULE_DESIGN (TYPEID,APPID)</sql>
+			<sql>CREATE INDEX IDX_TS_E_OBJID ON TS_HORIZON_EVENT(OBJID)</sql>
+		</sqlserver>
+		<dm>
+			<sql>CREATE INDEX IDX_TS_PARENT_ID ON TS_HORIZON_DICTIONARY(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_DICT_CODE ON TS_HORIZON_DICTIONARY(DICT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TS_M_PARENT_ID ON TS_HORIZON_MENU(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_M_MENU_CODE ON TS_HORIZON_MENU(MENU_CODE)</sql>
+			<sql>CREATE INDEX IDX_TSR_MD_TA ON TSR_HORIZON_MODULE_DESIGN (TYPEID,APPID)</sql>
+			<sql>CREATE INDEX IDX_TS_E_OBJID ON TS_HORIZON_EVENT(OBJID)</sql>
+		</dm>
+		<postgresql>
+			<sql>CREATE INDEX IDX_TS_PARENT_ID ON TS_HORIZON_DICTIONARY(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_DICT_CODE ON TS_HORIZON_DICTIONARY(DICT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TS_M_PARENT_ID ON TS_HORIZON_MENU(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_M_MENU_CODE ON TS_HORIZON_MENU(MENU_CODE)</sql>
+			<sql>CREATE INDEX IDX_TSR_MD_TA ON TSR_HORIZON_MODULE_DESIGN (TYPEID,APPID)</sql>
+			<sql>CREATE INDEX IDX_TS_E_OBJID ON TS_HORIZON_EVENT(OBJID)</sql>
+		</postgresql>
+		<highgo>
+			<sql>CREATE INDEX IDX_TS_PARENT_ID ON TS_HORIZON_DICTIONARY(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_DICT_CODE ON TS_HORIZON_DICTIONARY(DICT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TS_M_PARENT_ID ON TS_HORIZON_MENU(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_M_MENU_CODE ON TS_HORIZON_MENU(MENU_CODE)</sql>
+			<sql>CREATE INDEX IDX_TSR_MD_TA ON TSR_HORIZON_MODULE_DESIGN (TYPEID,APPID)</sql>
+			<sql>CREATE INDEX IDX_TS_E_OBJID ON TS_HORIZON_EVENT(OBJID)</sql>
+		</highgo>
+		<gbase>
+			<sql>CREATE INDEX IDX_TS_PARENT_ID ON TS_HORIZON_DICTIONARY(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_DICT_CODE ON TS_HORIZON_DICTIONARY(DICT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TS_M_PARENT_ID ON TS_HORIZON_MENU(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_M_MENU_CODE ON TS_HORIZON_MENU(MENU_CODE)</sql>
+			<sql>CREATE INDEX IDX_TSR_MD_TA ON TSR_HORIZON_MODULE_DESIGN (TYPEID,APPID)</sql>
+			<sql>CREATE INDEX IDX_TS_E_OBJID ON TS_HORIZON_EVENT(OBJID)</sql>
+		</gbase>
+		<gbase8s>
+			<sql>CREATE INDEX IDX_TS_PARENT_ID ON TS_HORIZON_DICTIONARY(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_DICT_CODE ON TS_HORIZON_DICTIONARY(DICT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TS_M_PARENT_ID ON TS_HORIZON_MENU(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_M_MENU_CODE ON TS_HORIZON_MENU(MENU_CODE)</sql>
+			<sql>CREATE INDEX IDX_TSR_MD_TA ON TSR_HORIZON_MODULE_DESIGN (TYPEID,APPID)</sql>
+			<sql>CREATE INDEX IDX_TS_E_OBJID ON TS_HORIZON_EVENT(OBJID)</sql>
+		</gbase8s>
+		<kingbase>
+			<sql>CREATE INDEX IDX_TS_PARENT_ID ON TS_HORIZON_DICTIONARY(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_DICT_CODE ON TS_HORIZON_DICTIONARY(DICT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TS_M_PARENT_ID ON TS_HORIZON_MENU(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_M_MENU_CODE ON TS_HORIZON_MENU(MENU_CODE)</sql>
+			<sql>CREATE INDEX IDX_TSR_MD_TA ON TSR_HORIZON_MODULE_DESIGN (TYPEID,APPID)</sql>
+			<sql>CREATE INDEX IDX_TS_E_OBJID ON TS_HORIZON_EVENT(OBJID)</sql>
+		</kingbase>
+		<kingbase8>
+			<sql>CREATE INDEX IDX_TS_PARENT_ID ON TS_HORIZON_DICTIONARY(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_DICT_CODE ON TS_HORIZON_DICTIONARY(DICT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TS_M_PARENT_ID ON TS_HORIZON_MENU(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_M_MENU_CODE ON TS_HORIZON_MENU(MENU_CODE)</sql>
+			<sql>CREATE INDEX IDX_TSR_MD_TA ON TSR_HORIZON_MODULE_DESIGN (TYPEID,APPID)</sql>
+			<sql>CREATE INDEX IDX_TS_E_OBJID ON TS_HORIZON_EVENT(OBJID)</sql>
+		</kingbase8>
+		<oscar>
+			<sql>CREATE INDEX IDX_TS_PARENT_ID ON TS_HORIZON_DICTIONARY(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_DICT_CODE ON TS_HORIZON_DICTIONARY(DICT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TS_M_PARENT_ID ON TS_HORIZON_MENU(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_M_MENU_CODE ON TS_HORIZON_MENU(MENU_CODE)</sql>
+			<sql>CREATE INDEX IDX_TSR_MD_TA ON TSR_HORIZON_MODULE_DESIGN (TYPEID,APPID)</sql>
+			<sql>CREATE INDEX IDX_TS_E_OBJID ON TS_HORIZON_EVENT(OBJID)</sql>
+		</oscar>
+		<upbase>
+			<sql>CREATE INDEX IDX_TS_PARENT_ID ON TS_HORIZON_DICTIONARY(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_DICT_CODE ON TS_HORIZON_DICTIONARY(DICT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TS_M_PARENT_ID ON TS_HORIZON_MENU(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TS_M_MENU_CODE ON TS_HORIZON_MENU(MENU_CODE)</sql>
+			<sql>CREATE INDEX IDX_TSR_MD_TA ON TSR_HORIZON_MODULE_DESIGN (TYPEID,APPID)</sql>
+			<sql>CREATE INDEX IDX_TS_E_OBJID ON TS_HORIZON_EVENT(OBJID)</sql>
+		</upbase>
+	</others>
+</tableinfo>

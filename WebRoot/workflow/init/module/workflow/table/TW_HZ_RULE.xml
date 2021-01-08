@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 规则引擎相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TR_HZ_RULE_OBJECT</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TR_HZ_RULE_OBJECT</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="OBJECTTYPE" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="OBJECTNAME" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="OBJECTCODE" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="OBJECTINPUT" typename="lvarchar"   length="4000"></fieldinfo>
+			<fieldinfo fieldname="RETURNTYPE" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="VALIDOBJ" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="VALIDBDS" typename="varchar"   length="200"></fieldinfo>
+		</fieldinfos>		
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TWR_HZ_RULE_FLOW</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TWR_HZ_RULE_FLOW</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="FLOWID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="CONTENT" typename="clob"></fieldinfo>
+		</fieldinfos>		
+	</tablename>
+	<others>
+		<oracle>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTNAME ON TR_HZ_RULE_OBJECT(OBJECTNAME)</sql>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTCODE ON TR_HZ_RULE_OBJECT(OBJECTCODE)</sql>
+		</oracle>
+		<mysql>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTNAME ON TR_HZ_RULE_OBJECT(OBJECTNAME)</sql>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTCODE ON TR_HZ_RULE_OBJECT(OBJECTCODE)</sql>
+		</mysql>
+		<mysql8>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTNAME ON TR_HZ_RULE_OBJECT(OBJECTNAME)</sql>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTCODE ON TR_HZ_RULE_OBJECT(OBJECTCODE)</sql>
+		</mysql8>
+		<db2>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTNAME ON TR_HZ_RULE_OBJECT(OBJECTNAME)</sql>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTCODE ON TR_HZ_RULE_OBJECT(OBJECTCODE)</sql>
+		</db2>
+		<sqlserver>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTNAME ON TR_HZ_RULE_OBJECT(OBJECTNAME)</sql>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTCODE ON TR_HZ_RULE_OBJECT(OBJECTCODE)</sql>
+		</sqlserver>
+		<dm>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTNAME ON TR_HZ_RULE_OBJECT(OBJECTNAME)</sql>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTCODE ON TR_HZ_RULE_OBJECT(OBJECTCODE)</sql>
+		</dm>
+		<postgresql>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTNAME ON TR_HZ_RULE_OBJECT(OBJECTNAME)</sql>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTCODE ON TR_HZ_RULE_OBJECT(OBJECTCODE)</sql>
+		</postgresql>
+		<highgo>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTNAME ON TR_HZ_RULE_OBJECT(OBJECTNAME)</sql>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTCODE ON TR_HZ_RULE_OBJECT(OBJECTCODE)</sql>
+		</highgo>
+		<gbase>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTNAME ON TR_HZ_RULE_OBJECT(OBJECTNAME)</sql>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTCODE ON TR_HZ_RULE_OBJECT(OBJECTCODE)</sql>
+		</gbase>
+		<gbase8s>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTNAME ON TR_HZ_RULE_OBJECT(OBJECTNAME)</sql>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTCODE ON TR_HZ_RULE_OBJECT(OBJECTCODE)</sql>
+		</gbase8s>
+		<kingbase>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTNAME ON TR_HZ_RULE_OBJECT(OBJECTNAME)</sql>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTCODE ON TR_HZ_RULE_OBJECT(OBJECTCODE)</sql>
+		</kingbase>
+		<kingbase8>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTNAME ON TR_HZ_RULE_OBJECT(OBJECTNAME)</sql>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTCODE ON TR_HZ_RULE_OBJECT(OBJECTCODE)</sql>
+		</kingbase8>
+		<oscar>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTNAME ON TR_HZ_RULE_OBJECT(OBJECTNAME)</sql>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTCODE ON TR_HZ_RULE_OBJECT(OBJECTCODE)</sql>
+		</oscar>
+		<upbase>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTNAME ON TR_HZ_RULE_OBJECT(OBJECTNAME)</sql>
+			<sql>CREATE INDEX IDX_TW_RO_OBJECTCODE ON TR_HZ_RULE_OBJECT(OBJECTCODE)</sql>
+		</upbase>
+	</others>
+</tableinfo>

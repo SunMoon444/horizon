@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 流程实例相关表机构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_INSTANCE</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_INSTANCE</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="XMLID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TITLE" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="FLOWID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FLOWNAME" typename="varchar"   length="255"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number"></fieldinfo>
+			<fieldinfo fieldname="CREATED" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="STARTTIME" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="PARENTWORKID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="FLOWVER" typename="number"></fieldinfo>
+			<fieldinfo fieldname="TRACKXMLID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="CREATOR" typename="varchar" length="70"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_INSTANCE_VER</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_INSTANCE_VER</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="XMLID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TITLE" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="FLOWID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FLOWNAME" typename="varchar"   length="255"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number"></fieldinfo>
+			<fieldinfo fieldname="CREATED" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="STARTTIME" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="PARENTWORKID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="FLOWVER" typename="number"></fieldinfo>
+			<fieldinfo fieldname="TRACKXMLID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="CREATOR" typename="varchar" length="70"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_INSTANCE_AUTH</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_INSTANCE_AUTH</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="STATUS_NO" typename="varchar"   length="5"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number" length="5"></fieldinfo>
+			<fieldinfo fieldname="NODENUM" typename="number" length="5"></fieldinfo>
+			<fieldinfo fieldname="AUTH_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="AUTH_TYPE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="SUBJECTION_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SUBJECTION_TYPE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="AUTH_NO" typename="number"   length="5"></fieldinfo>
+			<fieldinfo fieldname="AGENT_ID" typename="varchar"   length="40"></fieldinfo>
+			<fieldinfo fieldname="ISCLAIM" typename="varchar"   length="2"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_INSTANCE_AUTH_END</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_INSTANCE_AUTH_END</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="STATUS_NO" typename="varchar"   length="5"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number" length="5"></fieldinfo>
+			<fieldinfo fieldname="NODENUM" typename="number" length="5"></fieldinfo>
+			<fieldinfo fieldname="AUTH_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="AUTH_TYPE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="SUBJECTION_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SUBJECTION_TYPE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="AUTH_NO" typename="number"   length="5"></fieldinfo>
+			<fieldinfo fieldname="AGENT_ID" typename="varchar"   length="40"></fieldinfo>
+			<fieldinfo fieldname="ISCLAIM" typename="varchar"   length="2"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_INSTANCE_AUTH_VER</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_INSTANCE_AUTH_VER</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="STATUS_NO" typename="varchar"   length="5"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number" length="5"></fieldinfo>
+			<fieldinfo fieldname="NODENUM" typename="number" length="5"></fieldinfo>
+			<fieldinfo fieldname="AUTH_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="AUTH_TYPE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="SUBJECTION_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SUBJECTION_TYPE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="AUTH_NO" typename="number"   length="5"></fieldinfo>
+			<fieldinfo fieldname="AGENT_ID" typename="varchar"   length="40"></fieldinfo>
+			<fieldinfo fieldname="OLDVERSION" typename="number"   length="5"></fieldinfo>
+			<fieldinfo fieldname="OLDKEY" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="ISCLAIM" typename="varchar"   length="2"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_INSTANCE_XML</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_INSTANCE_XML</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="XML" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TWR_HZ_INSTANCE</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TWR_HZ_INSTANCE</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TABLEID" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="DATAID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FORMID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="AUTH" typename="varchar"   length="10"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<others>
+		<oracle>
+			<sql>CREATE INDEX IDX_TW_I_FV ON TW_HZ_INSTANCE(FLOWID,FLOWVER)</sql>
+			<sql>CREATE INDEX IDX_TW_IA_WSA ON TW_HZ_INSTANCE_AUTH(WORKID,STATUS_NO,AUTH_ID)</sql>
+			<sql>CREATE INDEX IDX_TW_IV_WV ON TW_HZ_INSTANCE_VER(WORKID,VERSION)</sql>
+		</oracle>
+		<mysql>
+			<sql>CREATE INDEX IDX_TW_I_FV ON TW_HZ_INSTANCE(FLOWID,FLOWVER)</sql>
+			<sql>CREATE INDEX IDX_TW_IA_WSA ON TW_HZ_INSTANCE_AUTH(WORKID,STATUS_NO,AUTH_ID)</sql>
+			<sql>CREATE INDEX IDX_TW_IV_WV ON TW_HZ_INSTANCE_VER(WORKID,VERSION)</sql>
+		</mysql>
+		<mysql8>
+			<sql>CREATE INDEX IDX_TW_I_FV ON TW_HZ_INSTANCE(FLOWID,FLOWVER)</sql>
+			<sql>CREATE INDEX IDX_TW_IA_WSA ON TW_HZ_INSTANCE_AUTH(WORKID,STATUS_NO,AUTH_ID)</sql>
+			<sql>CREATE INDEX IDX_TW_IV_WV ON TW_HZ_INSTANCE_VER(WORKID,VERSION)</sql>
+		</mysql8>
+		<db2>
+			<sql>CREATE INDEX IDX_TW_I_FV ON TW_HZ_INSTANCE(FLOWID,FLOWVER)</sql>
+			<sql>CREATE INDEX IDX_TW_IA_WSA ON TW_HZ_INSTANCE_AUTH(WORKID,STATUS_NO,AUTH_ID)</sql>
+			<sql>CREATE INDEX IDX_TW_IV_WV ON TW_HZ_INSTANCE_VER(WORKID,VERSION)</sql>
+		</db2>
+		<sqlserver>
+			<sql>CREATE INDEX IDX_TW_I_FV ON TW_HZ_INSTANCE(FLOWID,FLOWVER)</sql>
+			<sql>CREATE INDEX IDX_TW_IA_WSA ON TW_HZ_INSTANCE_AUTH(WORKID,STATUS_NO,AUTH_ID)</sql>
+			<sql>CREATE INDEX IDX_TW_IV_WV ON TW_HZ_INSTANCE_VER(WORKID,VERSION)</sql>
+		</sqlserver>
+		<dm>
+			<sql>CREATE INDEX IDX_TW_I_FV ON TW_HZ_INSTANCE(FLOWID,FLOWVER)</sql>
+			<sql>CREATE INDEX IDX_TW_IA_WSA ON TW_HZ_INSTANCE_AUTH(WORKID,STATUS_NO,AUTH_ID)</sql>
+			<sql>CREATE INDEX IDX_TW_IV_WV ON TW_HZ_INSTANCE_VER(WORKID,VERSION)</sql>
+		</dm>
+		<postgresql>
+			<sql>CREATE INDEX IDX_TW_I_FV ON TW_HZ_INSTANCE(FLOWID,FLOWVER)</sql>
+			<sql>CREATE INDEX IDX_TW_IA_WSA ON TW_HZ_INSTANCE_AUTH(WORKID,STATUS_NO,AUTH_ID)</sql>
+			<sql>CREATE INDEX IDX_TW_IV_WV ON TW_HZ_INSTANCE_VER(WORKID,VERSION)</sql>
+		</postgresql>
+		<highgo>
+			<sql>CREATE INDEX IDX_TW_I_FV ON TW_HZ_INSTANCE(FLOWID,FLOWVER)</sql>
+			<sql>CREATE INDEX IDX_TW_IA_WSA ON TW_HZ_INSTANCE_AUTH(WORKID,STATUS_NO,AUTH_ID)</sql>
+			<sql>CREATE INDEX IDX_TW_IV_WV ON TW_HZ_INSTANCE_VER(WORKID,VERSION)</sql>
+		</highgo>
+		<gbase>
+			<sql>CREATE INDEX IDX_TW_I_FV ON TW_HZ_INSTANCE(FLOWID,FLOWVER)</sql>
+			<sql>CREATE INDEX IDX_TW_IA_WSA ON TW_HZ_INSTANCE_AUTH(WORKID,STATUS_NO,AUTH_ID)</sql>
+			<sql>CREATE INDEX IDX_TW_IV_WV ON TW_HZ_INSTANCE_VER(WORKID,VERSION)</sql>
+		</gbase>
+		<gbase8s>
+			<sql>CREATE INDEX IDX_TW_I_FV ON TW_HZ_INSTANCE(FLOWID,FLOWVER)</sql>
+			<sql>CREATE INDEX IDX_TW_IA_WSA ON TW_HZ_INSTANCE_AUTH(WORKID,STATUS_NO,AUTH_ID)</sql>
+			<sql>CREATE INDEX IDX_TW_IV_WV ON TW_HZ_INSTANCE_VER(WORKID,VERSION)</sql>
+		</gbase8s>
+		<kingbase>
+			<sql>CREATE INDEX IDX_TW_I_FV ON TW_HZ_INSTANCE(FLOWID,FLOWVER)</sql>
+			<sql>CREATE INDEX IDX_TW_IA_WSA ON TW_HZ_INSTANCE_AUTH(WORKID,STATUS_NO,AUTH_ID)</sql>
+			<sql>CREATE INDEX IDX_TW_IV_WV ON TW_HZ_INSTANCE_VER(WORKID,VERSION)</sql>
+		</kingbase>
+		<kingbase8>
+			<sql>CREATE INDEX IDX_TW_I_FV ON TW_HZ_INSTANCE(FLOWID,FLOWVER)</sql>
+			<sql>CREATE INDEX IDX_TW_IA_WSA ON TW_HZ_INSTANCE_AUTH(WORKID,STATUS_NO,AUTH_ID)</sql>
+			<sql>CREATE INDEX IDX_TW_IV_WV ON TW_HZ_INSTANCE_VER(WORKID,VERSION)</sql>
+		</kingbase8>
+		<oscar>
+			<sql>CREATE INDEX IDX_TW_I_FV ON TW_HZ_INSTANCE(FLOWID,FLOWVER)</sql>
+			<sql>CREATE INDEX IDX_TW_IA_WSA ON TW_HZ_INSTANCE_AUTH(WORKID,STATUS_NO,AUTH_ID)</sql>
+			<sql>CREATE INDEX IDX_TW_IV_WV ON TW_HZ_INSTANCE_VER(WORKID,VERSION)</sql>
+		</oscar>
+		<upbase>
+			<sql>CREATE INDEX IDX_TW_I_FV ON TW_HZ_INSTANCE(FLOWID,FLOWVER)</sql>
+			<sql>CREATE INDEX IDX_TW_IA_WSA ON TW_HZ_INSTANCE_AUTH(WORKID,STATUS_NO,AUTH_ID)</sql>
+			<sql>CREATE INDEX IDX_TW_IV_WV ON TW_HZ_INSTANCE_VER(WORKID,VERSION)</sql>
+		</upbase>
+	</others>
+</tableinfo>

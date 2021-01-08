@@ -1,0 +1,68 @@
+<title>hz{platform-dict.trashTitle}</title>
+<hi18n  groups="platform-dict;base;message" ></hi18n>
+<div class="page-header smaller">
+	<h1>
+		hz{platform-dict.dictManager}<small>
+            <i class="ace-icon fa fa-angle-double-right"></i>
+		hz{platform-dict.trashTitle}
+         	</small>
+	</h1>
+</div>
+<div class='row'>
+	<div class="col-sm-12" id="applicationTrash" >
+      	<div>
+           	  <iframe name="trash" id="trash" frameborder="0" src="" width="100%" class="iframeBorder"></iframe>
+      	</div>
+    </div>
+	<div id="trashInfo" class="hidden">
+	    <form class="form-horizontal no-margin-bottom" id="trashForm">
+	        <div class="row">
+	            <label class="col-xs-12 col-sm-3 control-label">hz{platform-dict.type}</label>
+	            <div class="col-xs-12 col-sm-7 form-group">
+					 <input class="col-xs-12 col-sm-12 form-control" type="text" name="category" readOnly>
+				</div>
+	        </div>
+	        <div class="row">
+	            <label class="col-xs-12 col-sm-3  control-label">hz{platform-dict.name}</label>
+	            <div class="col-xs-12 col-sm-7 form-group"> 
+					 <input class="col-xs-12" type="text" name="dictName" readOnly>
+				</div>
+	        </div>
+		    <div class="row">
+	            <label class="col-xs-12 col-sm-3 control-label">hz{platform-dict.coding}</label>
+	            <div class="col-xs-12 col-sm-7 form-group"> 
+					 <input class="col-xs-12" type="text" name="dictCode" readOnly>
+				</div>
+		    </div>
+		    <div class="row">
+	            <label class="col-xs-12 col-sm-3 control-label">hz{platform-dict.value}</label>
+	            <div class="col-xs-12 col-sm-7 form-group"> 
+					 <input class="col-xs-12 col-sm-12 form-control" type="text" name="dictValue" readOnly>
+				</div>
+		    </div>
+		     <div class="row">
+	            <label class="col-xs-12 col-sm-3 control-label">hz{base.status}</label>
+	            <div class="col-xs-12 col-sm-7 form-group">
+                     <input type="text" class="col-xs-12 form-control" readOnly value= hz{platform-dict.markDeleted} >
+				</div>
+		    </div>
+		    <div class="row">
+	            <label class="col-xs-12 col-sm-3 control-label">hz{platform-dict.description}</label>
+	            <div class="col-xs-12 col-sm-7 form-group"> 
+					  <input class="col-xs-12 col-sm-12 form-control" type="text" name="comments" readOnly>
+				</div>
+		    </div>
+	  </form>
+   </div>
+</div>
+<div class="hidden" id="delDialog"></div>
+<script type="text/javascript">
+  jQuery(function($) {
+    require([
+         horizon.paths.apppath+'/horizon/assets/manager/dictionary/js/dictionary.trash.js'
+             ], function() {
+	    horizon.manager.trash.init();
+        $('.page-content-area').trigger('ajaxscriptsloaded');
+    });
+});
+</script>

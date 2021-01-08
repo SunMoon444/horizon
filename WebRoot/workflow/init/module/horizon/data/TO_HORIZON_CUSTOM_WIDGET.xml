@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="TO_HORIZON_CUSTOM_WIDGET">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:string" minOccurs="0" />
+                <xs:element name="LAYOUT_AREA_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="WIDGET_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="CUSTOM_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="SEQUENCE" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <TO_HORIZON_CUSTOM_WIDGET>
+    <ID>HZ2882c0581ed27d01581f42a32c00ba</ID>
+    <LAYOUT_AREA_ID>HZ2882c0581ed27d01581ee8fe090023</LAYOUT_AREA_ID>
+    <WIDGET_ID>HZ2882c05818c01b015818c1789a0002</WIDGET_ID>
+    <CUSTOM_ID>HZ2882c0581ed27d01581ee986eb0028</CUSTOM_ID>
+    <SEQUENCE>0</SEQUENCE>
+  </TO_HORIZON_CUSTOM_WIDGET>
+  <TO_HORIZON_CUSTOM_WIDGET>
+    <ID>HZ2882c0581ed27d01581f42a32c00bb</ID>
+    <LAYOUT_AREA_ID>HZ2882c0581ed27d01581ee8fe090024</LAYOUT_AREA_ID>
+    <WIDGET_ID>HZ2882c05818c01b015818c1cfe00003</WIDGET_ID>
+    <CUSTOM_ID>HZ2882c0581ed27d01581ee986eb0028</CUSTOM_ID>
+    <SEQUENCE>0</SEQUENCE>
+  </TO_HORIZON_CUSTOM_WIDGET>
+  <TO_HORIZON_CUSTOM_WIDGET>
+    <ID>HZ2882c0581ed27d01581f42a32c00bc</ID>
+    <LAYOUT_AREA_ID>HZ2882c0581ed27d01581ee8fe090025</LAYOUT_AREA_ID>
+    <WIDGET_ID>HZ2882c058193df20158196dc5960422</WIDGET_ID>
+    <CUSTOM_ID>HZ2882c0581ed27d01581ee986eb0028</CUSTOM_ID>
+    <SEQUENCE>0</SEQUENCE>
+  </TO_HORIZON_CUSTOM_WIDGET>
+  <TO_HORIZON_CUSTOM_WIDGET>
+    <ID>HZ2882c0581ed27d01581f42a32c00bd</ID>
+    <LAYOUT_AREA_ID>HZ2882c0581ed27d01581ee8fe090026</LAYOUT_AREA_ID>
+    <WIDGET_ID>HZ2882c0581ed27d01581ef8d2cf0037</WIDGET_ID>
+    <CUSTOM_ID>HZ2882c0581ed27d01581ee986eb0028</CUSTOM_ID>
+    <SEQUENCE>0</SEQUENCE>
+  </TO_HORIZON_CUSTOM_WIDGET>
+</NewDataSet>

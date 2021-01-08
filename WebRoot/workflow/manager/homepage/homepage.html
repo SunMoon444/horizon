@@ -1,0 +1,85 @@
+<hi18n groups="message;homepage;flowstatus"></hi18n>
+<div class="embed-toggle-sidebar-container hidden-md hidden-lg align-right" style="position:absolute;right: 12px;top: 2px;">
+    <button class="navbar-toggle toggle-sidebar" type="button" data-target="#toggle-sidebar">
+        <span class="sr-only">Toggle横向菜单</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <button class="navbar-toggle toggle-sidebar2" type="button" data-target="#toggle-sidebar2" >
+        <span class="sr-only">Toggle左侧菜单</span>
+        <i class="ace-icon fa fa-dashboard bigger-110"></i>
+    </button>
+</div>
+<div class="row flow-status-pic homepage">
+	<div class="col-sm-6">
+		<div class="widget-box transparent no-margin">
+			<div class="widget-header widget-header-small widget-header-flow">
+				<h5 class="widget-title">
+					<i class="ace-icon fa fa-pie-chart"></i> hz{homepage.runningState}
+				</h5>
+			</div>
+			<div class="widget-body">
+				<div class="widget-main no-padding-bottom">
+					<div id="flow-status-chart">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="widget-box transparent no-margin">
+			<div class="widget-header widget-header-small">
+				<h5 class="widget-title">
+					<i class="ace-icon fa fa-bar-chart-o"></i> hz{homepage.todoAndToread}
+				</h5>
+			</div>
+			<div class="widget-body">
+				<div class="widget-main">
+					<div id="todoread-monitor-chart"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<div class="widget-box transparent no-margin">
+			<div class="widget-header widget-header-small widget-header-ram" style="margin-bottom: 10px;">
+				<h5 class="widget-title">
+					<i class="ace-icon fa fa-area-chart chart-icon"></i> hz{homepage.memoryMonitor}
+				</h5>
+				<div class="widget-toolbar no-border">
+					<ul class="nav nav-tabs" id="recent-tab">
+						<li class="active" >
+							<a id="realtime" data-toggle="tab" href="#tab-one">hz{homepage.realMonitor}</a>
+						</li>
+						<li>
+							<a id="rt_his" data-toggle="tab" href="#tab-two">hz{homepage.historyMonitor}</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="widget-body">
+				<div class="widget-main no-padding">
+					<div class="tab-content no-padding">
+						<div id="tab-one" class="tab-pane active col-sm-12">
+							<div id="time-charts"></div>
+						</div>
+						<div id="tab-two" class="tab-pane col-sm-12">
+						   	<div id="history-charts"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	(function($, undefined) {
+        require([horizon.paths.assetspath + '/manager/homepage/homepage.js'], function() {
+            $('.page-content-area').trigger('ajaxscriptsloaded');
+            horizon.engine.homepage.init();
+        });
+	})(jQuery);
+</script>

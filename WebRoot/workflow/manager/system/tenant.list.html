@@ -1,0 +1,201 @@
+<!-- ajax layout which only needs content area -->
+<title>hz{tenant-list.title}</title>
+<hi18n groups="tenant-list;base;message;datatables;validator;load-license"></hi18n>
+<div class="page-header smaller">
+	<h1>
+		hz{tenant-list.title}
+		<small class="hidden-xs">
+            <i class="ace-icon fa fa-angle-double-right"></i>
+         	hz{tenant-list.smallTitle}
+        </small>
+		<div class="embed-toggle-sidebar-container hidden-md hidden-lg pull-right">
+            <button class="navbar-toggle toggle-sidebar" type="button" data-target="#toggle-sidebar">
+                <span class="sr-only">Toggle横向菜单</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button class="navbar-toggle toggle-sidebar2" type="button" data-target="#toggle-sidebar2" >
+                <span class="sr-only">Toggle左侧菜单</span>
+                <i class="ace-icon fa fa-dashboard bigger-110"></i>
+            </button>
+        </div>
+	</h1>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+        <table id="myDatatable" class="table table-hover"></table>
+    </div>
+</div>
+<div class="hidden" id="tenantInfo">
+	<div class="space-6"></div>
+	<form class="form-horizontal no-margin-bottom" id="tenantInfoForm">
+		<input type="hidden" name="id"/>
+		<input type="hidden" id="isDefault" name="isDefault" value="false" /><!-- 是否是默认数据源，默认是否 -->
+		<input type="hidden" name="initFlag" value="2"/>
+		<input type="hidden" name="connectionType" id="connectionType" value="DBCP"/>  <!-- 链接数据库的方式 -->
+		<input type="hidden" name="haveConn"/><!-- 是否建立连接 -->
+		<input type="hidden" name="type"/> <!-- 判断是连接还是初始化 -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 ">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{tenant-list.tenantName}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<input class="col-xs-12 form-control" name="tenantName" id="tenantName" type="text" maxlength="100" required>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{tenant-list.tenantCode}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<input class="col-xs-12 form-control" name="tenantCode" id="tenantCode" type="text" maxlength="100" required>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 ">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{tenant-list.identifier}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<input class="col-xs-12 form-control" data-placeholder="hz{tenant-list.htmlInput}" name="identifier" type="text" maxlength="100" required>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{tenant-list.dbConnectionType}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<select class="form-control" name="dbConnectionType" required>
+							<option value="DBCP">SPRING</option>
+							<option value="JNDI">JNDI</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 jndi hidden">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{tenant-list.dbConn}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<input class="col-xs-12 form-control ignore" data-placeholder="hz{tenant-list.htmlInput}" name="jndiName" type="text" required maxlength="100">
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{tenant-list.dbType}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<!--<select class="form-control" name="dbtype" readonly="readonly" disabled required>
+						    <option value="Oracle">Oracle</option>
+						    <option value="DB2" >DB2</option>
+						    <option value="MySQL" >MySQL</option>
+						    <option value="MySQL8" >MySQL8</option>
+						    <option value="SqlServer" >SqlServer</option>
+						    <option value="DM" >DM</option>
+						    <option value="GBase">GBase</option>
+							<option value="KingBase">KingBase</option>
+							<option value="Postgresql">Postgresql</option>
+						</select>-->
+						<input class="form-control" type="text" name="databaseType" readonly="readonly"  required/>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 hidden">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{tenant-list.lobProcessorClass}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<input class="col-xs-12 form-control" name="lobProcessorClass" type="text" required maxlength="200" notChinese="true">
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 hidden ">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{tenant-list.lobBufferSize}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<input class="col-xs-12 form-control" name="lobBufferSize" value="1048576" type="text" required maxlength="100">
+					</div>
+				</div>
+			</div>
+			<div class="spring">
+				<div class="col-xs-12 col-sm-6 hidden">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-3 control-label">hz{tenant-list.driverClass}:</label>
+						<div class="col-xs-12 col-sm-9">
+							<input for="DBCP" class="col-xs-12 form-control" name="driverClass" type="text" required maxlength="200" notChinese="true">
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 ">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-3 control-label">hz{tenant-list.dbUrl}:</label>
+						<div class="col-xs-12 col-sm-9">
+							<input for="DBCP" class="col-xs-12 form-control" name="jdbcUrl" type="text" required maxlength="200" notChinese="true">
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 ">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-3 control-label">hz{tenant-list.userName}:</label>
+						<div class="col-xs-12 col-sm-9">
+							<input for="DBCP" class="col-xs-12 form-control" name="userName" type="text" required maxlength="100" notChinese="true">
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 ">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-3 control-label">hz{tenant-list.userPassWord}:</label>
+						<div class="col-xs-12 col-sm-9">
+							<input for="DBCP" class="col-xs-12 form-control" name="password" type="text" required maxlength="100" notChinese="true">
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 ">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-3 control-label">hz{tenant-list.dbMinPoolSize}:</label>
+						<div class="col-xs-12 col-sm-9">
+							<input class="col-xs-12 form-control" name="minPoolSize" value="3" type="text" required maxlength="100">
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 ">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-3 control-label">hz{tenant-list.dbMaxPoolSize}:</label>
+						<div class="col-xs-12 col-sm-9">
+							<input class="col-xs-12 form-control" name="maxPoolSize" value="15" type="text" required maxlength="100">
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-3 control-label">hz{tenant-list.dbInitialPoolSize}:</label>
+						<div class="col-xs-12 col-sm-9">
+							<input class="col-xs-12 form-control" name="initialPoolSize" value="3" type="text" maxlength="100">
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 ">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-3 control-label">hz{tenant-list.dbMaxidelTime}:</label>
+						<div class="col-xs-12 col-sm-9">
+							<input class="col-xs-12 form-control" name="maxIdelTime" value="0" type="text" maxlength="100">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+   </form>
+</div>
+<div class="hidden" id="systemList-dialog"></div>
+<!-- /.page-header -->
+<!-- page specific plugin scripts -->
+<script type="text/javascript">
+jQuery(function($) {
+    require([horizon.paths.assetspath + '/manager/system/js/tenant.list.js'], function() {
+    	horizon.language.plugins.datatables();
+    	horizon.language.plugins.validator();
+        horizon.engine.tenantlist.initTable();
+		horizon.engine.tenantlist.initTenantForm();
+        $('.page-content-area').trigger('ajaxscriptsloaded');
+    });
+});
+
+</script>

@@ -1,0 +1,607 @@
+<title>hz{platform-widget.largeTitle}</title>
+<hi18n groups="platform-widget;base;selectuser;message"></hi18n>
+<!-- <div class="container-fluid"> -->
+    <div class="page-header smaller">
+        <h1>
+            hz{platform-widget.largeTitle}
+            <small class="hidden-xs">           
+                <i class="ace-icon fa fa-angle-double-right"></i>
+                hz{platform-widget.smallTitle}
+            </small>
+        </h1>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="tabbable">
+            	<div class="horizon-tab" id='myTab'>
+				<ul class="tab">
+					<li class="active"><a data-toggle="tab" data-type="widget" class="pane-one-widget"
+						href="tab-pane-one" data-target="[data-pane='tab-pane-one']">
+							hz{platform-widget.tabWidget} </a></li>
+					<li ><a data-toggle="tab" href="tab-pane-two" data-type="layout" class="pane-two-layout empty"
+						data-target="[data-pane='tab-pane-two']">hz{platform-widget.tabLayout} </a></li>
+					<li ><a data-toggle="tab" href="tab-pane-four"  data-type="custom" class="pane-four-custom"
+						data-target="[data-pane='tab-pane-four']"> hz{platform-widget.tabCustom}</a></li>
+				</ul>
+				<div class="tab-content">
+					<div data-pane="tab-pane-one" class="tab-pane fade in active">
+						<div class="row">
+                            <div class="col-xs-12 flow-buttons buttons-widget">
+                                <ul class="nav nav-pills no-margin" id="widget-group">
+                                    <li>
+                                        <a href="#nogo" data-type="widget" id="add-widget" tabindex="-1">hz{platform-widget.addApp}</a>
+                                    </li>
+                                    <li class="more hidden">
+                        				<a href="#nogo" data-toggle="dropdown" class="dropdown-toggle dropdown-toggle-widget">
+                         					<i class="ace-icon fa fa-list"></i>
+                        						hz{platform-widget.moreOperate}
+                       					 </a>
+                      					 <ul class="dropdown-menu dropdown-info" id="dropdown-widget-group"></ul>
+                   					 </li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-12 no-padding">
+                                <div class="space-12"></div>
+                                <div class="col-sm-3">
+                                	<h4 class="header smaller lighter blue no-margin-top">
+                                     	<i class="ace-icon fa fa-list green"></i>
+                                  	  	   	hz{platform-widget.list}
+                                    </h4>
+                                    <div class="ace-scroll componentList">
+                                    	<ul class="item-list" id="widget-group-container"></ul>
+                                    </div>
+                                </div>
+                                <div class="col-sm-9" id="widget-info">
+                               		<h4 class="header smaller lighter blue no-margin">
+                                     	<i class="ace-icon fa  fa-list green"></i>
+                                  	  	   	hz{platform-widget.info}
+                                    </h4>
+										<div id="widgetInfo">
+											<form class="form-horizontal horizon-form" id="widgetForm"
+												role="form">
+												<input type="hidden" id="widget" name="id" />
+												<div class="row">
+													<div class="col-xs-12 ">
+														<div class="row">
+															<div class="col-xs-12 col-sm-6">
+																<div class="form-group no-margin">
+																	<label class="control-label">hz{platform-widget.code}</label>
+																	<div class="has-error form-group no-margin">
+																		<input type="text" name="code" class="form-control  "
+																			placeholder="hz{base.inputPlaceholder}"   notChinese="true"
+																			  required/>
+																			<label class='span-null control-label'></label>
+																	</div>
+																</div>
+															</div>
+															<div class="col-xs-12 col-md-6">
+																<label class="control-label">hz{platform-widget.group}</label>
+																<div class="has-error form-group no-margin">
+																	<select class="form-control" name="groupId" required>
+																		<!-- <option value="appModule">应用模块</option> -->
+																	</select>
+																	<label class='span-null control-label'></label>
+																</div>
+															</div>
+														</div>
+
+														<div class="row">
+															<div class="col-xs-12 col-sm-6">
+																<div class="form-group no-margin">
+																	<label class="control-label">hz{platform-widget.name}</label>
+																	<div class="has-error form-group no-margin">
+																		<input type="text" name="name" maxlength="20" class="form-control"
+																			placeholder="hz{base.inputPlaceholder}" required />
+																			<label class='span-null control-label'></label>
+																	</div>
+																</div>
+															</div>
+															<div class="col-xs-12 col-sm-6">
+																<div class="form-group no-margin">
+																	<label class="control-label">hz{platform-widget.imgType}</label>
+																	<div class="form-group no-margin">
+																		<label class="inline"> <input type="radio"
+																			class="ace" value="class" name="iconType" checked />
+																			<span class="lbl middle">hz{platform-widget.imgClass}</span>
+																		</label> <label class="inline"> <input type="radio"
+																			class="ace" value="image" name="iconType" /> <span
+																			class="lbl middle">hz{platform-widget.image}</span>
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="row">
+															<div class="col-xs-12 col-sm-6">
+																<div class="form-group no-margin">
+																	<label class="control-label">hz{platform-widget.height}</label>
+																	<div class="has-error form-group no-margin">
+																		<input type="text" name="height" class="form-control"
+																			placeholder="hz{base.inputPlaceholder}" required
+																			onkeyup="value=value.replace(/[^\d.]/g,'')"  />
+																			<label class='span-null control-label'></label>
+																	</div>
+																</div>
+															</div>
+															<div class="col-xs-12 col-sm-6">
+																<div class="form-group no-margin">
+																	<label class="control-label" id="image-icon-text">hz{platform-widget.imgClass}</label>
+																	<div id="iconInput" class="hidden has-error form-group no-margin">
+																		<input type="text" class="form-control"
+																			placeholder="hz{base.inputPlaceholder}" name="icon" required/>
+																			<label class='span-null control-label'></label>
+																	</div>
+																	<div class="form-group no-margin has-error"
+																		id="iconBtn">
+																		<div data-toggle="buttons"
+																			class="btn-group btn-overlap btn-corner col-xs-12">
+																			<button
+																				class="btn btn-sm btn-white btn-danger col-xs-6"
+																				id="btnIconG" type="button">Glyphicon</button>
+																			<button
+																				class="btn btn-sm btn-white btn-danger col-xs-6"
+																				id="btnIconF" type="button">Fontawesome</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="row">
+															<div class="col-xs-12 col-sm-6">
+																<div class="form-group no-margin">
+																	<label class="control-label">hz{platform-widget.widgetClass}</label>
+																	<div>
+																		<input type="text" name="widgetClass"
+																			class="form-control" placeholder="hz{base.inputPlaceholder}" />
+																	</div>
+																</div>
+															</div>
+															<div class="col-xs-12 col-sm-6">
+																<div class="form-group no-margin">
+																	<label class="control-label">hz{platform-widget.authScope}</label>
+																	<div class="form-group no-margin">
+																		<label class="inline"> <input type="radio"
+																			class="ace" value="public" name="auth" checked /> <span
+																			class="lbl middle">hz{platform-widget.public}</span>
+																		</label> <label class="inline" id="protected"> <input type="radio"
+																			class="ace" value="protected" name="auth" /> <span
+																			class="lbl middle">hz{platform-widget.private}</span>
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="row hidden" id="deptAndUser">
+															<div class="col-xs-12 col-sm-6">
+																<div class="form-group no-margin">
+																	<label class="control-label">hz{platform-widget.dept}</label>
+																	<div>
+																		<input type="hidden" name="deptId" /> <input
+																			type="text" name="deptName"
+																			class="form-control pointer" readonly
+																			placeholder="hz{platform-widget.selectDept}" maxlength="100" />
+																	</div>
+																</div>
+															</div>
+
+															<div class="col-xs-12 col-sm-6">
+																<div class="form-group no-margin">
+																	<label class="control-label">hz{platform-widget.user}</label>
+																	<div>
+																		<input type="hidden" name="userId" /> <input
+																			type="text" name="userName"
+																			class="form-control pointer" readonly
+																			placeholder="hz{platform-widget.selectUser}" />
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-xs-12 col-md-6 hidden" id="role"
+																style="margin-top: -5px">
+																<label class="control-label">hz{platform-widget.role}</label>
+																<div class="form-group no-margin" >
+																	<select class="form-control" name="roleId">
+																	</select>
+																</div>
+															</div>
+															<div class="col-xs-12 col-sm-6">
+																<div class="form-group no-margin">
+																	<label class="control-label">hz{platform-widget.url}</label>
+																	<div class="btn-group width-100" data-toggle="buttons" >
+									                                    <label class="btn btn-white btn-rounded btn-sm active" id="viewSelect">
+										                                    <input name="urlType"  type="radio" value="view" />
+											                                <span class="lbl middle glyphicon glyphicon-ok">hz{platform-widget.view}</span>
+									                                    </label>
+									                                    <label class="btn btn-white btn-sm btn-rounded" id="urlInput">
+										                                    <input name="urlType" type="radio" value="url"/>
+										                                 	<span class="lbl middle glyphicon glyphicon-edit">hz{platform-widget.location}</span>
+									                                    </label>
+									                                </div>
+																	<div class="has-error form-group no-margin">
+																		<input type="text" id="url" name="url"  class="form-control hidden" placeholder="hz{message.input}url"  maxlength="2000"/>
+																		<input type="text" id= "link" name="link" data-toggle="dropdown" data-position="auto" class="form-control  pointer dropdown-toggle" readonly placeholder="hz{base.selectPlaceholder}url" />
+                    						   							<div class="select-tree dropdown-menu dropdown-yellow dropdown-caret dropdown-close ">
+                                            		 						<ul id="page-tree" class="ztree"></ul>
+                                            							</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="horizon-form-actions row">
+													<div class="col-xs-11">
+														<button class="btn btn-white btn-round border-width-1" id="save-widget-btn" type="submit">
+                    										<i class="ace-icon fa fa-save green"></i>
+                    											hz{base.save}
+               											</button>
+													</div>
+												</div>
+											</form>
+										</div>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+					<div data-pane="tab-pane-two" class="tab-pane fade">
+						<div class="row">
+                            <div class="col-xs-12 flow-buttons buttons-layout">
+                                <ul class="nav nav-pills no-margin layout-ul">
+                                    <li>
+                                        <a href="#nogo" tabindex="-1" data-type="layout" id="add-layout">hz{platform-widget.addLayout}</a>
+                                    </li>
+                                    <li class="more hidden">
+                        				<a href="#nogo" data-toggle="dropdown" class="dropdown-toggle-layout">
+                         					<i class="ace-icon fa fa-list"></i>
+                        						hz{platform-widget.moreOperate}
+                       					 </a>
+                      					 <ul class="dropdown-menu dropdown-info" id="dropdown-layout-group"></ul>
+                   					</li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-12 layout-main" >
+                            	<div class="space-6"></div>
+                                <div class="hidden" id="layout-infobox">
+                                    <h4 class="header smaller lighter blue no-margin">
+                                   		 <i class="ace-icon fa fa-pencil green"></i>
+                                			       hz{platform-widget.edit}
+                                        <small class="hidden-xs hidden-sm">
+                                            <i class="ace-icon fa fa-angle-double-right green"></i>&nbsp;&nbsp;<i class="fa fa-desktop bigger-140"></i>&nbsp;&nbsp;(≥1200px)
+                                            <i class="ace-icon fa fa-angle-double-right green"></i>&nbsp;&nbsp;<i class="fa fa-laptop bigger-160"></i>&nbsp;&nbsp;(≥992px)
+                                            <i class="ace-icon fa fa-angle-double-right green"></i>&nbsp;&nbsp;<i class="fa fa-tablet bigger-160"></i>&nbsp;&nbsp; (≥768px)
+                                            <i class="ace-icon fa fa-angle-double-right green"></i>&nbsp;&nbsp;<i class="fa fa-mobile-phone bigger-170"></i>&nbsp;&nbsp;(<768px)
+                                        </small>
+                                    </h4>
+                                    <div class="row">
+                                        <form class="form-horizontal layout-form ">
+                                         	<input type="hidden" id="layoutId" name="id"> 
+                                            <div class="col-xs-12 col-sm-3">
+                                                <div class="form-group">
+                                                    <label class="col-xs-12 col-sm-5 control-label">hz{platform-widget.layoutName}</label>
+                                                    <div class="col-xs-12 col-sm-7">
+                                                        <input type="text" id="layoutName" name="name" placeholder="hz{base.inputPlaceholder}" class="form-control ">
+                                                        <label class='span-null control-label'></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-3">
+                                                <div class="form-group">
+                                                    <label class="col-xs-12 col-sm-5 control-label">hz{platform-widget.layoutCount}</label>
+                                                    <div class="col-xs-12 col-sm-7">
+                                                        <input type="text"  class="form-control" value='1' id="layoutCount" name="layeroutCount">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="col-sm-12" id="area-container">
+                                                <div class="hidden" id="default-area-info">
+                                                    <div class="form-group area">
+                                                        <label class="col-xs-12 col-sm-1 control-label no-padding-right area-name"></label>
+                                                        <div class="col-xs-12 col-sm-11 area-content">
+                                                            <label class="col-sm-1 control-label no-padding-right hidden-xs"><i class="fa fa-mobile-phone bigger-190"></i></label>
+                                                            <label class="col-sm-1 control-label no-padding-right blue visible-xs-block"><i class="fa fa-mobile-phone bigger-190"></i></label>
+                                                            <div class="col-sm-2">
+                                                                <input type="text" placeholder="hz{base.inputPlaceholder}" data-col="xs" data-area="" value="12" class="form-control layoutNumber">
+                                                            </div>
+                                                            <label class="col-sm-1 control-label no-padding-right hidden-sm"><i class="fa fa-tablet bigger-180"></i></label>
+                                                            <label class="col-sm-1 control-label no-padding-right blue visible-sm-block"><i class="fa fa-tablet bigger-180"></i></label>
+                                                            <div class="col-sm-2">
+                                                                <input type="text" placeholder="hz{base.inputPlaceholder}" data-col="sm" data-area="" value="12" class="form-control layoutNumber">
+                                                            </div>
+                                                            <label class="col-sm-1 control-label no-padding-right hidden-md"><i class="fa fa-laptop bigger-150"></i></label>
+                                                            <label class="col-sm-1 control-label no-padding-right blue visible-md-block"><i class="fa fa-laptop bigger-150"></i></label>
+                                                            <div class="col-sm-2">
+                                                                <input type="text" placeholder="hz{base.inputPlaceholder}" data-col="md" data-area="" value="12"  class="form-control layoutNumber">
+                                                            </div>
+                                                            <label class="col-sm-1 control-label no-padding-right hidden-lg"><i class="fa fa-desktop bigger-120"></i></label>
+                                                            <label class="col-sm-1 control-label no-padding-right blue visible-lg-block"><i class="fa fa-desktop bigger-120"></i></label>
+                                                            <div class="col-sm-2">
+                                                                <input type="text" placeholder="hz{base.inputPlaceholder}" data-col="lg" data-area="" value="12" class="form-control layoutNumber">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 layerout-area">
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </form>
+                                        <form class="horizon-form">
+	                                        <div class="horizon-form-actions row">
+		                                          <div class="col-xs-11">
+			                                      	<button class="btn btn-white btn-round border-width-1" id="save-btn-success" type="button">
+			                    						<i class="ace-icon fa fa-save green"></i>
+			                    							hz{base.save}
+			               							</button>
+			               							<button class="btn btn-white btn-round border-width-1" id="delete-layout-btn" type="button">
+			                    						<i class="ace-icon fa fa-times red2"></i>
+			                   								hz{base.delete}
+			                						</button>
+			                						<button class="btn btn-white btn-round border-width-1" id="reset-layout-btn" type="button">
+			                    						<i class="ace-icon fa fa-undo grey"></i>
+			                    							hz{base.reset}
+			                						</button>
+			                					</div>
+		                                    </div>
+	                                    </form>
+                                    </div>
+                                </div>
+                                <div class="row hidden" id="layerout-container"></div>
+                            </div>
+                        </div>
+					</div>
+					<div data-pane="tab-pane-four" class="tab-pane fade">
+						<div class="row">
+                            <div class="col-xs-12 flow-buttons buttons-custom">
+                                <ul class="nav nav-pills no-margin edit-custom-ul">
+                                	<li>
+                                        <a href="#nogo" tabindex="-1" data-type="custom" id="add-custom">hz{platform-widget.addCustom}</a>
+                                    </li>
+                                    <li>
+                                        <a href="#nogo" tabindex="-1" class="edit-custom" data-type="user">hz{platform-widget.customUser}</a>
+                                    </li>
+                                    <li>
+                                        <a href="#nogo" tabindex="-1" class="edit-custom" data-type="role">hz{platform-widget.customRole}</a>
+                                    </li>
+                                    <li>
+                                        <a href="#nogo" tabindex="-1" class="edit-custom" data-type="dept">hz{platform-widget.customDept}</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="#nogo" tabindex="-1" class="edit-custom" data-type="public">hz{platform-widget.public}</a>
+                                    </li>
+                                    <li class="more hidden">
+                        				<a href="#nogo" data-toggle="dropdown" class="dropdown-toggle dropdown-toggle-custom">
+                         					<i class="ace-icon fa fa-list"></i>
+                        						hz{platform-widget.moreOperate}
+                       					 </a>
+                      					 <ul class="dropdown-menu dropdown-info" id="dropdown-custom-group">
+		                                    <li>
+                                        		<a href="#nogo" tabindex="-1" class="edit-custom" data-type="user">hz{platform-widget.customUser}</a>
+                                    		</li>
+                                    		<li>
+                                       			 <a href="#nogo" tabindex="-1" class="edit-custom" data-type="role">hz{platform-widget.customRole}</a>
+                                    		</li>
+                                    		<li>
+                                        		<a href="#nogo" tabindex="-1" class="edit-custom" data-type="dept">hz{platform-widget.customDept}</a>
+                                    		</li>
+                                    		<li>
+                                        		<a href="#nogo" tabindex="-1" class="edit-custom" data-type="public">hz{platform-widget.public}</a>
+                                    		</li>
+                      					 </ul>
+                   					 </li>
+                                 </ul>
+                            </div>
+                            <div class="col-xs-12" id="custom-container">
+                            <div class="space-12"></div>
+                                <div class="row hidden" id="custom-edit-search">
+                                    <div class="col-xs-12 col-sm-8">
+                                        <form class="form-horizontal" id="custom-search-form">
+                                            <div class="form-group" id="custom-dept-search">
+                                                <label class="col-sm-3 control-label no-padding-right"> hz{platform-widget.searchDept} </label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" placeholder=" hz{platform-widget.searchDept}" readonly class="col-xs-12 input-search" name="T_SEARCH_DEPT" id="input-search-dept"/>
+                                                    <input type="hidden" name="T_SEARCH_DEPT_ID"/>
+                                                    <input type="hidden" name="SEARCH_DEPT"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group" id="custom-role-search">
+                                                <label class="col-sm-3 control-label no-padding-right">hz{platform-widget.searchRole}</label>
+                                                <div class="col-sm-9">
+                                                 	<select class="form-control input-search" id="input-search-role" data-placeholder="hz{base.selectPlaceholder}" name="SEARCH_ROLE">
+                                                        <option value="" class='chosen-select-first'> hz{base.selectPlaceholder} </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group" id="custom-user-search">
+                                                <label class="col-sm-3 control-label no-padding-right"> hz{platform-widget.searchUser} </label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" readonly placeholder="hz{platform-widget.searchUser}" name="T_SEARCH_USER" class="col-xs-12 input-search" id="input-search-user"/>
+                                                    <input type="hidden" name="T_SEARCH_USER_ID"/>
+                                                    <input type="hidden" name="SEARCH_USER"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-4">
+                                    	<button type="button" id="custom-search-button" class="submit btn btn-white btn-round border-width-1 " value='hz{base.search}'>
+											<i class="ace-icon fa fa-search green"></i>hz{base.search}
+										</button>
+                                    </div>
+                                </div>
+                                <div class="alert alert-danger bigger-110 no-margin center hidden prompt-span"> hz{platform-widget.noCustom} </div>
+                                <div class="row custom-info-row" >
+                                    <div class="col-xs-12 col-sm-3">
+                                     	<h4 class="header smaller lighter blue no-margin">
+                                     		<i class="ace-icon fa fa-comments-o green"></i>
+                                  	  	   	  hz{platform-widget.customInfo} 
+                                    	</h4>
+                                        <form class="form-horizontal horizon-form" id="custom-info-form">
+                                            <input type="hidden" name="id" id="customId" />
+                                            <div class="form-group form-ridio-scope">
+                                                <label class="col-sm-3 control-label"> hz{platform-widget.scope} </label>
+                                                <div class="col-sm-9 no-padding">
+                                                    <div class="radio radio-scope">
+                                                        <label>
+                                                            <input type="radio" name="scope" class="ace radio-public" value="public" checked>
+                                                            <span class="lbl"> hz{platform-widget.public}</span>
+                                                        </label>
+                                                        <label>
+                                                            <input type="radio" name="scope" class="ace radio-dept" value="dept">
+                                                            <span class="lbl"> hz{platform-widget.customDept}</span>
+                                                        </label>
+                                                        <label>
+                                                            <input type="radio" name="scope" class="ace radio-role" value="role">
+                                                            <span class="lbl">hz{platform-widget.customRole}</span>
+                                                        </label>
+                                                        <label>
+                                                            <input type="radio" name="scope" class="ace radio-user" value="user">
+                                                            <span class="lbl"> hz{platform-widget.customUser}</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group input-dru hidden" id='input-dept'>
+                                                <label class="col-sm-3 control-label">hz{platform-widget.customDept}</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" placeholder="hz{platform-widget.dept}" readonly name="T_INPUT_DEPT" class="col-xs-12 input-objectId" id="input-objectId-dept">
+                                                    <span class='span-null'></span>
+                                                    <input type="hidden" name="T_INPUT_DEPT_ID"/>
+                                                    <input type="hidden" name="INPUT_DEPT"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group input-dru hidden" id='input-role'>
+                                                <label class="col-sm-3 control-label">hz{platform-widget.customRole}</label>
+                                                <div class="col-sm-9">
+                                                   	<select class="form-control input-objectId" name="INPUT_ROLE" id="input-objectId-role" data-placeholder="hz{base.selectPlaceholder}">
+                                                        <option value="" class='chosen-select-first'> hz{base.selectPlaceholder}</option>
+                                                    </select>
+                                                    <span class='span-null'></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group input-dru hidden" id='input-user'>
+                                                <label class="col-sm-3 control-label">hz{platform-widget.customUser} </label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" placeholder="hz{platform-widget.user}" readonly name="T_INPUT_USER" class="col-xs-12 input-objectId" id="input-objectId-user">
+                                                    <span class='span-null'></span>
+                                                    <input type="hidden" name="T_INPUT_USER_ID"/>
+                                                    <input type="hidden" name="INPUT_USER"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">hz{platform-widget.layout}</label>
+                                                <div class="col-sm-9">
+                                                    <select class="chosen-select form-control" data-placeholder="hz{base.selectPlaceholder}" name="layoutId">
+                                                        <option value="" class='chosen-select-first'> hz{base.selectPlaceholder} </option>
+                                                    </select>
+                                                    <span class='span-null'></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label"> hz{platform-widget.description} </label>
+                                                <div class="col-sm-9">
+                                                    <textarea class="form-control col-xs-12 desc-textarea" name="description" placeholder="hz{platform-widget.inputDesc}"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="horizon-form-actions row">
+                                             	<div class="col-xs-11">
+                    								<button class="btn btn-white btn-round border-width-1" id="save-custom-success" type="button" >
+                    									<i class="ace-icon fa fa-save green"></i>
+                   											 hz{base.save}
+                									</button>
+                                             		<button class="btn btn-white btn-round border-width-1" id="delete-custom-success" type="button">
+                   										 <i class="ace-icon fa fa-times red2"></i>
+                   											 hz{base.delete}
+                									</button>
+                									<button class="btn btn-white btn-round border-width-1" id="reset-custom-success" type="button">
+                    									<i class="ace-icon fa fa-undo grey"></i>
+                    										 hz{base.reset}
+                									</button>
+                								</div>
+                                            </div>
+                                        </form>
+                                        <!-- <div class="space-12"></div> -->
+	                                    <h4 class="header smaller lighter blue no-margin">
+	                                     	<i class="ace-icon fa fa-list green"></i>
+	                                  	  	  hz{platform-widget.list}
+	                                    </h4>
+	                                   <div class="ace-scroll componentList">
+	                                   		<ul class="item-list widget-container"></ul>
+	                                   </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-9">
+	                                    <h4 class="header smaller lighter blue no-margin-top">
+		                                     <i class="ace-icon fa fa-pencil-square-o green"></i>
+		                                  	  	hz{platform-widget.layoutArea}
+		                                </h4>
+	                                	<div class="layoutArea-row no-margin"></div>
+                                	</div>
+                                </div>
+                            </div><!-- custom-container -->
+					</div><!-- row -->
+				</div><!-- tab-pane-four -->
+				</div><!-- tab-content -->
+                </div><!-- myTab -->
+            </div>
+        </div>
+    </div>
+    <div class="space-12"></div>
+    <a href="#nogo" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+     <div class="layerout-area-default-container hidden">
+        <div></div>
+     </div>
+     <div class="widget-box-list hidden">
+		<li class="item-blue clearfix widget-item">
+			<label class="inline">
+				<input type="checkbox" class="ace widget-checkbox" />
+			    <span class="lbl widget-content"></span>
+			</label>
+		</li>
+  	</div>
+   <div class="widget-box-default hidden">
+      <div class="widget-box">
+		<div class="widget-header ui-sortable-handle">
+			<h5 class="widget-title"></h5>
+			<div class="widget-toolbar">
+			   <a href="#nogo" data-action="close" class="widget-box-close">
+				  <i class="ace-icon fa fa-times "></i>
+			  </a>
+			</div>
+		</div>
+		<div class="widget-body">
+			<div class="widget-main no-padding"></div>
+		</div>
+	 </div>
+   </div>
+   <div class="widget-item-defaule hidden">
+   		<li class="item-blue clearfix widget-item">
+			<label class="inline">
+			    <span class="lbl widget-content"></span>
+			</label>
+			<div class="pull-right action-buttons">
+				<a href="#nogo" class="blue edit-widget">
+					<i class="ace-icon fa fa-pencil bigger-130"></i>
+				</a>
+				<span class="vbar"></span>
+				<a href="#nogo" class="red delete-widget">
+					<i class="ace-icon fa fa-trash-o bigger-130"></i>
+				</a>
+			</div>
+		</li>
+   </div>
+<!-- </div> --><!-- /.main-container -->
+<div id="dialog" class="hidden"></div>
+<script>
+    require(['jquery', horizon.paths.apppath + '/horizon/assets/module/widget/js/widget.main.js'], function($) {
+        horizon.language.plugins.selectuser();
+    	horizon.tools.use(horizon.paths.apppath+'/horizon/assets/module/widget/css/widget.css');
+    	horizon.tools.use(horizon.paths.pluginpath + '/ztree/css/zTreeStyle/zTreeStyle.css');
+        horizon.widget.main.load();
+        $('.page-content-area').trigger('ajaxscriptsloaded');
+    });
+</script>
+

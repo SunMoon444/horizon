@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:Locale="zh-CN">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="TF_HORIZON_OPINION">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:string" minOccurs="0" />
+                <xs:element name="COMMENTS" type="xs:string" minOccurs="0" />
+                <xs:element name="USERID" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <TF_HORIZON_OPINION>
+    <ID>HZ28e5ef2b1d9858012b1dac995a000a</ID>
+    <COMMENTS>同意</COMMENTS>
+    <USERID>public</USERID>
+  </TF_HORIZON_OPINION>
+  <TF_HORIZON_OPINION>
+    <ID>HZ28e5ef2b1d9858012b1dacb05d000b</ID>
+    <COMMENTS>不同意</COMMENTS>
+    <USERID>public</USERID>
+  </TF_HORIZON_OPINION>
+</NewDataSet>

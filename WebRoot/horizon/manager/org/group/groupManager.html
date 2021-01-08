@@ -1,0 +1,203 @@
+<title>hz{platform-group.largeTitle}</title>
+<hi18n groups="platform-group;base;selectuser;message"></hi18n>
+<div class="horizon-modal-container">
+	<div class="other-content-area">
+		<div class="page-header smaller">
+         <h1>
+            hz{platform-group.subTitle}<small>
+            <i class="ace-icon fa fa-angle-double-right"></i>
+         		hz{platform-group.largeTitle}
+         	</small>
+            <div class="pull-right">
+                    <label class="pointer hidden" id="close">
+                        <i class="ace-icon fa fa-arrow-left bigger-110 icon-only"></i>
+                        hz{base.back}
+                    </label>
+                    <label class="pointer horizon-modal-trigger" data-target=".horizon-modal" data-toggle="modal">
+                        <i class="ace-icon fa fa-leaf bigger-110 icon-only green"></i>
+                        hz{platform-group.tree}
+                    </label>
+          </div>
+        </h1>
+		</div>
+		<iframe name="groupList" frameborder="0" id="groupList" src="" width="100%"
+			class="iframeBorder"></iframe>
+		<div  id="groupInfo" class="hidden">
+				<div class="horizon-tab" id='myTab'>
+					<ul class="tab">
+						<li class="active">
+							<a data-toggle="tab" href="javascript:void(0)" data-target="[data-pane='baseInfo']">
+								hz{platform-group.baseInfo} </a>
+						</li>
+						<li id="liUser">
+							<a data-toggle="tab" href="javascript:void(0)" data-target="[data-pane='userInfo']"> 
+								hz{platform-group.userInfo}</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div data-pane="baseInfo" class="tab-pane fade in active">
+						<form class="form-horizontal horizon-form" role="form" id="groupForm">
+							<div class="row">
+								<div class="col-xs-12 ">
+									<input type="hidden" name="id"/>
+									<div class="row">
+										<div class="col-xs-12 col-sm-6">
+											<div class="form-group no-margin-left no-margin-right">
+												<label class="control-label">hz{platform-group.groupName}</label>
+												<div class="form-group no-margin has-error">
+													<input type="text" required="true" name="groupName" class="form-control"
+														placeholder="hz{platform-group.inputGroupName}" minlength="3" maxlength="100" />
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-6">
+											<div class="form-group no-margin-left no-margin-right">
+												<label class="control-label">hz{platform-group.groupCode}</label>
+												<div class="form-group no-margin has-error">
+													<input type="text" required="true" name="groupCode" class="form-control"
+														placeholder="hz{platform-group.inputGroupCode}" notChinese="true" minlength="3" maxlength="20" />
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-6">
+												<label class="control-label">hz{platform-group.parentName}</label>
+												<div class="form-group no-margin-left no-margin-right has-error">
+												<div class="input-group input-daterange">
+													<input type="hidden" name="parentId" /> 
+													<input type="text" class="form-control pointer"  required="true" name="parentName"
+														placeholder="hz{platform-group.selectParentName}" readonly minlength="3" maxlength="100" />
+														<span class="input-group-addon pointer"  id="setnode">hz{platform-group.setRootGroup}</span>
+                                                </div>
+												</div>
+										</div>
+										<div class="col-xs-12 col-sm-6">
+											<div class="form-group no-margin-left no-margin-right">
+												<label class="control-label">hz{platform-group.shortName}</label>
+												<div>
+													<input type="text" name="shortName" class="form-control"
+														placeholder="hz{platform-group.inputShortName}" maxlength="50" />
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-6">
+											<div class="form-group no-margin-left no-margin-right">
+												<label class="control-label">hz{platform-group.leaderName}</label>
+												<div>
+													<input type="hidden" name="leader" />
+													<input type="text" class="form-control pointer" name="leaderName"
+														placeholder="hz{message.select}" readonly maxlength="100"/>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-6">
+											<div class="form-group no-margin-left no-margin-right">
+												<label class="control-label">hz{platform-group.humanInter}</label>
+												<div>
+													<input type="hidden" name="humanInter"/>
+													<input type="text" name="humanInterName" class="form-control pointer" 
+														placeholder="hz{message.select}" readonly />
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-6">
+											<div class="form-group no-margin-left no-margin-right">
+												<label class="control-label">hz{platform-group.upLeader}</label>
+												<div>
+													<input type="hidden" name="upLeader" />
+													<input type="text" class="form-control pointer" name="upLeaderName"
+														placeholder="hz{message.select}" readonly maxlength="100"/>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-6">
+											<div class="form-group no-margin-left no-margin-right">
+												<label class="control-label">hz{platform-group.groupAdmin}</label>
+												<div>
+													<input type="hidden" name="groupAdmin"/>
+													<input type="text" name="groupAdminName" class="form-control pointer"
+														placeholder="hz{message.select}" readonly  />
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="form-group no-margin-left no-margin-right">
+												<label class="control-label">hz{platform-group.groupRemark}</label>
+												<div>
+													<textarea name="groupRemark" style="resize: none" row="2" 
+														class="form-control" maxlength="200"></textarea>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- col-md-offset-3 -->
+							</div>
+							<!-- row -->
+							<div class="horizon-form-actions row">
+								<div calss="col-xs-12">
+									<button class="btn btn-white btn-round border-width-1"
+										type="submit">
+										<i class="ace-icon fa fa-save green"></i>  hz{base.save}
+									</button>
+									 <button  id="replacement" class="btn btn-white btn-round border-width-1" type="reset">
+	                                <i class="ace-icon fa fa-undo grey"></i>
+	                                	 hz{base.reset}
+	                            </button>
+	                            </div>
+                		 	</div>
+                		 	</form>
+						</div>
+						
+						<!-- baseInfo -->
+						<div data-pane="userInfo" class="tab-pane fade">
+							<iframe name="userList" frameborder="0" id="userList" src="" width="100%"
+								class="iframeBorder"></iframe>
+						</div>
+					</div>
+					</div>
+					<!-- tab-content -->
+				</div>
+				<!-- horizon-tab -->
+			
+		</div>
+		<!-- groupInfo -->
+	
+	<!-- other-content-area -->
+	<div class="horizon-modal modal aside aside-right aside-vc aside-fixed navbar-offset" data-body-scroll="false" data-offset="true" data-placement="right" data-fixed="true" data-backdrop="invisible" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header blue">
+                    	 hz{platform-group.tree}
+                    <label class="pull-right hidden-sm hidden-xs">
+                        <a data-action="fixed-modal" class="pointer"><i class="ace-icon fa fa-lock bigger-160" data-fixed-icon="fa-lock" data-unfixed-icon="fa-unlock"></i></a>
+                    </label>
+                </div>
+                <div class="modal-body">
+                    <ul id="group-tree" class="ztree"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- horizon-modal-container -->
+<div class="hidden" id="delDialog"></div>
+<script type="text/javascript">
+    require([
+             horizon.paths.apppath+'/horizon/assets/manager/org/group/js/select.group.js',
+             horizon.paths.apppath+'/horizon/assets/manager/org/group/js/update.group.js',
+             horizon.paths.apppath+'/horizon/assets/manager/org/user/js/user.js'
+             ], function() {
+        	 horizon.language.plugins.selectuser();
+             horizon.tools.use(horizon.paths.pluginpath + '/ztree/css/zTreeStyle/zTreeStyle.css');
+	    	 horizon.manager.group.init();
+        $('.page-content-area').trigger('ajaxscriptsloaded');
+    });
+</script>

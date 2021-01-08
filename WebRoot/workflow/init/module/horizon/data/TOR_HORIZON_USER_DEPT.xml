@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+    <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:Locale="zh-CN">
+            <xs:complexType>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:element name="TOR_HORIZON_USER_DEPT">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="ID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="USER_ID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="DEPT_ID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="JOIN_TIME" type="xs:string" minOccurs="0"/>
+                                <xs:element name="QUIT_TIME" type="xs:string" minOccurs="0"/>
+                                <xs:element name="ACTIVE" type="xs:decimal" minOccurs="0"/>
+                                <xs:element name="ORDER_NO" type="xs:decimal" minOccurs="0"/>
+                                <xs:element name="ISDEFAULT" type="xs:decimal" minOccurs="0"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:choice>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+    <TOR_HORIZON_USER_DEPT>
+        <ID>HZ8080811e3b10a3011e3b10a36c0000</ID>
+        <USER_ID>admin</USER_ID>
+        <DEPT_ID>HZ28e7f51e816d28011e816da7f1001f</DEPT_ID>
+        <JOIN_TIME>2008-08-21 10:07:15</JOIN_TIME>
+        <ACTIVE>1</ACTIVE>
+        <ORDER_NO>1</ORDER_NO>
+        <ISDEFAULT>0</ISDEFAULT>
+    </TOR_HORIZON_USER_DEPT>
+</NewDataSet>

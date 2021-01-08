@@ -1,0 +1,86 @@
+<style>
+    .select-workday {
+        width:inherit;
+        height:inherit;
+        float: right;
+        height:33px;
+        width:150px
+    }
+    .fc-sun, .fc-sat {
+        color: #ED6D23;
+    }
+    .fc-sun .fc-day-number, .fc-grid .fc-sun .fc-day-cnDate,
+    .fc-sat .fc-day-number, .fc-grid .fc-sat .fc-day-cnDate {
+        color:#ed6d23
+    }
+    .fc-day-number {
+        font-size: 24px;
+        font-family: Arial;
+        font-weight: 400;
+        padding: 12px 12px 0px 12px;
+        line-height: 25px;
+        height: 23px;
+        padding: 0 2px;
+    }
+    .fc-toolbar {
+        margin-bottom:8px;
+    }
+    .fc-center {
+        margin-left:150px;
+    }
+    .fc-content {
+        cursor: pointer;
+    }
+</style>
+<title>hz{work-day.title}</title>
+<hi18n  groups="work-day;message;datetimepicker" ></hi18n>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="page-header smaller" style="margin-bottom: 15px;">
+            <h1>
+                hz{work-day.workCalendar}
+                <small class="hidden-xs">
+                    <i class="ace-icon fa fa-angle-double-right"></i>
+                    hz{work-day.smallTitle}
+                </small>
+                <div class="embed-toggle-sidebar-container hidden-md hidden-lg pull-right">
+                    <button class="navbar-toggle toggle-sidebar" type="button" data-target="#toggle-sidebar">
+                        <span class="sr-only">Toggle横向菜单</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <button class="navbar-toggle toggle-sidebar2" type="button" data-target="#toggle-sidebar2" >
+                        <span class="sr-only">Toggle左侧菜单</span>
+                        <i class="ace-icon fa fa-dashboard bigger-110"></i>
+                    </button>
+                </div>
+            </h1>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div id="calendar"></div>
+    </div>
+    <div class="col-xs-12 space-4"></div>
+    <div class="col-xs-12 center">
+        hz{work-day.totalWorkDayMonth}
+        [ <span class="bolder green" id="gzr"></span> ]
+        hz{work-day.day},
+        hz{work-day.restDay}
+        [ <span class="bolder blue" id="xxr"></span> ]
+        hz{work-day.day}
+    </div>
+</div>
+<div class="hidden" id="workday-dialog"></div>
+<script type="text/javascript">
+    jQuery(function($) {
+        require([horizon.paths.assetspath + '/manager/calendar/js/workday.setup.js'], function() {
+            horizon.language.plugins.datetimepicker();
+            horizon.tools.use(horizon.paths.pluginpath + '/date-time/datetime-picker/css/bootstrap-datetimepicker.css');
+            horizon.tools.use(horizon.paths.pluginpath + '/date-time/fullcalendar/css/fullcalendar.css');
+            horizon.engine.workdaysetup.initCalendar();
+            horizon.engine.workdaysetup.initData();
+            $('.page-content-area').trigger('ajaxscriptsloaded');
+        });
+    });
+</script>

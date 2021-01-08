@@ -1,0 +1,236 @@
+<title>hz{platform-menu.applicationMenu}</title>
+<hi18n  groups="platform-menu;base;message" ></hi18n>
+
+<div class="horizon-modal-container">
+    <div class="other-content-area">
+        <div class="page-header smaller">
+            <h1>
+                hz{platform-menu.applicationMenu}<small>
+            <i class="ace-icon fa fa-angle-double-right"></i>
+                hz{platform-menu.appMenuManagerPage}
+         	</small>
+                <div class="pull-right">
+                    <label class="pointer" id="newMenu">
+                        <i class="ace-icon fa fa-edit bigger-110 green icon-only"></i>
+                        hz{platform-menu.newMenu}
+                    </label>
+                    <label class="pointer horizon-modal-trigger" data-target=".horizon-modal" data-toggle="modal">
+                        <i class="ace-icon fa fa-leaf bigger-110 icon-only green"></i>
+                        hz{platform-menu.menuManager}
+                    </label>
+                </div>
+            </h1>
+        </div>
+        <form class="form-horizontal horizon-form" role="form" id="menuInfoForm">
+            <div class="horizon-tab">
+                <div class="tab-content">
+                    <div class="row">
+                            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+                                <div class="hidden">
+                                	<input type="hidden" name="appId" />
+					            	<input type="hidden" name="id" />
+					            	<input type="hidden" name="parentId" />
+					            	<input type="hidden" name="menuCategory" id="menuCategory" value="1">
+                                </div>
+                                <div class="row">
+                                	<div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-menu.menuName}</label>
+                                            <div class="form-group no-margin has-error">
+                                                <input type="text" id="menuName" name="menuName" maxlength="50" required="true" name="aac" class="form-control" placeholder=hz{platform-menu.menuNameHelp} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-menu.menuCode}</label>
+                                            <div class="form-group no-margin has-error">
+                                                 <input type="text" id="menuCode" name="menuCode"  class="form-control " placeholder=hz{platform-menu.menuCodeHelp} required maxlength="100" notChinese="true" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-menu.supMenu}</label>
+                                            <div class="form-group no-margin has-error">
+                                                <input type="text" id="parentName" name="parentName" readonly maxlength="50" data-toggle="dropdown" data-position="auto" class="form-control  pointer dropdown-toggle" placeholder=hz{platform-menu.supMenuHelp} required/>
+                                            	<div class="select-tree dropdown-menu dropdown-yellow dropdown-caret dropdown-close ">
+                                            		<ul id="selectMenu-tree" class="ztree"></ul>
+                                            	</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-menu.menuOrder}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                            <input type="text" class="spinbox-input form-control" id="orderNo" name="orderNo"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-menu.linkType}</label>
+                                            <div  data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                                <label class="btn btn-white col-xs-4">
+                                                    <input name="urlType" type="radio" value="view" />
+                                             		       <span class="lbl middle"> hz{platform-menu.view}</span>
+                                                </label>
+                                                <label class="btn btn-white col-xs-4">
+                                                    <input name="urlType" type="radio" value="form"/>
+                                                     	<span class="lbl middle">hz{platform-menu.form}</span>
+                                                </label>
+                                                <label class="btn btn-white col-xs-4 active btn-primary">
+                                                    <input name="urlType" type="radio" value="url" checked="checked"/>
+                                                    <span class="lbl middle">URL</span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                        </div>
+                                    </div></div>
+                                     <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-menu.loadingMethod}</label>
+                                           <div  data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                                <label class="btn btn-white col-xs-4" >
+                                                    <input name="target" type="radio" value="ajax" checked="checked"/>
+                                             		       <span class="lbl middle">hz{platform-menu.injection}</span>
+                                                </label>
+                                                <label class="btn btn-white col-xs-4">
+                                                    <input name="target" type="radio" value="sysmain"/>
+                                                     	<span class="lbl middle"> hz{platform-menu.embed}</span>
+                                                </label>
+                                                 <label class="btn btn-white col-xs-4">
+                                                    <input name="target" type="radio" value="blank"/>
+                                                     	<span class="lbl middle">hz{platform-menu.newWindow}</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    </div>
+                                    <div class="row">
+                                    	<div class="col-xs-12  col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-menu.linkTarget}</label>
+                                            <div>
+                                               <input type="text" id="menuLink" name="menuLink"  class="form-control " placeholder="hz{message.input}url"  maxlength="2000"  />
+                                               <input type="text" id= "cellNodulName" name="cellNodulName" data-toggle="dropdown" data-position="auto" class="form-control  pointer hidden dropdown-toggle" placeholder="hz{message.input}"  readonly  maxlength="200" />
+                    						   <div class="select-tree dropdown-menu dropdown-yellow dropdown-caret dropdown-close ">
+                                            		 <ul id="page-tree" class="ztree"></ul>
+                                            	</div>
+                                            </div>
+                                        </div>
+                                    	</div>
+                                    	<div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-menu.menuIcon}</label>
+                                            <div>
+                                                <div class="btn-uplap select">
+								                	<button class="btn btn-white  col-sm-12" id="btnIcon" type="button">
+                                                        hz{platform-menu.selectIcon}
+								                	</button>
+								                	<input class="hidden" name="menuImg" value="fa fa-coffee"/>
+								                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-menu.isItDefault}</label>
+                                            <div  data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                            	<label class="btn btn-white col-xs-6">
+                                                	<input name="flag" type="radio" value="1"/>
+                                                   	<span class="lbl middle"> hz{platform-menu.yes}</span>
+                                                </label>
+	                                            <label class="btn btn-white col-xs-6 active btn-primary">
+	                                                <input name="flag" type="radio" value="0"  checked/>
+	                                                <span class="lbl middle"> hz{platform-menu.no}</span>
+	                                            </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-menu.menuStatus}</label>
+                                            <div  data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                            	<label class="btn btn-white col-xs-6 active btn-primary">
+                                                	<input name="active" type="radio" value="1" checked/>
+                                                   	<span class="lbl middle"> hz{base.enable}</span>
+                                                </label>
+	                                            <label class="btn btn-white col-xs-6">
+	                                                <input name="active" type="radio" value="0" />
+	                                                <span class="lbl middle"> hz{base.disabled}</span>
+	                                             </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin-left no-margin-right">
+                                            <label class="control-label">hz{platform-menu.triggerEvent}</label>
+                                            <div>
+                                                <div>
+                                                	<textarea id="func" name="func" class="form-control" placeholder="javascript" maxlength="200" style="resize: none"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="horizon-form-actions row">
+                <div class="col-xs-12">
+                    <button class="btn btn-white btn-round border-width-1" type="submit">
+                    <i class="ace-icon fa fa-save green"></i>
+                        hz{base.save}
+                </button>
+                <button class="btn btn-white btn-round border-width-1" id="menuRest" type="button">
+                    <i class="ace-icon fa fa-undo grey"></i>
+                    hz{base.reset}
+                </button>
+                <button class="btn btn-white btn-round border-width-1 hidden" id="delete" type="button">
+                    <i class="ace-icon fa fa-times red2"></i>
+                    hz{base.delete}
+                </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="horizon-modal modal aside aside-right aside-vc aside-fixed navbar-offset" data-body-scroll="false" data-offset="true" data-placement="right" data-fixed="true" data-backdrop="invisible" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header blue">
+                    hz{platform-menu.menuManager}
+                    <label class="pull-right">
+                        <a data-action="fixed-modal" class="pointer"><i class="ace-icon fa fa-lock bigger-160" data-fixed-icon="fa-lock" data-unfixed-icon="fa-unlock"></i></a>
+                    </label>
+                </div>
+                <div class="modal-body">
+                   <ul id="menu-tree" class="ztree"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hidden" id="dialog"></div>
+<script>
+    require([
+            horizon.paths.apppath+'/horizon/assets/manager/menu/js/application.menu.js'],
+        function() {
+            horizon.tools.use(horizon.paths.apppath+'/horizon/plugins/iconPicker/css/bootstrap-iconpicker.css');
+            horizon.tools.use(horizon.paths.pluginpath + '/ztree/css/zTreeStyle/zTreeStyle.css');
+            horizon.manager.appmenu.init();
+            $('.page-content-area').trigger('ajaxscriptsloaded');
+     });
+</script>

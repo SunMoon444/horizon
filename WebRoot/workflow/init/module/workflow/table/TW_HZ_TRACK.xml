@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 流程实例关于Track表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_TRACK</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_TRACK</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number"></fieldinfo>
+			<fieldinfo fieldname="FLOWSTATUS" typename="number"></fieldinfo>
+			<fieldinfo fieldname="NODENAME" typename="varchar"   length="255"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar"  length="32"></fieldinfo>
+			<fieldinfo fieldname="FUNNAME" typename="lvarchar" length="500"></fieldinfo>
+			<fieldinfo fieldname="AUTHORNAME" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="ENDTIME" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="NODENUM" typename="number"></fieldinfo>
+			<fieldinfo fieldname="ACTIVE" typename="number"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_TRACK_VER</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_TRACK_VER</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number"></fieldinfo>
+			<fieldinfo fieldname="FLOWSTATUS" typename="number"></fieldinfo>
+			<fieldinfo fieldname="NODENAME" typename="varchar"   length="255"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar"  length="32"></fieldinfo>
+			<fieldinfo fieldname="FUNNAME" typename="lvarchar" length="500"></fieldinfo>
+			<fieldinfo fieldname="AUTHORNAME" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="ENDTIME" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="NODENUM" typename="number"></fieldinfo>
+			<fieldinfo fieldname="ACTIVE" typename="number"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_TRACK_XML</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_TRACK_XML</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="XML" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_TRACK_XML_VER</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_TRACK_XML_VER</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="XML" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar"   length="32"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<others>
+		<oracle>
+			<sql>CREATE INDEX IDX_TW_T_WF ON TW_HZ_TRACK(WORKID,FLOWSTATUS)</sql>
+		</oracle>
+		<mysql>
+			<sql>CREATE INDEX IDX_TW_T_WF ON TW_HZ_TRACK(WORKID,FLOWSTATUS)</sql>
+		</mysql>
+		<mysql8>
+			<sql>CREATE INDEX IDX_TW_T_WF ON TW_HZ_TRACK(WORKID,FLOWSTATUS)</sql>
+		</mysql8>
+		<db2>
+			<sql>CREATE INDEX IDX_TW_T_WF ON TW_HZ_TRACK(WORKID,FLOWSTATUS)</sql>
+		</db2>
+		<sqlserver>
+			<sql>CREATE INDEX IDX_TW_T_WF ON TW_HZ_TRACK(WORKID,FLOWSTATUS)</sql>
+		</sqlserver>
+		<dm>
+			<sql>CREATE INDEX IDX_TW_T_WF ON TW_HZ_TRACK(WORKID,FLOWSTATUS)</sql>
+		</dm>
+		<postgresql>
+			<sql>CREATE INDEX IDX_TW_T_WF ON TW_HZ_TRACK(WORKID,FLOWSTATUS)</sql>
+		</postgresql>
+		<highgo>
+			<sql>CREATE INDEX IDX_TW_T_WF ON TW_HZ_TRACK(WORKID,FLOWSTATUS)</sql>
+		</highgo>
+		<gbase>
+			<sql>CREATE INDEX IDX_TW_T_WF ON TW_HZ_TRACK(WORKID,FLOWSTATUS)</sql>
+		</gbase>
+		<gbase8s>
+			<sql>CREATE INDEX IDX_TW_T_WF ON TW_HZ_TRACK(WORKID,FLOWSTATUS)</sql>
+		</gbase8s>
+		<kingbase>
+			<sql>CREATE INDEX IDX_TW_T_WF ON TW_HZ_TRACK(WORKID,FLOWSTATUS)</sql>
+		</kingbase>
+		<oscar>
+			<sql>CREATE INDEX IDX_TW_T_WF ON TW_HZ_TRACK(WORKID,FLOWSTATUS)</sql>
+		</oscar>
+		<upbase>
+			<sql>CREATE INDEX IDX_TW_T_WF ON TW_HZ_TRACK(WORKID,FLOWSTATUS)</sql>
+		</upbase>
+	</others>
+</tableinfo>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Identitys>
+	<!-- 优先级 priority 数字 1——9 在流程定义配置时，只显示优先级1—3 -->
+	<!-- 操作 operate -->
+	<!-- 控制属性 controlattribute  -->
+	<!-- 消息发送类型 msgtype  -->
+	<!-- 分组group  1 办理 2查看3已办4管理5创建 -->
+	<!-- 动作完成是否结束本节点 actionfinish-->
+	<!-- 动作完成不结束时持续范围continuousrange -->
+	<!-- 是否选人selectuser -->
+	<!-- 适用节点 applicablenode 流程全局global  开始节点: start 结束节点 end 人工节点 task 自动节点 robot 判定节点(取消) condition 引擎交互 cluster 事件event 网关gateway-->
+	<Identity name="主办" id="Author">
+		<priority>1</priority>
+		<operate>submit;startflow;innerSubmit;reduceAuthor;huiqianSubmit;freesubmit;rejectSubmit;huiqian;save;goto;reject;jumpreject;innerreject;stop;addreader;pause;move;jiaqian;subflow;jiaqianBefore</operate>
+		<controlattribute>OuterSelect;ManualSelect;FreeSelect;AutoPass;PassCurUser;AgentFlag;OnlySelectUser</controlattribute>
+		<msgtype>Mail;Msg;SMS;IM</msgtype>
+		<isglobal>0</isglobal>
+		<group>1</group>
+		<actionfinish>1</actionfinish>
+		<continuousrange>0</continuousrange>
+		<selectuser>1</selectuser>
+		<applicablenode>start;task</applicablenode>
+	</Identity>
+	<Identity name="协办" id="SecondAuthor">
+		<priority>1</priority>
+		<operate>secondSubmit;save</operate>
+		<controlattribute>ManualSelect;FreeSelect;OnlySelectUser</controlattribute>
+		<msgtype>Mail;Msg;SMS;IM</msgtype>
+		<isglobal>0</isglobal>
+		<group>1</group>
+		<actionfinish>1</actionfinish>
+		<continuousrange>0</continuousrange>
+		<selectuser>1</selectuser>
+		<applicablenode>task</applicablenode>
+	</Identity>
+	<Identity name="读者" id="Reader">
+	<!-- 优先级 -->
+		<priority>2</priority>
+		<operate>addreader;readed</operate>
+		<controlattribute>Relation;OuterSelect;ManualSelect;FreeSelect;OnlySelectUser</controlattribute>
+		<msgtype>Mail;Msg;SMS;IM</msgtype>
+		<isglobal>1</isglobal>
+		<group>2</group>
+		<selectuser>1</selectuser>
+		<actionfinish>1</actionfinish>
+		<continuousrange>0</continuousrange>
+		<applicablenode>global;end;task;robot;event;subflow</applicablenode>
+	</Identity>
+	<Identity name="已办" id="Done">
+		<priority>3</priority>
+		<operate>getback;reduceAuthor;reissue;reissuerouter</operate>
+		<controlattribute></controlattribute>
+		<isglobal>0</isglobal>
+		<msgtype></msgtype>
+		<group>3</group>
+		<selectuser>0</selectuser>
+		<actionfinish>1</actionfinish>
+		<continuousrange>0</continuousrange>
+		<applicablenode>start;task;robot;event;gateway;cluster;subflow</applicablenode>
+	</Identity>
+	<Identity name="管理员" id="Manager">
+		<priority>4</priority>
+		<operate>replace;stop;pause;goto;reduceAuthor;</operate>
+		<controlattribute></controlattribute>
+		<isglobal>0</isglobal>
+		<msgtype></msgtype>
+		<group>4</group>
+		<selectuser>0</selectuser>
+		<actionfinish>1</actionfinish>
+		<continuousrange>0</continuousrange>
+		<applicablenode>start;end;task;robot;event;gateway;cluster;subflow</applicablenode>
+	</Identity>
+	<Identity name="创建者" id="Creator">
+		<priority>5</priority>
+		<operate>urge;cancel;startflow;</operate>
+		<controlattribute></controlattribute>
+		<isglobal>0</isglobal>
+		<msgtype></msgtype>
+		<group>5</group>
+		<selectuser>0</selectuser>
+		<actionfinish>1</actionfinish>
+		<continuousrange>0</continuousrange>
+		<applicablenode>start;task;robot;event;gateway;cluster;subflow</applicablenode>
+	</Identity>
+</Identitys>

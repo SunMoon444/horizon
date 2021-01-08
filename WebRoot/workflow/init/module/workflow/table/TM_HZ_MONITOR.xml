@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 代办设置相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TM_HZ_MONITOR</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TM_HZ_MONITOR</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="DATETIME" typename="varchar"   length="25"></fieldinfo>
+			<fieldinfo fieldname="LICENSECOUNTER" typename="number"></fieldinfo>
+			<fieldinfo fieldname="ACTIVECOUNTER" typename="number" length="10,2"></fieldinfo>
+			<fieldinfo fieldname="TOTLECOUNTER" typename="number" length="10,2"></fieldinfo>
+			<fieldinfo fieldname="DATATYPE" typename="varchar" length="10"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+</tableinfo>

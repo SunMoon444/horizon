@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 备份功能相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TB_HORIZON_CONFIG</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TB_HORIZON_CONFIG</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="PATH" typename="lvarchar"   length="500"></fieldinfo>
+			<fieldinfo fieldname="DBUSERNAME" typename="lvarchar"   length="500"></fieldinfo>
+			<fieldinfo fieldname="DBPASSWORD" typename="lvarchar"   length="500"></fieldinfo>
+			<fieldinfo fieldname="FTPPATH" typename="lvarchar"   length="500"></fieldinfo>
+			<fieldinfo fieldname="FTPUSERNAME" typename="lvarchar"   length="500"></fieldinfo>
+			<fieldinfo fieldname="FTPPASSWORD" typename="lvarchar"   length="500"></fieldinfo>
+			<fieldinfo fieldname="PROGRAMPATH" typename="lvarchar"   length="500"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TB_HORIZON_LOG</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TB_HORIZON_LOG</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="YEARDEF_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TABLEDEF_ID" typename="varchar" length="32"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TB_HORIZON_TABLE_DEF</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TB_HORIZON_TABLE_DEF</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="TABLE_NAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="TYPE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="ACTIVE" typename="varchar"   length="1"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TB_HORIZON_YEAR_DEF</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TB_HORIZON_YEAR_DEF</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="YEAR_NAME" typename="varchar"   length="10"></fieldinfo>
+			<fieldinfo fieldname="BEGIN_DATE" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="END_DATE" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="ACTIVE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="COMMENTS" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="BACKUP_TIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="DB_IDENTIFIER" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="RESUME_TIME" typename="varchar"   length="20"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+</tableinfo>

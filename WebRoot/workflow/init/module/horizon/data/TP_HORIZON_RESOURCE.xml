@@ -1,0 +1,101 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:Locale="zh-CN">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="TP_HORIZON_RESOURCE">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:string" minOccurs="0" />
+                <xs:element name="RES_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="RES_TYPE" type="xs:decimal" minOccurs="0" />
+                <xs:element name="RES_CODE" type="xs:string" minOccurs="0" />
+                <xs:element name="ORDER_NO" type="xs:decimal" minOccurs="0" />
+                <xs:element name="COMMENTS" type="xs:string" minOccurs="0" />
+                <xs:element name="RES_URL" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <TP_HORIZON_RESOURCE>
+    <ID>HZ2881c13b44a39c013b45074eb30109</ID>
+    <RES_NAME>应用工具</RES_NAME>
+    <RES_TYPE>10</RES_TYPE>
+    <RES_CODE>TEANANT_APP</RES_CODE>
+    <ORDER_NO>0</ORDER_NO>
+  </TP_HORIZON_RESOURCE>
+  <TP_HORIZON_RESOURCE>
+    <ID>HZ2881c13b44a39c013b4507cc51010e</ID>
+    <RES_NAME>管理工具</RES_NAME>
+    <RES_TYPE>10</RES_TYPE>
+    <RES_CODE>TEANANT_MANAGE</RES_CODE>
+    <ORDER_NO>1</ORDER_NO>
+  </TP_HORIZON_RESOURCE>
+  <TP_HORIZON_RESOURCE>
+    <ID>HZ2881c13b44a39c013b450860390112</ID>
+    <RES_NAME>设计工具</RES_NAME>
+    <RES_TYPE>10</RES_TYPE>
+    <RES_CODE>TEANANT_DESINGER</RES_CODE>
+    <ORDER_NO>2</ORDER_NO>
+  </TP_HORIZON_RESOURCE>
+  <TP_HORIZON_RESOURCE>
+    <ID>HZ2881c13b4b6f71013b4b78ea0d0020</ID>
+    <RES_NAME>可选</RES_NAME>
+    <RES_TYPE>10</RES_TYPE>
+    <RES_CODE>SELECT</RES_CODE>
+    <ORDER_NO>3</ORDER_NO>
+  </TP_HORIZON_RESOURCE>
+  <TP_HORIZON_RESOURCE>
+    <ID>HZ2881c13b4b6f71013b4b794c220024</ID>
+    <RES_NAME>管理</RES_NAME>
+    <RES_TYPE>10</RES_TYPE>
+    <RES_CODE>MANAGE</RES_CODE>
+    <ORDER_NO>4</ORDER_NO>
+  </TP_HORIZON_RESOURCE>
+  <TP_HORIZON_RESOURCE>
+    <ID>HZ2881c13b4baa64013b4bbd2244001c</ID>
+    <RES_NAME>访问</RES_NAME>
+    <RES_TYPE>10</RES_TYPE>
+    <RES_CODE>VISIT</RES_CODE>
+    <ORDER_NO>0</ORDER_NO>
+  </TP_HORIZON_RESOURCE>
+  <TP_HORIZON_RESOURCE>
+    <ID>HZ2881c13b4baa64013b4bbe20380027</ID>
+    <RES_NAME>分级授权</RES_NAME>
+    <RES_TYPE>10</RES_TYPE>
+    <RES_CODE>GRANT</RES_CODE>
+    <ORDER_NO>5</ORDER_NO>
+  </TP_HORIZON_RESOURCE>
+  <TP_HORIZON_RESOURCE>
+    <ID>HZ2881c13b4efbd3013b4f029170001d</ID>
+    <RES_NAME>设计</RES_NAME>
+    <RES_TYPE>10</RES_TYPE>
+    <RES_CODE>DESIGN</RES_CODE>
+    <ORDER_NO>1</ORDER_NO>
+  </TP_HORIZON_RESOURCE>
+  <TP_HORIZON_RESOURCE>
+    <ID>HZ28e7f21e5e1cdb011e5e20bbfa0003</ID>
+    <RES_NAME>浏览</RES_NAME>
+    <RES_TYPE>18</RES_TYPE>
+    <RES_CODE>VIEW</RES_CODE>
+    <ORDER_NO>1</ORDER_NO>
+  </TP_HORIZON_RESOURCE>
+  <TP_HORIZON_RESOURCE>
+    <ID>HZ28e7f21e5e1cdb011e5e233ce80004</ID>
+    <RES_NAME>编辑</RES_NAME>
+    <RES_TYPE>18</RES_TYPE>
+    <RES_CODE>EDIT</RES_CODE>
+    <ORDER_NO>2</ORDER_NO>
+  </TP_HORIZON_RESOURCE>
+  <TP_HORIZON_RESOURCE>
+    <ID>HZ402881321be9f1a0011be9f24b7500</ID>
+    <RES_NAME>删除</RES_NAME>
+    <RES_TYPE>18</RES_TYPE>
+    <RES_CODE>DELETE</RES_CODE>
+    <ORDER_NO>5</ORDER_NO>
+  </TP_HORIZON_RESOURCE>
+</NewDataSet>

@@ -1,0 +1,738 @@
+<title>hz{cache-config.title}</title>
+<hi18n  groups="cache-config;profile-common;base;message;validator" ></hi18n>
+<div class="page-header smaller no-padding-top">
+	<h1>
+		hz{profile-common.largeTitle}
+		<small class="hidden-xs">
+			<i class="ace-icon fa fa-angle-double-right"></i>
+			hz{cache-config.title}
+		</small>
+	</h1>
+</div>
+<div id="visualTable" class="profile-table">
+	<!-- 基础设置模块 -->
+	<div id="cache-default-container" class="profile-container">
+		<form>
+			<div class="lead">hz{cache-config.defaultBasicTitle}
+				<button  type="button" class="changeset pull-right btn btn-white btn-round btn-sm  border-width-1">
+					<i class="ace-icon fa fa-pencil green"></i>&nbsp;hz{profile-common.buttonsSetUp}
+				</button>
+				<button type="button" id="default-reset" class="reset pull-right btn btn-white btn-round btn-sm  border-width-1 hidden" value="hz{profile-common.buttonsCancel}">
+					<i class="ace-icon fa fa-undo green"></i>&nbsp;hz{profile-common.buttonsCancel}
+				</button>
+				<button type="submit" class="submit pull-right btn btn-white btn-round btn-sm  border-width-1 hidden" value="hz{profile-common.buttonsSave}">
+					<i class="ace-icon fa fa-save green"></i>&nbsp;hz{profile-common.buttonsSave}
+				</button>
+			</div>
+			<table id="cahce-default-table" class="table">
+				<tbody>
+				<colgroup>
+					<col style="width: 30%">
+					<col style="width: 70%">
+				</colgroup>
+				<tr>
+					<td>hz{cache-config.defaultCacheType}:</td>
+					<td data-id="cache.type"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.defaultCacheName}:</td>
+					<td data-id="default.cache.name" ></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.defaultCacheTime}:</td>
+					<td data-id="default.cache.time" ></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.enableLocalCache}:</td>
+					<td data-id="enableLocalCache" ></td>
+				</tr>
+				</tbody>
+			</table>
+			<div class="profile-form form-horizontal no-margin-bottom hidden">
+				<div class="row">
+					<input type="hidden" name="type" value="default">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.defaultCacheType}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+							<select name="cache.type" class="form-control chosen" required>
+								<option value="guava">guava</option>
+								<option value="redis">redis</option>
+								<option value="memcache">memcache</option>
+								<option value="ehcache">ehcache</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.defaultCacheName}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="default.cache.name" type="text" placeholder="hz{profile-common.input}" class="form-control" required maxlength="20" />
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.defaultCacheTime}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="default.cache.time" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required maxlength="10" number="true" min='0'/>
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.enableLocalCache}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="enableLocalCache" data-value="true" value="true" class="ace" checked="checked" />
+								<span class="lbl">&nbsp;hz{profile-common.true} </span>
+							</label>
+							<label>
+								<input type="radio" name="enableLocalCache" data-value="false" value="false" class="ace" />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+							<label>
+								<span class="explain">hz{cache-config.localCacheHelp}</span>
+							</label>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<!-- end基础设置模块 -->
+	<!-- guava设置模块 -->
+	<div id="cache-guava-container" class="profile-container">
+		<form>
+			<div class="lead">GUAVA hz{cache-config.title}
+				<button  type="button" class="changeset pull-right btn btn-white btn-round btn-sm  border-width-1">
+					<i class="ace-icon fa fa-pencil green"></i>&nbsp;hz{profile-common.buttonsSetUp}
+				</button>
+				<button type="button" class="reset pull-right btn btn-white btn-round btn-sm  border-width-1 hidden" value="hz{profile-common.buttonsCancel}">
+					<i class="ace-icon fa fa-undo green"></i>&nbsp;hz{profile-common.buttonsCancel}
+				</button>
+				<button type="submit" class="submit pull-right btn btn-white btn-round btn-sm  border-width-1 hidden" value="hz{profile-common.buttonsSave}">
+					<i class="ace-icon fa fa-save green"></i>&nbsp;hz{profile-common.buttonsSave}
+				</button>
+			</div>
+			<table id="cahce-guava-table" class="table">
+				<tbody>
+				<colgroup>
+					<col style="width: 30%">
+					<col style="width: 70%">
+				</colgroup>
+				<tr>
+					<td>hz{cache-config.guavaEnable}:</td>
+					<td data-id="guava.enable"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.guavaMaximumSize}:</td>
+					<td data-id="guava.maximum.size"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.guavaExpireAfterAccess}:</td>
+					<td data-id="guava.expire.after.access"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.guavaExpireAfterWrite}:</td>
+					<td data-id="expire.after.write"></td>
+				</tr>
+				</tbody>
+			</table>
+			<div class="profile-form form-horizontal no-margin-bottom hidden">
+				<div class="row">
+					<input type="hidden" name="type" value="guava">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.guavaEnable}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="guava.enable" data-value="true" value="true" class="ace" checked="checked" />
+								<span class="lbl">&nbsp;hz{profile-common.true} </span>
+							</label>
+							<label>
+								<input type="radio" name="guava.enable" data-value="false" value="false" class="ace" />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.guavaMaximumSize}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="guava.maximum.size" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required maxlength="10" number="true" min='0'/>
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.guavaExpireAfterAccess}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="guava.expire.after.access" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required maxlength="10" number="true" min='0'/>
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.guavaExpireAfterWrite}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="expire.after.write" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required maxlength="10" number="true" min='0'/>
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<!-- end  guava设置模块-->
+	<!-- redis设置模块  -->
+	<div id="cache-redis-container" class="profile-container">
+		<form>
+			<div class="lead">REDIS hz{cache-config.title}
+				<button  type="button" class="changeset pull-right btn btn-white btn-round btn-sm  border-width-1">
+					<i class="ace-icon fa fa-pencil green"></i>&nbsp;hz{profile-common.buttonsSetUp}
+				</button>
+				<button type="button" class="reset pull-right btn btn-white btn-round btn-sm  border-width-1 hidden" value="hz{profile-common.buttonsCancel}">
+					<i class="ace-icon fa fa-undo green"></i>&nbsp;hz{profile-common.buttonsCancel}
+				</button>
+				<button type="submit" class="submit pull-right btn btn-white btn-round btn-sm  border-width-1 hidden" value="hz{profile-common.buttonsSave}">
+					<i class="ace-icon fa fa-save green"></i>&nbsp;hz{profile-common.buttonsSave}
+				</button>
+			</div>
+			<table id="cahce-redis-table" class="table">
+				<tbody>
+				<colgroup>
+					<col style="width: 30%">
+					<col style="width: 70%">
+				</colgroup>
+				<tr>
+					<td>hz{cache-config.guavaEnable}:</td>
+					<td data-id="redis.enable"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.host}:</td>
+					<td data-id="redis.host"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.port}:</td>
+					<td data-id="redis.port"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.name}:</td>
+					<td data-id="redis.name"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.passWord}:</td>
+					<td data-id="redis.passWord"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.timeOut}:</td>
+					<td data-id="redis.timeout"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.poolMaxActive}:</td>
+					<td data-id="redis.pool.maxActive"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.poolMaxIdle}:</td>
+					<td data-id="redis.pool.maxIdle"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.poolMinIdle}:</td>
+					<td data-id="redis.pool.minIdle"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.poolMaxWait}:</td>
+					<td data-id="redis.pool.maxWait"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.poolTestOnBorrow}:</td>
+					<td data-id="redis.pool.testOnBorrow"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.poolTestOnReturn}:</td>
+					<td data-id="redis.pool.testOnReturn"></td>
+				</tr>
+				</tbody>
+			</table>
+			<div class="profile-form form-horizontal no-margin-bottom hidden">
+				<div class="row">
+					<input type="hidden" name="type" value="guava">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.guavaEnable}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="redis.enable" data-value="true" value="true" class="ace"  />
+								<span class="lbl">&nbsp;hz{profile-common.true} </span>
+							</label>
+							<label>
+								<input type="radio" name="redis.enable" data-value="false" value="false" class="ace" checked="checked" />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.host}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="redis.host" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required />
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.port}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="redis.port" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required />
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.name}:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="redis.name" type="text" placeholder="hz{profile-common.input}" class="form-control" />
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.passWord}:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="redis.passWord" type="text" placeholder="hz{profile-common.input}" class="form-control" />
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.timeOut}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="redis.timeout" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required maxlength="16" number="true" min='0'/>
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.poolMaxActive}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="redis.pool.maxActive" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required maxlength="10" number="true" min='0'/>
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.poolMaxIdle}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="redis.pool.maxIdle" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required maxlength="10" number="true" min='0'/>
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.poolMinIdle}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="redis.pool.minIdle" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required maxlength="10" number="true" min='0'/>
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.poolMaxWait}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="redis.pool.maxWait" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required maxlength="10" number="true" min='0'/>
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.poolTestOnBorrow}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="redis.pool.testOnBorrow" data-value="true" value="true" class="ace" checked="checked" />
+								<span class="lbl">&nbsp;hz{profile-common.true} </span>
+							</label>
+							<label>
+								<input type="radio" name="redis.pool.testOnBorrow" data-value="false" value="false" class="ace" />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.poolTestOnReturn}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="redis.pool.testOnReturn" data-value="true" value="true" class="ace"  />
+								<span class="lbl">&nbsp;hz{profile-common.true} </span>
+							</label>
+							<label>
+								<input type="radio" name="redis.pool.testOnReturn" data-value="false" value="false" class="ace" checked="checked" />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</form>
+	</div>
+	<!-- end redis缓存配置 -->
+	<!-- memcache 缓存配置 -->
+	<div id="cache-memcache-container" class="profile-container">
+		<form>
+			<div class="lead">MEMCACHE hz{cache-config.title}
+				<button  type="button" class="changeset pull-right btn btn-white btn-round btn-sm  border-width-1">
+					<i class="ace-icon fa fa-pencil green"></i>&nbsp;hz{profile-common.buttonsSetUp}
+				</button>
+				<button type="button" class="reset pull-right btn btn-white btn-round btn-sm  border-width-1 hidden" value="hz{profile-common.buttonsCancel}">
+					<i class="ace-icon fa fa-undo green"></i>&nbsp;hz{profile-common.buttonsCancel}
+				</button>
+				<button type="submit" class="submit pull-right btn btn-white btn-round btn-sm  border-width-1 hidden" value="hz{profile-common.buttonsSave}">
+					<i class="ace-icon fa fa-save green"></i>&nbsp;hz{profile-common.buttonsSave}
+				</button>
+			</div>
+			<table id="cahce-memcache-table" class="table">
+				<tbody>
+				<colgroup>
+					<col style="width: 30%">
+					<col style="width: 70%">
+				</colgroup>
+				<tr>
+					<td>hz{cache-config.guavaEnable}:</td>
+					<td data-id="memcache.enable"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.memcachedServers}:</td>
+					<td data-id="memcached.servers"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.memcachedFailover}:</td>
+					<td data-id="memcached.failover"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.memcachedInitConn}:</td>
+					<td data-id="memcached.initConn"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.memcachedMinConn}:</td>
+					<td data-id="memcached.minConn"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.poolMaxActive}:</td>
+					<td data-id="memcached.maxConn"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.memcachedMaintSleep}:</td>
+					<td data-id="memcached.maintSleep"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.memcachedNagle}:</td>
+					<td data-id="memcached.nagle"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.socketTO}:</td>
+					<td data-id="memcached.socketTO"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.memcachedAliveCheck}:</td>
+					<td data-id="memcached.aliveCheck"></td>
+				</tr>
+				</tbody>
+			</table>
+			<div class="profile-form form-horizontal no-margin-bottom hidden">
+				<div class="row">
+					<input type="hidden" name="type" value="memcache">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.guavaEnable}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="memcache.enable" data-value="true" value="true" class="ace"  />
+								<span class="lbl">&nbsp;hz{profile-common.true} </span>
+							</label>
+							<label>
+								<input type="radio" name="memcache.enable" data-value="false" value="false" class="ace" checked="checked" />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.memcachedServers}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="memcached.servers" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required />
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.memcachedFailover}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="memcached.failover" data-value="true" value="true" class="ace" checked="checked"  />
+								<span class="lbl">&nbsp;hz{profile-common.true} </span>
+							</label>
+							<label>
+								<input type="radio" name="memcached.failover" data-value="false" value="false" class="ace"  />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.memcachedInitConn}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="memcached.initConn" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required maxlength="16" number="true" min='0' />
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.memcachedMinConn}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="memcached.minConn" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required maxlength="16" number="true" min='0' />
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.poolMaxActive}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="memcached.maxConn" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required maxlength="16" number="true" min='0'/>
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.memcachedMaintSleep}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="memcached.maintSleep" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required maxlength="10" number="true" min='0'/>
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.memcachedNagle}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="memcached.nagle" data-value="true" value="true" class="ace" checked="checked"  />
+								<span class="lbl">&nbsp;hz{profile-common.true} </span>
+							</label>
+							<label>
+								<input type="radio" name="memcached.nagle" data-value="false" value="false" class="ace"  />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.socketTO}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="memcached.socketTO" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required maxlength="10" number="true" min='0'/>
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.memcachedAliveCheck}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="memcached.aliveCheck" data-value="true" value="true" class="ace" checked="checked"  />
+								<span class="lbl">&nbsp;hz{profile-common.true} </span>
+							</label>
+							<label>
+								<input type="radio" name="memcached.aliveCheck" data-value="false" value="false" class="ace"  />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+		</form>
+	</div>
+	<!-- end memcache 缓存配置 -->
+	<!-- ehcache 缓存配置 -->
+	<div id="cache-ehcache-container" class="profile-container">
+		<form>
+			<div class="lead">EHCACHE hz{cache-config.title}
+				<button  type="button" class="changeset pull-right btn btn-white btn-round btn-sm  border-width-1">
+					<i class="ace-icon fa fa-pencil green"></i>&nbsp;hz{profile-common.buttonsSetUp}
+				</button>
+				<button type="button" class="reset pull-right btn btn-white btn-round btn-sm  border-width-1 hidden" value="hz{profile-common.buttonsCancel}">
+					<i class="ace-icon fa fa-undo green"></i>&nbsp;hz{profile-common.buttonsCancel}
+				</button>
+				<button type="submit" class="submit pull-right btn btn-white btn-round btn-sm  border-width-1 hidden" value="hz{profile-common.buttonsSave}">
+					<i class="ace-icon fa fa-save green"></i>&nbsp;hz{profile-common.buttonsSave}
+				</button>
+			</div>
+			<table id="cahce-ehcache-table" class="table">
+				<tbody>
+				<colgroup>
+					<col style="width: 30%">
+					<col style="width: 70%">
+				</colgroup>
+				<tr>
+					<td>hz{cache-config.guavaEnable}:</td>
+					<td data-id="ehcache.enable"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.ehcacheOverflowToDisk}:</td>
+					<td data-id="ehcache.overflowToDisk"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.ehcacheEternal}:</td>
+					<td data-id="ehcache.eternal"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.ehcacheMaxElementsInMemory}:</td>
+					<td data-id="ehcache.maxElementsInMemory"></td>
+				</tr>
+
+				<tr>
+					<td>hz{cache-config.ehcacheTimeToLiveSeconds}:</td>
+					<td data-id="ehcache.timeToLiveSeconds"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.ehcacheTimeToIdleSeconds}:</td>
+					<td data-id="ehcache.timeToIdleSeconds"></td>
+				</tr>
+				<tr>
+					<td>hz{cache-config.ehcahceDiskExpiryThreadIntervalSeconds}:</td>
+					<td data-id="ehcahce.diskExpiryThreadIntervalSeconds"></td>
+				</tr>
+				</tbody>
+			</table>
+			<div class="profile-form form-horizontal no-margin-bottom hidden">
+				<div class="row">
+					<input type="hidden" name="type" value="ehcache">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.guavaEnable}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="ehcache.enable" data-value="true" value="true" class="ace"  />
+								<span class="lbl">&nbsp;hz{profile-common.true} </span>
+							</label>
+							<label>
+								<input type="radio" name="ehcache.enable" data-value="false" value="false" class="ace" checked="checked"   />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.ehcacheOverflowToDisk}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="ehcache.overflowToDisk" data-value="true" value="true" class="ace"  />
+								<span class="lbl">&nbsp;hz{profile-common.true} </span>
+							</label>
+							<label>
+								<input type="radio" name="ehcache.overflowToDisk" data-value="false" value="false" class="ace" checked="checked"   />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.ehcacheEternal}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6 radio">
+							<label>
+								<input type="radio" name="ehcache.eternal" data-value="true" value="true" class="ace"  />
+								<span class="lbl">&nbsp;hz{profile-common.true} </span>
+							</label>
+							<label>
+								<input type="radio" name="ehcache.eternal" data-value="false" value="false" class="ace" checked="checked"   />
+								<span class="lbl">&nbsp;hz{profile-common.false} </span>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.ehcacheMaxElementsInMemory}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="ehcache.maxElementsInMemory" number="true" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required/>
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.ehcacheTimeToLiveSeconds}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="ehcache.timeToLiveSeconds" number="true" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required/>
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.ehcacheTimeToIdleSeconds}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="ehcache.timeToIdleSeconds" number="true" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required/>
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-4 control-label">hz{cache-config.ehcahceDiskExpiryThreadIntervalSeconds}<i>*</i>:</label>
+						<div class="col-xs-12 col-sm-6">
+						<span class="input-icon col-xs-12 no-padding">
+							<input name="ehcahce.diskExpiryThreadIntervalSeconds" number="true" type="text" placeholder="hz{profile-common.input}" class="form-control"
+								   required/>
+							<i class="ace-icon glyphicon glyphicon-pencil"></i>
+						</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</form>
+	</div>
+</div>
+
+<script type="text/javascript">
+    jQuery(function($) {
+        require(
+            [ horizon.paths.assetspath + '/manager/profile/js/sys.cache.js' ],
+            function() {
+                horizon.language.plugins.validator();
+                horizon.tools.use( horizon.paths.assetspath + '/manager/profile/css/profile.css');
+                horizon.engine.profile_cache.init();
+                $('.page-content-area').trigger('ajaxscriptsloaded');
+            });
+    });
+</script>

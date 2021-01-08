@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 工作列表相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_WORKLIST</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_WORKLIST</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="SENDUSERID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SENDUSERNAME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="SENDSUBJECTIONID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SENDSUBJECTIONTYPE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="SENDSUBJECTIONNAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="SENDTIME" typename="varchar"  length="20"></fieldinfo>
+			<fieldinfo fieldname="FLOWID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="FLOWNAME" typename="varchar" length="255"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="TITLE" typename="lvarchar" length="300"></fieldinfo>
+			<fieldinfo fieldname="LIMITTIME" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="PRIORITY" typename="varchar" length="5"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar" length="10"></fieldinfo>
+			<fieldinfo fieldname="NODENAME" typename="varchar" length="100"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="TRACKSTATUS" typename="varchar" length="5"></fieldinfo>
+			<fieldinfo fieldname="TRACKACTIVE" typename="varchar" length="2"></fieldinfo>
+			<fieldinfo fieldname="WORKVER" typename="number"></fieldinfo>
+			<fieldinfo fieldname="DOTIME" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar" length="30"></fieldinfo>
+			<fieldinfo fieldname="STATUS_NO" typename="varchar" length="5"></fieldinfo>
+			<fieldinfo fieldname="ISCLAIM" typename="varchar" length="2"></fieldinfo>
+			<fieldinfo fieldname="AUTH_ID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="SUBJECTION_ID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="SUBJECTION_TYPE" typename="varchar" length="2"></fieldinfo>
+			<fieldinfo fieldname="SUBJECTIONNAME" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="AGENT_ID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="ISAGENT" typename="varchar" length="2"></fieldinfo>
+			<fieldinfo fieldname="ISACTIVE" typename="varchar" length="2"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_WORKLIST_DONE</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_WORKLIST_DONE</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="SENDUSERID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SENDUSERNAME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="SENDSUBJECTIONID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SENDSUBJECTIONTYPE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="SENDSUBJECTIONNAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="SENDTIME" typename="varchar"  length="20"></fieldinfo>
+			<fieldinfo fieldname="FLOWID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="FLOWNAME" typename="varchar" length="255"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="TITLE" typename="lvarchar" length="300"></fieldinfo>
+			<fieldinfo fieldname="LIMITTIME" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="PRIORITY" typename="varchar" length="5"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar" length="10"></fieldinfo>
+			<fieldinfo fieldname="NODENAME" typename="varchar" length="100"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="TRACKSTATUS" typename="varchar" length="5"></fieldinfo>
+			<fieldinfo fieldname="TRACKACTIVE" typename="varchar" length="2"></fieldinfo>
+			<fieldinfo fieldname="WORKVER" typename="number"></fieldinfo>
+			<fieldinfo fieldname="DOTIME" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar" length="30"></fieldinfo>
+			<fieldinfo fieldname="STATUS_NO" typename="varchar" length="5"></fieldinfo>
+			<fieldinfo fieldname="ISCLAIM" typename="varchar" length="2"></fieldinfo>
+			<fieldinfo fieldname="AUTH_ID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="SUBJECTION_ID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="SUBJECTION_TYPE" typename="varchar" length="2"></fieldinfo>
+			<fieldinfo fieldname="SUBJECTIONNAME" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="AGENT_ID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="ISAGENT" typename="varchar" length="2"></fieldinfo>
+			<fieldinfo fieldname="ISACTIVE" typename="varchar" length="2"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<others>
+		<oracle>
+			<sql>CREATE INDEX IDX_TW_W_FLOWID ON TW_HZ_WORKLIST(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_W_WORKID ON TW_HZ_WORKLIST(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_FLOWID ON TW_HZ_WORKLIST_DONE(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_WORKID ON TW_HZ_WORKLIST_DONE(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_AUTH_ID ON TW_HZ_WORKLIST_DONE(AUTH_ID)</sql>
+		</oracle>
+		<mysql>
+			<sql>CREATE INDEX IDX_TW_W_FLOWID ON TW_HZ_WORKLIST(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_W_WORKID ON TW_HZ_WORKLIST(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_FLOWID ON TW_HZ_WORKLIST_DONE(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_WORKID ON TW_HZ_WORKLIST_DONE(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_AUTH_ID ON TW_HZ_WORKLIST_DONE(AUTH_ID)</sql>
+		</mysql>
+		<mysql8>
+			<sql>CREATE INDEX IDX_TW_W_FLOWID ON TW_HZ_WORKLIST(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_W_WORKID ON TW_HZ_WORKLIST(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_FLOWID ON TW_HZ_WORKLIST_DONE(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_WORKID ON TW_HZ_WORKLIST_DONE(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_AUTH_ID ON TW_HZ_WORKLIST_DONE(AUTH_ID)</sql>
+		</mysql8>
+		<db2>
+			<sql>CREATE INDEX IDX_TW_W_FLOWID ON TW_HZ_WORKLIST(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_W_WORKID ON TW_HZ_WORKLIST(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_FLOWID ON TW_HZ_WORKLIST_DONE(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_WORKID ON TW_HZ_WORKLIST_DONE(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_AUTH_ID ON TW_HZ_WORKLIST_DONE(AUTH_ID)</sql>
+		</db2>
+		<sqlserver>
+			<sql>CREATE INDEX IDX_TW_W_FLOWID ON TW_HZ_WORKLIST(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_W_WORKID ON TW_HZ_WORKLIST(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_FLOWID ON TW_HZ_WORKLIST_DONE(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_WORKID ON TW_HZ_WORKLIST_DONE(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_AUTH_ID ON TW_HZ_WORKLIST_DONE(AUTH_ID)</sql>
+		</sqlserver>
+		<dm>
+			<sql>CREATE INDEX IDX_TW_W_FLOWID ON TW_HZ_WORKLIST(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_W_WORKID ON TW_HZ_WORKLIST(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_FLOWID ON TW_HZ_WORKLIST_DONE(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_WORKID ON TW_HZ_WORKLIST_DONE(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_AUTH_ID ON TW_HZ_WORKLIST_DONE(AUTH_ID)</sql>
+		</dm>
+		<postgresql>
+			<sql>CREATE INDEX IDX_TW_W_FLOWID ON TW_HZ_WORKLIST(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_W_WORKID ON TW_HZ_WORKLIST(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_FLOWID ON TW_HZ_WORKLIST_DONE(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_WORKID ON TW_HZ_WORKLIST_DONE(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_AUTH_ID ON TW_HZ_WORKLIST_DONE(AUTH_ID)</sql>
+		</postgresql>
+		<highgo>
+			<sql>CREATE INDEX IDX_TW_W_FLOWID ON TW_HZ_WORKLIST(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_W_WORKID ON TW_HZ_WORKLIST(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_FLOWID ON TW_HZ_WORKLIST_DONE(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_WORKID ON TW_HZ_WORKLIST_DONE(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_AUTH_ID ON TW_HZ_WORKLIST_DONE(AUTH_ID)</sql>
+		</highgo>
+		<gbase>
+			<sql>CREATE INDEX IDX_TW_W_FLOWID ON TW_HZ_WORKLIST(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_W_WORKID ON TW_HZ_WORKLIST(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_FLOWID ON TW_HZ_WORKLIST_DONE(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_WORKID ON TW_HZ_WORKLIST_DONE(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_AUTH_ID ON TW_HZ_WORKLIST_DONE(AUTH_ID)</sql>
+		</gbase>
+		<gbase8s>
+			<sql>CREATE INDEX IDX_TW_W_FLOWID ON TW_HZ_WORKLIST(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_W_WORKID ON TW_HZ_WORKLIST(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_FLOWID ON TW_HZ_WORKLIST_DONE(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_WORKID ON TW_HZ_WORKLIST_DONE(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_AUTH_ID ON TW_HZ_WORKLIST_DONE(AUTH_ID)</sql>
+		</gbase8s>
+		<kingbase>
+			<sql>CREATE INDEX IDX_TW_W_FLOWID ON TW_HZ_WORKLIST(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_W_WORKID ON TW_HZ_WORKLIST(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_FLOWID ON TW_HZ_WORKLIST_DONE(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_WORKID ON TW_HZ_WORKLIST_DONE(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_AUTH_ID ON TW_HZ_WORKLIST_DONE(AUTH_ID)</sql>
+		</kingbase>
+		<oscar>
+			<sql>CREATE INDEX IDX_TW_W_FLOWID ON TW_HZ_WORKLIST(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_W_WORKID ON TW_HZ_WORKLIST(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_FLOWID ON TW_HZ_WORKLIST_DONE(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_WORKID ON TW_HZ_WORKLIST_DONE(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_AUTH_ID ON TW_HZ_WORKLIST_DONE(AUTH_ID)</sql>
+		</oscar>
+		<upbase>
+			<sql>CREATE INDEX IDX_TW_W_FLOWID ON TW_HZ_WORKLIST(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_W_WORKID ON TW_HZ_WORKLIST(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_FLOWID ON TW_HZ_WORKLIST_DONE(FLOWID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_WORKID ON TW_HZ_WORKLIST_DONE(WORKID)</sql>
+			<sql>CREATE INDEX IDX_TW_WD_AUTH_ID ON TW_HZ_WORKLIST_DONE(AUTH_ID)</sql>
+		</upbase>
+	</others>
+</tableinfo>

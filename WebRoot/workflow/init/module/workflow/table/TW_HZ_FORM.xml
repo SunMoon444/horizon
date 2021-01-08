@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 外部表单字段权限设置相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_FORM_FIELD</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_FORM_FIELD</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="FORMID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FIELDID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FIELDNAME" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="TABLEID" typename="varchar"   length="200"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_FORM_FIELDAUTH</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_FORM_FIELDAUTH</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="FORMID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TABLEID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="AUTH_NAME" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="AUTH_CODE" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="EDITFIELD" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="CHECKFIELD" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="HIDDENFIELD" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="READFIELD" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="AUTHFLAG" typename="varchar"   length="10"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<others>
+		<oracle>
+			<sql>CREATE INDEX IDX_TW_FF_FORMID ON TW_HZ_FORM_FIELD(FORMID)</sql>
+		</oracle>
+		<mysql>
+			<sql>CREATE INDEX IDX_TW_FF_FORMID ON TW_HZ_FORM_FIELD(FORMID)</sql>
+		</mysql>
+		<mysql8>
+			<sql>CREATE INDEX IDX_TW_FF_FORMID ON TW_HZ_FORM_FIELD(FORMID)</sql>
+		</mysql8>
+		<db2>
+			<sql>CREATE INDEX IDX_TW_FF_FORMID ON TW_HZ_FORM_FIELD(FORMID)</sql>
+		</db2>
+		<sqlserver>
+			<sql>CREATE INDEX IDX_TW_FF_FORMID ON TW_HZ_FORM_FIELD(FORMID)</sql>
+		</sqlserver>
+		<dm>
+			<sql>CREATE INDEX IDX_TW_FF_FORMID ON TW_HZ_FORM_FIELD(FORMID)</sql>
+		</dm>
+		<postgresql>
+			<sql>CREATE INDEX IDX_TW_FF_FORMID ON TW_HZ_FORM_FIELD(FORMID)</sql>
+		</postgresql>
+		<highgo>
+			<sql>CREATE INDEX IDX_TW_FF_FORMID ON TW_HZ_FORM_FIELD(FORMID)</sql>
+		</highgo>
+		<gbase>
+			<sql>CREATE INDEX IDX_TW_FF_FORMID ON TW_HZ_FORM_FIELD(FORMID)</sql>
+		</gbase>
+		<gbase8s>
+			<sql>CREATE INDEX IDX_TW_FF_FORMID ON TW_HZ_FORM_FIELD(FORMID)</sql>
+		</gbase8s>
+		<kingbase>
+			<sql>CREATE INDEX IDX_TW_FF_FORMID ON TW_HZ_FORM_FIELD(FORMID)</sql>
+		</kingbase>
+		<oscar>
+			<sql>CREATE INDEX IDX_TW_FF_FORMID ON TW_HZ_FORM_FIELD(FORMID)</sql>
+		</oscar>
+		<upbase>
+			<sql>CREATE INDEX IDX_TW_FF_FORMID ON TW_HZ_FORM_FIELD(FORMID)</sql>
+		</upbase>
+	</others>
+</tableinfo>

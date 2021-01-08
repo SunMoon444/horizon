@@ -1,0 +1,58 @@
+<title>页面参数</title>
+<div class="page-header smaller no-padding-top">
+	<h1>
+		页面参数<small> <i class="ace-icon fa fa-angle-double-right"></i>
+			页面参数列表
+		</small>
+		<div class="embed-toggle-sidebar-container hidden-md hidden-lg pull-right">
+            <button class="navbar-toggle toggle-sidebar" type="button" data-target="#toggle-sidebar">
+                <span class="sr-only">Toggle横向菜单</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button class="navbar-toggle toggle-sidebar2" type="button" data-target="#toggle-sidebar2" >
+                <span class="sr-only">Toggle左侧菜单</span>
+                <i class="ace-icon fa fa-dashboard bigger-110"></i>
+            </button>
+        </div>
+	</h1>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<table id="myTable"
+			class="table table-hover"></table>
+	</div>
+</div>
+<div class="hidden" id="myInfo">
+	<form class="form-horizontal no-margin-bottom" id="myForm"
+		method="post">
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-3 control-label">参数名称</label>
+				<div class="col-xs-12 col-sm-8">
+					<input class="no-margin col-sm-12 form-control" name="paraName"
+						type="text" required>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-3 control-label">参数值</label>
+				<div class="col-xs-12 col-sm-8">
+					<input class="no-margin col-sm-12 form-control" name="paraValue"
+						type="text" required>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+	jQuery(function($) {  
+		require([ horizon.paths.assetspath + '/manager/flow/config/js/parameter.list.js' ], function() {
+			horizon.engine.parameter.initTable();
+			$('.page-content-area').trigger('ajaxscriptsloaded');
+		});
+	});
+</script>

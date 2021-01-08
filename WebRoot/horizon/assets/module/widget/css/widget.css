@@ -1,0 +1,82 @@
+body {
+	background-color: white;
+}
+.dropdown-preview {
+	margin: 0 5px;
+	display: inline-block;
+}
+.dropdown-preview  > .dropdown-menu {
+    display: block;
+	position: static;
+	margin-bottom: 5px;
+}
+.infobox > .infobox-tool {
+    position: absolute;
+    right: 2px;
+}
+.infobox > .infobox-tool > .btn {
+     border-width: 0px;
+}
+.ui-selected{
+    background-color:#3AB3F2;
+}
+ .span-null{
+    color:#d16e6c;
+}
+.delete-layout-btn{
+    background-color:#FF0000;
+}
+textarea {
+	resize: none;
+}
+.ace-spinner.touch-spinner .spinbox-buttons > .btn {
+    line-height: 8px;
+}
+.img-icon{
+	width: 16px;
+   	height: 16px;
+    margin-top: -4px;
+}
+.img-icon-small{
+	width: 32px;
+    height: 34.2813px;
+}
+.flow-buttons {
+   	padding: 6px 12px;
+    border-bottom: 1px dotted #e5e5e5;
+}
+.widget-container{
+	padding:12px;
+}
+.nav-pills > li {
+	float: right;
+} 
+ul {
+	margin-right: 25px;
+  	margin-left: 25px;
+}
+.nav-pills > li > a {
+	padding:4px 12px;
+}
+.widget-item-img {
+	width: 11px;
+   	height: 13px;
+   	margin-top: -4px;
+}
+.layerout-area > div {
+	font-size:20px;
+	text-align:center;
+	margin:5px 0px;
+	min-height: 200px;
+	border: 2px dashed #ccc;
+	line-height:200px
+}
+.widget-container-col,
+.layerout-area-default-container > div {
+	margin:5px 0px;
+	min-height: 200px;
+	border: 2px dashed #ccc;
+}
+#widget-group-container > li > label > i {
+	color: #85b558
+}

@@ -1,0 +1,63 @@
+<title>相对关系</title>
+<div class="page-header smaller no-padding-top">
+	<h1>
+		相对关系<small> <i class="ace-icon fa fa-angle-double-right"></i>
+			相对关系
+		</small>
+		<div class="embed-toggle-sidebar-container hidden-md hidden-lg pull-right">
+            <button class="navbar-toggle toggle-sidebar" type="button" data-target="#toggle-sidebar">
+                <span class="sr-only">Toggle横向菜单</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button> 
+            <button class="navbar-toggle toggle-sidebar2" type="button" data-target="#toggle-sidebar2" >
+                <span class="sr-only">Toggle左侧菜单</span>
+                <i class="ace-icon fa fa-dashboard bigger-110"></i>
+            </button>
+        </div>
+	</h1>
+</div>
+
+<div class="row">
+	<div class="col-xs-12">
+		<table id="myTable"
+			class="table table-hover"></table>
+	</div>
+</div>
+<div class="hidden" id="myInfo">
+	<form class="form-horizontal no-margin-bottom" id="myForm">
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-3 control-label">相对关系名称：</label>
+				<div class="col-xs-12 col-sm-8">
+					<input class="form-control" name="name" type="text" required>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-3 control-label">相对关系类型：</label>
+				<div class="col-xs-12 col-sm-8">
+					<input class="form-control" name="data" type="text" required>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-3 control-label">相对关系实现类：</label>
+				<div class="col-xs-12 col-sm-8">
+					<input class="form-control" name="clazz" type="text" >
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+	jQuery(function($) {
+		require([ horizon.paths.assetspath+ '/manager/flow/config/js/relationship.list.js' ], function() {
+			horizon.engine.relationship.initTable();
+			$('.page-content-area').trigger('ajaxscriptsloaded');
+		});
+	});
+</script>

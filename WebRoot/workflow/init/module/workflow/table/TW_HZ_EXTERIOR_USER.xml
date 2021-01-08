@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 外部办理人相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_EXTERIOR_USER</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_HZ_EXTERIOR_USER</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="FLOWID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="USETYPE" typename="varchar" length="200"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar" length="100"></fieldinfo>
+			<fieldinfo fieldname="LIMITTIME" typename="varchar" length="100"></fieldinfo>
+			<fieldinfo fieldname="AUTHOR" typename="varchar" length="200"></fieldinfo>
+			<fieldinfo fieldname="READER" typename="varchar" length="200"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<others>
+		<oracle>
+			<sql>CREATE INDEX IDX_TW_EU_FU ON TW_HZ_EXTERIOR_USER(FLOWID,USETYPE)</sql>
+		</oracle>
+		<mysql>
+			<sql>CREATE INDEX IDX_TW_EU_FU ON TW_HZ_EXTERIOR_USER(FLOWID,USETYPE)</sql>
+		</mysql>
+		<mysql8>
+			<sql>CREATE INDEX IDX_TW_EU_FU ON TW_HZ_EXTERIOR_USER(FLOWID,USETYPE)</sql>
+		</mysql8>
+		<db2>
+			<sql>CREATE INDEX IDX_TW_EU_FU ON TW_HZ_EXTERIOR_USER(FLOWID,USETYPE)</sql>
+		</db2>
+		<sqlserver>
+			<sql>CREATE INDEX IDX_TW_EU_FU ON TW_HZ_EXTERIOR_USER(FLOWID,USETYPE)</sql>
+		</sqlserver>
+		<dm>
+			<sql>CREATE INDEX IDX_TW_EU_FU ON TW_HZ_EXTERIOR_USER(FLOWID,USETYPE)</sql>
+		</dm>
+		<postgresql>
+			<sql>CREATE INDEX IDX_TW_EU_FU ON TW_HZ_EXTERIOR_USER(FLOWID,USETYPE)</sql>
+		</postgresql>
+		<highgo>
+			<sql>CREATE INDEX IDX_TW_EU_FU ON TW_HZ_EXTERIOR_USER(FLOWID,USETYPE)</sql>
+		</highgo>
+		<gbase>
+			<sql>CREATE INDEX IDX_TW_EU_FU ON TW_HZ_EXTERIOR_USER(FLOWID,USETYPE)</sql>
+		</gbase>
+		<gbase8s>
+			<sql>CREATE INDEX IDX_TW_EU_FU ON TW_HZ_EXTERIOR_USER(FLOWID,USETYPE)</sql>
+		</gbase8s>
+		<kingbase>
+			<sql>CREATE INDEX IDX_TW_EU_FU ON TW_HZ_EXTERIOR_USER(FLOWID,USETYPE)</sql>
+		</kingbase>
+		<kingbase8>
+			<sql>CREATE INDEX IDX_TW_EU_FU ON TW_HZ_EXTERIOR_USER(FLOWID,USETYPE)</sql>
+		</kingbase8>
+		<oscar>
+			<sql>CREATE INDEX IDX_TW_EU_FU ON TW_HZ_EXTERIOR_USER(FLOWID,USETYPE)</sql>
+		</oscar>
+		<upbase>
+			<sql>CREATE INDEX IDX_TW_EU_FU ON TW_HZ_EXTERIOR_USER(FLOWID,USETYPE)</sql>
+		</upbase>
+	</others>
+</tableinfo>

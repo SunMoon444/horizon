@@ -1,0 +1,120 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="TO_HORIZON_WIDGET">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:string" minOccurs="0" />
+                <xs:element name="CREATED" type="xs:string" minOccurs="0" />
+                <xs:element name="MODIFIED" type="xs:string" minOccurs="0" />
+                <xs:element name="CREATOR" type="xs:string" minOccurs="0" />
+                <xs:element name="MODIFICATOR" type="xs:string" minOccurs="0" />
+                <xs:element name="RECYCLE" type="xs:string" minOccurs="0" />
+                <xs:element name="CODE" type="xs:string" minOccurs="0" />
+                <xs:element name="NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="NAME_EN" type="xs:string" minOccurs="0" />
+                <xs:element name="GROUP_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="SHOW_TYPE" type="xs:string" minOccurs="0" />
+                <xs:element name="URL" type="xs:string" minOccurs="0" />
+                <xs:element name="HEIGHT" type="xs:string" minOccurs="0" />
+                <xs:element name="BELONG" type="xs:string" minOccurs="0" />
+                <xs:element name="AUTH" type="xs:string" minOccurs="0" />
+                <xs:element name="DEPT_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="LOAD_TYPE" type="xs:string" minOccurs="0" />
+                <xs:element name="USER_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="ROLE_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="WIDGET_CLASS" type="xs:string" minOccurs="0" />
+                <xs:element name="ICON" type="xs:string" minOccurs="0" />
+                <xs:element name="ICON_TYPE" type="xs:string" minOccurs="0" />
+                <xs:element name="DESCRIPTION" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <TO_HORIZON_WIDGET>
+    <ID>HZ2882c05818c01b015818c1789a0002</ID>
+    <CREATED>2016-10-31 11:21:22</CREATED>
+    <MODIFIED>2016-11-01 17:45:06</MODIFIED>
+    <CREATOR>admin</CREATOR>
+    <MODIFICATOR>admin</MODIFICATOR>
+    <CODE>00001</CODE>
+    <NAME>我发起的工作</NAME>
+    <GROUP_ID>HZ2882f751b324130151b3f0adb30b2a</GROUP_ID>
+    <URL>|apppath|/horizon/view/getViewTemplatePath.wf?viewId=HZ2882c0581ed27d01581f34ddd40071</URL>
+    <HEIGHT>230</HEIGHT>
+    <AUTH>public</AUTH>
+    <LOAD_TYPE>iframe</LOAD_TYPE>
+    <ICON>glyphicon glyphicon-bullhorn</ICON>
+    <ICON_TYPE>class</ICON_TYPE>
+  </TO_HORIZON_WIDGET>
+  <TO_HORIZON_WIDGET>
+    <ID>HZ2882c05818c01b015818c1cfe00003</ID>
+    <CREATED>2016-10-31 11:21:44</CREATED>
+    <MODIFIED>2016-11-01 17:45:11</MODIFIED>
+    <CREATOR>admin</CREATOR>
+    <MODIFICATOR>admin</MODIFICATOR>
+    <CODE>00002</CODE>
+    <NAME>我要办理的工作</NAME>
+    <GROUP_ID>HZ2882f751b324130151b3f0adb30b2a</GROUP_ID>
+    <URL>|apppath|/horizon/view/getViewTemplatePath.wf?viewId=HZ2882c0581ed27d01581f369b45007d</URL>
+    <HEIGHT>230</HEIGHT>
+    <AUTH>public</AUTH>
+    <LOAD_TYPE>iframe</LOAD_TYPE>
+    <ICON>glyphicon glyphicon-adjust</ICON>
+    <ICON_TYPE>class</ICON_TYPE>
+  </TO_HORIZON_WIDGET>
+  <TO_HORIZON_WIDGET>
+    <ID>HZ2882c0581ed27d01581ef8d2cf0037</ID>
+    <CREATED>2016-11-01 16:19:33</CREATED>
+    <MODIFIED>2016-11-01 17:45:17</MODIFIED>
+    <CREATOR>admin</CREATOR>
+    <MODIFICATOR>admin</MODIFICATOR>
+    <CODE>00003</CODE>
+    <NAME>我要阅知的工作</NAME>
+    <GROUP_ID>HZ2882f751b324130151b3f0adb30b2a</GROUP_ID>
+    <URL>|apppath|/horizon/view/getViewTemplatePath.wf?viewId=HZ2882c0581ed27d01581f3798990093</URL>
+    <HEIGHT>230</HEIGHT>
+    <AUTH>public</AUTH>
+    <LOAD_TYPE>iframe</LOAD_TYPE>
+    <ICON>glyphicon glyphicon-compressed</ICON>
+    <ICON_TYPE>class</ICON_TYPE>
+  </TO_HORIZON_WIDGET>
+  <TO_HORIZON_WIDGET>
+    <ID>HZ2882c0581ed27d01581f3e6b3700b3</ID>
+    <CREATED>2016-11-01 17:35:34</CREATED>
+    <MODIFIED>2016-11-01 17:45:22</MODIFIED>
+    <CREATOR>admin</CREATOR>
+    <MODIFICATOR>admin</MODIFICATOR>
+    <CODE>00005</CODE>
+    <NAME>我有权查询的工作</NAME>
+    <GROUP_ID>HZ2882f751b324130151b3f0adb30b2a</GROUP_ID>
+    <URL>|apppath|/horizon/view/getViewTemplatePath.wf?viewId=HZ2882c0581ed27d01581f3d955500a8</URL>
+    <HEIGHT>230</HEIGHT>
+    <AUTH>public</AUTH>
+    <LOAD_TYPE>iframe</LOAD_TYPE>
+    <ICON>glyphicon glyphicon-link</ICON>
+    <ICON_TYPE>class</ICON_TYPE>
+  </TO_HORIZON_WIDGET>
+  <TO_HORIZON_WIDGET>
+    <ID>HZ2882c058193df20158196dc5960422</ID>
+    <CREATED>2016-10-31 14:29:34</CREATED>
+    <MODIFIED>2016-11-01 17:45:27</MODIFIED>
+    <CREATOR>admin</CREATOR>
+    <MODIFICATOR>admin</MODIFICATOR>
+    <CODE>00004</CODE>
+    <NAME>我审批过的流程</NAME>
+    <GROUP_ID>HZ2882f751b324130151b3f0adb30b2a</GROUP_ID>
+    <URL>|apppath|/horizon/view/getViewTemplatePath.wf?viewId=HZ2882c0581ed27d01581f37113d008a</URL>
+    <HEIGHT>230</HEIGHT>
+    <AUTH>public</AUTH>
+    <LOAD_TYPE>iframe</LOAD_TYPE>
+    <ICON>glyphicon glyphicon-briefcase</ICON>
+    <ICON_TYPE>class</ICON_TYPE>
+  </TO_HORIZON_WIDGET>
+</NewDataSet>

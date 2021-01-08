@@ -1,0 +1,74 @@
+<title>hz{platform-lasttime.largeTitle}</title>
+<hi18n groups="platform-lasttime;base;message"></hi18n>
+<div class="page-header smaller">
+	<h1>
+		hz{platform-lasttime.subTitle}<small>
+            <i class="ace-icon fa fa-angle-double-right"></i>
+         		 hz{platform-lasttime.smallTitle}
+         	</small>
+	</h1>
+</div>
+<div  id="userIfream" >
+		<iframe name="lasttime" frameborder="0" id="lasttime" src="" width="100%" class="iframeBorder"></iframe>
+</div>
+<!-- 查看密码详情 -->
+<div id="pswLastTimeInfo" class="hidden">
+	<form class="form-horizontal no-margin-bottom " id="pswLastTimeForm">
+	<div class="row">
+					
+						<div class="col-xs-12 col-md-6 col-md-offset-3">
+							<div class="row">
+								<input type="hidden" name="id" />
+								<div class="col-xs-12">
+									<div class="form-group no-margin-left no-margin-right">
+										<label class="control-label">hz{platform-lasttime.userName}</label>
+										<div class="form-group no-margin ">
+											<input type="hidden" name="userId" >
+											<input  type="text" required="true" class="form-control" name="userName"
+												 readonly maxlength="200" />
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12">
+									<div class="form-group no-margin-left no-margin-right">
+										<label class="control-label">hz{platform-lasttime.deptName}</label>
+										<div class="form-group no-margin ">
+											<input  type="text" required="true" class="form-control" name="deptName"
+												notChinese="true" readonly maxlength="20"/>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12">
+									<div class="form-group no-margin-left no-margin-right">
+										<label class="control-label">hz{platform-lasttime.password}</label>
+										<div class="form-group no-margin ">
+											<input type="text" required="true" readonly class="form-control "  name="password"
+												 maxlength="255"/>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12">
+									<div class="form-group no-margin-left no-margin-right">
+										<label class="control-label">hz{platform-lasttime.operTime}</label>
+										<div class="form-group no-margin ">
+											<input type="text" required="true" readonly class="form-control"  name="operTime"
+												 maxlength="100"/>
+										</div>
+									</div>
+								</div>
+								
+								
+							</div><!-- row -->
+						</div><!-- col-md-offset-3 -->
+					</div>
+	</form>
+</div>
+<script type="text/javascript">
+		 require([
+				horizon.paths.apppath+ '/horizon/assets/manager/org/user/js/lasttime.js'
+				],
+				function() {
+				horizon.manager.lasttime.init();
+				$('.page-content-area').trigger('ajaxscriptsloaded');
+			});
+</script>

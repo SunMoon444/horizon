@@ -1,0 +1,71 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+    <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:Locale="zh-CN">
+            <xs:complexType>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:element name="TO_HORIZON_USER">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="ID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="NAME" type="xs:string" minOccurs="0"/>
+                                <xs:element name="LOGIN_NAME" type="xs:string" minOccurs="0"/>
+                                <xs:element name="EMAIL" type="xs:string" minOccurs="0"/>
+                                <xs:element name="ACTIVE" type="xs:decimal" minOccurs="0"/>
+                                <xs:element name="ORDER_NO" type="xs:decimal" minOccurs="0"/>
+                                <xs:element name="USER_STYLE" type="xs:string" minOccurs="0"/>
+                                <xs:element name="DELETE_TIME" type="xs:string" minOccurs="0"/>
+                                <xs:element name="REGISTER_TIME" type="xs:string" minOccurs="0"/>
+                                <xs:element name="PASSWORD" type="xs:string" minOccurs="0"/>
+                                <xs:element name="FIRSTNAME" type="xs:string" minOccurs="0"/>
+                                <xs:element name="GIVENNAME" type="xs:string" minOccurs="0"/>
+                                <xs:element name="EMP_NUM" type="xs:string" minOccurs="0"/>
+                                <xs:element name="CERTIFICATE" type="xs:string" minOccurs="0"/>
+                                <xs:element name="SEX" type="xs:string" minOccurs="0"/>
+                                <xs:element name="BIRTH_DATE" type="xs:string" minOccurs="0"/>
+                                <xs:element name="HAS_IMAGE" type="xs:decimal" minOccurs="0"/>
+                                <xs:element name="TELEPHONE" type="xs:string" minOccurs="0"/>
+                                <xs:element name="CELLPHONE" type="xs:string" minOccurs="0"/>
+                                <xs:element name="CERT_TYPE" type="xs:string" minOccurs="0"/>
+                                <xs:element name="CERT_NO" type="xs:string" minOccurs="0"/>
+                                <xs:element name="POSTCODE" type="xs:string" minOccurs="0"/>
+                                <xs:element name="ADDRESS" type="xs:string" minOccurs="0"/>
+                                <xs:element name="IP" type="xs:string" minOccurs="0"/>
+                                <xs:element name="COMMENTS" type="xs:string" minOccurs="0"/>
+                                <xs:element name="SEC_ID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="ENGNAME" type="xs:string" minOccurs="0"/>
+                                <xs:element name="POSITION" type="xs:string" minOccurs="0"/>
+                                <xs:element name="FAX" type="xs:string" minOccurs="0"/>
+                                <xs:element name="DN" type="xs:string" minOccurs="0"/>
+                                <xs:element name="WORK_DESC" type="xs:string" minOccurs="0"/>
+                                <xs:element name="TELEPHONE_HOME" type="xs:string" minOccurs="0"/>
+                                <xs:element name="OTHER_POSITION" type="xs:string" minOccurs="0"/>
+                                <xs:element name="LDAP_UNID" type="xs:string" minOccurs="0"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:choice>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+    <TO_HORIZON_USER>
+        <ID>admin</ID>
+        <NAME>管理员</NAME>
+        <LOGIN_NAME>admin</LOGIN_NAME>
+        <EMAIL>admin@horizon.cn</EMAIL>
+        <ACTIVE>1</ACTIVE>
+        <ORDER_NO>72</ORDER_NO>
+        <USER_STYLE>default</USER_STYLE>
+        <DELETE_TIME>11111</DELETE_TIME>
+        <REGISTER_TIME>2011-06-16 11:25:57</REGISTER_TIME>
+        <PASSWORD>ED94C2C049B041FD</PASSWORD>
+        <FIRSTNAME>管理</FIRSTNAME>
+        <GIVENNAME>员</GIVENNAME>
+        <CERTIFICATE>password</CERTIFICATE>
+        <SEX>0</SEX>
+        <TELEPHONE>010-2345678-1234</TELEPHONE>
+        <CELLPHONE>1234</CELLPHONE>
+        <TELEPHONE_HOME>64939298</TELEPHONE_HOME>
+    </TO_HORIZON_USER>
+</NewDataSet>

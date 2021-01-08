@@ -1,0 +1,366 @@
+<title>hz{platform-user.largeTitle}</title>
+<hi18n groups="platform-user;base;message;selectuser;platform-validator"></hi18n>
+<div class="horizon-modal-container">
+    <div class="other-content-area">
+        <div class="page-header smaller">
+            <h1>
+               hz{platform-user.largeTitle}
+                <small>
+                    <i class="ace-icon fa fa-angle-double-right"></i>hz{platform-user.subTitle}
+                </small>
+                <div class="pull-right">
+                    <label class="pointer hidden" id="close">
+                        <i class="ace-icon fa fa-arrow-left bigger-110 icon-only"></i>
+                       hz{base.back}
+                    </label>
+                    <label class="pointer horizon-modal-trigger" data-target=".horizon-modal" data-toggle="modal">
+                        <i class="ace-icon fa fa-leaf bigger-110 icon-only green"></i>
+                        hz{platform-user.deptTree}
+                    </label>
+                </div>
+            </h1>
+        </div>
+        <div id="userListInfo" >
+            <iframe name="userList" frameborder="0" id="userList" src="" width="100%" class="iframeBorder"></iframe>
+        </div>
+        <div class="hidden" id="userInfo">
+            <form class="form-horizontal horizon-form" enctype = "multipart/form-data" id="addUserForm" role="form">
+                <div class="horizon-tab">
+                    <ul class="tab" id='myTab'>
+                        <li class="active">
+                            <a data-toggle="tab" href="#baseInfo" data-target="[data-pane='tab0']">
+                                hz{platform-user.baseInfo}
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#workInfo" data-target="[data-pane='tab1']">
+                               hz{platform-user.workInfo}
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="baseInfo" data-pane="tab0" class="tab-pane fade in active">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-9 col-md-8 col-md-offset-1">
+                                    <div class="row">
+                                        <div class="hidden">
+                                            <input type="hidden" name="id"/>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <label class="control-label">hz{platform-user.loginName}</label>
+                                            <div class="form-group no-margin-left no-margin-right has-error" id="loginName">
+                                                <input class="form-control" placeholder="hz{base.inputPlaceholder}" minlength="3" type="text" name="loginName" maxlength="50" required/>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <label class="control-label">hz{platform-user.deptName}</label>
+                                            <div class="form-group no-margin-left no-margin-right has-error" id="deptName">
+                                                <input  class = "hidden" name="deptId"/>
+                                                <input class="form-control pointer" placeholder="hz{base.clickToSelect}" type="text" minlength="3" maxlength="100" readonly="readonly" name="deptName" required/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="control-label">hz{platform-user.userName}</label>
+                                            <div class="form-group no-margin-left no-margin-right has-error" id="userName">
+                                                <div class="input-group input-daterange">
+                                                    <input type="text" class="form-control" placeholder="hz{platform-user.firstName}" name="firstName" maxlength="20" required="true"/>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-plus"></i>
+                                                    </span>
+                                                    <input type="text" class="form-control" placeholder="hz{platform-user.givenName}" name="givenName" maxlength="20"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="control-label">hz{platform-user.empNum}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <input class="form-control" placeholder="hz{base.inputPlaceholder}" name="empNum" type="text" notChinese="true" maxlength="20"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="update_password">
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="control-label">hz{platform-user.password}</label>
+                                            <div class="form-group no-margin-left no-margin-right has-error" id="secret">
+                                                <input class="form-control" placeholder="hz{base.inputPlaceholder}" id="password" type="password" minlength="6" maxlength="25" notChinese="true" name="password" required/>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="control-label">hz{platform-user.confirmPassword}</label>
+                                            <div class="form-group no-margin-left no-margin-right has-error" id="confirmPassword">
+                                                <input class="form-control" placeholder="hz{base.inputPlaceholder}" type="password" minlength="6" maxlength="25" notChinese="true" name="confirmPassword" required/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="update_generator">
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="control-label">hz{platform-user.passwordLevel}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                                    <label class="btn btn-white col-xs-4 disabled pwd-strong">
+                                                        hz{platform-user.weak}
+                                                    </label>
+                                                    <label class="btn btn-white col-xs-4 disabled pwd-strong">
+                                                        hz{platform-user.center}
+                                                    </label>
+                                                    <label class="btn btn-white col-xs-4 disabled pwd-strong">
+                                                        hz{platform-user.strong}
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="control-label">hz{platform-user.autoGeneration}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <input class="form-control" id="autoGeneration" type="button" name="autoGeneration" value="hz{platform-user.autoGeneration}"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="control-label">hz{platform-user.certNo}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <input class="form-control" placeholder="hz{base.inputPlaceholder}" id="certNo" name="certNo" notChinese="true" type="text" maxlength="18"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="control-label no-margin">hz{platform-user.engName}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <input class="form-control" placeholder="hz{base.inputPlaceholder}" name="engName"  type="text" maxlength="50"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="control-label">hz{platform-user.cellPhone}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <input class="form-control" placeholder="hz{base.inputPlaceholder}" name="cellPhone"  type="text" maxlength="50"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="control-label">hz{platform-user.email}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <input class="form-control" placeholder="hz{base.inputPlaceholder}" name="email" type="text" maxlength="100"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <label class="control-label">hz{base.status}</label>
+                                                <div  data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                                    <label class="btn btn-white col-xs-4 btn-primary active">
+                                                        <input required="true" name="active"  type="radio" value="1"/>
+                                                        <span class="lbl middle">hz{base.enable}</span>
+                                                    </label>
+                                                    <label class="btn btn-white col-xs-4">
+                                                        <input required="true" name="active" type="radio" value="0"/>
+                                                        <span class="lbl middle">hz{base.unable}</span>
+                                                    </label>
+                                                    <label class="btn btn-white col-xs-4  ">
+                                                        <input required="true" name="active" type="radio" value="2" />
+                                                        <span class="lbl middle">hz{base.logOff}</span>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <label class="control-label">hz{base.gender}</label>
+                                                <div  data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                                    <label class="btn btn-white col-xs-6 btn-primary active">
+                                                        <input required="true" name="sex"  type="radio" value="0" />
+                                                        <span class="lbl middle">hz{base.male}</span>
+                                                    </label>
+                                                    <label class="btn btn-white col-xs-6">
+                                                        <input required="true" name="sex" type="radio" value="1"/>
+                                                        <span class="lbl middle">hz{base.female}</span>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" >
+                                        <div class="col-xs-12 col-md-6" style="margin-top: -5px">
+                                            <label class="control-label">hz{platform-user.telephoneHome}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <input class="form-control " placeholder="hz{base.inputPlaceholder}" name="telephoneHome" type="text" maxlength="50"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6" style="margin-top: -5px">
+                                            <label class="control-label">hz{platform-user.validateMode}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <select class="form-control" name="certificate">
+                                                    <option value="Password">hz{platform-user.passwordValidate}</option>
+                                                    <option value="Certificate">hz{platform-user.certificateValidate}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <label class="control-label">hz{platform-user.comments}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <textarea class="form-control" name="comments" placeholder='hz{base.inputPlaceholder}' rows="2" maxlength="200"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-3">
+                                    <div class="space-14"></div>
+                                    <div class="align-center" >
+                                        <input type="hidden" name="fileId" />
+                                        <span class="profile-picture picture-size">
+                                            <input type="file" name="avatar"/>
+                                        </span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div data-pane="tab1"  id="workInfo" class="tab-pane fade">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <label class="control-label">hz{platform-user.deptOrderNo}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <input class="form-control " placeholder="hz{base.inputPlaceholder}" number="true" min="0" maxlength="200" type="text" maxlength="100" name="dn"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <label class="control-label">hz{platform-user.partTimeDept}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <input class="hidden" name="otherDeptId">
+                                                <input class="form-control pointer" type="text"  placeholder="hz{base.clickToSelect}" readonly="readonly"  name="otherDeptName"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <label class="control-label">hz{platform-user.position}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <input class="hidden" name="workPost"/>
+                                                <input class="form-control pointer" type="text" placeholder="hz{base.clickToSelect}" readonly="readonly" name="workPostName" maxlength="100"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <label class="control-label">hz{platform-user.partTimePosition}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <input class="hidden" name="ptWorkPost">
+                                                <input class="form-control pointer" type="text" placeholder="hz{base.clickToSelect}"  readonly="readonly" name="ptWorkPostName"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <label class="control-label">hz{platform-user.post}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <input class="form-control" placeholder="hz{base.inputPlaceholder}" type="text" maxlength="20" name="position"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <label class="control-label">hz{platform-user.partTimePost}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <input class="form-control" placeholder="hz{base.inputPlaceholder}" maxlength="300" type="text" name="otherPosition"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <label class="control-label">hz{platform-user.secName}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <input class="hidden" name="secId">
+                                                <input class="form-control pointer" type="text" placeholder="hz{base.clickToSelect}" maxlength="100" readonly="readonly" name="secName"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <label class="control-label">hz{platform-user.telephone}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <input class="form-control" placeholder="hz{base.inputPlaceholder}" type="text" maxlength="100" name="telephone"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <label class="control-label">hz{platform-user.postCode}</label>
+                                                <div class="form-group no-margin-left no-margin-right">
+                                                    <input class="form-control " placeholder="hz{base.inputPlaceholder}" maxlength="10" type="text"  name="postCode"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <label class="control-label">hz{platform-user.fax}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <input class="form-control" placeholder="hz{base.inputPlaceholder}" type="text" maxlength="20" name="fax"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <label class="control-label">hz{platform-user.address}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <textarea class="form-control" placeholder="hz{base.inputPlaceholder}" rows="2" maxlength="200" name="address"/></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <label class="control-label">hz{platform-user.workDesc}</label>
+                                            <div class="form-group no-margin-left no-margin-right">
+                                                <textarea class="form-control" name="workDesc" placeholder="hz{base.inputPlaceholder}" rows="2" maxlength="200"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="horizon-form-actions row">
+                    <div class="col-xs-12">
+                        <button class="btn btn-white btn-round border-width-1" id="save" type="submit">
+                            <i class="ace-icon fa fa-save green"></i> hz{base.save}
+                        </button>
+                        <button id="replacement" class="btn btn-white btn-round border-width-1" type="button">
+                            <i class="ace-icon fa fa-undo grey"></i> hz{base.reset}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="horizon-modal modal aside aside-right aside-vc aside-fixed navbar-offset" data-body-scroll="false" data-offset="true" data-placement="right" data-fixed="true" data-backdrop="invisible" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header blue">
+                   hz{platform-user.deptTree}
+                    <label class="pull-right">
+                        <a data-action="fixed-modal" class="pointer"><i class="ace-icon fa fa-lock bigger-160" data-fixed-icon="fa-lock" data-unfixed-icon="fa-unlock"></i></a>
+                    </label>
+                </div>
+                <div class="modal-body">
+                    <ul id="dept-tree" class="ztree"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hidden" id="dialog"></div>
+<script>
+    require(['jquery',
+            horizon.paths.apppath+ '/horizon/assets/manager/org/user/js/user.js'],
+        function($) {
+            horizon.language.plugins.selectuser();
+            horizon.tools.use(horizon.paths.pluginpath + '/ztree/css/zTreeStyle/zTreeStyle.css');
+            horizon.tools.use(horizon.paths.pluginpath + '/chosen/css/chosen.css');
+            horizon.tools.use(horizon.paths.apppath + '/horizon/assets/manager/org/user/css/user.css');
+            horizon.manager.user.init();
+            $('.page-content-area').trigger('ajaxscriptsloaded');
+        });
+</script>

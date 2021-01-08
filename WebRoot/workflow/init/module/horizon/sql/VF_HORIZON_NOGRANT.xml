@@ -1,0 +1,1233 @@
+<tableinfo>
+    <others>
+        <db2>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_nogrant as
+                (
+                select id ,t.tenant_name as biz_name , 'TENANTOPER' as biz_type
+                from ts_horizon_tenant t
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'TENANTOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,dept_name , 'ORGOPER' as biz_type
+                from to_horizon_dept
+                where id!='root_node_id' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ORGOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,g.group_name , 'WORKGROUPOPER' as biz_type
+                from to_horizon_group g
+                where id!='root_node_id' and id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'WORKGROUPOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select id,role_name , 'ROLEOPER' as biz_type
+                from to_horizon_role
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ROLEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'USERMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='1' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'USERMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'ADMINMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='2' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ADMINMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,app_name , 'MODULEOPER' as biz_type
+                from ts_horizon_module
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'MODULEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select flowid,flowname , 'FLOWOPER' as biz_type
+                from TW_HZ_FLOW_DEF f
+                where version=(select max(version) from TW_HZ_FLOW_DEF where flowid=f.flowid ) and flowid not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'FLOWOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+                )
+                ]]>
+            </sql>
+        </db2>
+        <dm>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_nogrant as
+                (
+                select id ,t.tenant_name as biz_name , 'TENANTOPER' as biz_type
+                from ts_horizon_tenant t
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'TENANTOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,dept_name , 'ORGOPER' as biz_type
+                from to_horizon_dept
+                where id!='root_node_id' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ORGOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,g.group_name , 'WORKGROUPOPER' as biz_type
+                from to_horizon_group g
+                where id!='root_node_id' and id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'WORKGROUPOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select id,role_name , 'ROLEOPER' as biz_type
+                from to_horizon_role
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ROLEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'USERMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='1' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'USERMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'ADMINMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='2' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ADMINMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,app_name , 'MODULEOPER' as biz_type
+                from ts_horizon_module
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'MODULEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select flowid,flowname , 'FLOWOPER' as biz_type
+                from TW_HZ_FLOW_DEF f
+                where version=(select max(version) from TW_HZ_FLOW_DEF where flowid=f.flowid ) and flowid not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'FLOWOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+                )
+                ]]>
+            </sql>
+        </dm>
+        <gbase>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_nogrant as
+
+                select id ,t.tenant_name as biz_name , 'TENANTOPER' as biz_type
+                from ts_horizon_tenant t
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'TENANTOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,dept_name , 'ORGOPER' as biz_type
+                from to_horizon_dept
+                where id!='root_node_id' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ORGOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,g.group_name , 'WORKGROUPOPER' as biz_type
+                from to_horizon_group g
+                where id!='root_node_id' and id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'WORKGROUPOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select id,role_name , 'ROLEOPER' as biz_type
+                from to_horizon_role
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ROLEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'USERMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='1' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'USERMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'ADMINMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='2' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ADMINMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,app_name , 'MODULEOPER' as biz_type
+                from ts_horizon_module
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'MODULEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select flowid,flowname , 'FLOWOPER' as biz_type
+                from TW_HZ_FLOW_DEF f
+                where version=(select max(version) from TW_HZ_FLOW_DEF where flowid=f.flowid ) and flowid not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'FLOWOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+                
+                ]]>
+            </sql>
+        </gbase>
+        <gbase8s>
+            <sql>
+                <![CDATA[
+                create view vf_horizon_nogrant as
+                select id,biz_name,biz_type from (
+                select id ,t.tenant_name as biz_name , 'TENANTOPER' as biz_type
+                from ts_horizon_tenant t
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'TENANTOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,dept_name , 'ORGOPER' as biz_type
+                from to_horizon_dept
+                where id!='root_node_id' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ORGOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,g.group_name , 'WORKGROUPOPER' as biz_type
+                from to_horizon_group g
+                where id!='root_node_id' and id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'WORKGROUPOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select id,role_name , 'ROLEOPER' as biz_type
+                from to_horizon_role
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ROLEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'USERMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='1' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'USERMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'ADMINMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='2' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ADMINMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,app_name , 'MODULEOPER' as biz_type
+                from ts_horizon_module
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'MODULEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select flowid,flowname , 'FLOWOPER' as biz_type
+                from TW_HZ_FLOW_DEF f
+                where version=(select max(version) from TW_HZ_FLOW_DEF where flowid=f.flowid ) and flowid not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'FLOWOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT'))
+
+                ]]>
+            </sql>
+        </gbase8s>
+        <kingbase>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_nogrant as
+
+                select id ,t.tenant_name as biz_name , 'TENANTOPER' as biz_type
+                from ts_horizon_tenant t
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'TENANTOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,dept_name , 'ORGOPER' as biz_type
+                from to_horizon_dept
+                where id!='root_node_id' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ORGOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,g.group_name , 'WORKGROUPOPER' as biz_type
+                from to_horizon_group g
+                where id!='root_node_id' and id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'WORKGROUPOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select id,role_name , 'ROLEOPER' as biz_type
+                from to_horizon_role
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ROLEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'USERMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='1' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'USERMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'ADMINMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='2' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ADMINMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,app_name , 'MODULEOPER' as biz_type
+                from ts_horizon_module
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'MODULEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select flowid,flowname , 'FLOWOPER' as biz_type
+                from TW_HZ_FLOW_DEF f
+                where version=(select max(version) from TW_HZ_FLOW_DEF where flowid=f.flowid ) and flowid not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'FLOWOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+                
+                ]]>
+            </sql>
+        </kingbase>
+        <kingbase8>
+            <sql>
+                <![CDATA[
+                create or replace view vf_horizon_nogrant as
+
+                select id ,t.tenant_name as biz_name , 'TENANTOPER' as biz_type
+                from ts_horizon_tenant t
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'TENANTOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,dept_name , 'ORGOPER' as biz_type
+                from to_horizon_dept
+                where id!='root_node_id' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ORGOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,g.group_name , 'WORKGROUPOPER' as biz_type
+                from to_horizon_group g
+                where id!='root_node_id' and id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'WORKGROUPOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select id,role_name , 'ROLEOPER' as biz_type
+                from to_horizon_role
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ROLEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'USERMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='1' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'USERMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'ADMINMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='2' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ADMINMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,app_name , 'MODULEOPER' as biz_type
+                from ts_horizon_module
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'MODULEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select flowid,flowname , 'FLOWOPER' as biz_type
+                from TW_HZ_FLOW_DEF f
+                where version=(select max(version) from TW_HZ_FLOW_DEF where flowid=f.flowid ) and flowid not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'FLOWOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                ]]>
+            </sql>
+        </kingbase8>
+        <mysql>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_nogrant as
+
+                select id ,t.tenant_name as biz_name , 'TENANTOPER' as biz_type
+                from ts_horizon_tenant t
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'TENANTOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,dept_name , 'ORGOPER' as biz_type
+                from to_horizon_dept
+                where id!='root_node_id' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ORGOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,g.group_name , 'WORKGROUPOPER' as biz_type
+                from to_horizon_group g
+                where id!='root_node_id' and id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'WORKGROUPOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select id,role_name , 'ROLEOPER' as biz_type
+                from to_horizon_role
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ROLEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'USERMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='1' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'USERMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'ADMINMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='2' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ADMINMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,app_name , 'MODULEOPER' as biz_type
+                from ts_horizon_module
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'MODULEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select flowid,flowname , 'FLOWOPER' as biz_type
+                from TW_HZ_FLOW_DEF f
+                where version=(select max(version) from TW_HZ_FLOW_DEF where flowid=f.flowid ) and flowid not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'FLOWOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+                
+                ]]>
+            </sql>
+        </mysql>
+        <mysql8>
+            <sql>
+                <![CDATA[
+                create or replace view vf_horizon_nogrant as
+
+                select id ,t.tenant_name as biz_name , 'TENANTOPER' as biz_type
+                from ts_horizon_tenant t
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'TENANTOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,dept_name , 'ORGOPER' as biz_type
+                from to_horizon_dept
+                where id!='root_node_id' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ORGOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,g.group_name , 'WORKGROUPOPER' as biz_type
+                from to_horizon_group g
+                where id!='root_node_id' and id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'WORKGROUPOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select id,role_name , 'ROLEOPER' as biz_type
+                from to_horizon_role
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ROLEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'USERMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='1' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'USERMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'ADMINMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='2' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ADMINMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,app_name , 'MODULEOPER' as biz_type
+                from ts_horizon_module
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'MODULEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select flowid,flowname , 'FLOWOPER' as biz_type
+                from TW_HZ_FLOW_DEF f
+                where version=(select max(version) from TW_HZ_FLOW_DEF where flowid=f.flowid ) and flowid not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'FLOWOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                ]]>
+            </sql>
+        </mysql8>
+        <oracle>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_nogrant as
+                (
+                select id ,t.tenant_name as biz_name , 'TENANTOPER' as biz_type
+                from ts_horizon_tenant t
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'TENANTOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,dept_name , 'ORGOPER' as biz_type
+                from to_horizon_dept
+                where id!='root_node_id' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ORGOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,g.group_name , 'WORKGROUPOPER' as biz_type
+                from to_horizon_group g
+                where id!='root_node_id' and id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'WORKGROUPOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select id,role_name , 'ROLEOPER' as biz_type
+                from to_horizon_role
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ROLEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'USERMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='1' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'USERMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'ADMINMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='2' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ADMINMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,app_name , 'MODULEOPER' as biz_type
+                from ts_horizon_module
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'MODULEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select flowid,flowname , 'FLOWOPER' as biz_type
+                from TW_HZ_FLOW_DEF f
+                where version=(select max(version) from TW_HZ_FLOW_DEF where flowid=f.flowid ) and flowid not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'FLOWOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+                )
+                ]]>
+            </sql>
+        </oracle>
+        <postgresql>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_nogrant as
+
+                select id ,t.tenant_name as biz_name , 'TENANTOPER' as biz_type
+                from ts_horizon_tenant t
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'TENANTOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,dept_name , 'ORGOPER' as biz_type
+                from to_horizon_dept
+                where id!='root_node_id' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ORGOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,g.group_name , 'WORKGROUPOPER' as biz_type
+                from to_horizon_group g
+                where id!='root_node_id' and id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'WORKGROUPOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select id,role_name , 'ROLEOPER' as biz_type
+                from to_horizon_role
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ROLEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'USERMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='1' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'USERMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'ADMINMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='2' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ADMINMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,app_name , 'MODULEOPER' as biz_type
+                from ts_horizon_module
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'MODULEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select flowid,flowname , 'FLOWOPER' as biz_type
+                from TW_HZ_FLOW_DEF f
+                where version=(select max(version) from TW_HZ_FLOW_DEF where flowid=f.flowid ) and flowid not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'FLOWOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+                
+                ]]>
+            </sql>
+        </postgresql>
+        <highgo>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_nogrant as
+
+                select id ,t.tenant_name as biz_name , 'TENANTOPER' as biz_type
+                from ts_horizon_tenant t
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'TENANTOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,dept_name , 'ORGOPER' as biz_type
+                from to_horizon_dept
+                where id!='root_node_id' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ORGOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,g.group_name , 'WORKGROUPOPER' as biz_type
+                from to_horizon_group g
+                where id!='root_node_id' and id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'WORKGROUPOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select id,role_name , 'ROLEOPER' as biz_type
+                from to_horizon_role
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ROLEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'USERMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='1' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'USERMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'ADMINMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='2' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ADMINMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,app_name , 'MODULEOPER' as biz_type
+                from ts_horizon_module
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'MODULEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select flowid,flowname , 'FLOWOPER' as biz_type
+                from TW_HZ_FLOW_DEF f
+                where version=(select max(version) from TW_HZ_FLOW_DEF where flowid=f.flowid ) and flowid not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'FLOWOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                ]]>
+            </sql>
+        </highgo>
+        <sqlserver>
+            <sql>
+            <![CDATA[
+                create  view vf_horizon_nogrant as
+                (
+                select id ,t.tenant_name as biz_name , 'TENANTOPER' as biz_type
+                from ts_horizon_tenant t
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'TENANTOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,dept_name , 'ORGOPER' as biz_type
+                from to_horizon_dept
+                where id!='root_node_id' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ORGOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,g.group_name , 'WORKGROUPOPER' as biz_type
+                from to_horizon_group g
+                where id!='root_node_id' and id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'WORKGROUPOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select id,role_name , 'ROLEOPER' as biz_type
+                from to_horizon_role
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ROLEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'USERMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='1' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'USERMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'ADMINMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='2' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ADMINMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,app_name , 'MODULEOPER' as biz_type
+                from ts_horizon_module
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'MODULEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select flowid,flowname , 'FLOWOPER' as biz_type
+                from TW_HZ_FLOW_DEF f
+                where version=(select max(version) from TW_HZ_FLOW_DEF where flowid=f.flowid ) and flowid not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'FLOWOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+                )
+                ]]>
+            </sql>
+        </sqlserver>
+        <oscar>
+            <sql>
+            <![CDATA[
+			create or replace view vf_horizon_nogrant as
+				 (
+				 select id ,t.tenant_name as biz_name , 'TENANTOPER' as biz_type
+				 from ts_horizon_tenant t
+				 where id not in (select r.biz_id
+				 from tp_horizon_role r, tp_horizon_resource res
+				 where r.biz_type = 'TENANTOPER'
+				 and r.res_id = res.id
+				 and res.res_code = 'GRANT')
+				
+				 union all
+				
+				 select id,dept_name , 'ORGOPER' as biz_type
+				 from to_horizon_dept
+				 where id!='root_node_id' and  id not in (select r.biz_id
+				 from tp_horizon_role r, tp_horizon_resource res
+				 where r.biz_type = 'ORGOPER'
+				 and r.res_id = res.id
+				 and res.res_code = 'GRANT')
+				
+				 union all
+				
+				 select id,g.group_name , 'WORKGROUPOPER' as biz_type
+				 from to_horizon_group g
+				 where id!='root_node_id' and id not in (select r.biz_id
+				 from tp_horizon_role r, tp_horizon_resource res
+				 where r.biz_type = 'WORKGROUPOPER'
+				 and r.res_id = res.id
+				 and res.res_code = 'GRANT')
+				
+				 union all
+				
+				 select id,role_name , 'ROLEOPER' as biz_type
+				 from to_horizon_role
+				 where id not in (select r.biz_id
+				 from tp_horizon_role r, tp_horizon_resource res
+				 where r.biz_type = 'ROLEOPER'
+				 and r.res_id = res.id
+				 and res.res_code = 'GRANT')
+				
+				 union all
+				
+				 select id,menu_name , 'USERMENUOPER' as biz_type
+				 from ts_horizon_menu
+				 where menu_category='1' and  id not in (select r.biz_id
+				 from tp_horizon_role r, tp_horizon_resource res
+				 where r.biz_type = 'USERMENUOPER'
+				 and r.res_id = res.id
+				 and res.res_code = 'GRANT')
+				
+				 union all
+				
+				 select id,menu_name , 'ADMINMENUOPER' as biz_type
+				 from ts_horizon_menu
+				 where menu_category='2' and  id not in (select r.biz_id
+				 from tp_horizon_role r, tp_horizon_resource res
+				 where r.biz_type = 'ADMINMENUOPER'
+				 and r.res_id = res.id
+				 and res.res_code = 'GRANT')
+				
+				 union all
+				
+				 select id,app_name , 'MODULEOPER' as biz_type
+				 from ts_horizon_module
+				 where id not in (select r.biz_id
+				 from tp_horizon_role r, tp_horizon_resource res
+				 where r.biz_type = 'MODULEOPER'
+				 and r.res_id = res.id
+				 and res.res_code = 'GRANT')
+				 union all
+				
+				 select flowid,flowname , 'FLOWOPER' as biz_type
+				 from TW_HZ_FLOW_DEF f
+				 where version=(select max(version) from TW_HZ_FLOW_DEF where flowid=f.flowid ) and flowid not in (select r.biz_id
+				 from tp_horizon_role r, tp_horizon_resource res
+				 where r.biz_type = 'FLOWOPER'
+				 and r.res_id = res.id
+				 and res.res_code = 'GRANT')
+				 )
+                ]]>
+            </sql>
+        </oscar>
+        <upbase>
+            <sql>
+                <![CDATA[
+                create or replace view vf_horizon_nogrant as
+
+                select id ,t.tenant_name as biz_name , 'TENANTOPER' as biz_type
+                from ts_horizon_tenant t
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'TENANTOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,dept_name , 'ORGOPER' as biz_type
+                from to_horizon_dept
+                where id!='root_node_id' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ORGOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,g.group_name , 'WORKGROUPOPER' as biz_type
+                from to_horizon_group g
+                where id!='root_node_id' and id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'WORKGROUPOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select id,role_name , 'ROLEOPER' as biz_type
+                from to_horizon_role
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ROLEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'USERMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='1' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'USERMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,menu_name , 'ADMINMENUOPER' as biz_type
+                from ts_horizon_menu
+                where menu_category='2' and  id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'ADMINMENUOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                union all
+
+                select id,app_name , 'MODULEOPER' as biz_type
+                from ts_horizon_module
+                where id not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'MODULEOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+
+                union all
+
+                select flowid,flowname , 'FLOWOPER' as biz_type
+                from TW_HZ_FLOW_DEF f
+                where version=(select max(version) from TW_HZ_FLOW_DEF where flowid=f.flowid ) and flowid not in (select r.biz_id
+                from tp_horizon_role r, tp_horizon_resource res
+                where r.biz_type = 'FLOWOPER'
+                and r.res_id = res.id
+                and res.res_code = 'GRANT')
+
+                ]]>
+            </sql>
+        </upbase>
+    </others>
+</tableinfo>

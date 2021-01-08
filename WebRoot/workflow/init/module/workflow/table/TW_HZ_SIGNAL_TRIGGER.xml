@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 信号操作相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_SIGNAL_TRIGGER</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_SIGNAL_TRIGGER</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="SIGNAL_TYPE" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="SIGNAL_CONTENT" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="SIGNAL_ID" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="SIGNAL_NAME" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="SIGNAL_FROM" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="SIGNAL_TO" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="SIGNAL_PARA" typename="lvarchar"   length="500"></fieldinfo>
+			<fieldinfo fieldname="SIGNAL_CLASS" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="TRIGGER_TIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="ISSUCCESS" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="FLOWID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar"   length="2"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_SIGNAL_TRIGGER_LOG</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_SIGNAL_TRIGGER_LOG</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="SIGNAL_TYPE" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="SIGNAL_CONTENT" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="SIGNAL_ID" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="SIGNAL_NAME" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="SIGNAL_FROM" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="SIGNAL_TO" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="SIGNAL_PARA" typename="lvarchar"   length="500"></fieldinfo>
+			<fieldinfo fieldname="SIGNAL_CLASS" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="TRIGGER_TIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="ISSUCCESS" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="FLOWID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar"   length="2"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+</tableinfo>

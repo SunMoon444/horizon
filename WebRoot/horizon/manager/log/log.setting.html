@@ -1,0 +1,173 @@
+<title>hz{platform-log.logSet}</title>
+<hi18n  groups="platform-log;base;message" ></hi18n>
+
+<div class="page-header smaller">
+	<h1>
+		hz{platform-log.sysManager}<small> <i class="ace-icon fa fa-angle-double-right"></i>
+		hz{platform-log.sysLogSet}
+		</small>
+	</h1>
+</div>
+<div class='row'>
+	<div id="logSetInfo">
+				<iframe name="logSetList" frameborder="0" id="logSetList" src="" width="100%"
+					class="iframeBorder"></iframe>
+	</div>
+	<div class="hidden" id="lookLogSetInfo">
+		<form id="logSetForm" class="form-horizontal no-margin-bottom" target="typeList">
+			<div class="col-md-12">
+					<div id="LogSetBaseInfo">
+							<div class="space-4">
+								<input type="hidden" name="id" />
+						    </div>
+							<div class="row">
+							<div class="col-sm-6 form-group no-margin-left no-margin-right">
+								<label class="control-label ">hz{platform-log.logName}</label>
+								<div class="form-group no-margin has-error" id="logName">
+									<input class="form-control" type="text" name="logName" minlength="1" maxlength="100" required>
+								</div>
+							</div>
+							<div class="col-sm-6 form-group no-margin-left no-margin-right">
+								<label class="control-label">hz{platform-log.logType}</label>
+								<div class="form-group no-margin">
+									<select class="form-control chosen valid" name="logType">
+									    <option value="1">hz{platform-log.loginLog}</option>
+										<option value="2">hz{platform-log.logOff}</option>
+										<option value="3">hz{platform-log.businessLog}</option>
+										<option value="4">hz{platform-log.securityLog}</option>
+									</select>
+								</div>
+							</div>
+							</div>
+							<div class="row">
+							<div class="col-sm-6 form-group no-margin-left no-margin-right">
+								<label class="control-label ">hz{platform-log.connectionAddress}</label>
+								<div class="form-group has-error no-margin" id="operUrl">
+									<input class="form-control" name="operUrl" type="text">
+								</div>
+							</div>
+							<div class="col-sm-6 form-group no-margin-left no-margin-right">
+								<label class="control-label">hz{platform-log.methodInterceptKey}</label>
+								<div class="form-group has-error no-margin" id="key">
+									<input class="form-control" name="logKey" type="text" >
+								</div>
+							</div>
+							</div>
+							<div class="row">
+							<div class="col-sm-6 form-group no-margin-left no-margin-right">
+								<label class="control-label ">hz{platform-log.moduleNumber}</label>
+								<div class="form-group no-margin">
+									<select class="form-control chosen valid" name="moduleId" id="moduleId">
+                                          <option value="">hz{message.select}</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-sm-6 form-group no-margin-left no-margin-right">
+								<label class="control-label">hz{platform-log.isItEnabled}</label>
+								<div class="form-group no-margin">
+									<label class="inline">
+										<input type="radio" name="active" value="1" type="radio" class="ace" checked />
+										<span class="lbl">hz{platform-log.yes}</span>
+									</label>
+									<label class="inline">
+										<input type="radio" name="active"  value="0" type="radio" class="ace"/>
+										<span class="lbl">hz{platform-log.no}</span>
+									</label>
+								</div>
+							</div>
+							</div>
+						    <div class="row">
+						    <div class="col-sm-6 form-group no-margin-left no-margin-right">
+								<label class="control-label ">hz{platform-log.operateType}</label>
+								<div class="form-group no-margin">
+									<select class="form-control chosen valid" name="operateType">
+									    <option value="">hz{message.select}</option>
+										<option value="1">hz{platform-log.newData}</option>
+										<option value="2">hz{platform-log.updateData}</option>
+										<option value="3">hz{platform-log.deleteData}</option>
+									</select>
+								</div>
+							</div>
+						    <div class="col-sm-6 form-group no-margin-left no-margin-right">
+								<label class="control-label">hz{platform-log.customImplementation}</label>
+								<div class="form-group no-margin">
+									<input class="form-control" name="serviceName" type="text">
+								</div>
+							</div>
+							</div>
+							<div class="row">
+							<div class="col-sm-6 form-group no-margin-left no-margin-right">
+								<label class="control-label">hz{platform-log.description}</label>
+								<div class="form-group no-margin">
+									<input class="form-control" name="comments" type="text" maxlength="200">
+								</div>
+							</div>
+							<div class="col-sm-6 form-group no-margin-left no-margin-right">
+								<label class="control-label">hz{platform-log.expiredApproach}</label>
+								<div class="form-group no-margin">
+									<select class="form-control chosen valid" name="saveType">
+										<option value="1">hz{platform-log.automaticDelete}</option>
+										<option value="2">hz{platform-log.automaticArchiving}</option>
+										<option value="3">hz{platform-log.manualProcessing}</option>
+									</select>
+								</div>
+							</div>
+							</div>
+							<div class="row">
+							<div class="col-sm-6 form-group no-margin-left no-margin-right">
+								<label class="control-label ">hz{platform-log.periodValue}</label>
+								<div class="form-group has-error no-margin" id="cycleValue">
+									<input class="form-control" name="cycleValue" type="text" required>
+								</div>
+							</div>
+							<div class="col-sm-6 form-group no-margin-left no-margin-right">
+								<label class="control-label ">hz{platform-log.saveCycle}</label>
+								<div class="form-group no-margin">
+									<select class="form-control chosen valid" name="saveCycle">
+										<option value="1">hz{platform-log.day}</option>
+										<option value="2">hz{platform-log.week}</option>
+										<option value="3">hz{platform-log.month}</option>
+										<option value="4">hz{platform-log.quarterly}</option>
+										<option value="5">hz{platform-log.year}</option>
+									</select>
+								</div>
+							</div>
+						    </div>
+						    <div class="row">
+							<div class="col-sm-12 form-group no-margin-left no-margin-right">
+								<label class="control-label">hz{platform-log.filterConditions}</label>
+								<div class="form-group no-margin">
+									<input class="form-control" name="logCondition" placeholder=hz{platform-log.filterConditionsHelp} type="text">
+								</div>
+							</div>
+							<div class="col-sm-12 form-group no-margin-left no-margin-right">
+								<label class="control-label">hz{platform-log.recordContent}</label>
+								<div class="form-group no-margin">
+								    <textarea class="form-control" style="resize: none" name="logContext" placeholder=hz{platform-log.recordContentHelp} rows="2" maxlength="200"></textarea>
+								</div>
+							</div>
+							</div>
+						</div>
+					</div>
+		     </form>
+	  </div>
+</div>
+<script type="text/javascript">
+	jQuery(function($) {
+		require(
+				[
+				     horizon.paths.apppath
+								+ '/horizon/assets/manager/log/js/log.setting.js'
+						 ],
+				function() {
+					horizon.tools.use(horizon.paths.pluginpath
+							+ '/ztree/css/zTreeStyle/zTreeStyle.css');
+					horizon.manager.logsetting.init();
+					horizon.tools.use(horizon.paths.apppath+'/horizon/assets/common/css/horizon.base.css');
+					horizon.tools.use(horizon.paths.apppath
+							+'/horizon/plugins/iconPicker/css/bootstrap-iconpicker.css');
+					$('.page-content-area').trigger('ajaxscriptsloaded');
+				});
+
+	});
+</script>

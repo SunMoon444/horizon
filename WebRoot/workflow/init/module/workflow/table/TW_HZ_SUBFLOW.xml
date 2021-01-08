@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 子流程相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_SUBFLOW_RECORD</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_SUBFLOW_RECORD</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="PARENTWORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="PARENTTRACKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="PARENTNODEID" typename="varchar"   length="10"></fieldinfo>
+			<fieldinfo fieldname="SUBWORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SUBTRACKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SUBNODEID" typename="varchar"  length="10"></fieldinfo>
+			<fieldinfo fieldname="SUBFLOWVARDATA" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="SUBTOPARENTDATA" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number"></fieldinfo>
+			<fieldinfo fieldname="SAVETIME" typename="varchar"   length="25"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_SUBFLOW_RECORD_VER</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_SUBFLOW_RECORD_VER</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="PARENTWORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="PARENTTRACKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="PARENTNODEID" typename="varchar"   length="10"></fieldinfo>
+			<fieldinfo fieldname="SUBWORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SUBTRACKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SUBNODEID" typename="varchar"  length="10"></fieldinfo>
+			<fieldinfo fieldname="SUBFLOWVARDATA" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="SUBTOPARENTDATA" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number"></fieldinfo>
+			<fieldinfo fieldname="RECORDID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SAVETIME" typename="varchar"   length="25"></fieldinfo>
+		</fieldinfos>	
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TWR_HZ_SUBFLOW</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TWR_HZ_SUBFLOW</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="NODEID" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="FLOWID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TRACKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SUBWORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="SUBFLOWEND" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="WAITRETURN" typename="varchar"  length="2"></fieldinfo>
+			<fieldinfo fieldname="SUBFLOWID" typename="varchar"   length="32"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+</tableinfo>

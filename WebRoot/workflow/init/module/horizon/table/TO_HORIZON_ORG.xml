@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 组织机构相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TO_HORIZON_USER</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TO_HORIZON_USER</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="NAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="LOGIN_NAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="EMAIL" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="ACTIVE" typename="number"   length="1"></fieldinfo>
+			<fieldinfo fieldname="ORDER_NO" typename="number"   length="10"></fieldinfo>
+			<fieldinfo fieldname="USER_STYLE" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="DELETE_TIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="REGISTER_TIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="PASSWORD" typename="varchar"   length="255"></fieldinfo>
+			<fieldinfo fieldname="FIRSTNAME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="GIVENNAME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="EMP_NUM" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="CERTIFICATE" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="SEX" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="BIRTH_DATE" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="HAS_IMAGE" typename="number"   length="1"></fieldinfo>
+			<fieldinfo fieldname="TELEPHONE" typename="varchar"   length="50"></fieldinfo>	
+			<fieldinfo fieldname="CELLPHONE" typename="varchar"   length="50"></fieldinfo>	
+			<fieldinfo fieldname="CERT_TYPE" typename="varchar"   length="5"></fieldinfo>	
+			<fieldinfo fieldname="CERT_NO" typename="varchar"   length="30"></fieldinfo>	
+			<fieldinfo fieldname="POSTCODE" typename="varchar"   length="10"></fieldinfo>	
+			<fieldinfo fieldname="ADDRESS" typename="varchar"   length="200"></fieldinfo>	
+			<fieldinfo fieldname="IP" typename="varchar"   length="23"></fieldinfo>	
+			<fieldinfo fieldname="COMMENTS" typename="varchar"   length="200"></fieldinfo>	
+			<fieldinfo fieldname="SEC_ID" typename="varchar"   length="32"></fieldinfo>	
+			<fieldinfo fieldname="ENGNAME" typename="varchar"   length="50"></fieldinfo>	
+			<fieldinfo fieldname="POSITION" typename="varchar"   length="20"></fieldinfo>	
+			<fieldinfo fieldname="FAX" typename="varchar"   length="20"></fieldinfo>	
+			<fieldinfo fieldname="DN" typename="varchar"   length="200"></fieldinfo>	
+			<fieldinfo fieldname="WORK_DESC" typename="varchar"   length="200"></fieldinfo>	
+			<fieldinfo fieldname="TELEPHONE_HOME" typename="varchar"   length="50"></fieldinfo>	
+			<fieldinfo fieldname="OTHER_POSITION" typename="lvarchar"   length="300"></fieldinfo>
+			<fieldinfo fieldname="LDAP_UNID" typename="varchar"   length="100"></fieldinfo>					
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TO_HORIZON_USER_PASSWORD</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_SYS_USER_PWD</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="USER_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="PASSWORD" typename="varchar"   length="255"></fieldinfo>
+			<fieldinfo fieldname="OPER_TIME" typename="varchar"   length="30"></fieldinfo>
+			<fieldinfo fieldname="GROUP_FLAG" typename="number"   length="10"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TO_HORIZON_USER_PWD_SAFE</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_SYS_USER_PWDSAFE</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="USER_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="OPER_TIME" typename="varchar"   length="20"></fieldinfo>
+		</fieldinfos>		
+	</tablename>
+	<!-- 部门相关表 -->
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TO_HORIZON_DEPT</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TO_HORIZON_DEPT</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>			
+			<fieldinfo fieldname="DEPT_NAME" typename="varchar"   length="50"></fieldinfo>	
+			<fieldinfo fieldname="DEPT_LEVEL" typename="number"   length="10"></fieldinfo>	
+			<fieldinfo fieldname="DEPT_CODE" typename="varchar"   length="20"></fieldinfo>	
+			<fieldinfo fieldname="PARENT_ID" typename="varchar"   length="32"></fieldinfo>	
+			<fieldinfo fieldname="ORDER_NO" typename="number"   length="10"></fieldinfo>	
+			<fieldinfo fieldname="CREATEDATE" typename="varchar"   length="20"></fieldinfo>	
+			<fieldinfo fieldname="LEADER" typename="varchar"   length="32"></fieldinfo>	
+			<fieldinfo fieldname="DEPT_REMARK" typename="varchar"   length="200"></fieldinfo>	
+			<fieldinfo fieldname="COMMENTS" typename="varchar"   length="200"></fieldinfo>	
+			<fieldinfo fieldname="DN" typename="varchar"   length="200"></fieldinfo>	
+			<fieldinfo fieldname="IS_INDEPENDENT" typename="number"   length="1"></fieldinfo>	
+			<fieldinfo fieldname="ADMIN_ID" typename="varchar"   length="32"></fieldinfo>	
+			<fieldinfo fieldname="DESIGNER_ID" typename="varchar"   length="32"></fieldinfo>	
+			<fieldinfo fieldname="SEC_ID" typename="varchar"   length="32"></fieldinfo>	
+			<fieldinfo fieldname="SHORT_NAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="DEPT_GRADE" typename="varchar"   length="10"></fieldinfo>	
+			<fieldinfo fieldname="LDAP_UNID" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="UNIT" typename="varchar"   length="10"></fieldinfo>					
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TO_HORIZON_DEPT_ADMIN</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TO_HORIZON_DEPT_ADMIN</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="USER_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="DEPT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="OPER_TYPE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="ORG_TYPE" typename="varchar"   length="1"></fieldinfo>
+		</fieldinfos>		
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TO_HORIZON_GROUP</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TO_HORIZON_GROUP</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>			
+			<fieldinfo fieldname="GROUP_NAME" typename="varchar"   length="100"></fieldinfo>	
+			<fieldinfo fieldname="GROUP_CODE" typename="varchar"   length="20"></fieldinfo>	
+			<fieldinfo fieldname="PARENT_ID" typename="varchar"   length="32"></fieldinfo>	
+			<fieldinfo fieldname="DEPT_ID" typename="varchar"   length="32"></fieldinfo>	
+			<fieldinfo fieldname="CREATE_TIME" typename="varchar"   length="20"></fieldinfo>	
+			<fieldinfo fieldname="QUIT_TIME" typename="varchar"   length="20"></fieldinfo>	
+			<fieldinfo fieldname="ACTIVE" typename="number"   length="1"></fieldinfo>
+			<fieldinfo fieldname="ORDER_NO" typename="number"   length="10"></fieldinfo>	
+			<fieldinfo fieldname="COMMENTS" typename="varchar"   length="200"></fieldinfo>	
+			<fieldinfo fieldname="DN" typename="varchar"   length="200"></fieldinfo>	
+			<fieldinfo fieldname="DESIGNER_ID" typename="varchar"   length="32"></fieldinfo>	
+			<fieldinfo fieldname="SHORT_NAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="GROUP_REMARK" typename="varchar"   length="200"></fieldinfo>	
+			<fieldinfo fieldname="IS_INDEPENDENT" typename="number"   length="1"></fieldinfo>	
+			<fieldinfo fieldname="GROUP_GRADE" typename="varchar"   length="10"></fieldinfo>					
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TO_HORIZON_ROLE</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TO_HORIZON_ROLE</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>			
+			<fieldinfo fieldname="ROLE_NAME" typename="varchar"   length="50"></fieldinfo>	
+			<fieldinfo fieldname="ROLE_CODE" typename="varchar"   length="100"></fieldinfo>	
+			<fieldinfo fieldname="ROLE_TYPE" typename="varchar"   length="30"></fieldinfo>	
+			<fieldinfo fieldname="ORDER_NO" typename="number"   length="10"></fieldinfo>
+			<fieldinfo fieldname="COMMENTS" typename="varchar"   length="200"></fieldinfo>		
+			<fieldinfo fieldname="SIMPLE_NAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="CREATE_TIME" typename="varchar"   length="20" ></fieldinfo>
+			<fieldinfo fieldname="IS_PRIVATE" typename="number"   length="1" defaultvalue="0"></fieldinfo>	
+			<fieldinfo fieldname="PARENT_ID" typename="varchar"   length="32"></fieldinfo>	
+			<fieldinfo fieldname="ROLE_CLASS" typename="varchar"   length="100"></fieldinfo>	
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TO_HORIZON_POSITION</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TO_HORIZON_POSITION</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>			
+			<fieldinfo fieldname="POSITION_NAME" typename="varchar"   length="200"></fieldinfo>	
+			<fieldinfo fieldname="CREATED" typename="varchar"   length="20"></fieldinfo>	
+			<fieldinfo fieldname="MODIFIED" typename="varchar"   length="20"></fieldinfo>	
+			<fieldinfo fieldname="CREATOR" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="MODIFICATOR" typename="varchar"   length="32"></fieldinfo>		
+			<fieldinfo fieldname="RECYCLE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="POSITION_CODE" typename="varchar"   length="100" ></fieldinfo>
+			<fieldinfo fieldname="PARENT_ID" typename="varchar"   length="32"></fieldinfo>	
+			<fieldinfo fieldname="POSITION_DESCRIPTION" typename="varchar"   length="200"></fieldinfo>	
+			<fieldinfo fieldname="PARENT_NAME" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="POSITION_TYPE_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="ORDER_NO" typename="varchar"   length="32"></fieldinfo>					
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TO_HORIZON_POSITION_TYPE</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TO_HORIZON_POSI_TYPE</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>			
+			<fieldinfo fieldname="CATEGORY_NAME" typename="varchar"   length="255"></fieldinfo>	
+			<fieldinfo fieldname="CATEGORY_CODE" typename="varchar"   length="255"></fieldinfo>
+			<fieldinfo fieldname="PARENT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="CREATED" typename="varchar"   length="20"></fieldinfo>			
+			<fieldinfo fieldname="MODIFIED" typename="varchar"   length="20"></fieldinfo>	
+			<fieldinfo fieldname="CREATOR" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="MODIFICATOR" typename="varchar"   length="32"></fieldinfo>		
+			<fieldinfo fieldname="ORDER_NO" typename="number"></fieldinfo>
+			<fieldinfo fieldname="COMMENTS" typename="varchar"   length="200" ></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TOR_HORIZON_USER_DEPT</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TOR_HORIZON_USER_DEPT</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>			
+			<fieldinfo fieldname="USER_ID" typename="varchar"   length="32"></fieldinfo>	
+			<fieldinfo fieldname="DEPT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="JOIN_TIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="QUIT_TIME" typename="varchar"   length="20"></fieldinfo>			
+			<fieldinfo fieldname="ACTIVE" typename="number"   length="1"></fieldinfo>	
+			<fieldinfo fieldname="ORDER_NO" typename="number"  length="10"></fieldinfo>
+			<fieldinfo fieldname="ISDEFAULT" typename="number"   length="1" ></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TOR_HORIZON_USER_GROUP</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TOR_HORIZON_USER_GROUP</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>			
+			<fieldinfo fieldname="USER_ID" typename="varchar"   length="32"></fieldinfo>	
+			<fieldinfo fieldname="WORKGROUP_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="JOIN_TIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="QUIT_TIME" typename="varchar"   length="20"></fieldinfo>			
+			<fieldinfo fieldname="ACTIVE" typename="number"   length="1"></fieldinfo>	
+			<fieldinfo fieldname="ORDER_NO" typename="number"  length="10"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TOR_HORIZON_USER_POSITION</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TOR_HORIZON_USER_POS</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>			
+			<fieldinfo fieldname="USER_ID" typename="varchar"   length="32"></fieldinfo>	
+			<fieldinfo fieldname="POSITION_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="JOIN_TIME" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="ORDER_NO" typename="number"  length="10"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_TYPE" typename="varchar"   length="5"></fieldinfo>			
+			<fieldinfo fieldname="IS_PT" typename="varchar"   length="2"></fieldinfo>	
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TOR_HORIZON_POSITION_OBJ</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TOR_HORIZON_POS_OBJ</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>			
+			<fieldinfo fieldname="POSITION_ID" typename="varchar"   length="32"></fieldinfo>	
+			<fieldinfo fieldname="OBJECT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_TYPE" typename="varchar"   length="5"></fieldinfo>	
+			<fieldinfo fieldname="ORDER_NO" typename="number"  length="2"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 扩展信息定义 -->
+	    <name>TO_HORIZON_OBJECT_EXTEND</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TO_HORIZON_OBJECT_EXTEND</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_KEY" typename="varchar"   length="255" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_VALUE" typename="varchar" length="255" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_TYPE" typename="varchar" length="1" isnull="0"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<others>
+		<oracle>
+			<sql>CREATE INDEX IDX_TO_U_LOGIN_NAME ON TO_HORIZON_USER(LOGIN_NAME)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_DEPT_ID ON TOR_HORIZON_USER_DEPT(DEPT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_USER_ID ON TOR_HORIZON_USER_DEPT (USER_ID)</sql>
+			<sql> CREATE INDEX IDX_TO_D_PARENT_ID ON TO_HORIZON_DEPT (PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_D_DEPT_CODE ON TO_HORIZON_DEPT (DEPT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TO_OE_OBJECT_ID ON TO_HORIZON_OBJECT_EXTEND (OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_USER_ID ON TOR_HORIZON_USER_POSITION(USER_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_PARENT_ID ON TO_HORIZON_POSITION(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_POSITION_CODE ON TO_HORIZON_POSITION(POSITION_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_OBJECT_ID ON TOR_HORIZON_POSITION_OBJ(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_POSITION_ID ON TOR_HORIZON_USER_POSITION(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_POSITION_ID ON TOR_HORIZON_POSITION_OBJ(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_PARENT_ID ON TO_HORIZON_POSITION_TYPE(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_CATEGORY_CODE ON TO_HORIZON_POSITION_TYPE(CATEGORY_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_UW ON TOR_HORIZON_USER_GROUP(USER_ID,WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_G_PG ON TO_HORIZON_GROUP(PARENT_ID,GROUP_NAME)</sql>
+			<sql>CREATE INDEX IDX_TO_G_GROUP_CODE ON TO_HORIZON_GROUP(GROUP_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_WORKGROUP_ID ON TOR_HORIZON_USER_GROUP(WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_R_ROLE_CODE ON TO_HORIZON_ROLE(ROLE_CODE)</sql>
+			<sql>CREATE INDEX IDX_TO_UPS_USER_ID ON TO_HORIZON_USER_PWD_SAFE(USER_ID)</sql>
+		</oracle>
+		<mysql>
+			<sql>CREATE INDEX IDX_TO_U_LOGIN_NAME ON TO_HORIZON_USER(LOGIN_NAME)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_DEPT_ID ON TOR_HORIZON_USER_DEPT(DEPT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_USER_ID ON TOR_HORIZON_USER_DEPT (USER_ID)</sql>
+			<sql> CREATE INDEX IDX_TO_D_PARENT_ID ON TO_HORIZON_DEPT (PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_D_DEPT_CODE ON TO_HORIZON_DEPT (DEPT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TO_OE_OBJECT_ID ON TO_HORIZON_OBJECT_EXTEND (OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_USER_ID ON TOR_HORIZON_USER_POSITION(USER_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_PARENT_ID ON TO_HORIZON_POSITION(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_POSITION_CODE ON TO_HORIZON_POSITION(POSITION_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_OBJECT_ID ON TOR_HORIZON_POSITION_OBJ(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_POSITION_ID ON TOR_HORIZON_USER_POSITION(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_POSITION_ID ON TOR_HORIZON_POSITION_OBJ(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_PARENT_ID ON TO_HORIZON_POSITION_TYPE(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_CATEGORY_CODE ON TO_HORIZON_POSITION_TYPE(CATEGORY_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_UW ON TOR_HORIZON_USER_GROUP(USER_ID,WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_G_PG ON TO_HORIZON_GROUP(PARENT_ID,GROUP_NAME)</sql>
+			<sql>CREATE INDEX IDX_TO_G_GROUP_CODE ON TO_HORIZON_GROUP(GROUP_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_WORKGROUP_ID ON TOR_HORIZON_USER_GROUP(WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_R_ROLE_CODE ON TO_HORIZON_ROLE(ROLE_CODE)</sql>
+		</mysql>
+		<mysql8>
+			<sql>CREATE INDEX IDX_TO_U_LOGIN_NAME ON TO_HORIZON_USER(LOGIN_NAME)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_DEPT_ID ON TOR_HORIZON_USER_DEPT(DEPT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_USER_ID ON TOR_HORIZON_USER_DEPT (USER_ID)</sql>
+			<sql> CREATE INDEX IDX_TO_D_PARENT_ID ON TO_HORIZON_DEPT (PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_D_DEPT_CODE ON TO_HORIZON_DEPT (DEPT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TO_OE_OBJECT_ID ON TO_HORIZON_OBJECT_EXTEND (OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_USER_ID ON TOR_HORIZON_USER_POSITION(USER_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_PARENT_ID ON TO_HORIZON_POSITION(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_POSITION_CODE ON TO_HORIZON_POSITION(POSITION_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_OBJECT_ID ON TOR_HORIZON_POSITION_OBJ(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_POSITION_ID ON TOR_HORIZON_USER_POSITION(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_POSITION_ID ON TOR_HORIZON_POSITION_OBJ(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_PARENT_ID ON TO_HORIZON_POSITION_TYPE(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_CATEGORY_CODE ON TO_HORIZON_POSITION_TYPE(CATEGORY_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_UW ON TOR_HORIZON_USER_GROUP(USER_ID,WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_G_PG ON TO_HORIZON_GROUP(PARENT_ID,GROUP_NAME)</sql>
+			<sql>CREATE INDEX IDX_TO_G_GROUP_CODE ON TO_HORIZON_GROUP(GROUP_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_WORKGROUP_ID ON TOR_HORIZON_USER_GROUP(WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_R_ROLE_CODE ON TO_HORIZON_ROLE(ROLE_CODE)</sql>
+		</mysql8>
+		<db2>
+			<sql>CREATE INDEX IDX_TO_U_LOGIN_NAME ON TO_HORIZON_USER(LOGIN_NAME)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_DEPT_ID ON TOR_HORIZON_USER_DEPT(DEPT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_USER_ID ON TOR_HORIZON_USER_DEPT (USER_ID)</sql>
+			<sql> CREATE INDEX IDX_TO_D_PARENT_ID ON TO_HORIZON_DEPT (PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_D_DEPT_CODE ON TO_HORIZON_DEPT (DEPT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TO_OE_OBJECT_ID ON TO_HORIZON_OBJECT_EXTEND (OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_USER_ID ON TOR_HORIZON_USER_POSITION(USER_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_PARENT_ID ON TO_HORIZON_POSITION(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_POSITION_CODE ON TO_HORIZON_POSITION(POSITION_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_OBJECT_ID ON TOR_HORIZON_POSITION_OBJ(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_POSITION_ID ON TOR_HORIZON_USER_POSITION(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_POSITION_ID ON TOR_HORIZON_POSITION_OBJ(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_PARENT_ID ON TO_HORIZON_POSITION_TYPE(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_CATEGORY_CODE ON TO_HORIZON_POSITION_TYPE(CATEGORY_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_UW ON TOR_HORIZON_USER_GROUP(USER_ID,WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_G_PG ON TO_HORIZON_GROUP(PARENT_ID,GROUP_NAME)</sql>
+			<sql>CREATE INDEX IDX_TO_G_GROUP_CODE ON TO_HORIZON_GROUP(GROUP_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_WORKGROUP_ID ON TOR_HORIZON_USER_GROUP(WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_R_ROLE_CODE ON TO_HORIZON_ROLE(ROLE_CODE)</sql>
+		</db2>
+		<sqlserver>
+			<sql>CREATE INDEX IDX_TO_U_LOGIN_NAME ON TO_HORIZON_USER(LOGIN_NAME)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_DEPT_ID ON TOR_HORIZON_USER_DEPT(DEPT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_USER_ID ON TOR_HORIZON_USER_DEPT (USER_ID)</sql>
+			<sql> CREATE INDEX IDX_TO_D_PARENT_ID ON TO_HORIZON_DEPT (PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_D_DEPT_CODE ON TO_HORIZON_DEPT (DEPT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TO_OE_OBJECT_ID ON TO_HORIZON_OBJECT_EXTEND (OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_USER_ID ON TOR_HORIZON_USER_POSITION(USER_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_PARENT_ID ON TO_HORIZON_POSITION(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_POSITION_CODE ON TO_HORIZON_POSITION(POSITION_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_OBJECT_ID ON TOR_HORIZON_POSITION_OBJ(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_POSITION_ID ON TOR_HORIZON_USER_POSITION(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_POSITION_ID ON TOR_HORIZON_POSITION_OBJ(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_PARENT_ID ON TO_HORIZON_POSITION_TYPE(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_CATEGORY_CODE ON TO_HORIZON_POSITION_TYPE(CATEGORY_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_UW ON TOR_HORIZON_USER_GROUP(USER_ID,WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_G_PG ON TO_HORIZON_GROUP(PARENT_ID,GROUP_NAME)</sql>
+			<sql>CREATE INDEX IDX_TO_G_GROUP_CODE ON TO_HORIZON_GROUP(GROUP_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_WORKGROUP_ID ON TOR_HORIZON_USER_GROUP(WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_R_ROLE_CODE ON TO_HORIZON_ROLE(ROLE_CODE)</sql>
+		</sqlserver>
+		<dm>
+			<sql>CREATE INDEX IDX_TO_U_LOGIN_NAME ON TO_HORIZON_USER(LOGIN_NAME)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_DEPT_ID ON TOR_HORIZON_USER_DEPT(DEPT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_USER_ID ON TOR_HORIZON_USER_DEPT (USER_ID)</sql>
+			<sql> CREATE INDEX IDX_TO_D_PARENT_ID ON TO_HORIZON_DEPT (PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_D_DEPT_CODE ON TO_HORIZON_DEPT (DEPT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TO_OE_OBJECT_ID ON TO_HORIZON_OBJECT_EXTEND (OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_USER_ID ON TOR_HORIZON_USER_POSITION(USER_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_PARENT_ID ON TO_HORIZON_POSITION(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_POSITION_CODE ON TO_HORIZON_POSITION(POSITION_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_OBJECT_ID ON TOR_HORIZON_POSITION_OBJ(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_POSITION_ID ON TOR_HORIZON_USER_POSITION(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_POSITION_ID ON TOR_HORIZON_POSITION_OBJ(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_PARENT_ID ON TO_HORIZON_POSITION_TYPE(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_CATEGORY_CODE ON TO_HORIZON_POSITION_TYPE(CATEGORY_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_UW ON TOR_HORIZON_USER_GROUP(USER_ID,WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_G_PG ON TO_HORIZON_GROUP(PARENT_ID,GROUP_NAME)</sql>
+			<sql>CREATE INDEX IDX_TO_G_GROUP_CODE ON TO_HORIZON_GROUP(GROUP_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_WORKGROUP_ID ON TOR_HORIZON_USER_GROUP(WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_R_ROLE_CODE ON TO_HORIZON_ROLE(ROLE_CODE)</sql>
+		</dm>
+		<postgresql>
+			<sql>CREATE INDEX IDX_TO_U_LOGIN_NAME ON TO_HORIZON_USER(LOGIN_NAME)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_DEPT_ID ON TOR_HORIZON_USER_DEPT(DEPT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_USER_ID ON TOR_HORIZON_USER_DEPT (USER_ID)</sql>
+			<sql> CREATE INDEX IDX_TO_D_PARENT_ID ON TO_HORIZON_DEPT (PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_D_DEPT_CODE ON TO_HORIZON_DEPT (DEPT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TO_OE_OBJECT_ID ON TO_HORIZON_OBJECT_EXTEND (OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_USER_ID ON TOR_HORIZON_USER_POSITION(USER_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_PARENT_ID ON TO_HORIZON_POSITION(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_POSITION_CODE ON TO_HORIZON_POSITION(POSITION_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_OBJECT_ID ON TOR_HORIZON_POSITION_OBJ(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_POSITION_ID ON TOR_HORIZON_USER_POSITION(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_POSITION_ID ON TOR_HORIZON_POSITION_OBJ(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_PARENT_ID ON TO_HORIZON_POSITION_TYPE(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_CATEGORY_CODE ON TO_HORIZON_POSITION_TYPE(CATEGORY_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_UW ON TOR_HORIZON_USER_GROUP(USER_ID,WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_G_PG ON TO_HORIZON_GROUP(PARENT_ID,GROUP_NAME)</sql>
+			<sql>CREATE INDEX IDX_TO_G_GROUP_CODE ON TO_HORIZON_GROUP(GROUP_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_WORKGROUP_ID ON TOR_HORIZON_USER_GROUP(WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_R_ROLE_CODE ON TO_HORIZON_ROLE(ROLE_CODE)</sql>
+		</postgresql>
+		<highgo>
+			<sql>CREATE INDEX IDX_TO_U_LOGIN_NAME ON TO_HORIZON_USER(LOGIN_NAME)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_DEPT_ID ON TOR_HORIZON_USER_DEPT(DEPT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_USER_ID ON TOR_HORIZON_USER_DEPT (USER_ID)</sql>
+			<sql> CREATE INDEX IDX_TO_D_PARENT_ID ON TO_HORIZON_DEPT (PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_D_DEPT_CODE ON TO_HORIZON_DEPT (DEPT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TO_OE_OBJECT_ID ON TO_HORIZON_OBJECT_EXTEND (OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_USER_ID ON TOR_HORIZON_USER_POSITION(USER_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_PARENT_ID ON TO_HORIZON_POSITION(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_POSITION_CODE ON TO_HORIZON_POSITION(POSITION_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_OBJECT_ID ON TOR_HORIZON_POSITION_OBJ(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_POSITION_ID ON TOR_HORIZON_USER_POSITION(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_POSITION_ID ON TOR_HORIZON_POSITION_OBJ(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_PARENT_ID ON TO_HORIZON_POSITION_TYPE(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_CATEGORY_CODE ON TO_HORIZON_POSITION_TYPE(CATEGORY_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_UW ON TOR_HORIZON_USER_GROUP(USER_ID,WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_G_PG ON TO_HORIZON_GROUP(PARENT_ID,GROUP_NAME)</sql>
+			<sql>CREATE INDEX IDX_TO_G_GROUP_CODE ON TO_HORIZON_GROUP(GROUP_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_WORKGROUP_ID ON TOR_HORIZON_USER_GROUP(WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_R_ROLE_CODE ON TO_HORIZON_ROLE(ROLE_CODE)</sql>
+		</highgo>
+		<gbase>
+			<sql>CREATE INDEX IDX_TO_U_LOGIN_NAME ON TO_HORIZON_USER(LOGIN_NAME)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_DEPT_ID ON TOR_HORIZON_USER_DEPT(DEPT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_USER_ID ON TOR_HORIZON_USER_DEPT (USER_ID)</sql>
+			<sql> CREATE INDEX IDX_TO_D_PARENT_ID ON TO_HORIZON_DEPT (PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_D_DEPT_CODE ON TO_HORIZON_DEPT (DEPT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TO_OE_OBJECT_ID ON TO_HORIZON_OBJECT_EXTEND (OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_USER_ID ON TOR_HORIZON_USER_POSITION(USER_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_PARENT_ID ON TO_HORIZON_POSITION(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_POSITION_CODE ON TO_HORIZON_POSITION(POSITION_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_OBJECT_ID ON TOR_HORIZON_POSITION_OBJ(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_POSITION_ID ON TOR_HORIZON_USER_POSITION(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_POSITION_ID ON TOR_HORIZON_POSITION_OBJ(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_PARENT_ID ON TO_HORIZON_POSITION_TYPE(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_CATEGORY_CODE ON TO_HORIZON_POSITION_TYPE(CATEGORY_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_UW ON TOR_HORIZON_USER_GROUP(USER_ID,WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_G_PG ON TO_HORIZON_GROUP(PARENT_ID,GROUP_NAME)</sql>
+			<sql>CREATE INDEX IDX_TO_G_GROUP_CODE ON TO_HORIZON_GROUP(GROUP_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_WORKGROUP_ID ON TOR_HORIZON_USER_GROUP(WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_R_ROLE_CODE ON TO_HORIZON_ROLE(ROLE_CODE)</sql>
+		</gbase>
+		<gbase8s>
+			<sql>CREATE INDEX IDX_TO_U_LOGIN_NAME ON TO_HORIZON_USER(LOGIN_NAME)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_DEPT_ID ON TOR_HORIZON_USER_DEPT(DEPT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_USER_ID ON TOR_HORIZON_USER_DEPT (USER_ID)</sql>
+			<sql> CREATE INDEX IDX_TO_D_PARENT_ID ON TO_HORIZON_DEPT (PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_D_DEPT_CODE ON TO_HORIZON_DEPT (DEPT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TO_OE_OBJECT_ID ON TO_HORIZON_OBJECT_EXTEND (OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_USER_ID ON TOR_HORIZON_USER_POSITION(USER_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_PARENT_ID ON TO_HORIZON_POSITION(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_POSITION_CODE ON TO_HORIZON_POSITION(POSITION_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_OBJECT_ID ON TOR_HORIZON_POSITION_OBJ(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_POSITION_ID ON TOR_HORIZON_USER_POSITION(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_POSITION_ID ON TOR_HORIZON_POSITION_OBJ(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_PARENT_ID ON TO_HORIZON_POSITION_TYPE(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_CATEGORY_CODE ON TO_HORIZON_POSITION_TYPE(CATEGORY_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_UW ON TOR_HORIZON_USER_GROUP(USER_ID,WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_G_PG ON TO_HORIZON_GROUP(PARENT_ID,GROUP_NAME)</sql>
+			<sql>CREATE INDEX IDX_TO_G_GROUP_CODE ON TO_HORIZON_GROUP(GROUP_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_WORKGROUP_ID ON TOR_HORIZON_USER_GROUP(WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_R_ROLE_CODE ON TO_HORIZON_ROLE(ROLE_CODE)</sql>
+		</gbase8s>
+		<kingbase>
+			<sql>CREATE INDEX IDX_TO_U_LOGIN_NAME ON TO_HORIZON_USER(LOGIN_NAME)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_DEPT_ID ON TOR_HORIZON_USER_DEPT(DEPT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_USER_ID ON TOR_HORIZON_USER_DEPT (USER_ID)</sql>
+			<sql> CREATE INDEX IDX_TO_D_PARENT_ID ON TO_HORIZON_DEPT (PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_D_DEPT_CODE ON TO_HORIZON_DEPT (DEPT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TO_OE_OBJECT_ID ON TO_HORIZON_OBJECT_EXTEND (OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_USER_ID ON TOR_HORIZON_USER_POSITION(USER_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_PARENT_ID ON TO_HORIZON_POSITION(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_POSITION_CODE ON TO_HORIZON_POSITION(POSITION_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_OBJECT_ID ON TOR_HORIZON_POSITION_OBJ(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_POSITION_ID ON TOR_HORIZON_USER_POSITION(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_POSITION_ID ON TOR_HORIZON_POSITION_OBJ(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_PARENT_ID ON TO_HORIZON_POSITION_TYPE(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_CATEGORY_CODE ON TO_HORIZON_POSITION_TYPE(CATEGORY_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_UW ON TOR_HORIZON_USER_GROUP(USER_ID,WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_G_PG ON TO_HORIZON_GROUP(PARENT_ID,GROUP_NAME)</sql>
+			<sql>CREATE INDEX IDX_TO_G_GROUP_CODE ON TO_HORIZON_GROUP(GROUP_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_WORKGROUP_ID ON TOR_HORIZON_USER_GROUP(WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_R_ROLE_CODE ON TO_HORIZON_ROLE(ROLE_CODE)</sql>
+		</kingbase>
+		<kingbase8>
+			<sql>CREATE INDEX IDX_TO_U_LOGIN_NAME ON TO_HORIZON_USER(LOGIN_NAME)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_DEPT_ID ON TOR_HORIZON_USER_DEPT(DEPT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_USER_ID ON TOR_HORIZON_USER_DEPT (USER_ID)</sql>
+			<sql> CREATE INDEX IDX_TO_D_PARENT_ID ON TO_HORIZON_DEPT (PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_D_DEPT_CODE ON TO_HORIZON_DEPT (DEPT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TO_OE_OBJECT_ID ON TO_HORIZON_OBJECT_EXTEND (OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_USER_ID ON TOR_HORIZON_USER_POSITION(USER_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_PARENT_ID ON TO_HORIZON_POSITION(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_POSITION_CODE ON TO_HORIZON_POSITION(POSITION_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_OBJECT_ID ON TOR_HORIZON_POSITION_OBJ(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_POSITION_ID ON TOR_HORIZON_USER_POSITION(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_POSITION_ID ON TOR_HORIZON_POSITION_OBJ(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_PARENT_ID ON TO_HORIZON_POSITION_TYPE(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_CATEGORY_CODE ON TO_HORIZON_POSITION_TYPE(CATEGORY_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_UW ON TOR_HORIZON_USER_GROUP(USER_ID,WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_G_PG ON TO_HORIZON_GROUP(PARENT_ID,GROUP_NAME)</sql>
+			<sql>CREATE INDEX IDX_TO_G_GROUP_CODE ON TO_HORIZON_GROUP(GROUP_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_WORKGROUP_ID ON TOR_HORIZON_USER_GROUP(WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_R_ROLE_CODE ON TO_HORIZON_ROLE(ROLE_CODE)</sql>
+		</kingbase8>
+		<oscar>
+			<sql>CREATE INDEX IDX_TO_U_LOGIN_NAME ON TO_HORIZON_USER(LOGIN_NAME)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_DEPT_ID ON TOR_HORIZON_USER_DEPT(DEPT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_USER_ID ON TOR_HORIZON_USER_DEPT (USER_ID)</sql>
+			<sql> CREATE INDEX IDX_TO_D_PARENT_ID ON TO_HORIZON_DEPT (PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_D_DEPT_CODE ON TO_HORIZON_DEPT (DEPT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TO_OE_OBJECT_ID ON TO_HORIZON_OBJECT_EXTEND (OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_USER_ID ON TOR_HORIZON_USER_POSITION(USER_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_PARENT_ID ON TO_HORIZON_POSITION(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_POSITION_CODE ON TO_HORIZON_POSITION(POSITION_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_OBJECT_ID ON TOR_HORIZON_POSITION_OBJ(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_POSITION_ID ON TOR_HORIZON_USER_POSITION(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_POSITION_ID ON TOR_HORIZON_POSITION_OBJ(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_PARENT_ID ON TO_HORIZON_POSITION_TYPE(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_CATEGORY_CODE ON TO_HORIZON_POSITION_TYPE(CATEGORY_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_UW ON TOR_HORIZON_USER_GROUP(USER_ID,WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_G_PG ON TO_HORIZON_GROUP(PARENT_ID,GROUP_NAME)</sql>
+			<sql>CREATE INDEX IDX_TO_G_GROUP_CODE ON TO_HORIZON_GROUP(GROUP_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_WORKGROUP_ID ON TOR_HORIZON_USER_GROUP(WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_R_ROLE_CODE ON TO_HORIZON_ROLE(ROLE_CODE)</sql>
+		</oscar>
+		<upbase>
+			<sql>CREATE INDEX IDX_TO_U_LOGIN_NAME ON TO_HORIZON_USER(LOGIN_NAME)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_DEPT_ID ON TOR_HORIZON_USER_DEPT(DEPT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UD_USER_ID ON TOR_HORIZON_USER_DEPT (USER_ID)</sql>
+			<sql> CREATE INDEX IDX_TO_D_PARENT_ID ON TO_HORIZON_DEPT (PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_D_DEPT_CODE ON TO_HORIZON_DEPT (DEPT_CODE)</sql>
+			<sql>CREATE INDEX IDX_TO_OE_OBJECT_ID ON TO_HORIZON_OBJECT_EXTEND (OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_USER_ID ON TOR_HORIZON_USER_POSITION(USER_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_PARENT_ID ON TO_HORIZON_POSITION(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_P_POSITION_CODE ON TO_HORIZON_POSITION(POSITION_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_OBJECT_ID ON TOR_HORIZON_POSITION_OBJ(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_UP_POSITION_ID ON TOR_HORIZON_USER_POSITION(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TOR_PO_POSITION_ID ON TOR_HORIZON_POSITION_OBJ(POSITION_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_PARENT_ID ON TO_HORIZON_POSITION_TYPE(PARENT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_PT_CATEGORY_CODE ON TO_HORIZON_POSITION_TYPE(CATEGORY_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_UW ON TOR_HORIZON_USER_GROUP(USER_ID,WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_G_PG ON TO_HORIZON_GROUP(PARENT_ID,GROUP_NAME)</sql>
+			<sql>CREATE INDEX IDX_TO_G_GROUP_CODE ON TO_HORIZON_GROUP(GROUP_CODE)</sql>
+			<sql>CREATE INDEX IDX_TOR_UG_WORKGROUP_ID ON TOR_HORIZON_USER_GROUP(WORKGROUP_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_R_ROLE_CODE ON TO_HORIZON_ROLE(ROLE_CODE)</sql>
+		</upbase>
+	</others>
+</tableinfo>

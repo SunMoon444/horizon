@@ -1,0 +1,42 @@
+.profile-table{
+  	margin: 0 8px;
+}
+.profile-table table {
+	margin-bottom:0px;
+	font-size:15px;
+	word-wrap: break-word;
+    white-space: normal;
+    word-break:break-all;    
+}
+.error{
+	color:red;
+}
+.lead{
+	padding: 0px 0px;
+	margin-bottom: 10px;
+}
+
+.profile-form{
+	margin-bottom:30px;
+}
+.profile-form label i{
+	color:red;
+	font-style:normal;
+}
+
+.explain{
+	color:#0080ff;
+	display:block;
+}
+.profile-form .row{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.lead .btn{
+	margin:0 0.5em 0 0;
+}
+.profile-container{
+	border-bottom: 1px solid #dddddd;
+	margin-bottom:1em;
+}
+

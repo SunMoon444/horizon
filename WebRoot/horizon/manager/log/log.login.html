@@ -1,0 +1,202 @@
+<title>hz{platform-log.largeTitle}</title>
+<hi18n  groups="platform-log;base;message" ></hi18n>
+<div class="horizon-modal-container">
+    <div class="page-header smaller">
+        <h1>
+            hz{platform-log.sysManager}
+            <small>
+                <i class="ace-icon fa fa-angle-double-right"></i>
+                hz{platform-log.sysLog}
+            </small>
+        </h1>
+    </div>
+    <div class="horizon-modal-container">
+        <div id="logInfo" class="log-iframe-container">
+            <iframe name="logList" frameborder="0" id="logList" src="" width="100%" class="iframeBorder"></iframe>
+        </div>
+        <div class="hidden log-iframe-container" id="operateLogInfo">
+            <iframe name="operatelogList" frameborder="0" id="operatelogList" src="" width="100%"
+                    class="iframeBorder"></iframe>
+        </div>
+    </div>
+    <div class="hidden other-content-area log-iframe-container" id="lookLogInfo">
+        <form class="form-horizontal" id="logForm" role="form">
+            <div class="horizon-tab">
+                <div class="tab-content" id="baseInfo">
+                    <div class="col-sm-12">
+                        <div class="space-4">
+                            <input type="hidden" name="id"/>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.logType}</label>
+                                <div class="form-group no-margin">
+                                    <input type="hidden" name="loginType">
+                                    <input class="col-xs-12" type="text" name="loginType" readonly="readonly">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.loginAccount}</label>
+                                <div class="form-group no-margin">
+                                    <input class="col-xs-12" type="text" readonly="readonly" name="loginName">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.userName}</label>
+                                <div class="form-group no-margin">
+                                    <input class="col-xs-12" type="text" name="realName" readonly="readonly">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.dept}</label>
+                                <div class="form-group no-margin">
+                                    <input class="col-xs-12" type="text" name="deptName" readonly="readonly">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.ipAddress}</label>
+                                <div class="form-group no-margin">
+                                    <input class="col-xs-12" name="ip" type="text" readonly="readonly">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.operateTime}</label>
+                                <div class="form-group no-margin">
+                                    <input class="col-xs-12" name="loginTime" readonly="readonly" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.result}</label>
+                                <div class="form-group no-margin">
+                                    <input class="col-xs-12" name="loginResult" readonly="readonly" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.recordContent}</label>
+                                <div class="form-group no-margin">
+                                    <textarea class="form-control" style="resize: none" name="logContext" placeholder=hz{message.input}
+                                              rows="2" maxlength="200"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="hidden other-content-area log-iframe-container" id="lookOperateLogInfo">
+        <form class="form-horizontal" id="OperateLogForm" role="form">
+            <div class="horizon-tab">
+                <div class="tab-content" id="OperateLogBaseInfo">
+                    <div class="col-sm-12">
+                        <input type="hidden" name="id"/>
+                        <div class="row">
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.logType}</label>
+                                <div class="form-group no-margin">
+                                    <input class="col-xs-12" type="text" name="logType" readonly="readonly">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.moduleName}</label>
+                                <div class="form-group no-margin">
+                                    <input class="col-xs-12" type="text" readonly="readonly" name="moduleName">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.userName}</label>
+                                <div class="form-group no-margin">
+                                    <input class="col-xs-12" type="text" readonly="readonly" name="userName">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.logName}</label>
+                                <div class="form-group no-margin">
+                                    <input class="col-xs-12" readonly="readonly" type="text" name="logName">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.dept}</label>
+                                <div class="form-group no-margin">
+                                    <input class="col-xs-12" name="deptName" readonly="readonly" type="text">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.operateTime}</label>
+                                <div class="form-group no-margin">
+                                    <input class="col-xs-12" readonly="readonly" name="operTime" type="text">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.result}</label>
+                                <div class="form-group no-margin">
+                                    <input class="col-xs-12" name="operResult" readonly="readonly" type="text">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.byteCount}</label>
+                                <div class="form-group no-margin">
+                                    <input class="col-xs-12" name="httpBytes" readonly="readonly" type="text">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.ipAddress}</label>
+                                <div class="form-group no-margin">
+                                    <input class="col-xs-12" name="ip" readonly="readonly" type="text">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.userAgent}</label>
+                                <div class="form-group no-margin">
+                                    <input class="col-xs-12" name="userAgent" readonly="readonly" type="text">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.reverseConnection}</label>
+                                <div class="form-group no-margin">
+                                    <input class="col-xs-12" name="httpReferrer" readonly="readonly" type="text">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.httpRequest}</label>
+                                <div class="form-group no-margin">
+                                    <input class="col-xs-12" name="httpRequest" readonly="readonly" type="text">
+                                </div>
+                            </div>
+                            <div class="col-sm-12 form-group no-margin-left no-margin-right">
+                                <label class="control-label no-padding-right">hz{platform-log.recordContent}</label>
+                                <div class="form-group no-margin">
+                                    <textarea class="form-control" style="resize: none" name="logContext" placeholder=hz{message.input}
+                                              rows="2" maxlength="200"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="dialog"></div>
+<script>
+    jQuery(function ($) {
+        require([horizon.paths.apppath + '/horizon/assets/manager/log/js/log.login.js'
+            ],
+            function () {
+                horizon.tools.use(horizon.paths.pluginpath
+                    + '/ztree/css/zTreeStyle/zTreeStyle.css');
+                horizon.manager.loginlogout.init();
+                $('.page-content-area').trigger('ajaxscriptsloaded');
+            });
+
+    });
+</script>

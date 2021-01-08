@@ -1,0 +1,130 @@
+<title>hz{agent-common.setupTitle}</title>
+<hi18n  groups="manager-agent;agent-common;base;message;datatables;validator;datetimepicker;selectuser"></hi18n>
+<div class="page-header smaller">
+	<h1>
+		hz{agent-common.setupTitle}
+        <small class="hidden-xs">
+            <i class="ace-icon fa fa-angle-double-right"></i>
+			hz{agent-common.setupSmallTitle}
+		</small>
+		<div class="embed-toggle-sidebar-container hidden-md hidden-lg pull-right">
+            <button class="navbar-toggle toggle-sidebar" type="button" data-target="#toggle-sidebar">
+                <span class="sr-only">Toggle横向菜单</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button class="navbar-toggle toggle-sidebar2" type="button" data-target="#toggle-sidebar2" >
+                <span class="sr-only">Toggle左侧菜单</span>
+                <i class="ace-icon fa fa-dashboard bigger-110"></i>
+            </button>
+        </div>
+	</h1>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+        <table id="myDatatable" class="table table-hover"></table>
+    </div>
+</div>
+<div class="hidden" id="setFlowAgent">
+	<div class="space-6"></div>
+	<form class="form-horizontal no-margin-bottom" id="setAgent">
+		<input type="hidden" name="actionName" />
+		<input type="hidden" name="ids" />
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{agent-common.agentUserName}:</label>
+					<div class="col-xs-12 col-sm-5">
+						<input class="no-margin col-sm-12 pointer" name="agentName" readonly type="text" required>
+						<input type="hidden" name="agentID">
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{agent-common.beginDate}:</label>
+					<div class="col-xs-12 col-sm-5">
+						<div class="input-group">
+							<input class="form-control hasDatepicker pointer" readonly name="begindate" type="text" required>
+							<span class="input-group-addon">
+								<i class="ace-icon fa fa-calendar"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{agent-common.endDate}:</label>
+					<div class="col-xs-12 col-sm-5">
+						<div class="input-group ">
+							<input class="form-control hasDatepicker pointer" readonly name="enddate" type="text" required>
+							<span class="input-group-addon">
+								<i class="ace-icon fa fa-calendar"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{manager-agent.noticeType}:</label>
+					<div class="col-xs-12 col-sm-9 no-padding">
+						<div class="checkbox checkbox-scope">
+			            	<label>
+			                   <input type="checkbox" name="noticetype" class="ace" value="Msg">
+			                   <span class="lbl">hz{manager-agent.msg} </span>
+			                </label>
+			                <label>
+			                    <input type="checkbox" name="noticetype" class="ace" value="SMS">
+			                    <span class="lbl"> hz{manager-agent.sms} </span>
+			                </label>
+			                <label>
+			                    <input type="checkbox" name="noticetype" class="ace" value="IM">
+			                    <span class="lbl"> hz{manager-agent.im} </span>
+			                </label>
+			                <label>
+			                     <input type="checkbox" name="noticetype" class="ace" value="Mail">
+			                     <span class="lbl"> hz{manager-agent.mail} </span>
+			                 </label>
+		                </div>
+		          </div>
+		        </div>
+	        </div>
+	        <div class="col-xs-12">
+		        <div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{manager-agent.moveTodo}:</label>
+					<div class="col-sm-9 no-padding">
+						<div class="radio radio-scope">
+		                     <label>
+		                        <input type="radio" name="movetodo" class="ace" value="1" checked>
+		                        <span class="lbl"> hz{manager-agent.yes} </span>
+		                     </label>
+		                     <label>
+		                         <input type="radio" name="movetodo" class="ace" value="0">
+		                         <span class="lbl"> hz{manager-agent.no}</span>
+		                     </label>
+		                </div>                                                    
+		           </div>
+			   </div>
+		   </div>
+	   </div>
+   </form>
+</div>
+<div class="hidden" id="flowagentsetup-dialog"></div>
+<script type="text/javascript">
+jQuery(function($) {
+	require([horizon.paths.assetspath + '/manager/workcenter/agent/js/setup.list.js'], function() {
+		horizon.language.plugins.datatables();
+		horizon.language.plugins.validator();
+		horizon.language.plugins.datetimepicker();
+		horizon.language.plugins.selectuser();
+	    horizon.tools.use(horizon.paths.pluginpath + '/ztree/css/zTreeStyle/zTreeStyle.css');
+		horizon.tools.use(horizon.paths.pluginpath + '/date-time/date-picker/css/datepicker.css');
+	    horizon.engine.setuplist.initTable();
+		horizon.engine.setuplist.initSetAgentForm();
+	    $('.page-content-area').trigger('ajaxscriptsloaded');
+	});
+});
+</script>

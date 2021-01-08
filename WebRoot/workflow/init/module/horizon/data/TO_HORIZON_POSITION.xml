@@ -1,0 +1,34 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="TO_HORIZON_POSITION">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:string" minOccurs="0" />
+                <xs:element name="POSITION_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="CREATED" type="xs:string" minOccurs="0" />
+                <xs:element name="MODIFIED" type="xs:string" minOccurs="0" />
+                <xs:element name="CREATOR" type="xs:string" minOccurs="0" />
+                <xs:element name="MODIFICATOR" type="xs:string" minOccurs="0" />
+                <xs:element name="RECYCLE" type="xs:string" minOccurs="0" />
+                <xs:element name="POSITION_CODE" type="xs:string" minOccurs="0" />
+                <xs:element name="PARENT_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="POSITION_DESCRIPTION" type="xs:string" minOccurs="0" />
+                <xs:element name="PARENT_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="POSITION_TYPE_ID" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <TO_HORIZON_POSITION>
+    <ID>root_node_id</ID>
+    <POSITION_NAME>岗位导航</POSITION_NAME>
+    <POSITION_CODE>root_node_id</POSITION_CODE>
+  </TO_HORIZON_POSITION>
+</NewDataSet>

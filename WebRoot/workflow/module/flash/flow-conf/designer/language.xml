@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Language>
+	<Item id="OuterSelect">由外部设置办理人</Item>
+	<Item id="ManualSelect">需要从设置列表中选择办理人</Item>
+	<Item id="FreeSelect">办理人为空时，允许自由选择</Item>
+	<Item id="AutoPass">办理人为空时，跳过此节点</Item>
+	<Item id="Assign">进入该节点后，人工指派</Item>
+	<Item id="PassCurUser">办理人包含当前人时，跳过此人</Item>
+	<!--<Item id="Offered">办理人之一主动认领任务</Item>-->
+	<Item id="AgentFlag">代办设置生效</Item>
+	<Item id="GotoSelect">跳转到此节点时,允许自由选择</Item>
+	<Item id="OuterReader">由外部指定读者</Item>
+	<Item id="Relation1">当前实例全体参与者</Item>
+	<Item id="Relation2">仅结束节点指定的参与者</Item>
+	<Item id="OnlySelectUser">仅允许选择人员</Item>
+	<Item id="Todo">待办</Item>
+	<Item id="Read">待阅</Item>
+	<Item id="Mail">邮件</Item>
+	<Item id="Msg">系统消息</Item>
+	<Item id="SMS">短信</Item>
+	<Item id="IM">即时消息</Item>
+	<Item id="">允许</Item>
+	<!-- 异常 -->
+	<Item id="WFE_0001">实例创建事件异常</Item>
+	<Item id="WFE_0010">节点超期</Item>
+	<Item id="WFE_0020">事件接口执行失败</Item>
+	<Item id="WFE_0030">事件节点自动提交失败</Item>
+	<Item id="WFE_0040">网关接口执行失败</Item>
+
+	<Item id="WFE_0060">节点进入事件执行失败</Item>
+	<Item id="WFE_0070">节点离开事件执行失败</Item>
+	<Item id="WFE_0080">当前节点实例打开事件执行失败</Item>
+	<Item id="WFE_0090">节点操作完成事件执行失败</Item>
+	<Item id="WFE_0120">节点进入规则运算异常</Item>
+	<Item id="WFE_0140">节点自动激活执行失败</Item>
+	<!-- <Item id="WFE_0150">节点自动离开执行失败</Item> -->
+	<Item id="WFE_0160">节点结束规则运算异常</Item>
+	<Item id="WFE_0200">自动节点程序执行异常</Item>
+	<Item id="WFE_0210">自动节点业务规则执行异常</Item>
+	<Item id="WFE_0220">自动节点服务执行异常</Item>
+	<Item id="WFE_0230">全局超期</Item>
+	<Item id=""></Item>
+</Language>

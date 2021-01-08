@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 首页定制相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TL_HORIZON_CONTENT</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TL_HORIZON_CONTENT</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="CODE" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="CONTENT_LINK" typename="lvarchar"   length="300"></fieldinfo>
+			<fieldinfo fieldname="NAME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="PARENT" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="TYPE" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="EXTEND" typename="lvarchar"   length="300"></fieldinfo>
+			<fieldinfo fieldname="LINK_TYPE" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="VIEW_LINK" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="COLUMN_LINK" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="COLUMN_MODULE" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="TITLEFLG" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="HEIGHT" typename="varchar"   length="10"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TL_HORIZON_FORMAT</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TL_HORIZON_FORMAT</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="LAYOUT_CODE" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="NAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="LAYOUT_FILE" typename="lvarchar"   length="300"></fieldinfo>
+			<fieldinfo fieldname="LAYOUT_SIZE" typename="number"   length="10"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TL_HORIZON_NAVIGATION</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TL_HORIZON_NAVIGATION</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="NAME" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="PARENT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="MENU_CODE" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="PATH_LINK" typename="lvarchar" length="300"></fieldinfo>
+			<fieldinfo fieldname="IMG_LINK" typename="lvarchar"   length="300"></fieldinfo>
+			<fieldinfo fieldname="LINK_TYPE" typename="varchar"   length="6"></fieldinfo>
+			<fieldinfo fieldname="ORDER_NO" typename="number"></fieldinfo>
+			<fieldinfo fieldname="ACTIVE" typename="varchar"   length="1"></fieldinfo>
+			<fieldinfo fieldname="REMARK" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="LINK_TARGET" typename="varchar"   length="10"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TL_HORIZON_PROTOCOL</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TL_HORIZON_PROTOCOL</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="CONTENT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="ORDER_NO"  typename="varchar"   length="10"></fieldinfo>
+			<fieldinfo fieldname="ROLE_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="LAYOUT_TYPE" typename="varchar"   length="10"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TL_HORIZON_SELECTED</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TL_HORIZON_SELECTED</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="USER_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="LAYOUT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="CONTENT"  typename="lvarchar"   length="500"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+</tableinfo>

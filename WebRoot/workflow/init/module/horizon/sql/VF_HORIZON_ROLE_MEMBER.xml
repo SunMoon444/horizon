@@ -1,0 +1,304 @@
+<tableinfo>
+    <others>
+        <db2>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_role_member as
+                (
+                select tr.id,r.role_name,u.name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_user u,to_horizon_role r where r.id=tr.role_id and tr.object_id=u.id and tr.object_type='U'
+
+                union
+
+                select tr.id,r.role_name,d.dept_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_dept d,to_horizon_role r where r.id=tr.role_id and tr.object_id=d.id and tr.object_type='D'
+
+                union
+
+                select tr.id,r.role_name,g.group_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_group g,to_horizon_role r where r.id=tr.role_id and tr.object_id=g.id and tr.object_type='G'
+
+                union
+
+                select tr.id,r.role_name,p.position_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_position p,to_horizon_role r where r.id=tr.role_id and tr.object_id=p.id and tr.object_type='P'
+                )
+                ]]>
+            </sql>
+        </db2>
+        <dm>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_role_member as
+                (
+                select tr.id,r.role_name,u.name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_user u,to_horizon_role r where r.id=tr.role_id and tr.object_id=u.id and tr.object_type='U'
+
+                union
+
+                select tr.id,r.role_name,d.dept_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_dept d,to_horizon_role r where r.id=tr.role_id and tr.object_id=d.id and tr.object_type='D'
+
+                union
+
+                select tr.id,r.role_name,g.group_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_group g,to_horizon_role r where r.id=tr.role_id and tr.object_id=g.id and tr.object_type='G'
+
+                union
+
+                select tr.id,r.role_name,p.position_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_position p,to_horizon_role r where r.id=tr.role_id and tr.object_id=p.id and tr.object_type='P'
+                )
+                ]]>
+            </sql>
+        </dm>
+        <gbase>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_role_member as
+                select tr.id,r.role_name,u.name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_user u,to_horizon_role r where r.id=tr.role_id and tr.object_id=u.id and tr.object_type='U'
+
+                union
+
+                select tr.id,r.role_name,d.dept_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_dept d,to_horizon_role r where r.id=tr.role_id and tr.object_id=d.id and tr.object_type='D'
+
+                union
+
+                select tr.id,r.role_name,g.group_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_group g,to_horizon_role r where r.id=tr.role_id and tr.object_id=g.id and tr.object_type='G'
+
+                union
+
+                select tr.id,r.role_name,p.position_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_position p,to_horizon_role r where r.id=tr.role_id and tr.object_id=p.id and tr.object_type='P'
+                
+                ]]>
+            </sql>
+        </gbase>
+        <gbase8s>
+            <sql>
+                <![CDATA[
+                create view vf_horizon_role_member as
+                select id,role_name,name,status,object_type from (
+                select tr.id,r.role_name,u.name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_user u,to_horizon_role r where r.id=tr.role_id and tr.object_id=u.id and tr.object_type='U'
+
+                union
+
+                select tr.id,r.role_name,d.dept_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_dept d,to_horizon_role r where r.id=tr.role_id and tr.object_id=d.id and tr.object_type='D'
+
+                union
+
+                select tr.id,r.role_name,g.group_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_group g,to_horizon_role r where r.id=tr.role_id and tr.object_id=g.id and tr.object_type='G'
+
+                union
+
+                select tr.id,r.role_name,p.position_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_position p,to_horizon_role r where r.id=tr.role_id and tr.object_id=p.id and tr.object_type='P'
+                )
+                ]]>
+            </sql>
+        </gbase8s>
+        <kingbase>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_role_member as
+                select tr.id,r.role_name,u.name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_user u,to_horizon_role r where r.id=tr.role_id and tr.object_id=u.id and tr.object_type='U'
+
+                union
+
+                select tr.id,r.role_name,d.dept_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_dept d,to_horizon_role r where r.id=tr.role_id and tr.object_id=d.id and tr.object_type='D'
+
+                union
+
+                select tr.id,r.role_name,g.group_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_group g,to_horizon_role r where r.id=tr.role_id and tr.object_id=g.id and tr.object_type='G'
+
+                union
+
+                select tr.id,r.role_name,p.position_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_position p,to_horizon_role r where r.id=tr.role_id and tr.object_id=p.id and tr.object_type='P'
+                
+                ]]>
+            </sql>
+        </kingbase>
+        <kingbase8>
+            <sql>
+                <![CDATA[
+                create or replace view vf_horizon_role_member as
+                select tr.id,r.role_name,u.name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_user u,to_horizon_role r where r.id=tr.role_id and tr.object_id=u.id and tr.object_type='U'
+
+                union
+
+                select tr.id,r.role_name,d.dept_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_dept d,to_horizon_role r where r.id=tr.role_id and tr.object_id=d.id and tr.object_type='D'
+
+                union
+
+                select tr.id,r.role_name,g.group_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_group g,to_horizon_role r where r.id=tr.role_id and tr.object_id=g.id and tr.object_type='G'
+
+                union
+
+                select tr.id,r.role_name,p.position_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_position p,to_horizon_role r where r.id=tr.role_id and tr.object_id=p.id and tr.object_type='P'
+
+                ]]>
+            </sql>
+        </kingbase8>
+        <mysql>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_role_member as
+                select tr.id,r.role_name,u.name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_user u,to_horizon_role r where r.id=tr.role_id and tr.object_id=u.id and tr.object_type='U'
+
+                union
+
+                select tr.id,r.role_name,d.dept_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_dept d,to_horizon_role r where r.id=tr.role_id and tr.object_id=d.id and tr.object_type='D'
+
+                union
+
+                select tr.id,r.role_name,g.group_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_group g,to_horizon_role r where r.id=tr.role_id and tr.object_id=g.id and tr.object_type='G'
+
+                union
+
+                select tr.id,r.role_name,p.position_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_position p,to_horizon_role r where r.id=tr.role_id and tr.object_id=p.id and tr.object_type='P'
+                
+                ]]>
+            </sql>
+        </mysql>
+        <mysql8>
+            <sql>
+                <![CDATA[
+                create or replace view vf_horizon_role_member as
+                select tr.id,r.role_name,u.name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_user u,to_horizon_role r where r.id=tr.role_id and tr.object_id=u.id and tr.object_type='U'
+
+                union
+
+                select tr.id,r.role_name,d.dept_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_dept d,to_horizon_role r where r.id=tr.role_id and tr.object_id=d.id and tr.object_type='D'
+
+                union
+
+                select tr.id,r.role_name,g.group_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_group g,to_horizon_role r where r.id=tr.role_id and tr.object_id=g.id and tr.object_type='G'
+
+                union
+
+                select tr.id,r.role_name,p.position_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_position p,to_horizon_role r where r.id=tr.role_id and tr.object_id=p.id and tr.object_type='P'
+
+                ]]>
+            </sql>
+        </mysql8>
+        <oracle>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_role_member as
+                (
+                select tr.id,r.role_name,u.name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_user u,to_horizon_role r where r.id=tr.role_id and tr.object_id=u.id and tr.object_type='U'
+
+                union
+
+                select tr.id,r.role_name,d.dept_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_dept d,to_horizon_role r where r.id=tr.role_id and tr.object_id=d.id and tr.object_type='D'
+
+                union
+
+                select tr.id,r.role_name,g.group_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_group g,to_horizon_role r where r.id=tr.role_id and tr.object_id=g.id and tr.object_type='G'
+
+                union
+
+                select tr.id,r.role_name,p.position_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_position p,to_horizon_role r where r.id=tr.role_id and tr.object_id=p.id and tr.object_type='P'
+                )
+                ]]>
+            </sql>
+        </oracle>
+        <postgresql>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_role_member as
+                select tr.id,r.role_name,u.name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_user u,to_horizon_role r where r.id=tr.role_id and tr.object_id=u.id and tr.object_type='U'
+
+                union
+
+                select tr.id,r.role_name,d.dept_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_dept d,to_horizon_role r where r.id=tr.role_id and tr.object_id=d.id and tr.object_type='D'
+
+                union
+
+                select tr.id,r.role_name,g.group_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_group g,to_horizon_role r where r.id=tr.role_id and tr.object_id=g.id and tr.object_type='G'
+
+                union
+
+                select tr.id,r.role_name,p.position_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_position p,to_horizon_role r where r.id=tr.role_id and tr.object_id=p.id and tr.object_type='P'
+                
+                ]]>
+            </sql>
+        </postgresql>
+        <highgo>
+            <sql>
+            <![CDATA[
+                create or replace view vf_horizon_role_member as
+                select tr.id,r.role_name,u.name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_user u,to_horizon_role r where r.id=tr.role_id and tr.object_id=u.id and tr.object_type='U'
+
+                union
+
+                select tr.id,r.role_name,d.dept_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_dept d,to_horizon_role r where r.id=tr.role_id and tr.object_id=d.id and tr.object_type='D'
+
+                union
+
+                select tr.id,r.role_name,g.group_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_group g,to_horizon_role r where r.id=tr.role_id and tr.object_id=g.id and tr.object_type='G'
+
+                union
+
+                select tr.id,r.role_name,p.position_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_position p,to_horizon_role r where r.id=tr.role_id and tr.object_id=p.id and tr.object_type='P'
+
+                ]]>
+            </sql>
+        </highgo>
+        <sqlserver>
+            <sql>
+            <![CDATA[
+                create view vf_horizon_role_member as
+                (
+                select tr.id,r.role_name,u.name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_user u,to_horizon_role r where r.id=tr.role_id and tr.object_id=u.id and tr.object_type='U'
+
+                union
+
+                select tr.id,r.role_name,d.dept_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_dept d,to_horizon_role r where r.id=tr.role_id and tr.object_id=d.id and tr.object_type='D'
+
+                union
+
+                select tr.id,r.role_name,g.group_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_group g,to_horizon_role r where r.id=tr.role_id and tr.object_id=g.id and tr.object_type='G'
+
+                union
+
+                select tr.id,r.role_name,p.position_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_position p,to_horizon_role r where r.id=tr.role_id and tr.object_id=p.id and tr.object_type='P'
+                )
+                ]]>
+            </sql>
+        </sqlserver>
+        <oscar>
+            <sql>
+            <![CDATA[
+               create or replace view vf_horizon_role_member as
+				(
+				 select tr.id,r.role_name,u.name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_user u,to_horizon_role r where r.id=tr.role_id and tr.object_id=u.id and tr.object_type='U'
+				
+				 union
+				
+				 select tr.id,r.role_name,d.dept_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_dept d,to_horizon_role r where r.id=tr.role_id and tr.object_id=d.id and tr.object_type='D'
+				
+				 union
+				
+				 select tr.id,r.role_name,g.group_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_group g,to_horizon_role r where r.id=tr.role_id and tr.object_id=g.id and tr.object_type='G'
+				
+				 union
+				
+				 select tr.id,r.role_name,p.position_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_position p,to_horizon_role r where r.id=tr.role_id and tr.object_id=p.id and tr.object_type='P'
+				)
+                ]]>
+            </sql>
+        </oscar>
+        <upbase>
+            <sql>
+                <![CDATA[
+                create or replace view vf_horizon_role_member as
+                select tr.id,r.role_name,u.name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_user u,to_horizon_role r where r.id=tr.role_id and tr.object_id=u.id and tr.object_type='U'
+
+                union
+
+                select tr.id,r.role_name,d.dept_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_dept d,to_horizon_role r where r.id=tr.role_id and tr.object_id=d.id and tr.object_type='D'
+
+                union
+
+                select tr.id,r.role_name,g.group_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_group g,to_horizon_role r where r.id=tr.role_id and tr.object_id=g.id and tr.object_type='G'
+
+                union
+
+                select tr.id,r.role_name,p.position_name,tr.status,tr.object_type from tpr_horizon_obj_role tr,to_horizon_position p,to_horizon_role r where r.id=tr.role_id and tr.object_id=p.id and tr.object_type='P'
+
+                ]]>
+            </sql>
+        </upbase>
+    </others>
+</tableinfo>

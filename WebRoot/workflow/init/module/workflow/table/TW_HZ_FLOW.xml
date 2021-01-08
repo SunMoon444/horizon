@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 流程定义相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_FLOW_DEF</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_FLOW_DEF</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="FLOWID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FLOWNAME" typename="varchar"   length="255"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number"></fieldinfo>
+			<fieldinfo fieldname="ACTIVE" typename="number"></fieldinfo>
+			<fieldinfo fieldname="TYPE" typename="varchar"   length="255"></fieldinfo>
+			<fieldinfo fieldname="TYPENAME" typename="varchar"   length="255"></fieldinfo>
+			<fieldinfo fieldname="CREATED" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="CREATOR" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="MODIFIED" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="MODIFICATOR" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="XML" typename="clob"></fieldinfo>
+		</fieldinfos>		
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_FLOW_AUTH</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_FLOW_AUTH</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="DATA_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_ID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_TYPE" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="ORDER_NO" typename="number" length="5"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar"   length="50"></fieldinfo>
+		</fieldinfos>		
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_FLOW_NODES</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_FLOW_NODES</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="FLOWID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FLOWVER" typename="number"   length="5"></fieldinfo>
+			<fieldinfo fieldname="ISLASTVER" typename="number" length="2"></fieldinfo>
+			<fieldinfo fieldname="PRE_NODEID" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="PRE_NODENAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="PRE_NODETYPE" typename="number" length="10"></fieldinfo>
+			
+			<fieldinfo fieldname="ROUTERID" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="ROUTERNAME" typename="varchar"   length="100"></fieldinfo>
+			
+			<fieldinfo fieldname="NEXT_NODEID" typename="varchar"   length="20"></fieldinfo>
+			<fieldinfo fieldname="NEXT_NODENAME" typename="varchar"   length="100"></fieldinfo>
+			<fieldinfo fieldname="NEXT_NODETYPE" typename="number" length="10"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TW_HZ_FLOWVAR_RECORD</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TW_HZ_FLOWVAR_RECORD</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="WORKID" typename="varchar"   length="32"></fieldinfo>
+			<fieldinfo fieldname="FLOWVAR" typename="clob"></fieldinfo>
+			<fieldinfo fieldname="VERSION" typename="number"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	 <tablename>
+        <!-- 表名 -->
+        <name>TW_HZ_FLOW_NODE_MODULE</name>
+        <!-- 主键名称 -->
+        <pkname>PK_TW_HZ_FLOW_NODE_MODULE</pkname>
+        <!-- 主键，格式如(ID,NAME) -->
+        <pk>(ID)</pk>
+        <!-- 字段列表 -->
+        <fieldinfos>
+            <!-- 字段属性 -->
+            <fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+            <fieldinfo fieldname="NAME" typename="varchar" length="255"></fieldinfo>
+            <fieldinfo fieldname="NODEIDFIX" typename="varchar" length="20"></fieldinfo>
+            <fieldinfo fieldname="NODEXML" typename="clob"></fieldinfo>
+        </fieldinfos>
+    </tablename>
+	<others>
+		<oracle>
+			<sql>CREATE INDEX IDX_TW_FD_FVF ON TW_HZ_FLOW_DEF(FLOWID,VERSION,FLOWNAME)</sql>
+		</oracle>
+		<mysql>
+			<sql>CREATE INDEX IDX_TW_FD_FVF ON TW_HZ_FLOW_DEF(FLOWID,VERSION,FLOWNAME)</sql>
+		</mysql>
+		<mysql8>
+			<sql>CREATE INDEX IDX_TW_FD_FVF ON TW_HZ_FLOW_DEF(FLOWID,VERSION,FLOWNAME)</sql>
+		</mysql8>
+		<db2>
+			<sql>CREATE INDEX IDX_TW_FD_FVF ON TW_HZ_FLOW_DEF(FLOWID,VERSION,FLOWNAME)</sql>
+		</db2>
+		<sqlserver>
+			<sql>CREATE INDEX IDX_TW_FD_FVF ON TW_HZ_FLOW_DEF(FLOWID,VERSION,FLOWNAME)</sql>
+		</sqlserver>
+		<dm>
+			<sql>CREATE INDEX IDX_TW_FD_FVF ON TW_HZ_FLOW_DEF(FLOWID,VERSION,FLOWNAME)</sql>
+		</dm>
+		<postgresql>
+			<sql>CREATE INDEX IDX_TW_FD_FVF ON TW_HZ_FLOW_DEF(FLOWID,VERSION,FLOWNAME)</sql>
+		</postgresql>
+		<highgo>
+			<sql>CREATE INDEX IDX_TW_FD_FVF ON TW_HZ_FLOW_DEF(FLOWID,VERSION,FLOWNAME)</sql>
+		</highgo>
+		<gbase>
+			<sql>CREATE INDEX IDX_TW_FD_FVF ON TW_HZ_FLOW_DEF(FLOWID,VERSION,FLOWNAME)</sql>
+		</gbase>
+		<gbase8s>
+			<sql>CREATE INDEX IDX_TW_FD_FVF ON TW_HZ_FLOW_DEF(FLOWID,VERSION,FLOWNAME)</sql>
+		</gbase8s>
+		<kingbase>
+			<sql>CREATE INDEX IDX_TW_FD_FVF ON TW_HZ_FLOW_DEF(FLOWID,VERSION,FLOWNAME)</sql>
+		</kingbase>
+		<kingbase8>
+			<sql>CREATE INDEX IDX_TW_FD_FVF ON TW_HZ_FLOW_DEF(FLOWID,VERSION,FLOWNAME)</sql>
+		</kingbase8>
+		<oscar>
+			<sql>CREATE INDEX IDX_TW_FD_FVF ON TW_HZ_FLOW_DEF(FLOWID,VERSION,FLOWNAME)</sql>
+		</oscar>
+		<upbase>
+			<sql>CREATE INDEX IDX_TW_FD_FVF ON TW_HZ_FLOW_DEF(FLOWID,VERSION,FLOWNAME)</sql>
+		</upbase>
+	</others>
+</tableinfo>

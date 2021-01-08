@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 个人定制首页相关表结构定义 -->
+<tableinfo>
+	<tablename>
+		<!-- 表名 -->
+		<name>TO_HORIZON_CUSTOM</name>
+		<!-- 主键名称 -->
+		<pkname>PK_TO_HORIZON_CUSTOM</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="LAYOUT_ID" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="SCOPE" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="DESCRIPTION" typename="varchar" length="200"></fieldinfo>
+			<fieldinfo fieldname="OBJECT_ID" typename="lvarchar" length="2000"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+		<!-- 表名 -->
+		<name>TO_HORIZON_CUSTOM_WIDGET</name>
+		<!-- 主键名称 -->
+		<pkname>PK_TO_HORIZON_CUSTOM_WIDGET</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="LAYOUT_AREA_ID" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="WIDGET_ID" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="CUSTOM_ID" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="SEQUENCE" typename="varchar" length="10"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+		<!-- 表名 -->
+		<name>TO_HORIZON_LAYOUT</name>
+		<!-- 主键名称 -->
+		<pkname>PK_TO_HORIZON_LAYOUT</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="NAME" typename="varchar" length="100"></fieldinfo>
+			<fieldinfo fieldname="LAYEROUT_COUNT" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="DESCRIPTION" typename="varchar" length="50"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+		<!-- 表名 -->
+		<name>TO_HORIZON_LAYOUT_AREA</name>
+		<!-- 主键名称 -->
+		<pkname>PK_TO_HORIZON_LAYOUT_AREA</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar" length="32"
+				isnull="0"></fieldinfo>
+			<fieldinfo fieldname="SEQUENCE" typename="varchar" length="8"></fieldinfo>
+			<fieldinfo fieldname="XS" typename="varchar" length="8"></fieldinfo>
+			<fieldinfo fieldname="SM" typename="varchar" length="8"></fieldinfo>
+			<fieldinfo fieldname="MD" typename="varchar" length="8"></fieldinfo>
+			<fieldinfo fieldname="LG" typename="varchar" length="8"></fieldinfo>
+			<fieldinfo fieldname="LAYEROUT_ID" typename="varchar" length="50"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+		<!-- 表名 -->
+		<name>TO_HORIZON_WIDGET</name>
+		<!-- 主键名称 -->
+		<pkname>PK_TO_HORIZON_WIDGET</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar" length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="CREATED" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="MODIFIED" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="CREATOR" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="MODIFICATOR" typename="varchar" length="32"></fieldinfo>
+			<fieldinfo fieldname="RECYCLE" typename="varchar" length="2"></fieldinfo>
+			<fieldinfo fieldname="CODE" typename="varchar" length="100"></fieldinfo>
+			<fieldinfo fieldname="NAME" typename="varchar" length="30"></fieldinfo>
+			<fieldinfo fieldname="NAME_EN" typename="varchar" length="100"></fieldinfo>
+			<fieldinfo fieldname="GROUP_ID" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="SHOW_TYPE" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="URL" typename="lvarchar" length="2000"></fieldinfo>
+			<fieldinfo fieldname="HEIGHT" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="BELONG" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="AUTH" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="DEPT_ID" typename="lvarchar" length="2000"></fieldinfo>
+			<fieldinfo fieldname="LOAD_TYPE" typename="varchar" length="20"></fieldinfo>
+			<fieldinfo fieldname="USER_ID" typename="lvarchar" length="2000"></fieldinfo>
+			<fieldinfo fieldname="ROLE_ID" typename="lvarchar" length="2000"></fieldinfo>
+			<fieldinfo fieldname="WIDGET_CLASS" typename="varchar" length="100"></fieldinfo>
+			<fieldinfo fieldname="ICON" typename="lvarchar" length="2000"></fieldinfo>
+			<fieldinfo fieldname="ICON_TYPE" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="DESCRIPTION" typename="varchar" length="200"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<others>
+		<oracle>
+			<sql>CREATE INDEX IDX_TO_C_OBJECT_ID ON TO_HORIZON_CUSTOM(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_C_LAYOUT_ID ON TO_HORIZON_CUSTOM(LAYOUT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_W_GROUP_ID ON TO_HORIZON_WIDGET(GROUP_ID)</sql>
+		</oracle>
+		<mysql>
+			<sql>CREATE INDEX IDX_TO_C_OBJECT_ID ON TO_HORIZON_CUSTOM(OBJECT_ID(32))</sql>
+			<sql>CREATE INDEX IDX_TO_C_LAYOUT_ID ON TO_HORIZON_CUSTOM(LAYOUT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_W_GROUP_ID ON TO_HORIZON_WIDGET(GROUP_ID)</sql>
+		</mysql>
+		<mysql8>
+			<sql>CREATE INDEX IDX_TO_C_OBJECT_ID ON TO_HORIZON_CUSTOM(OBJECT_ID(32))</sql>
+			<sql>CREATE INDEX IDX_TO_C_LAYOUT_ID ON TO_HORIZON_CUSTOM(LAYOUT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_W_GROUP_ID ON TO_HORIZON_WIDGET(GROUP_ID)</sql>
+		</mysql8>
+		<db2>
+			<sql>CREATE INDEX IDX_TO_C_OBJECT_ID ON TO_HORIZON_CUSTOM(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_C_LAYOUT_ID ON TO_HORIZON_CUSTOM(LAYOUT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_W_GROUP_ID ON TO_HORIZON_WIDGET(GROUP_ID)</sql>
+		</db2>
+		<sqlserver>
+			<sql>CREATE INDEX IDX_TO_C_OBJECT_ID ON TO_HORIZON_CUSTOM(OBJECT_ID(32))</sql>
+			<sql>CREATE INDEX IDX_TO_C_LAYOUT_ID ON TO_HORIZON_CUSTOM(LAYOUT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_W_GROUP_ID ON TO_HORIZON_WIDGET(GROUP_ID)</sql>
+		</sqlserver>
+		<dm>
+			<sql>CREATE INDEX IDX_TO_C_OBJECT_ID ON TO_HORIZON_CUSTOM (OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_C_LAYOUT_ID ON TO_HORIZON_CUSTOM(LAYOUT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_W_GROUP_ID ON TO_HORIZON_WIDGET(GROUP_ID)</sql>
+		</dm>
+		<postgresql>
+			<sql>CREATE INDEX IDX_TO_C_OBJECT_ID ON TO_HORIZON_CUSTOM(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_C_LAYOUT_ID ON TO_HORIZON_CUSTOM(LAYOUT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_W_GROUP_ID ON TO_HORIZON_WIDGET(GROUP_ID)</sql>
+		</postgresql>
+		<highgo>
+			<sql>CREATE INDEX IDX_TO_C_OBJECT_ID ON TO_HORIZON_CUSTOM(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_C_LAYOUT_ID ON TO_HORIZON_CUSTOM(LAYOUT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_W_GROUP_ID ON TO_HORIZON_WIDGET(GROUP_ID)</sql>
+		</highgo>
+		<gbase>
+			<sql>CREATE INDEX IDX_TO_C_OBJECT_ID ON TO_HORIZON_CUSTOM(OBJECT_ID(32))</sql>
+			<sql>CREATE INDEX IDX_TO_C_LAYOUT_ID ON TO_HORIZON_CUSTOM(LAYOUT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_W_GROUP_ID ON TO_HORIZON_WIDGET(GROUP_ID)</sql>
+		</gbase>
+		<gbase8s>
+			<sql>CREATE INDEX IDX_TO_C_LAYOUT_ID ON TO_HORIZON_CUSTOM(LAYOUT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_W_GROUP_ID ON TO_HORIZON_WIDGET(GROUP_ID)</sql>
+		</gbase8s>
+		<kingbase>
+			<sql>CREATE INDEX IDX_TO_C_OBJECT_ID ON TO_HORIZON_CUSTOM(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_C_LAYOUT_ID ON TO_HORIZON_CUSTOM(LAYOUT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_W_GROUP_ID ON TO_HORIZON_WIDGET(GROUP_ID)</sql>
+		</kingbase>
+		<kingbase8>
+			<sql>CREATE INDEX IDX_TO_C_OBJECT_ID ON TO_HORIZON_CUSTOM(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_C_LAYOUT_ID ON TO_HORIZON_CUSTOM(LAYOUT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_W_GROUP_ID ON TO_HORIZON_WIDGET(GROUP_ID)</sql>
+		</kingbase8>
+		<oscar>
+			<sql>CREATE INDEX IDX_TO_C_OBJECT_ID ON TO_HORIZON_CUSTOM(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_C_LAYOUT_ID ON TO_HORIZON_CUSTOM(LAYOUT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_W_GROUP_ID ON TO_HORIZON_WIDGET(GROUP_ID)</sql>
+		</oscar>
+		<upbase>
+			<sql>CREATE INDEX IDX_TO_C_OBJECT_ID ON TO_HORIZON_CUSTOM(OBJECT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_C_LAYOUT_ID ON TO_HORIZON_CUSTOM(LAYOUT_ID)</sql>
+			<sql>CREATE INDEX IDX_TO_W_GROUP_ID ON TO_HORIZON_WIDGET(GROUP_ID)</sql>
+		</upbase>
+	</others>
+</tableinfo>

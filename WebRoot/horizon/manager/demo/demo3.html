@@ -1,0 +1,202 @@
+<div class="horizon-tab">
+    <ul class="tab">
+        <li>
+            <a data-toggle="tab" href="javascript:void(0)" data-target="[data-pane='tab0']">
+                角色属性
+            </a>
+        </li>
+        <li>
+            <a data-toggle="tab" href="javascript:void(0)" data-target="[data-pane='tab1']">
+                角色成员
+            </a>
+        </li>
+        <li class="active">
+            <a data-toggle="tab" href="javascript:void(0)" data-target="[data-pane='tab2']">
+                权限设置
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div data-pane="tab0" class="tab-pane fade"></div>
+        <div data-pane="tab1" class="tab-pane fade"></div>
+        <div data-pane="tab2" class="tab-pane fade in active">
+            <div class="row">
+                <div class="col-xs-5 col-sm-4 col-md-3 col-lg-2">
+                    <div class="btn-group width-100">
+                        <div data-toggle="dropdown" class="btn btn-white btn-sm btn-round border-width-1 width-100">
+                            <span>
+                                应用空间 <i class="ace-icon fa fa-angle-down icon-on-right"></i>
+                            </span>
+                        </div>
+                        <ul class="dropdown-menu dropdown-caret width-100">
+                            <li class="active">
+                                <a href="javascript:void(0);" data-toggle="tab" data-target="[data-pane='tab-sub-0']">应用空间</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" data-toggle="tab" data-target="[data-pane='tab-sub-1']">组织机构</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" data-toggle="tab">系统菜单</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" data-toggle="tab">应用菜单</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" data-toggle="tab">模块</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" data-toggle="tab">流程</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-7 col-sm-8 col-md-9 col-lg-10 align-right">
+                    <button class="btn btn-white btn-sm btn-round border-width-1" type="button">
+                        <i class="ace-icon fa fa-save green"></i>
+                        保存
+                    </button>
+                    <button class="btn btn-white btn-sm btn-round border-width-1" type="button">
+                        <i class="ace-icon fa fa-refresh green hidden-320"></i> 刷新
+                    </button>
+                    <button class="btn btn-white btn-sm btn-round border-width-1" type="button">
+                        <i class="ace-icon fa fa-plus blue hidden-320"></i> 展开全部
+                    </button>
+                </div>
+                <div class="col-xs-12">
+                    <div class="hr hr-dotted hr-10 no-margin-bottom"></div>
+                    <div class="tab-content">
+                        <div data-pane="tab-sub-0" class="tab-pane fade in active">
+                            <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                <label class="btn btn-white col-xs-6">
+                                    <input type="checkbox" value="1">
+                                    应用工具
+                                </label>
+                                <label class="btn btn-white col-xs-6">
+                                    <input type="checkbox" value="2">
+                                    管理工具
+                                </label>
+                            </div>
+                            <div class="space-6"></div>
+                            <div data-toggle="buttons" class="btn-group btn-overlap width-100">
+                                <label class="btn btn-white col-xs-6">
+                                    <input type="checkbox" value="1">
+                                    设计工具
+                                </label>
+                                <label class="btn btn-white col-xs-6">
+                                    <input type="checkbox" value="2">
+                                    分级授权
+                                </label>
+                            </div>
+                        </div>
+                        <div data-pane="tab-sub-1" class="tab-pane fade">
+                            <ul id="treeDemo" class="ztree ztree-outlook no-padding"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    require(['jquery', 'ztree'], function($) {
+
+        horizon.tools.use(horizon.paths.pluginpath + '/ztree/css/zTreeStyle/zTreeStyle.css');
+
+        function addDiyDom(treeId, treeNode) {
+            var $switchObj = $("#" + treeNode.tId + "_switch"),
+                $treeA = $("#" + treeNode.tId + "_a"),
+                $icoObj = $("#" + treeNode.tId + "_ico");
+            $switchObj.remove();
+            $icoObj.before($switchObj);
+
+            $treeA.append('<span id="' + treeNode.tId + '_auth" class="auth">' +
+                    '<label class="inline">' +
+                    '<input name="a" type="checkbox" class="ace" ' + (treeNode.a?'checked':'') + '/>' +
+                    '<span class="lbl middle"> 访问 </span>' +
+                    '</label>' +
+                    '<label class="inline">' +
+                    '<input name="b" type="checkbox" class="ace" ' + (treeNode.b?'checked':'') + '/>' +
+                    '<span class="lbl middle"> 管理 </span>' +
+                    '</label>' +
+                    '<label class="inline">' +
+                    '<input name="c" type="checkbox" class="ace" ' + (treeNode.c?'checked':'') + '/>' +
+                    '<span class="lbl middle"> 分级授权 </span>' +
+                    '</label>' +
+                    '</span>');
+
+            var toggleChildNodesChecked = function(name, checked, nodes) {
+                $.each(nodes, function(i, child) {
+                    child[name] = checked;
+                    $tree.find('#' + child.tId + '_auth input[name="' + name + '"]').prop('checked', checked);
+                    if(child.isParent) {
+                        toggleChildNodesChecked(name, checked, child.children);
+                    }
+                });
+            };
+            var toggleParentNodesChecked = function(name, checked, node) {
+                var parentNode = node.getParentNode();
+                if(parentNode) {
+                    if(checked && parentNode.level !== 0) {
+                        parentNode[name] = checked;
+                        $tree.find('#' + parentNode.tId + '_auth input[name="' + name + '"]').prop('checked', checked);
+                        toggleParentNodesChecked(name, checked, parentNode);
+                    }else if(parentNode.level === 0) {
+                        parentNode[name] = false;
+                        $tree.find('#' + parentNode.tId + '_auth input[name="' + name + '"]').prop('checked', false);
+                    }
+                }
+            };
+            $treeA.on('click', 'input.ace', function(ev) {
+                var $this = $(this),
+                    name = $this.attr('name'),
+                    checked = $this.prop('checked');
+                treeNode[name] = checked;
+                if(treeNode.isParent) {
+                    toggleChildNodesChecked(name, checked, treeNode.children);
+                }
+                toggleParentNodesChecked(name, checked, treeNode);
+            })
+        }
+
+        var $tree = $("#treeDemo"),
+            $treeObj = $.fn.zTree.init($tree, {
+                    view: {
+                        showLine: false,
+                        showIcon: false,
+                        selectedMulti: false,
+                        dblClickExpand: false,
+                        addDiyDom: addDiyDom
+                    },
+                    data: {
+                        simpleData: {
+                            enable: true
+                        }
+                    }
+                },
+                [
+                    { id:1, pId:0, name:"授权树", open:true},
+                    { id:11, pId:1, name:"收件箱", a: true, b: false, c: false},
+                    { id:111, pId:11, name:"收件箱1", a: true, b: false, c: false},
+                    { id:112, pId:111, name:"收件箱2", a: true, b: false, c: false},
+                    { id:113, pId:112, name:"收件箱3", a: true, b: false, c: false},
+                    { id:114, pId:113, name:"收件箱4", a: true, b: false, c: false},
+                    { id:12, pId:1, name:"垃圾邮件", a: false, b: false, c: false},
+                    { id:13, pId:1, name:"草稿", a: false, b: false, c: false},
+                    { id:14, pId:1, name:"已发送邮件", a: false, b: false, c: false},
+                    { id:15, pId:1, name:"已删除邮件", a: false, b: false, c: false},
+                    { id:3, pId:1, name:"快速视图", a: false, b: false, c: false},
+                    { id:31, pId:3, name:"文档", a: false, b: false, c: false},
+                    { id:32, pId:3, name:"照片", a: false, b: false, c: false}
+                ]
+            );
+        $tree.hover(function () {
+            if (!$tree.hasClass("showIcon")) {
+                $tree.addClass("showIcon");
+            }
+        }, function() {
+            $tree.removeClass("showIcon");
+        });
+
+        $('.page-content-area').trigger('ajaxscriptsloaded');
+    });
+</script>

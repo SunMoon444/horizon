@@ -1,0 +1,104 @@
+<title>hz{flow-share.largeTitle}</title>
+<hi18n groups="base;message;flow-share;datatables;selectuser;validator"></hi18n>
+<div class="horizon-modal-container">
+	<div class="other-content-area">
+		<div class="page-header smaller">
+			<h1>
+				hz{flow-share.largeTitle} 
+				<small class="hidden-xs"> 
+					<i class="ace-icon fa fa-angle-double-right"></i>
+					hz{flow-share.subTitle}
+				</small>
+				<div class="pull-right">
+					<label class="pointer horizon-modal-trigger" data-target=".horizon-modal" data-toggle="modal">
+					<i class="ace-icon fa fa-leaf bigger-110 icon-only green"></i>
+						hz{base.flowtree}
+					</label>
+				</div>
+				<div class="embed-toggle-sidebar-container hidden-md hidden-lg pull-right">
+					<button class="navbar-toggle toggle-sidebar" type="button" data-target="#toggle-sidebar">
+						<span class="sr-only">Toggle横向菜单</span> <span class="icon-bar"></span>
+						<span class="icon-bar"></span> <span class="icon-bar"></span>
+					</button>
+					<button class="navbar-toggle toggle-sidebar2" type="button" data-target="#toggle-sidebar2">
+						<span class="sr-only">Toggle左侧菜单</span> 
+							<i class="ace-icon fa fa-dashboard bigger-110"></i>
+					</button>
+				</div>
+			</h1>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<table id="myDatatable" class="table table-hover"></table>
+			</div>
+		</div>
+		<div id="infoContainer" class="hidden">
+			<form class="form-horizontal no-margin-bottom" id="infoFrom">
+				<div class="space-4">
+					<input type="hidden" name="flowId" /> 
+					<input type="hidden" name="id" />
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-2 control-label">
+								hz{flow-share.applicationType}:</label>
+							<div class="col-xs-12 col-sm-5">
+								<input class="col-sm-12" name="useType" type="text" required maxlength="200">
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-2 control-label">hz{flow-share.nodeList}:</label>
+							<div class="col-xs-12 col-sm-9">
+								<table id="nodeList" class="table table-striped table-bordered">
+									<thead class="thin-border-bottom">
+										<tr role="row">
+											<th class="center">hz{flow-share.node}</th>
+											<th class="center">hz{flow-share.transactor}</th>
+											<th class="center">hz{flow-share.readers}</th>
+											<th class="center">hz{flow-share.deadline}</th>
+										</tr>
+									</thead>
+									<tbody id="nodeTbody"></tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="horizon-modal modal aside aside-right aside-vc aside-fixed navbar-offset"
+		data-body-scroll="false" data-offset="true" data-placement="right"
+		data-fixed="true" data-backdrop="invisible" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header blue">
+					hz{base.flowtree} <label class="pull-right hidden-sm hidden-xs"> <a
+						data-action="fixed-modal" class="pointer"><i
+							class="ace-icon fa fa-lock bigger-160" data-fixed-icon="fa-lock"
+							data-unfixed-icon="fa-unlock"></i></a>
+					</label>
+				</div>
+				<div class="modal-body">
+					<ul id="flow-tree"></ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="flowlog-dialog" class="hidden"></div>
+<script type="text/javascript">
+jQuery(function($) {
+    require([horizon.paths.assetspath + '/manager/flow/js/flow.share.js'], function() {
+        horizon.language.plugins.datatables();
+        horizon.language.plugins.selectuser();
+        horizon.language.plugins.validator();
+        horizon.tools.use(horizon.paths.pluginpath + '/ztree/css/zTreeStyle/zTreeStyle.css');
+        horizon.engine.flowshare.init();
+        $('.page-content-area').trigger('ajaxscriptsloaded');
+    });
+});
+</script>

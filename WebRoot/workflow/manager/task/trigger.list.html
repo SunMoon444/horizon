@@ -1,0 +1,414 @@
+<style>
+	.tab-content {
+		height: 320px
+	}
+</style>
+<title>hz{trigger-list.title}</title>
+<hi18n  groups="base;message;trigger-list;datatables;validator;datetimepicker"></hi18n>
+<div class="page-header smaller">
+	<h1>
+		hz{trigger-list.timingTask}
+		<small class="hidden-xs"> 
+		<i class="ace-icon fa fa-angle-double-right"></i>
+			hz{trigger-list.smallTitle}
+		</small>
+		<div class="embed-toggle-sidebar-container hidden-md hidden-lg pull-right">
+            <button class="navbar-toggle toggle-sidebar" type="button" data-target="#toggle-sidebar">
+                <span class="sr-only">Toggle横向菜单</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button class="navbar-toggle toggle-sidebar2" type="button" data-target="#toggle-sidebar2" >
+                <span class="sr-only">Toggle左侧菜单</span>
+                <i class="ace-icon fa fa-dashboard bigger-110"></i>
+            </button>
+        </div>
+	</h1>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+        <table id="myTable" class="table table-hover"></table>
+    </div>
+</div>
+<div class="hidden no-padding" id="myInfo">
+    <form class="form-horizontal no-margin-bottom" id="myForm">
+        <div class="space-4">
+            <input type="hidden" name="id"/>
+        </div>
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-2 control-label">hz{trigger-list.triggerName}:</label>
+				<div class="col-xs-12 col-sm-9">
+					<input class="no-margin col-sm-12 form-control" name="name" type="text" maxlength="200" required>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-2 control-label">hz{trigger-list.triggerCode}:</label>
+				<div class="col-xs-12 col-sm-9">
+					<input class="no-margin col-sm-12 form-control" name="triggerName" type="text" maxlength="200" required>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-2 control-label">hz{trigger-list.triggerBlockCode}:</label>
+				<div class="col-xs-12 col-sm-9">
+					<input class="no-margin col-sm-12 form-control" name="triggerGroup" type="text" maxlength="200" required>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-2 control-label">hz{trigger-list.triggerType}:</label>
+				<div class="col-xs-12 col-sm-9">
+					<select name="triggerType" class="form-control" required>
+						<option value="1">hz{trigger-list.cron}</option>
+						<option value="0">hz{trigger-list.simpleType}</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="simple">
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-2 control-label">hz{trigger-list.startEndTime}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<i class="fa fa-calendar bigger-110"></i>
+							</span>
+							<input class="form-control pointer" type="text" name="date_range_picker" id="id-date-range-picker-1" readonly required/>
+							<input type="hidden" name="startTime"/>
+							<input type="hidden" name="endTime"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-2 control-label">hz{trigger-list.repeatInterval}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<input class="no-margin col-sm-12 form-control" name="repeatInterval" type="text" maxlength="10" required>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-2 control-label">hz{trigger-list.repeatIntervalUnit}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<select name="intervalType" class="form-control" required>
+							<option value="0">hz{trigger-list.millisecond}</option>
+							<option value="1">hz{trigger-list.second}</option>
+							<option value="2">hz{trigger-list.minute}</option>
+							<option value="3">hz{trigger-list.hour}</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-2 control-label">hz{trigger-list.repeatNumber}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<input class="no-margin col-sm-12 form-control" name="repeatCount" type="text" maxlength="10" required>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 cron">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-2 control-label">hz{trigger-list.cronCalendar}:</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="tabbable">
+						<ul class="nav nav-tabs padding-12 tab-color-blue background-blue no-padding-bottom" id="myTab">
+							<li class="">
+								<a data-toggle="tab" href="#second" aria-expanded="true">hz{trigger-list.second}</a>
+							</li>
+							<li class="">
+								<a data-toggle="tab" href="#min" aria-expanded="false">hz{trigger-list.minute}</a>
+							</li>
+							<li class="">
+								<a data-toggle="tab" href="#hour" aria-expanded="false">hz{trigger-list.hour}</a>
+							</li>
+							<li class="">
+								<a data-toggle="tab" href="#day" aria-expanded="false">hz{trigger-list.day}</a>
+							</li>
+							<li class="">
+								<a data-toggle="tab" href="#month" aria-expanded="false">hz{trigger-list.month}</a>
+							</li>
+							<li class="">
+								<a data-toggle="tab" href="#week" aria-expanded="false">hz{trigger-list.week}</a>
+							</li>
+							<li class="">
+								<a data-toggle="tab" href="#year" aria-expanded="false">hz{trigger-list.year}</a>
+							</li>
+						</ul>
+						<div class="tab-content no-padding-left no-padding-right no-padding-top">
+							<div id="second" class="tab-pane">
+								<div class="radio">
+									<label>
+										<input name="second" type="radio" class="ace everyTime">
+										<span class="lbl">&nbsp;hz{trigger-list.triggerPerSecond}</span>
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="second" type="radio" class="ace cycle">
+										<span class="lbl">&nbsp;hz{trigger-list.cycleTriggerFrom}&nbsp;</span>
+										<input type="text" id="secondStart_0" class="cron-spinner" data-options="dataoptions_0_59" value="0">&nbsp;hz{trigger-list.secondsTo}&nbsp;
+										<input type="text" id="secondEnd_0" class="cron-spinner" data-options="dataoptions_1_59" value="1">&nbsp;hz{trigger-list.second}
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="second" type="radio" class="ace startOn">
+										<span class="lbl">&nbsp;hz{trigger-list.incrementalTrigger}&nbsp;</span>
+										<input type="text" id="secondStart_1" class="cron-spinner" data-options="dataoptions_0_59" value="0">&nbsp;hz{trigger-list.secondStart}&nbsp;
+										<input type="text" id="secondEnd_1" class="cron-spinner" data-options="dataoptions_1_59" value="1">&nbsp;hz{trigger-list.secondTrigger}
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="second" type="radio" class="ace appoint">
+										<span class="lbl">&nbsp;hz{trigger-list.specifySecondTrigger}</span>
+									</label>
+								</div>
+							</div>
+							<div id="min" class="tab-pane">
+								<div class="radio">
+									<label>
+										<input name="min" type="radio" class="ace everyTime">
+										<span class="lbl">&nbsp;hz{trigger-list.triggerPerMinute}</span>
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="min" type="radio" class="ace cycle">
+										<span class="lbl">&nbsp;hz{trigger-list.cycleTriggerFrom}&nbsp;</span>
+										<input type="text" id="minStart_0" class="cron-spinner" data-options="dataoptions_0_59" value="0">&nbsp;hz{trigger-list.beasSignedto}&nbsp;
+										<input type="text" id="minEnd_0" class="cron-spinner" data-options="dataoptions_1_59" value="1">&nbsp;hz{trigger-list.minute}
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="min" type="radio" class="ace startOn">
+										<span class="lbl">&nbsp;hz{trigger-list.incrementalTrigger}&nbsp;</span>
+										<input type="text" id="minStart_1" class="cron-spinner" data-options="dataoptions_0_59" value="0">&nbsp;hz{trigger-list.atBeginningEach}&nbsp;
+										<input type="text" id="minEnd_1" class="cron-spinner" data-options="dataoptions_1_59" value="1">&nbsp;hz{trigger-list.triggerOnce}
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="min" type="radio" class="ace appoint">
+										<span class="lbl">&nbsp;hz{trigger-list.specifiedTrigger}</span>
+									</label>
+								</div>
+							</div>
+							<div id="hour" class="tab-pane">
+								<div class="radio">
+									<label>
+										<input name="hour" type="radio" class="ace everyTime">
+										<span class="lbl">&nbsp;hz{trigger-list.triggerPerHour}</span>
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="hour" type="radio" class="ace cycle">
+										<span class="lbl">&nbsp;hz{trigger-list.cycleTriggerFrom}&nbsp;</span>
+										<input type="text" id="hourStart_0" class="cron-spinner" data-options="dataoptions_0_23" value="0">&nbsp;hz{trigger-list.hourTo}&nbsp;
+										<input type="text" id="hourEnd_0" class="cron-spinner" data-options="dataoptions_1_23" value="1">&nbsp;hz{trigger-list.hour}
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="hour" type="radio" class="ace startOn">
+										<span class="lbl">&nbsp;hz{trigger-list.incrementalTrigger}&nbsp;</span>
+										<input type="text" id="hourStart_1" class="cron-spinner" data-options="dataoptions_0_23" value="0">&nbsp;hz{trigger-list.hourStartPer}&nbsp;
+										<input type="text" id="hourEnd_1" class="cron-spinner" data-options="dataoptions_1_23" value="1">&nbsp;hz{trigger-list.node}
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="hour" type="radio" class="ace appoint">
+										<span class="lbl">&nbsp;hz{trigger-list.triggerSpecified}</span>
+									</label>
+								</div>
+							</div>
+							<div id="day" class="tab-pane">
+								<div class="radio">
+									<label>
+										<input name="day" type="radio" class="ace everyTime checkDayAndWeek">
+										<span class="lbl">&nbsp;hz{trigger-list.dailyTrigger}</span>
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="day" type="radio" class="ace unAppoint">
+										<span class="lbl">&nbsp;hz{trigger-list.notSpecified}</span>
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="day" type="radio" class="ace cycle checkDayAndWeek">
+										<span class="lbl">&nbsp;hz{trigger-list.cycleTriggerFrom}&nbsp;</span>
+										<input type="text" id="dayStart_0" class="cron-spinner" data-options="dataoptions_1_31" value="1">&nbsp;hz{trigger-list.theDay}&nbsp;
+										<input type="text" id="dayEnd_0" class="cron-spinner" data-options="dataoptions_2_31" value="2">&nbsp;hz{trigger-list.day}
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="day" type="radio" class="ace startOn checkDayAndWeek">
+										<span class="lbl">&nbsp;hz{trigger-list.incrementalTrigger}&nbsp;</span>
+										<input type="text" id="dayStart_1" class="cron-spinner" data-options="dataoptions_1_31" value="1">&nbsp;hz{trigger-list.dayBeginsper}&nbsp;
+										<input type="text" id="dayEnd_1" class="cron-spinner" data-options="dataoptions_1_31" value="1">&nbsp;hz{trigger-list.dayTrigger}
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="day" type="radio" class="ace workDay checkDayAndWeek">
+										<span class="lbl">&nbsp;hz{trigger-list.recentTriggerMonthly}&nbsp;</span>
+										<input type="text" id="dayStart_2" class="cron-spinner" data-options="dataoptions_1_31" value="1">&nbsp;hz{trigger-list.lastWorkDay}
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="day" type="radio" class="ace lastDay checkDayAndWeek">
+										<span class="lbl">&nbsp;hz{trigger-list.lastDayMonthTriggers}</span>
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="day" type="radio" class="ace appoint">
+										<span class="lbl">&nbsp;hz{trigger-list.specifiedDayTrigger}</span>
+									</label>
+								</div>
+							</div>
+							<div id="month" class="tab-pane">
+								<div class="radio">
+									<label>
+										<input name="month" type="radio" class="ace everyTime">
+										<span class="lbl">&nbsp;hz{trigger-list.monthlyTrigger}</span>
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="month" type="radio" class="ace cycle">
+										<span class="lbl">&nbsp;hz{trigger-list.cycleTriggerFrom}&nbsp;</span>
+										<input type="text" id="monthStart_0" class="cron-spinner" data-options="dataoptions_1_12" value="1">&nbsp;hz{trigger-list.monthTo}&nbsp;
+										<input type="text" id="monthEnd_0" class="cron-spinner" data-options="dataoptions_2_12" value="2">&nbsp;hz{trigger-list.month}
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="month" type="radio" class="ace startOn">
+										<span class="lbl">&nbsp;hz{trigger-list.incrementalTrigger}&nbsp;</span>
+										<input type="text" id="monthStart_1" class="cron-spinner" data-options="dataoptions_1_12" value="1">&nbsp;hz{trigger-list.atEachMonth}&nbsp;
+										<input type="text" id="monthEnd_1" class="cron-spinner" data-options="dataoptions_1_12" value="1">&nbsp;hz{trigger-list.triggerMonth}
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="month" type="radio" class="ace appoint">
+										<span class="lbl">&nbsp;hz{trigger-list.appointMonthTrigger}</span>
+									</label>
+								</div>
+							</div>
+							<div id="week" class="tab-pane">
+								<div class="radio">
+									<label>
+										<input name="week" type="radio" class="ace everyTime checkDayAndWeek">
+										<span class="lbl">&nbsp;hz{trigger-list.weeklyTrigger}</span>
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="week" type="radio" class="ace unAppoint">
+										<span class="lbl">&nbsp;hz{trigger-list.notSpecified}</span>
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="week" type="radio" class="ace cycle checkDayAndWeek">
+										<span class="lbl">&nbsp;hz{trigger-list.cycleTriggerWeek}&nbsp;</span>
+										<input type="text" id="weekStart_0" class="cron-spinner" data-options="dataoptions_1_7" value="1">&nbsp;hz{trigger-list.toWeek}&nbsp;
+										<input type="text" id="weekEnd_0" class="cron-spinner" data-options="dataoptions_2_7" value="2">
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="week" type="radio" class="ace weekOfDay checkDayAndWeek">
+										<span class="lbl">&nbsp;hz{trigger-list.serialTriggerMonthly}&nbsp;</span>
+										<input type="text" id="weekStart_1" class="cron-spinner" data-options="dataoptions_1_4" value="1">&nbsp;hz{trigger-list.weekOfWeek}&nbsp;
+										<input type="text" id="weekEnd_1" class="cron-spinner" data-options="dataoptions_1_7" value="1">&nbsp;hz{trigger-list.trigger}
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="week" type="radio" class="ace lastWeek checkDayAndWeek">
+										<span class="lbl">&nbsp;hz{trigger-list.lastTriggerWeekMonth}&nbsp;</span>
+										<input type="text" id="weekStart_2" class="cron-spinner" data-options="dataoptions_1_7" value="1">&nbsp;hz{trigger-list.trigger}
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="week" type="radio" class="ace appoint">
+										<span class="lbl">&nbsp;hz{trigger-list.specifyWeeklyTrigger}</span>
+									</label>
+								</div>
+							</div>
+							<div id="year" class="tab-pane">
+								<div class="radio">
+									<label>
+										<input name="year" type="radio" class="ace unAppoint">
+										<span class="lbl">&nbsp;hz{trigger-list.notSpecified}</span>
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="year" type="radio" class="ace everyTime">
+										<span class="lbl">&nbsp;hz{trigger-list.annualTrigger}</span>
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input name="year" type="radio" class="ace cycle">
+										<span class="lbl">&nbsp;hz{trigger-list.cycleTriggerFrom}&nbsp;</span>
+										<input type="text" id="yearStart_0" class="cron-spinner" data-options="dataoptions_2015_3000" value="2015">&nbsp;hz{trigger-list.yearTo}&nbsp;
+										<input type="text" id="yearEnd_0" class="cron-spinner" data-options="dataoptions_2016_3000" value="2016">&nbsp;hz{trigger-list.year}
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="hidden">
+							<input type="text" name="v_second" value="*"/>
+					        <input type="text" name="v_min" value="*"/>
+					        <input type="text" name="v_hour" value="*"/>
+					        <input type="text" name="v_day" value="*"/>
+					        <input type="text" name="v_month" value="*"/>
+					        <input type="text" name="v_week" value="?"/>
+					        <input type="text" name="v_year"/>
+						</div>
+					</div>
+					<input class="col-sm-12 form-control" style="margin-top: 1px" name="cronExpress" type="text" maxlength="120" readonly required>
+				</div>
+			</div>
+		</div>
+    </form>
+</div>
+<div class="hidden" id="myDialog"></div>
+<script type="text/javascript">
+    jQuery(function($) {
+        require([horizon.paths.assetspath + '/manager/task/js/trigger.list.js'], function() {
+        	horizon.language.plugins.datatables();
+        	horizon.language.plugins.validator();
+        	horizon.language.plugins.datetimepicker();
+        	horizon.tools.use(horizon.paths.pluginpath + '/date-time/daterange-picker/css/daterangepicker.css');
+            horizon.engine.trigger.initTable();
+    		horizon.engine.trigger.initForm();
+    		horizon.engine.trigger.initCron();
+            $('.page-content-area').trigger('ajaxscriptsloaded');
+        });
+    });
+</script>

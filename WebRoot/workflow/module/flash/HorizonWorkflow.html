@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <title>流程设计器</title>
+    <link rel="stylesheet" href="../../plugins/bootstrap/bootstrap/css/bootstrap.css?HorzonWorkflow" />
+    <link rel="stylesheet" href="../../plugins/bootstrap/bootstrap/css/font-awesome.css" />
+    <link rel="stylesheet" href="../../plugins/jquery/jquery-ui/css/jquery-ui.css?HorzonWorkflow" />
+    <link rel="stylesheet" href="../../plugins/bootstrap/ace/css/ace-fonts.css" />
+    <link rel="stylesheet" href="../../plugins/bootstrap/ace/css/ace.css?HorzonWorkflow" class="ace-main-stylesheet main-stylesheet" id="main-ace-style" />
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="../../plugins/bootstrap/ace/css/ace-part2.css" class="ace-main-stylesheet" />
+    <link rel="stylesheet" href="../../plugins/bootstrap/ace/css/ace-ie.css" />
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="../../plugins/ztree/css/zTreeStyle/zTreeStyle.css?HorzonWorkflow"/>
+    <link rel="stylesheet" href="../../assets/common/css/horizon.base.css?HorzonWorkflow" />
+    <link rel="icon" type="image/png" href="../../assets/common/img/favicon.png" />
+    <style>
+        body {
+            margin: 0;
+            overflow:hidden;
+        }
+    </style>
+    <!--[if lte IE 8]>
+    <script src="../../plugins/old-browser/html5shiv.js"></script>
+    <script src="../../plugins/old-browser/respond.js"></script>
+    <![endif]-->
+
+    <script src="../../assets/common/js/horizon.base.js"></script>
+    <!--[if !IE]> -->
+    <script type="text/javascript" language="JavaScript" src="../../plugins/jquery/jquery-base/jquery.js"></script>
+    <!-- <![endif]-->
+    <!--[if IE]>
+    <script type="text/javascript" language="JavaScript" src="../../plugins/jquery/jquery-base/jquery1x.js"></script>
+    <![endif]-->
+    <script type="text/javascript" language="JavaScript" src="../../plugins/bootstrap/ace/ace.js"></script>
+    <script type="text/javascript" language="JavaScript" src="../../plugins/jquery/jquery-ui/jquery-ui.js"></script>
+    <script type="text/javascript" language="JavaScript" src="../../plugins/ztree/jquery.ztree.min.js"></script>
+    <script type="text/javascript" language="JavaScript" src="../../assets/common/js/horizon.jqueryui.js"></script>
+    <script type="text/javascript" language="JavaScript" src="../../plugins/bootstrap/ace/js/elements.scroller.js"></script>
+    <script type="text/javascript" language="JavaScript" src="../../assets/common/js/horizon.selectuser.js"></script>
+    <script type="text/javascript" language="javascript" src="../../assets/module/flash/js/AC_OETags.js"></script>
+    <script type="text/javascript" language="javascript" src="../../assets/module/flash/js/HorizonWorkflow.js"></script>
+    <script>
+
+        jQuery(function($) {
+            $('#HorizonWorkflow').height($(window).height());
+            $(window).resize(function() {
+                $('#HorizonWorkflow').height($(window).height());
+            });
+        });
+
+        var info = {};
+        jQuery.ajax({
+            url: horizon.tools.formatUrl('/system/info'),
+            dataType: 'json',
+            async: false,
+            cache: false,
+            success: function (data) {
+                info = data;
+            }
+        });
+
+        // -----------------------------------------------------------------------------
+        // Globals
+        // Major version of Flash required
+        var requiredMajorVersion = 10;
+        // Minor version of Flash required
+        var requiredMinorVersion = 0;
+        // Minor version of Flash required
+        var requiredRevision = 0;
+        // -----------------------------------------------------------------------------
+        var userid = info.userId;
+        var username = info.userName;
+        var alluserid = info.allUserId;
+
+		//返回上下文路径()
+        function getContextPathSWF(){
+            return horizon.paths.serverPath;
+        }
+        //返回配置文件路径
+        function getConfigPathSWF(){
+            return horizon.paths.syspath.substring(horizon.paths.apppath.length) + '/module/flash/flow-conf/designer/';
+        }
+        //设计元素的图片路径,默认返回空时,在当前目录下的assets/image/下查找
+        function getImgPathForFlex(){
+            return horizon.paths.syspath.substring(horizon.paths.apppath.length) + '/module/flash';
+        }
+		//配置文件路径
+		function getIPForDy(){
+			return horizon.paths.apppath;
+		}
+		//图片路径如果在其他服务器上时指定全路径
+		function getIPForStatic(){
+			return horizon.paths.syspath+'/module/flash';
+		}
+        //返回租户id
+        function getTenantid(){
+            return info.tenantCode;
+        }
+        //返回数据源标识
+        function getIdentifier(){
+            return info.dbIdentifier;
+        }
+        //加载指定flowid的流程定义
+        function checkReload(flowid){
+            try{
+                if(jQuery('.selectuser-dialog').length) {
+                    jQuery('.selectuser-dialog > .ui-dialog-content').dialog('close');
+                }
+            }catch(e){}
+            HorizonWorkflow.reloadFlow(flowid);
+        }
+        //保存流程后刷新列表
+        function refreshAfterSaveFlow(){
+            parent.jQuery('#flow-tree').flowtree('reload');
+        }
+        //设计元素的图片路径,默认返回空时,在当前目录下的assets/image/下查找
+        function getImgPathForFlex(){
+            return horizon.paths.syspath.substring(horizon.paths.path.length) + '/module/flash11';
+        }
+        /**
+         * 流程定义需要的参数
+         */
+        function getWorkflowParam(){
+            var flowId = horizon.tools.getQueryString('flowid');
+            flowId = flowId ? flowId : '';
+            return 'flowid=' + flowId;
+        }
+
+    </script>
+
+</head>
+
+<body scroll="no">
+    <script>
+        // Version check for the Flash Player that has the ability to start Player Product Install (6.0r65)
+        var hasProductInstall = DetectFlashVer(6, 0, 65);
+
+        // Version check based upon the values defined in globals
+        var hasRequestedVersion = DetectFlashVer(requiredMajorVersion, requiredMinorVersion, requiredRevision);
+
+        if ( hasProductInstall && !hasRequestedVersion ) {
+            // DO NOT MODIFY THE FOLLOWING FOUR LINES
+            // Location visited after installation is complete if installation is required
+            var MMPlayerType = (isIE == true) ? "ActiveX" : "PlugIn";
+            var MMredirectURL = encodeURI(window.location);//特殊字符转码
+            document.title = document.title.slice(0, 47) + " - Flash Player Installation";
+            var MMdoctitle = document.title;
+
+            AC_FL_RunContent(
+                    "src", "playerProductInstall",
+                    "FlashVars", "MMredirectURL="+MMredirectURL+'&MMplayerType='+MMPlayerType+'&MMdoctitle='+MMdoctitle+"",
+                    "width", "100%",
+                    "height", "100%",
+                    "align", "middle",
+                    "wmode","transparent",
+                    "id", "HorizonWorkflow",
+                    "quality", "high",
+                    "bgcolor", "#869ca7",
+                    "name", "HorizonWorkflow",
+                    "allowScriptAccess","sameDomain",
+                    "type", "application/x-shockwave-flash",
+                    "pluginspage", "http://www.adobe.com/go/getflashplayer"
+            );
+        } else if (hasRequestedVersion) {
+            // if we've detected an acceptable version
+            // embed the Flash Content SWF when all tests are passed
+            AC_FL_RunContent(
+                    "src", horizon.paths.syspath + "/module/flash/HorizonWorkflow",
+                    "width", "100%",
+                    "height", "100%",
+                    "align", "middle",
+                    "wmode","transparent",
+                    "id", "HorizonWorkflow",
+                    "quality", "high",
+                    "bgcolor", "#869ca7",
+                    "name", "HorizonWorkflow",
+                    "allowScriptAccess","sameDomain",
+                    "type", "application/x-shockwave-flash",
+                    "pluginspage", "http://www.adobe.com/go/getflashplayer"
+            );
+        } else {  // flash is too old or we can't detect the plugin
+            var alternateContent = 'Alternate HTML content should be placed here. '
+                    + 'This content requires the Adobe Flash Player. '
+                    + '<a href=http://www.adobe.com/go/getflash/>Get Flash</a>';
+            document.write(alternateContent);  // insert non-flash content
+        }
+    </script>
+    <noscript>
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                id="HorizonWorkflow" width="100%" height="100%"
+                codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
+            <param name="movie" value="HorizonWorkflow.swf" />
+            <param name="wmode" value="transparent">
+            <param name="quality" value="high" />
+            <param name="bgcolor" value="#869ca7" />
+            <param name="allowScriptAccess" value="sameDomain" />
+            <embed src="HorizonWorkflow.swf" quality="high" bgcolor="#869ca7"
+                   width="100%" height="100%" name="HorizonWorkflow" align="middle"
+                   play="true"
+                   loop="false"
+                   quality="high"
+                   allowScriptAccess="sameDomain"
+                   allowFullScreen="true"
+                   type="application/x-shockwave-flash"
+                   pluginspage="http://www.adobe.com/go/getflashplayer">
+            </embed>
+        </object>
+    </noscript>
+    <div style="display:none">
+        <input type="text" id="userid" name="userid" /><!--选择人员临时域-->
+        <input type="text" id="username" name="username" />
+        <input type="text" name="saveflag">
+        <textarea name="XML"></textarea>
+        <textarea name="Config" id="Config"></textarea>
+    </div>
+</body>
+</html>

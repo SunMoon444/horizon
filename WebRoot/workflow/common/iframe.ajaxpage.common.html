@@ -1,0 +1,44 @@
+<title>hz{base.appname}</title>
+<hi18n groups="base"></hi18n>
+<div class="horizon-box-grid">
+    <iframe frameborder="0" class="horizon-context-frame" height="100%" width="100%" style="display: block;" id="horizon-context-frame" name="horizon-context-frame" src=""></iframe>
+</div>
+<script>
+    (function($, undefined) {
+        $('.page-content-area').ace_ajax('loadScripts', [], function() {
+
+            var $sidebar = $('#sidebar'), //横向菜单
+                $sidebar2 = $('#sidebar2'), //纵向菜单
+                $frame = $('#horizon-context-frame'),
+                $activeA = $sidebar2.find('li.active:last a');
+            if(!$activeA.length) {
+                $activeA = $sidebar.find('li.active:last a');
+                if(!$activeA.length) {
+                    return;
+                }
+            }
+            var _url = $activeA.attr('data-url');
+            var getFrameHeight = function() {
+                var _height = $(window).height();
+                var $body = $('body');
+                if($.inArray($body.attr('data-layout'), ['left', 'left-hoversubmenu', 'bottom-left', 'bottom-left-hoversubmenu']) == -1) {
+                    _height -= ($sidebar.css('visibility') != 'hidden'? $sidebar.outerHeight(true):0)
+                }
+                if(!$body.hasClass('embed')) {
+                    _height -= $('#navbar').outerHeight(true);
+                }
+                return _height;
+            };
+            setTimeout(function() {
+                $frame.css('height', getFrameHeight())[0].src = _url;
+            }, 1);
+            var timer;
+            $(window).off('resize.horizon-context-frame').on('resize.horizon-context-frame', function() {
+                window.clearTimeout(timer);
+                timer = setTimeout(function() {
+                    $frame.css('height', getFrameHeight());
+                }, 100);
+            });
+        });
+    })(jQuery);
+</script>

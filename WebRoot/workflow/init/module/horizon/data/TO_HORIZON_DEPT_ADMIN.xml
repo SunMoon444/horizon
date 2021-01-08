@@ -1,0 +1,44 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+    <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:Locale="zh-CN">
+            <xs:complexType>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:element name="TO_HORIZON_DEPT_ADMIN">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="ID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="USER_ID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="DEPT_ID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="OPER_TYPE" type="xs:string" minOccurs="0"/>
+                                <xs:element name="ORG_TYPE" type="xs:string" minOccurs="0"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:choice>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+    <TO_HORIZON_DEPT_ADMIN>
+        <ID>HZ28e5bf25b40e680125b41e658f0136</ID>
+        <USER_ID>admin</USER_ID>
+        <DEPT_ID>HZ28e7f51e816d28011e816da7f1001f</DEPT_ID>
+        <OPER_TYPE>F</OPER_TYPE>
+        <ORG_TYPE>D</ORG_TYPE>
+    </TO_HORIZON_DEPT_ADMIN>
+    <TO_HORIZON_DEPT_ADMIN>
+        <ID>HZ28e5bf25b40e680125b41e658f0137</ID>
+        <USER_ID>admin</USER_ID>
+        <DEPT_ID>HZ28e7f51e816d28011e816da7f1001f</DEPT_ID>
+        <OPER_TYPE>C</OPER_TYPE>
+        <ORG_TYPE>D</ORG_TYPE>
+    </TO_HORIZON_DEPT_ADMIN>
+    <TO_HORIZON_DEPT_ADMIN>
+        <ID>HZ28e5bf25b40e680125b41e658f0138</ID>
+        <USER_ID>admin</USER_ID>
+        <DEPT_ID>HZ28e7f51e816d28011e816da7f1001f</DEPT_ID>
+        <OPER_TYPE>A</OPER_TYPE>
+        <ORG_TYPE>D</ORG_TYPE>
+    </TO_HORIZON_DEPT_ADMIN>
+</NewDataSet>

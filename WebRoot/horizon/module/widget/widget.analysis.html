@@ -1,0 +1,39 @@
+<div class="horizon-widget-container row"></div>
+<div class="horizon-widget-empty alert alert-danger center margin-12 no-margin-left no-margin-right hidden"> 未定制首页模版, 请添加! </div>
+<div class="hidden">
+    <div class="widget-large-tls">
+        <div class="widget-box">
+            <div class="widget-header">
+                <div class="widget-title"></div>
+                <div class="widget-toolbar">
+                    <a href="javascript:void(0)" data-action="fullscreen" class="orange2">
+                        <i class="ace-icon fa fa-expand"></i>
+                    </a>
+                    <a href="javascript:void(0)" data-action="reload">
+                        <i class="ace-icon fa fa-refresh"></i>
+                    </a>
+                    <a href="javascript:void(0)" data-action="collapse">
+                        <i class="ace-icon fa fa-chevron-up"></i>
+                    </a>
+                    <a href="javascript:void(0)" data-action="close">
+                        <i class="ace-icon fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="widget-body">
+                <iframe width="100%" height="100%" name="widgetFrame" frameborder="0" src="" style="display: block;"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="widget-smaller-tls">
+        <li class="col-xs-4 col-sm-3 col-md-2 col-lg-1">
+            <a href="javascript:void(0)"></a>
+        </li>
+    </div>
+</div>
+<script>
+    require(['jquery', horizon.paths.apppath + '/horizon/assets/module/widget/js/widget.analysis.js'], function($) {
+        horizon.widget.analysis.load();
+        $('.page-content-area').trigger('ajaxscriptsloaded');
+    });
+</script>

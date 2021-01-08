@@ -1,0 +1,1196 @@
+<tableinfo>
+	<others>
+		<oracle>
+			<sql>
+            <![CDATA[
+                create or replace view vf_horizon_auth_check_v7 as
+                (
+                select rp.id,r.id as role_id, r.role_name,res.res_name,resg.res_group_name,resg.res_group_code,rp.status,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select dept_name from to_horizon_dept where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select role_name from to_horizon_role  where id = rp.biz_id)
+                when 'WORKGROUPOPER'
+                then  (select group_name from to_horizon_group  where id = rp.biz_id)
+                when 'TENANTOPER'
+                then (
+      				case
+      				when (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id) IS NULL
+      				then  '主空间'
+      				else (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id)
+      				END
+      				)
+                when 'ADMINMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowname from tw_hz_flow_def t where flowid=rp.biz_id  and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.app_name from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.form_name from tf_horizon_form tf where tf.id = rp.biz_id union all
+          				select tfg.flowformname from tf_horizon_form_graphics tfg where tfg.id = rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.view_name from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tfview.view_name||'->'||tvb.button_name from tf_horizon_view_button tvb,tf_horizon_view tfview where tvb.id = rp.biz_id and tvb.viewid=tfview.id)
+                when 'FORMBUTTON'
+                then (select tfform.form_name||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form tfform  where tfb.formid = tfform.id and tfb.id=rp.biz_id
+                union
+                select tgf.FLOWFORMNAME||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form_graphics tgf  where tgf.id = tfb.formid and tfb.id=rp.biz_id)
+                end
+                as biz_name,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select id from to_horizon_dept where id=rp.biz_id)
+                when 'TENANTOPER'
+                then (select t.id from ts_horizon_tenant t where id=rp.biz_id)
+                when 'ADMINMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowid from tw_hz_flow_def t where flowid=rp.biz_id and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.id from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.id from tf_horizon_form tf where tf.id=rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.id from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tvb.id from tf_horizon_view_button tvb where id=rp.biz_id)
+                when 'FORMBUTTON'
+                then (select tfb.id from tf_horizon_form_button tfb where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select r.id from to_horizon_role r where id=rp.biz_id)
+                when 'WORKGROUPOPER'
+                then (select g.id from to_horizon_group g where id=rp.biz_id)
+                end
+                as biz_id
+                from
+                tp_horizon_role           rp,
+                to_horizon_role           r,
+                tp_horizon_resource       res,
+                tp_horizon_resource_group resg
+                where r.id = rp.object_id
+                and rp.res_id = res.id
+                and rp.res_group_id=resg.id
+                )
+                ]]>
+			</sql>
+		</oracle>
+		<db2>
+			<sql>
+            <![CDATA[
+                create or replace view vf_horizon_auth_check_v7 as
+                (
+                select rp.id,r.id as role_id, r.role_name,res.res_name,resg.res_group_name,resg.res_group_code,rp.status,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select dept_name from to_horizon_dept where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select role_name from to_horizon_role  where id = rp.biz_id)
+                when 'WORKGROUPOPER'
+                then  (select group_name from to_horizon_group  where id = rp.biz_id)
+                when 'TENANTOPER'
+                then (
+      				case
+      				when (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id) IS NULL
+      				then  '主空间'
+      				else (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id)
+      				END
+      				)
+                when 'ADMINMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowname from tw_hz_flow_def t where flowid=rp.biz_id  and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.app_name from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.form_name from tf_horizon_form tf where tf.id = rp.biz_id union all
+          				select tfg.flowformname from tf_horizon_form_graphics tfg where tfg.id = rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.view_name from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tfview.view_name||'->'||tvb.button_name from tf_horizon_view_button tvb,tf_horizon_view tfview where tvb.id = rp.biz_id and tvb.viewid=tfview.id)
+                when 'FORMBUTTON'
+                then (select tfform.form_name||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form tfform  where tfb.formid = tfform.id and tfb.id=rp.biz_id
+                union
+                select tgf.FLOWFORMNAME||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form_graphics tgf  where tgf.id = tfb.formid and tfb.id=rp.biz_id)
+                end
+                as biz_name,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select id from to_horizon_dept where id=rp.biz_id)
+                when 'TENANTOPER'
+                then (select t.id from ts_horizon_tenant t where id=rp.biz_id)
+                when 'ADMINMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowid from tw_hz_flow_def t where flowid=rp.biz_id and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.id from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.id from tf_horizon_form tf where tf.id=rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.id from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tvb.id from tf_horizon_view_button tvb where id=rp.biz_id)
+                when 'FORMBUTTON'
+                then (select tfb.id from tf_horizon_form_button tfb where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select r.id from to_horizon_role r where id=rp.biz_id)
+                when 'WORKGROUPOPER'
+                then (select g.id from to_horizon_group g where id=rp.biz_id)
+                end
+                as biz_id
+                from
+                tp_horizon_role           rp,
+                to_horizon_role           r,
+                tp_horizon_resource       res,
+                tp_horizon_resource_group resg
+                where r.id = rp.object_id
+                and rp.res_id = res.id
+                and rp.res_group_id=resg.id
+                )
+                ]]>
+			</sql>
+		</db2>
+		<dm>
+			<sql>
+            <![CDATA[
+                create or replace view vf_horizon_auth_check_v7 as
+                (
+                select rp.id,r.id as role_id, r.role_name,res.res_name,resg.res_group_name,resg.res_group_code,rp.status,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select dept_name from to_horizon_dept where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select role_name from to_horizon_role  where id = rp.biz_id)
+                when 'WORKGROUPOPER'
+                then  (select group_name from to_horizon_group  where id = rp.biz_id)
+                when 'TENANTOPER'
+                then (
+      				case
+      				when (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id) IS NULL
+      				then  '主空间'
+      				else (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id)
+      				END
+      				)
+                when 'ADMINMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowname from tw_hz_flow_def t where flowid=rp.biz_id  and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.app_name from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.form_name from tf_horizon_form tf where tf.id = rp.biz_id union all
+          				select tfg.flowformname from tf_horizon_form_graphics tfg where tfg.id = rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.view_name from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tfview.view_name||'->'||tvb.button_name from tf_horizon_view_button tvb,tf_horizon_view tfview where tvb.id = rp.biz_id and tvb.viewid=tfview.id)
+                when 'FORMBUTTON'
+                then (select tfform.form_name||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form tfform  where tfb.formid = tfform.id and tfb.id=rp.biz_id
+                union
+                select tgf.FLOWFORMNAME||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form_graphics tgf  where tgf.id = tfb.formid and tfb.id=rp.biz_id)
+                end
+                as biz_name,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select id from to_horizon_dept where id=rp.biz_id)
+                when 'TENANTOPER'
+                then (select t.id from ts_horizon_tenant t where id=rp.biz_id)
+                when 'ADMINMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowid from tw_hz_flow_def t where flowid=rp.biz_id and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.id from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.id from tf_horizon_form tf where tf.id=rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.id from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tvb.id from tf_horizon_view_button tvb where id=rp.biz_id)
+                when 'FORMBUTTON'
+                then (select tfb.id from tf_horizon_form_button tfb where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select r.id from to_horizon_role r where id=rp.biz_id)
+                when 'WORKGROUPOPER'
+                then (select g.id from to_horizon_group g where id=rp.biz_id)
+                end
+                as biz_id
+                from
+                tp_horizon_role           rp,
+                to_horizon_role           r,
+                tp_horizon_resource       res,
+                tp_horizon_resource_group resg
+                where r.id = rp.object_id
+                and rp.res_id = res.id
+                and rp.res_group_id=resg.id
+                )
+                ]]>
+			</sql>
+		</dm>
+		<gbase>
+			<sql>
+            <![CDATA[
+                create or replace view vf_horizon_auth_check_v7 as
+                (
+                select rp.id,r.id as role_id, r.role_name,res.res_name,resg.res_group_name,resg.res_group_code,rp.status,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select dept_name from to_horizon_dept where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select role_name from to_horizon_role  where id = rp.biz_id)
+                when 'WORKGROUPOPER'
+                then  (select group_name from to_horizon_group  where id = rp.biz_id)
+                when 'TENANTOPER'
+                then (
+      				case
+      				when (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id) IS NULL
+      				then  '主空间'
+      				else (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id)
+      				END
+      				)
+                when 'ADMINMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowname from tw_hz_flow_def t where flowid=rp.biz_id  and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.app_name from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.form_name from tf_horizon_form tf where tf.id = rp.biz_id union all
+          				select tfg.flowformname from tf_horizon_form_graphics tfg where tfg.id = rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.view_name from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tfview.view_name||'->'||tvb.button_name from tf_horizon_view_button tvb,tf_horizon_view tfview where tvb.id = rp.biz_id and tvb.viewid=tfview.id)
+                when 'FORMBUTTON'
+                then (select tfform.form_name||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form tfform  where tfb.formid = tfform.id and tfb.id=rp.biz_id
+                union
+                select tgf.FLOWFORMNAME||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form_graphics tgf  where tgf.id = tfb.formid and tfb.id=rp.biz_id)
+                end
+                as biz_name,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select id from to_horizon_dept where id=rp.biz_id)
+                when 'TENANTOPER'
+                then (select t.id from ts_horizon_tenant t where id=rp.biz_id)
+                when 'ADMINMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowid from tw_hz_flow_def t where flowid=rp.biz_id and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.id from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.id from tf_horizon_form tf where tf.id=rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.id from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tvb.id from tf_horizon_view_button tvb where id=rp.biz_id)
+                when 'FORMBUTTON'
+                then (select tfb.id from tf_horizon_form_button tfb where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select r.id from to_horizon_role r where id=rp.biz_id)
+                when 'WORKGROUPOPER'
+                then (select g.id from to_horizon_group g where id=rp.biz_id)
+                end
+                as biz_id
+                from
+                tp_horizon_role           rp,
+                to_horizon_role           r,
+                tp_horizon_resource       res,
+                tp_horizon_resource_group resg
+                where r.id = rp.object_id
+                and rp.res_id = res.id
+                and rp.res_group_id=resg.id
+                )
+                ]]>
+			</sql>
+		</gbase>
+		<gbase8s>
+			<sql>
+				<![CDATA[
+                create view vf_horizon_auth_check_v7 as
+				(select id,role_id,role_name,res_name,res_group_name,res_group_code,status,biz_name,biz_id from (
+				select rp.id,r.id as role_id, r.role_name,res.res_name,resg.res_group_name,resg.res_group_code,rp.status,
+ 				to_char(
+ 				case resg.res_group_code
+    				when 'ORGOPER'
+      				then (select dept_name from to_horizon_dept where id=rp.biz_id)
+    				when 'ROLEOPER'
+      				then (select role_name from to_horizon_role  where id = rp.biz_id)
+    				when 'WORKGROUPOPER'
+      				then  (select group_name from to_horizon_group  where id = rp.biz_id)
+    				when 'TENANTOPER'
+      				then (
+      					case
+      					when (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id) IS NULL
+      					then  '主空间'
+      					else (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id)
+      					END
+      					)
+  					when 'ADMINMENUOPER'
+      				then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+  					when 'USERMENUOPER'
+      				then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+    				when 'FLOWOPER'
+      				then (select t.flowname from tw_hz_flow_def t where flowid=rp.biz_id  and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+    				when 'MODULEOPER'
+      				then (select m.app_name from ts_horizon_module m where m.id=rp.biz_id)
+    				when 'MODULETABLE'
+      				then (select tf.form_name from tf_horizon_form tf where tf.id=rp.biz_id)
+    				when 'MODULEVIEW'
+      				then (select tv.view_name from tf_horizon_view tv where tv.id=rp.biz_id)
+    				when 'MODULEMENU'
+      				then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+    				when 'VIEWBUTTON'
+      				then (select tfview.view_name||'->'||tvb.button_name from tf_horizon_view_button tvb,tf_horizon_view tfview where tvb.id = rp.biz_id and tvb.viewid=tfview.id)
+    				when 'FORMBUTTON'
+      				then (select tfform.form_name||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form tfform  where tfb.formid = tfform.id and tfb.id=rp.biz_id
+           			union
+           			select tgf.FLOWFORMNAME||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form_graphics tgf  where tgf.id = tfb.formid and tfb.id=rp.biz_id)
+    				end)
+  				as biz_name,
+ 				case resg.res_group_code
+    				when 'ORGOPER'
+      				then (select id from to_horizon_dept where id=rp.biz_id)
+    				when 'TENANTOPER'
+      				then (select t.id from ts_horizon_tenant t where id=rp.biz_id)
+    				when 'ADMINMENUOPER'
+      				then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+    				when 'USERMENUOPER'
+      				then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+    				when 'FLOWOPER'
+      				then (select t.flowid from tw_hz_flow_def t where flowid=rp.biz_id and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+    				when 'MODULEOPER'
+      				then (select m.id from ts_horizon_module m where m.id=rp.biz_id)
+    				when 'MODULETABLE'
+      				then (select tf.id from tf_horizon_form tf where tf.id=rp.biz_id)
+    				when 'MODULEVIEW'
+      				then (select tv.id from tf_horizon_view tv where tv.id=rp.biz_id)
+    				when 'MODULEMENU'
+      				then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+    				when 'VIEWBUTTON'
+      				then (select tvb.id from tf_horizon_view_button tvb where id=rp.biz_id)
+    				when 'FORMBUTTON'
+      				then (select tfb.id from tf_horizon_form_button tfb where id=rp.biz_id)
+    				when 'ROLEOPER'
+      				then (select r.id from to_horizon_role r where id=rp.biz_id)
+    				when 'WORKGROUPOPER'
+      				then (select g.id from to_horizon_group g where id=rp.biz_id)
+    				end
+  				as biz_id
+ 			from
+       			tp_horizon_role           rp,
+        		to_horizon_role           r,
+       			tp_horizon_resource       res,
+       			tp_horizon_resource_group resg
+ 			where r.id = rp.object_id
+   				and rp.res_id = res.id
+   				and rp.res_group_id=resg.id)
+					);
+                ]]>
+			</sql>
+		</gbase8s>
+		<kingbase>
+			<sql>
+            <![CDATA[
+                create or replace view vf_horizon_auth_check_v7 as
+                (
+                select rp.id,r.id as role_id, r.role_name,res.res_name,resg.res_group_name,resg.res_group_code,rp.status,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select dept_name from to_horizon_dept where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select role_name from to_horizon_role  where id = rp.biz_id)
+                when 'WORKGROUPOPER'
+                then  (select group_name from to_horizon_group  where id = rp.biz_id)
+                when 'TENANTOPER'
+               	then (
+      				case
+      				when (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id) IS NULL
+      				then  '主空间'
+      				else (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id)
+      				END
+      				)
+                when 'ADMINMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowname from tw_hz_flow_def t where flowid=rp.biz_id  and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.app_name from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.form_name from tf_horizon_form tf where tf.id = rp.biz_id union all
+          				select tfg.flowformname from tf_horizon_form_graphics tfg where tfg.id = rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.view_name from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tfview.view_name||'->'||tvb.button_name from tf_horizon_view_button tvb,tf_horizon_view tfview where tvb.id = rp.biz_id and tvb.viewid=tfview.id)
+                when 'FORMBUTTON'
+                then (select tfform.form_name||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form tfform  where tfb.formid = tfform.id and tfb.id=rp.biz_id
+                union
+                select tgf.FLOWFORMNAME||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form_graphics tgf  where tgf.id = tfb.formid and tfb.id=rp.biz_id)
+                end
+                as biz_name,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select id from to_horizon_dept where id=rp.biz_id)
+                when 'TENANTOPER'
+                then (select t.id from ts_horizon_tenant t where id=rp.biz_id)
+                when 'ADMINMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowid from tw_hz_flow_def t where flowid=rp.biz_id and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.id from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.id from tf_horizon_form tf where tf.id=rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.id from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tvb.id from tf_horizon_view_button tvb where id=rp.biz_id)
+                when 'FORMBUTTON'
+                then (select tfb.id from tf_horizon_form_button tfb where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select r.id from to_horizon_role r where id=rp.biz_id)
+                when 'WORKGROUPOPER'
+                then (select g.id from to_horizon_group g where id=rp.biz_id)
+                end
+                as biz_id
+                from
+                tp_horizon_role           rp,
+                to_horizon_role           r,
+                tp_horizon_resource       res,
+                tp_horizon_resource_group resg
+                where r.id = rp.object_id
+                and rp.res_id = res.id
+                and rp.res_group_id=resg.id
+                )
+                ]]>
+			</sql>
+		</kingbase>
+		<kingbase8>
+			<sql>
+				<![CDATA[
+                create or replace view vf_horizon_auth_check_v7 as
+                (
+                select rp.id,r.id as role_id, r.role_name,res.res_name,resg.res_group_name,resg.res_group_code,rp.status,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select dept_name from to_horizon_dept where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select role_name from to_horizon_role  where id = rp.biz_id)
+                when 'WORKGROUPOPER'
+                then  (select group_name from to_horizon_group  where id = rp.biz_id)
+                when 'TENANTOPER'
+               	then (
+      				case
+      				when (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id) IS NULL
+      				then  '主空间'
+      				else (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id)
+      				END
+      				)
+                when 'ADMINMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowname from tw_hz_flow_def t where flowid=rp.biz_id  and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.app_name from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.form_name from tf_horizon_form tf where tf.id = rp.biz_id union all
+          				select tfg.flowformname from tf_horizon_form_graphics tfg where tfg.id = rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.view_name from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tfview.view_name||'->'||tvb.button_name from tf_horizon_view_button tvb,tf_horizon_view tfview where tvb.id = rp.biz_id and tvb.viewid=tfview.id)
+                when 'FORMBUTTON'
+                then (select tfform.form_name||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form tfform  where tfb.formid = tfform.id and tfb.id=rp.biz_id
+                union
+                select tgf.FLOWFORMNAME||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form_graphics tgf  where tgf.id = tfb.formid and tfb.id=rp.biz_id)
+                end
+                as biz_name,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select id from to_horizon_dept where id=rp.biz_id)
+                when 'TENANTOPER'
+                then (select t.id from ts_horizon_tenant t where id=rp.biz_id)
+                when 'ADMINMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowid from tw_hz_flow_def t where flowid=rp.biz_id and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.id from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.id from tf_horizon_form tf where tf.id=rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.id from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tvb.id from tf_horizon_view_button tvb where id=rp.biz_id)
+                when 'FORMBUTTON'
+                then (select tfb.id from tf_horizon_form_button tfb where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select r.id from to_horizon_role r where id=rp.biz_id)
+                when 'WORKGROUPOPER'
+                then (select g.id from to_horizon_group g where id=rp.biz_id)
+                end
+                as biz_id
+                from
+                tp_horizon_role           rp,
+                to_horizon_role           r,
+                tp_horizon_resource       res,
+                tp_horizon_resource_group resg
+                where r.id = rp.object_id
+                and rp.res_id = res.id
+                and rp.res_group_id=resg.id
+                )
+                ]]>
+			</sql>
+		</kingbase8>
+		<mysql>
+			<sql>
+            <![CDATA[
+                create or replace view vf_horizon_auth_check_v7 as
+                (
+                select rp.id,r.id as role_id, r.role_name,res.res_name,resg.res_group_name,resg.res_group_code,rp.status,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select dept_name from to_horizon_dept where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select role_name from to_horizon_role  where id = rp.biz_id)
+                when 'WORKGROUPOPER'
+                then  (select group_name from to_horizon_group  where id = rp.biz_id)
+                when 'TENANTOPER'
+                then (
+      				case
+      				when (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id) IS NULL
+      				then  '主空间'
+      				else (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id)
+      				END
+      				)
+                when 'ADMINMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowname from tw_hz_flow_def t where flowid=rp.biz_id  and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.app_name from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.form_name from tf_horizon_form tf where tf.id = rp.biz_id union all
+          				select tfg.flowformname from tf_horizon_form_graphics tfg where tfg.id = rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.view_name from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select CONCAT(CONCAT(tfview.view_name,'->'),tvb.button_name) from tf_horizon_view_button tvb,tf_horizon_view tfview where tvb.id = rp.biz_id and tvb.viewid=tfview.id)
+                when 'FORMBUTTON'
+                then (select CONCAT(CONCAT(tfform.form_name,'->'),tfb.button_name) from tf_horizon_form_button tfb, tf_horizon_form tfform  where tfb.formid = tfform.id and tfb.id=rp.biz_id
+                union
+                select CONCAT(CONCAT(tgf.FLOWFORMNAME,'->'),tfb.button_name) from tf_horizon_form_button tfb, tf_horizon_form_graphics tgf  where tgf.id = tfb.formid and tfb.id=rp.biz_id)
+                end
+                as biz_name,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select id from to_horizon_dept where id=rp.biz_id)
+                when 'TENANTOPER'
+                then (select t.id from ts_horizon_tenant t where id=rp.biz_id)
+                when 'ADMINMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowid from tw_hz_flow_def t where flowid=rp.biz_id and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.id from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.id from tf_horizon_form tf where tf.id=rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.id from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tvb.id from tf_horizon_view_button tvb where id=rp.biz_id)
+                when 'FORMBUTTON'
+                then (select tfb.id from tf_horizon_form_button tfb where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select r.id from to_horizon_role r where id=rp.biz_id)
+                when 'WORKGROUPOPER'
+                then (select g.id from to_horizon_group g where id=rp.biz_id)
+                end
+                as biz_id
+                from
+                tp_horizon_role           rp,
+                to_horizon_role           r,
+                tp_horizon_resource       res,
+                tp_horizon_resource_group resg
+                where r.id = rp.object_id
+                and rp.res_id = res.id
+                and rp.res_group_id=resg.id
+                )
+                ]]>
+			</sql>
+		</mysql>
+		<mysql8>
+			<sql>
+				<![CDATA[
+                create or replace view vf_horizon_auth_check_v7 as
+                (
+                select rp.id,r.id as role_id, r.role_name,res.res_name,resg.res_group_name,resg.res_group_code,rp.status,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select dept_name from to_horizon_dept where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select role_name from to_horizon_role  where id = rp.biz_id)
+                when 'WORKGROUPOPER'
+                then  (select group_name from to_horizon_group  where id = rp.biz_id)
+                when 'TENANTOPER'
+                then (
+      				case
+      				when (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id) IS NULL
+      				then  '主空间'
+      				else (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id)
+      				END
+      				)
+                when 'ADMINMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowname from tw_hz_flow_def t where flowid=rp.biz_id  and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.app_name from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.form_name from tf_horizon_form tf where tf.id = rp.biz_id union all
+          				select tfg.flowformname from tf_horizon_form_graphics tfg where tfg.id = rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.view_name from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select CONCAT(CONCAT(tfview.view_name,'->'),tvb.button_name) from tf_horizon_view_button tvb,tf_horizon_view tfview where tvb.id = rp.biz_id and tvb.viewid=tfview.id)
+                when 'FORMBUTTON'
+                then (select CONCAT(CONCAT(tfform.form_name,'->'),tfb.button_name) from tf_horizon_form_button tfb, tf_horizon_form tfform  where tfb.formid = tfform.id and tfb.id=rp.biz_id
+                union
+                select CONCAT(CONCAT(tgf.FLOWFORMNAME,'->'),tfb.button_name) from tf_horizon_form_button tfb, tf_horizon_form_graphics tgf  where tgf.id = tfb.formid and tfb.id=rp.biz_id)
+                end
+                as biz_name,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select id from to_horizon_dept where id=rp.biz_id)
+                when 'TENANTOPER'
+                then (select t.id from ts_horizon_tenant t where id=rp.biz_id)
+                when 'ADMINMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowid from tw_hz_flow_def t where flowid=rp.biz_id and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.id from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.id from tf_horizon_form tf where tf.id=rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.id from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tvb.id from tf_horizon_view_button tvb where id=rp.biz_id)
+                when 'FORMBUTTON'
+                then (select tfb.id from tf_horizon_form_button tfb where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select r.id from to_horizon_role r where id=rp.biz_id)
+                when 'WORKGROUPOPER'
+                then (select g.id from to_horizon_group g where id=rp.biz_id)
+                end
+                as biz_id
+                from
+                tp_horizon_role           rp,
+                to_horizon_role           r,
+                tp_horizon_resource       res,
+                tp_horizon_resource_group resg
+                where r.id = rp.object_id
+                and rp.res_id = res.id
+                and rp.res_group_id=resg.id
+                )
+                ]]>
+			</sql>
+		</mysql8>
+		<postgresql>
+			<sql>
+            <![CDATA[
+                create or replace view vf_horizon_auth_check_v7 as
+                (
+                select rp.id,r.id as role_id, r.role_name,res.res_name,resg.res_group_name,resg.res_group_code,rp.status,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select dept_name from to_horizon_dept where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select role_name from to_horizon_role  where id = rp.biz_id)
+                when 'WORKGROUPOPER'
+                then  (select group_name from to_horizon_group  where id = rp.biz_id)
+                when 'TENANTOPER'
+                then (
+      				case
+      				when (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id) IS NULL
+      				then  '主空间'
+      				else (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id)
+      				END
+      				)
+                when 'ADMINMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowname from tw_hz_flow_def t where flowid=rp.biz_id  and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.app_name from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.form_name from tf_horizon_form tf where tf.id = rp.biz_id union all
+          				select tfg.flowformname from tf_horizon_form_graphics tfg where tfg.id = rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.view_name from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tfview.view_name||'->'||tvb.button_name from tf_horizon_view_button tvb,tf_horizon_view tfview where tvb.id = rp.biz_id and tvb.viewid=tfview.id)
+                when 'FORMBUTTON'
+                then (select tfform.form_name||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form tfform  where tfb.formid = tfform.id and tfb.id=rp.biz_id
+                union
+                select tgf.FLOWFORMNAME||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form_graphics tgf  where tgf.id = tfb.formid and tfb.id=rp.biz_id)
+                end
+                as biz_name,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select id from to_horizon_dept where id=rp.biz_id)
+                when 'TENANTOPER'
+                then (select t.id from ts_horizon_tenant t where id=rp.biz_id)
+                when 'ADMINMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowid from tw_hz_flow_def t where flowid=rp.biz_id and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.id from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.id from tf_horizon_form tf where tf.id=rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.id from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tvb.id from tf_horizon_view_button tvb where id=rp.biz_id)
+                when 'FORMBUTTON'
+                then (select tfb.id from tf_horizon_form_button tfb where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select r.id from to_horizon_role r where id=rp.biz_id)
+                when 'WORKGROUPOPER'
+                then (select g.id from to_horizon_group g where id=rp.biz_id)
+                end
+                as biz_id
+                from
+                tp_horizon_role           rp,
+                to_horizon_role           r,
+                tp_horizon_resource       res,
+                tp_horizon_resource_group resg
+                where r.id = rp.object_id
+                and rp.res_id = res.id
+                and rp.res_group_id=resg.id
+                )
+                ]]>
+			</sql>
+
+		</postgresql>
+		<highgo>
+			<sql>
+            <![CDATA[
+                create or replace view vf_horizon_auth_check_v7 as
+                (
+                select rp.id,r.id as role_id, r.role_name,res.res_name,resg.res_group_name,resg.res_group_code,rp.status,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select dept_name from to_horizon_dept where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select role_name from to_horizon_role  where id = rp.biz_id)
+                when 'WORKGROUPOPER'
+                then  (select group_name from to_horizon_group  where id = rp.biz_id)
+                when 'TENANTOPER'
+                then (
+      				case
+      				when (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id) IS NULL
+      				then  '主空间'
+      				else (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id)
+      				END
+      				)
+                when 'ADMINMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowname from tw_hz_flow_def t where flowid=rp.biz_id  and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.app_name from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.form_name from tf_horizon_form tf where tf.id = rp.biz_id union all
+          				select tfg.flowformname from tf_horizon_form_graphics tfg where tfg.id = rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.view_name from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tfview.view_name||'->'||tvb.button_name from tf_horizon_view_button tvb,tf_horizon_view tfview where tvb.id = rp.biz_id and tvb.viewid=tfview.id)
+                when 'FORMBUTTON'
+                then (select tfform.form_name||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form tfform  where tfb.formid = tfform.id and tfb.id=rp.biz_id
+                union
+                select tgf.FLOWFORMNAME||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form_graphics tgf  where tgf.id = tfb.formid and tfb.id=rp.biz_id)
+                end
+                as biz_name,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select id from to_horizon_dept where id=rp.biz_id)
+                when 'TENANTOPER'
+                then (select t.id from ts_horizon_tenant t where id=rp.biz_id)
+                when 'ADMINMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowid from tw_hz_flow_def t where flowid=rp.biz_id and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.id from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.id from tf_horizon_form tf where tf.id=rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.id from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tvb.id from tf_horizon_view_button tvb where id=rp.biz_id)
+                when 'FORMBUTTON'
+                then (select tfb.id from tf_horizon_form_button tfb where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select r.id from to_horizon_role r where id=rp.biz_id)
+                when 'WORKGROUPOPER'
+                then (select g.id from to_horizon_group g where id=rp.biz_id)
+                end
+                as biz_id
+                from
+                tp_horizon_role           rp,
+                to_horizon_role           r,
+                tp_horizon_resource       res,
+                tp_horizon_resource_group resg
+                where r.id = rp.object_id
+                and rp.res_id = res.id
+                and rp.res_group_id=resg.id
+                )
+                ]]>
+			</sql>
+
+		</highgo>
+		<sqlserver>
+			<sql>
+            <![CDATA[
+                create view vf_horizon_auth_check_v7 as
+                (
+                select rp.id,r.id as role_id, r.role_name,res.res_name,resg.res_group_name,resg.res_group_code,rp.status,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select dept_name from to_horizon_dept where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select role_name from to_horizon_role  where id = rp.biz_id)
+                when 'WORKGROUPOPER'
+                then  (select group_name from to_horizon_group  where id = rp.biz_id)
+                when 'TENANTOPER'
+               	then (
+      				case
+      				when (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id) IS NULL
+      				then  '主空间'
+      				else (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id)
+      				END
+      				)
+                when 'ADMINMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowname from tw_hz_flow_def t where flowid=rp.biz_id  and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.app_name from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.form_name from tf_horizon_form tf where tf.id = rp.biz_id union all
+          				select tfg.flowformname from tf_horizon_form_graphics tfg where tfg.id = rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.view_name from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tfview.view_name +'->'+ tvb.button_name from tf_horizon_view_button tvb,tf_horizon_view tfview where tvb.id = rp.biz_id and tvb.viewid=tfview.id)
+                when 'FORMBUTTON'
+                then (select tfform.form_name +'->'+ tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form tfform  where tfb.formid = tfform.id and tfb.id=rp.biz_id
+                union
+                select tgf.FLOWFORMNAME +'->'+ tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form_graphics tgf  where tgf.id = tfb.formid and tfb.id=rp.biz_id)
+                end
+                as biz_name,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select id from to_horizon_dept where id=rp.biz_id)
+                when 'TENANTOPER'
+                then (select t.id from ts_horizon_tenant t where id=rp.biz_id)
+                when 'ADMINMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowid from tw_hz_flow_def t where flowid=rp.biz_id and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.id from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.id from tf_horizon_form tf where tf.id=rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.id from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tvb.id from tf_horizon_view_button tvb where id=rp.biz_id)
+                when 'FORMBUTTON'
+                then (select tfb.id from tf_horizon_form_button tfb where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select r.id from to_horizon_role r where id=rp.biz_id)
+                when 'WORKGROUPOPER'
+                then (select g.id from to_horizon_group g where id=rp.biz_id)
+                end
+                as biz_id
+                from
+                tp_horizon_role           rp,
+                to_horizon_role           r,
+                tp_horizon_resource       res,
+                tp_horizon_resource_group resg
+                where r.id = rp.object_id
+                and rp.res_id = res.id
+                and rp.res_group_id=resg.id
+                )
+              ]]>
+			</sql>
+		</sqlserver>
+		<oscar>
+			<sql>
+            <![CDATA[
+                create or replace view vf_horizon_auth_check_v7 as
+				(
+				select rp.id,r.id as role_id, r.role_name,res.res_name,resg.res_group_name,resg.res_group_code,rp.status,
+				 case resg.res_group_code
+				    when 'ORGOPER'
+				      then (select dept_name from to_horizon_dept where id=rp.biz_id)
+				    when 'ROLEOPER' 
+				      then (select role_name from to_horizon_role  where id = rp.biz_id)  
+				    when 'WORKGROUPOPER' 
+				      then  (select group_name from to_horizon_group  where id = rp.biz_id)
+				    when 'TENANTOPER'
+				      then (
+      					case
+      					when (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id) IS NULL
+      					then  '主空间'
+      					else (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id)
+      					END
+      					)
+				    when 'ADMINMENUOPER'
+				      then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+				    when 'USERMENUOPER'
+				      then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+				    when 'FLOWOPER'
+				      then (select t.flowname from tw_hz_flow_def t where flowid=rp.biz_id  and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+				    when 'MODULEOPER'
+				      then (select m.app_name from ts_horizon_module m where m.id=rp.biz_id)
+				    when 'MODULETABLE'
+				      then (select tf.form_name from tf_horizon_form tf where tf.id=rp.biz_id)
+				    when 'MODULEVIEW'
+				      then (select tv.view_name from tf_horizon_view tv where tv.id=rp.biz_id)
+				    when 'MODULEMENU'
+				      then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+				    when 'VIEWBUTTON'
+				      then (select tfview.view_name||'->'||tvb.button_name from tf_horizon_view_button tvb,tf_horizon_view tfview where tvb.id = rp.biz_id and tvb.viewid=tfview.id)
+				    when 'FORMBUTTON'
+				      then (select tfform.form_name||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form tfform  where tfb.formid = tfform.id and tfb.id=rp.biz_id
+				    union
+				      select tgf.FLOWFORMNAME||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form_graphics tgf  where tgf.id = tfb.formid and tfb.id=rp.biz_id)
+				    end
+				    as biz_name,
+			   case resg.res_group_code
+				    when 'ORGOPER'
+				      then (select id from to_horizon_dept where id=rp.biz_id)
+				    when 'TENANTOPER'
+				      then (select t.id from ts_horizon_tenant t where id=rp.biz_id)
+				    when 'ADMINMENUOPER'
+				      then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+				    when 'USERMENUOPER'
+				      then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+				    when 'FLOWOPER'
+				      then (select t.flowid from tw_hz_flow_def t where flowid=rp.biz_id and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+				    when 'MODULEOPER'
+				      then (select m.id from ts_horizon_module m where m.id=rp.biz_id)
+				    when 'MODULETABLE'
+				      then (select tf.id from tf_horizon_form tf where tf.id=rp.biz_id)
+				    when 'MODULEVIEW'
+				      then (select tv.id from tf_horizon_view tv where tv.id=rp.biz_id)
+				    when 'MODULEMENU'
+				      then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+				    when 'VIEWBUTTON'
+				      then (select tvb.id from tf_horizon_view_button tvb where id=rp.biz_id)
+				    when 'FORMBUTTON'
+				      then (select tfb.id from tf_horizon_form_button tfb where id=rp.biz_id)
+				    when 'ROLEOPER'
+				      then (select r.id from to_horizon_role r where id=rp.biz_id)
+				    when 'WORKGROUPOPER'
+				      then (select g.id from to_horizon_group g where id=rp.biz_id)
+				    end
+				  as biz_id
+				 from
+				       tp_horizon_role           rp,
+				        to_horizon_role           r,
+				       tp_horizon_resource       res,
+				       tp_horizon_resource_group resg
+				 where r.id = rp.object_id
+				   and rp.res_id = res.id
+				   and rp.res_group_id=resg.id
+				)
+                ]]>
+			</sql>
+		</oscar>
+		<upbase>
+			<sql>
+				<![CDATA[
+                create or replace view vf_horizon_auth_check_v7 as
+                (
+                select rp.id,r.id as role_id, r.role_name,res.res_name,resg.res_group_name,resg.res_group_code,rp.status,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select dept_name from to_horizon_dept where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select role_name from to_horizon_role  where id = rp.biz_id)
+                when 'WORKGROUPOPER'
+                then  (select group_name from to_horizon_group  where id = rp.biz_id)
+                when 'TENANTOPER'
+                then (
+      				case
+      				when (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id) IS NULL
+      				then  '主空间'
+      				else (select t.tenant_name from ts_horizon_tenant t where id=rp.biz_id)
+      				END
+      				)
+                when 'ADMINMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowname from tw_hz_flow_def t where flowid=rp.biz_id  and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.app_name from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.form_name from tf_horizon_form tf where tf.id = rp.biz_id union all
+          				select tfg.flowformname from tf_horizon_form_graphics tfg where tfg.id = rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.view_name from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.menu_name from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tfview.view_name||'->'||tvb.button_name from tf_horizon_view_button tvb,tf_horizon_view tfview where tvb.id = rp.biz_id and tvb.viewid=tfview.id)
+                when 'FORMBUTTON'
+                then (select tfform.form_name||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form tfform  where tfb.formid = tfform.id and tfb.id=rp.biz_id
+                union
+                select tgf.FLOWFORMNAME||'->'||tfb.button_name from tf_horizon_form_button tfb, tf_horizon_form_graphics tgf  where tgf.id = tfb.formid and tfb.id=rp.biz_id)
+                end
+                as biz_name,
+                case resg.res_group_code
+                when 'ORGOPER'
+                then (select id from to_horizon_dept where id=rp.biz_id)
+                when 'TENANTOPER'
+                then (select t.id from ts_horizon_tenant t where id=rp.biz_id)
+                when 'ADMINMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'USERMENUOPER'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'FLOWOPER'
+                then (select t.flowid from tw_hz_flow_def t where flowid=rp.biz_id and version=(select max(version) from tw_hz_flow_def where flowid=t.flowid))
+                when 'MODULEOPER'
+                then (select m.id from ts_horizon_module m where m.id=rp.biz_id)
+                when 'MODULETABLE'
+                then (select tf.id from tf_horizon_form tf where tf.id=rp.biz_id)
+                when 'MODULEVIEW'
+                then (select tv.id from tf_horizon_view tv where tv.id=rp.biz_id)
+                when 'MODULEMENU'
+                then (select t.id from ts_horizon_menu t where  id=rp.biz_id)
+                when 'VIEWBUTTON'
+                then (select tvb.id from tf_horizon_view_button tvb where id=rp.biz_id)
+                when 'FORMBUTTON'
+                then (select tfb.id from tf_horizon_form_button tfb where id=rp.biz_id)
+                when 'ROLEOPER'
+                then (select r.id from to_horizon_role r where id=rp.biz_id)
+                when 'WORKGROUPOPER'
+                then (select g.id from to_horizon_group g where id=rp.biz_id)
+                end
+                as biz_id
+                from
+                tp_horizon_role           rp,
+                to_horizon_role           r,
+                tp_horizon_resource       res,
+                tp_horizon_resource_group resg
+                where r.id = rp.object_id
+                and rp.res_id = res.id
+                and rp.res_group_id=resg.id
+                )
+                ]]>
+			</sql>
+
+		</upbase>
+	</others>
+</tableinfo>

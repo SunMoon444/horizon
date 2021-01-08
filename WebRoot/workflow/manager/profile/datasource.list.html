@@ -1,0 +1,153 @@
+<title>hz{datasource-config.title}</title>
+<hi18n  groups="datasource-config;base;message;datatables;validator" ></hi18n>
+<div class="page-header smaller">
+	<h1>
+		hz{datasource-config.largeTitle}
+		<small class="hidden-xs">
+            <i class="ace-icon fa fa-angle-double-right"></i>
+         	hz{datasource-config.samllTitle}
+        </small>
+		<div class="embed-toggle-sidebar-container hidden-md hidden-lg pull-right">
+            <button class="navbar-toggle toggle-sidebar" type="button" data-target="#toggle-sidebar">
+                <span class="sr-only">Toggle横向菜单</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button class="navbar-toggle toggle-sidebar2" type="button" data-target="#toggle-sidebar2" >
+                <span class="sr-only">Toggle左侧菜单</span>
+                <i class="ace-icon fa fa-dashboard bigger-110"></i>
+            </button>
+        </div>
+	</h1>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+        <table id="myDatatable" class="table table-hover"></table>
+    </div>
+</div>
+<div class="hidden" id="dataSourceInfo">
+	<div class="space-6"></div>
+	<form class="form-horizontal no-margin-bottom" id="dataSourceInfoForm">
+        <div class="space-4">
+           <input type="hidden" name="id"/>
+           <input type="hidden" name="type"/>
+           <input type="hidden" name="initFlag" value="2"/>
+		   <input type="hidden" id="isDefault" name="isDefault" value="false" /><!-- 是否是默认数据源，默认是否 -->
+		   <input type="hidden" name="connectionType" id="connectionType" value="DBCP"/>  <!-- 链接数据库的方式 -->
+		   <input type="hidden" name="dbConnectionType" id="dbConnectionType" value="DBCP"/>  <!-- 数据库连接的方式 -->	
+        </div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 ">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{datasource-config.identifier}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<input class="col-xs-12 form-control" name="identifier" type="text" maxlength="100" required>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{datasource-config.dbtype}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<select class="form-control" name="databaseType"   required>
+						    <option value="Oracle">Oracle</option>
+						    <option value="DB2" >DB2</option>
+						    <option value="MySQL" >MySQL</option>
+						    <option value="MySQL8" >MySQL8</option>
+						    <option value="SqlServer" >SqlServer</option>
+						    <option value="DM" >DM</option>
+						    <option value="GBase">GBase</option>
+						    <option value="GBase8s">GBase8s</option>
+							<option value="KingBase">KingBase</option>
+							<option value="KingBase8">KingBase8</option>
+							<option value="Postgresql">Postgresql</option>
+							<option value="Oscar">Oscar</option>
+							<option value="Upbase">Upbase</option>
+						</select>
+						<!-- <input class="form-control" type="text" name="databaseType" readonly="readonly"  required/> -->
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 hidden">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{datasource-config.driverClass}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<input class="col-xs-12 form-control" name="driverClass" type="text" required maxlength="200" notChinese="true">
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 ">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{datasource-config.dbUrl}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<input class="col-xs-12 form-control" name="jdbcUrl" type="text" required maxlength="200" notChinese="true">
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 ">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{datasource-config.userName}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<input class="col-xs-12 form-control" name="userName" type="text" required maxlength="100" notChinese="true">
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 ">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{datasource-config.userPassword}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<input class="col-xs-12 form-control" name="password" type="text" required maxlength="100" notChinese="true">
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 ">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{datasource-config.dbMinpoolsize}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<input class="col-xs-12 form-control" name="minPoolSize" value="3" type="text" required maxlength="100" digits="true">
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 ">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{datasource-config.dbMaxpoolsize}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<input class="col-xs-12 form-control" name="maxPoolSize" value="15" type="text" required maxlength="100" digits="true">
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{datasource-config.dbInitialpoolsize}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<input class="col-xs-12 form-control" name="initialPoolSize" value="3" type="text" maxlength="100" digits="true">
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 ">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 control-label">hz{datasource-config.dbMaxideltime}:</label>
+					<div class="col-xs-12 col-sm-9">
+						<input class="col-xs-12 form-control" name="maxIdelTime" value="10" type="text" maxlength="100" digits="true">
+					</div>
+				</div>
+			</div>
+		</div>
+		  <input name="lobProcessorClass"  type="hidden" >
+		  <input name="lobBufferSize" value="1048576" type="hidden" >
+		</div>
+   </form>
+</div>
+<div class="hidden" id="systemList-dialog"></div>
+<script type="text/javascript">
+jQuery(function($) {
+    require([horizon.paths.assetspath + '/manager/profile/js/sys.datasource.js'], function() {
+    	horizon.language.plugins.datatables();
+    	horizon.language.plugins.validator();
+        horizon.engine.dataSourcelist.initTable();
+		horizon.engine.dataSourcelist.initdataSourceForm();
+        $('.page-content-area').trigger('ajaxscriptsloaded');
+    });
+});
+</script>

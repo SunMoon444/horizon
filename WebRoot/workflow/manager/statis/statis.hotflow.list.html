@@ -1,0 +1,205 @@
+<title>hz{quantity.hotFlowSmallTitle}</title>
+<hi18n groups="quantity;base;message;statis-common;datetimepicker;datatables"></Hi18n>
+<div class="page-header smaller">
+	<h1>
+		hz{statis-common.quantityLargeTitle}
+        <small class="hidden-xs">
+            <i class="ace-icon fa fa-angle-double-right"></i>
+			hz{quantity.hotFlowSmallTitle}
+		</small>
+		<div class="embed-toggle-sidebar-container hidden-md hidden-lg pull-right">
+            <button class="navbar-toggle toggle-sidebar" type="button" data-target="#toggle-sidebar">
+                <span class="sr-only">Toggle横向菜单</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button class="navbar-toggle toggle-sidebar2" type="button" data-target="#toggle-sidebar2" >
+                <span class="sr-only">Toggle左侧菜单</span>
+                <i class="ace-icon fa fa-dashboard bigger-110"></i>
+            </button>
+        </div>
+	</h1>
+</div>
+<div class="row">
+   <div class="col-xs-12" id="statis-hotflow-searcher">
+       <div class="widget-box transparent">
+           <div class="widget-header">
+           		<h5 class="widget-title lighter smaller">
+                    <i class="ace-icon fa fa-pie-chart"></i>hz{statis-common.showTypeRing}
+                </h5>
+                <div class="widget-toolbar">
+                    <div class="widget-menu">
+                        <a href="javascript:void(0);" data-action="settings" data-toggle="dropdown">
+                            <i class="ace-icon fa fa-bars"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right dropdown-light-blue dropdown-caret dropdown-closer">
+                            <li class="active" data-value='pillar'>
+                                <a  href="javascript:void(0)">
+                                    <i class="ace-icon fa fa-pie-chart"></i>
+                                    	hz{statis-common.showTypeRing}
+                                </a>
+                            </li>
+                            <li data-value='table'>
+                                <a  href="javascript:void(0)">
+                                    <i class="ace-icon fa fa-list-alt"></i>
+                                   	hz{statis-common.showTypeTable}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0);" data-action="collapse">
+                        <i class="ace-icon fa fa-chevron-up"></i>
+                    </a>
+                </div>
+               <div class="widget-toolbar no-border" id='myTab'>
+                   <ul class="nav nav-tabs">
+                       <li class="active">
+                            <a data-toggle="tab" href="#day-tab" data-value="day" data-active='true' aria-expanded="true">hz{statis-common.mytabDay}</a>
+                        </li>
+                       <li >
+                           <a data-toggle="tab" href="#day-tab" data-value="month" data-active='false' aria-expanded="false">hz{statis-common.mytabMonth}</a>
+                       </li>
+                       <li>
+                           <a data-toggle="tab" href="#day-tab" data-value="quarter" data-active='false' aria-expanded="false">hz{statis-common.mytabQuarter}</a>
+                       </li>
+                       <li >
+                           <a data-toggle="tab" href="#day-tab" data-value="year" data-active='false' aria-expanded="false">hz{statis-common.mytabYear}</a>
+                       </li>
+                       <li>
+                           <a data-toggle="tab" href="#day-tab" data-value="auto" data-active='false' aria-expanded="false">hz{statis-common.mytabAuto}</a>
+                       </li>
+                    </ul>
+                </div>
+       </div>
+      <div class="widget-body">
+       <div class="widget-main padding-4">
+           <div class="tab-content padding-8">
+               <div id="day-tab" class="tab-pane active">
+                   <form class="form-horizontal">
+                       <div class="form-group">
+                           <div id='day-tab-container' class='tab-container'>
+	                               <label class="col-sm-2 control-label no-padding-left" title=hz{statis-common.tabDayTime}>
+	                                       	 hz{statis-common.tabDayTime}:
+	                                    </label>
+	                                    <div class="col-sm-2 no-padding">
+	                                        <span class="input-icon col-xs-12 no-padding">
+											    <input type="text" name="day_time" id="day_time" class="form-control pointer" readonly  placeholder='hz{statis-common.tabTime}' />
+												<i class="ace-icon fa fa-calendar"></i>
+											</span>
+	                                    </div>
+                                    </div>
+                                    <div id='month-tab-container' class='tab-container hidden'>
+	                                    <label class="col-sm-2 control-label no-padding-left" title=hz{statis-common.tabMonthTime}>
+                                       		hz{statis-common.tabMonthTime}:
+	                                    </label>
+	                                    <div class="col-sm-2 no-padding">
+	                                        <span class="input-icon col-xs-12 no-padding">
+											    <input type="text" name="month_month" id="month_month" class="form-control pointer" readonly  placeholder='hz{statis-common.tabMonth}' />
+												<i class="ace-icon fa fa-calendar"></i>
+											</span>
+	                                    </div>
+                                    </div>
+                                   <div id='quarter-tab-container' class='tab-container hidden'>
+                                    	<label class="col-sm-2 col-md-1 control-label no-padding-right" title=hz{statis-common.tabYearTime}>
+                                       		hz{statis-common.tabYearTime}:
+	                                    </label>
+	                                    <div class="col-sm-2 col-md-2 no-padding-right">
+	                                        <span class="input-icon col-xs-12 no-padding">
+											    <input type="text" name="quarter_year" id="quarter_year" class="form-control pointer" readonly  placeholder='hz{statis-common.tabYear}' />
+												<i class="ace-icon fa fa-calendar"></i>
+											</span>
+	                                    </div>
+	                                    <label class="col-sm-2 col-md-1 control-label no-padding-right" title=hz{statis-common.tabQuarterTime}>
+	                                       	hz{statis-common.tabQuarterTime}:
+	                                    </label>
+	                                    <div class="col-sm-2 col-md-2 no-padding-right">
+	                                        <span class="input-icon col-xs-12 no-padding">
+	                                        	<select  name="quarter_quarter" id="quarter_quarter" class="form-control no-padding"></select>
+											</span>
+	                                    </div>
+                                    </div>
+                                    <div id='year-tab-container' class='tab-container hidden'>
+	                                    <label class="col-sm-2 control-label no-padding-left" title=hz{statis-common.tabYearTime}>
+                                       	hz{statis-common.tabYearTime}:
+	                                    </label>
+	                                    <div class="col-sm-2 no-padding">
+	                                        <span class="input-icon col-xs-12 no-padding">
+											    <input type="text" name="year_year" id="year_year" class="form-control pointer" readonly  placeholder='hz{statis-common.tabYear}' />
+												<i class="ace-icon fa fa-calendar"></i>
+											</span>
+	                                    </div>
+                                    </div>
+                           <div id="auto-tab-container" class='tab-container hidden'>
+                               <label class="col-sm-2 col-md-1 control-label no-padding-right" title=hz{statis-common.tabAutoTime}>
+                                   hz{statis-common.tabAutoTime}:
+                               </label>
+                               <div class="col-sm-2 col-md-2 no-padding-right">
+                                   <span class="input-icon col-xs-12 no-padding">
+                                       <input type="text" name="auto_datepicker" id="auto_datepicker" class="form-control pointer" readonly  placeholder='hz{statis-common.tabMonth}' />
+                                       <input type="hidden" name="auto_starttime" id="auto_starttime" />
+                                       <input type="hidden" name="auto_endtime" id="auto_endtime" />
+                                       <i class="ace-icon fa fa-calendar"></i>
+                                    </span>
+                                </div>
+                             </div>
+                             <div id="other-container" >
+                                 <label class="col-sm-2 col-md-1 control-label no-padding-right"  title=hz{statis-common.flowShowNumber}>
+                                      hz{statis-common.flowNumber}:
+                                 </label>
+                                 <div class="col-sm-2 col-md-2 no-padding-right">
+                                 <span class="input-icon col-xs-12 no-padding">
+                                         <select class="form-control pointer" id="size" >
+                                             <option value="5" selected="selected">5</option>
+                                             <option value="10">10</option>
+                                             <option value="15">15</option>
+                                             <option value="20">20</option>
+                                         </select>
+                                  </span>
+                                  </div>
+                                  <div class="pull-right margin-4 no-margin-right" >
+                                  <button type="button" class="btn btn-white btn-round btn-sm btn-submit border-width-1" >
+                                      <i class="ace-icon fa fa-search green"></i>hz{statis-common.buttonsStatis}
+                                  </button>
+                              </div>
+                              </div>
+                           </div>
+                       </form>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </div>
+</div>
+    <div class="col-xs-12">
+	<!-- 最热流程统计 -->
+		<div id="statis-status-flow-container">
+			<div class="col-xs-12 hidden no-padding" id="flowimage-container">
+				<div id="statis-status-flow-placeholder" style="z-index: 1"></div>
+			</div>
+			<div class="hidden" id="statis-flow-list-container">
+				<table id="statis-flow-list-data" class="table table-hover"></table>
+			</div>
+		</div>
+	<!-- end 最热流程统计 -->
+	</div>
+</div>
+
+<script type="text/javascript">
+jQuery(function($) {
+	require([
+		horizon.paths.assetspath + '/manager/statis/js/hotflow.list.js'
+		],
+		function() {
+			horizon.language.plugins.datatables();
+			horizon.language.plugins.datetimepicker()
+			horizon.tools.use(horizon.paths.pluginpath + '/date-time/datetime-picker/css/bootstrap-datetimepicker.css');
+			horizon.tools.use(horizon.paths.pluginpath + '/date-time/daterange-picker/css/daterangepicker.css');
+			//初始化搜索控件
+			horizon.engine.hotflow.initSearcher();
+			//控制内容显示
+			horizon.engine.hotflow.init();
+			$('.page-content-area').trigger('ajaxscriptsloaded');
+		});
+});
+</script>

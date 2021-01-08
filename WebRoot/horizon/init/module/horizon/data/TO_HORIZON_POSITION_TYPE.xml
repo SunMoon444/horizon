@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="TO_HORIZON_POSITION_TYPE">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:string" minOccurs="0" />
+                <xs:element name="CATEGORY_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="CATEGORY_CODE" type="xs:string" minOccurs="0" />
+                <xs:element name="PARENT_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="CREATED" type="xs:string" minOccurs="0" />
+                <xs:element name="MODIFIED" type="xs:string" minOccurs="0" />
+                <xs:element name="CREATOR" type="xs:string" minOccurs="0" />
+                <xs:element name="MODIFICATOR" type="xs:string" minOccurs="0" />
+                <xs:element name="ORDER_NO" type="xs:decimal" minOccurs="0" />
+                <xs:element name="COMMENTS" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <TO_HORIZON_POSITION_TYPE>
+    <ID>root_node_id</ID>
+    <CATEGORY_NAME>岗位类别</CATEGORY_NAME>
+    <CATEGORY_CODE>root_node_id</CATEGORY_CODE>
+  </TO_HORIZON_POSITION_TYPE>
+</NewDataSet>

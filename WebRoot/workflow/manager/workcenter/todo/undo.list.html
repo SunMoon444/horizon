@@ -1,0 +1,38 @@
+<title>hz{todo-common.undoTitle}</title>
+<hi18n  groups="todo-common;base;message;datatables" ></hi18n>
+<div class="page-header smaller">
+	<h1>
+		hz{todo-common.undoTitle}
+        <small class="hidden-xs">
+             <i class="ace-icon fa fa-angle-double-right"></i>
+             hz{todo-common.undoSmallTitle}
+		</small>
+		<div class="embed-toggle-sidebar-container hidden-md hidden-lg pull-right">
+            <button class="navbar-toggle toggle-sidebar" type="button" data-target="#toggle-sidebar">
+                <span class="sr-only">Toggle横向菜单</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button class="navbar-toggle toggle-sidebar2" type="button" data-target="#toggle-sidebar2" >
+                <span class="sr-only">Toggle左侧菜单</span>
+                <i class="ace-icon fa fa-dashboard bigger-110"></i>
+            </button>
+        </div>
+	</h1>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+        <table id="myDatatable" class="table table-hover"></table>
+    </div>
+</div>
+<div class="hidden" id="flowundolist-dialog"></div>
+<script type="text/javascript">
+jQuery(function($) {
+	require([horizon.paths.assetspath + '/manager/workcenter/todo/js/undo.list.js'], function() {
+		horizon.language.plugins.datatables();
+	    horizon.engine.undolist.initTable();
+	    $('.page-content-area').trigger('ajaxscriptsloaded');
+	});
+});
+</script>

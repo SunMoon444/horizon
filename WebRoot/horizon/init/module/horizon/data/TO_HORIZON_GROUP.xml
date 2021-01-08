@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+    <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:Locale="zh-CN">
+            <xs:complexType>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:element name="TO_HORIZON_GROUP">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="ID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="GROUP_NAME" type="xs:string" minOccurs="0"/>
+                                <xs:element name="GROUP_CODE" type="xs:string" minOccurs="0"/>
+                                <xs:element name="PARENT_ID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="DEPT_ID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="CREATE_TIME" type="xs:string" minOccurs="0"/>
+                                <xs:element name="QUIT_TIME" type="xs:string" minOccurs="0"/>
+                                <xs:element name="ACTIVE" type="xs:decimal" minOccurs="0"/>
+                                <xs:element name="ORDER_NO" type="xs:decimal" minOccurs="0"/>
+                                <xs:element name="COMMENTS" type="xs:string" minOccurs="0"/>
+                                <xs:element name="DN" type="xs:string" minOccurs="0"/>
+                                <xs:element name="DESIGNER_ID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="SHORT_NAME" type="xs:string" minOccurs="0"/>
+                                <xs:element name="GROUP_REMARK" type="xs:string" minOccurs="0"/>
+                                <xs:element name="IS_INDEPENDENT" type="xs:decimal" minOccurs="0"/>
+                                <xs:element name="GROUP_GRADE" type="xs:string" minOccurs="0"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:choice>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+    <TO_HORIZON_GROUP>
+        <ID>root_node_id</ID>
+        <GROUP_NAME>群组导航</GROUP_NAME>
+        <GROUP_CODE>100000</GROUP_CODE>
+        <CREATE_TIME>2011-06-16 17:00:08</CREATE_TIME>
+        <ORDER_NO>0</ORDER_NO>
+    </TO_HORIZON_GROUP>
+    <TO_HORIZON_GROUP>
+        <ID>HZ28e7ef21e2b6520121e2f11e7005f6</ID>
+        <GROUP_NAME>所有用户</GROUP_NAME>
+        <GROUP_CODE>01</GROUP_CODE>
+        <PARENT_ID>root_node_id</PARENT_ID>
+        <CREATE_TIME>2011-06-16 16:03:21</CREATE_TIME>
+        <ORDER_NO>1</ORDER_NO>
+        <IS_INDEPENDENT>0</IS_INDEPENDENT>
+    </TO_HORIZON_GROUP>
+</NewDataSet>

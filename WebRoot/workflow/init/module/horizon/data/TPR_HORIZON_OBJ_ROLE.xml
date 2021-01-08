@@ -1,0 +1,42 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="TPR_HORIZON_OBJ_ROLE">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:string" minOccurs="0" />
+                <xs:element name="ROLE_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="OBJECT_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="OBJECT_TYPE" type="xs:string" minOccurs="0" />
+                <xs:element name="ORDER_NO" type="xs:decimal" minOccurs="0" />
+                <xs:element name="VERIFY_TYPE" type="xs:decimal" minOccurs="0" />
+                <xs:element name="STATUS" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <TPR_HORIZON_OBJ_ROLE>
+    <ID>HZ2881be36f6ae190136f6b5d7080038</ID>
+    <ROLE_ID>SYSTEM_ADMINISTRATOR</ROLE_ID>
+    <OBJECT_ID>admin</OBJECT_ID>
+    <OBJECT_TYPE>U</OBJECT_TYPE>
+    <ORDER_NO>1</ORDER_NO>
+    <VERIFY_TYPE>0</VERIFY_TYPE>
+    <STATUS>1</STATUS>
+  </TPR_HORIZON_OBJ_ROLE>
+  <TPR_HORIZON_OBJ_ROLE>
+    <ID>HZ2881be47ecdea20147ece0aed10038</ID>
+    <ROLE_ID>users</ROLE_ID>
+    <OBJECT_ID>HZ28e7f51e816d28011e816da7f1001f</OBJECT_ID>
+    <OBJECT_TYPE>D</OBJECT_TYPE>
+    <ORDER_NO>1</ORDER_NO>
+    <VERIFY_TYPE>1</VERIFY_TYPE>
+    <STATUS>1</STATUS>
+  </TPR_HORIZON_OBJ_ROLE>
+</NewDataSet>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 流程定义相关表结构定义 -->
+<tableinfo>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TM_HORIZON_MONITOR</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TM_HORIZON_MONITOR</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="DATETIME" typename="varchar"   length="25"></fieldinfo>
+			<fieldinfo fieldname="FREEPHYMEMORY" typename="number"   length="10,2"></fieldinfo>
+			<fieldinfo fieldname="FREEVMMEMORY" typename="number" length="10,2"></fieldinfo>
+			<fieldinfo fieldname="FLOWNUM" typename="number"   length="10,2"></fieldinfo>
+			<fieldinfo fieldname="DATATYPE" typename="varchar" length="10"></fieldinfo>
+		</fieldinfos>		
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TM_HORIZON_EVENT</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TM_HORIZON_EVENT</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="PID" typename="varchar"   length="10"></fieldinfo>
+			<fieldinfo fieldname="EVENTTYPE" typename="lvarchar"   length="500"></fieldinfo>
+			<fieldinfo fieldname="EVENTLEVEL" typename="varchar"   length="10"></fieldinfo>
+			<fieldinfo fieldname="NOTICETYPE" typename="varchar" length="100"></fieldinfo>
+			<fieldinfo fieldname="EVENTCLASS" typename="varchar"   length="200"></fieldinfo>
+			<fieldinfo fieldname="NOTICEMODEL" typename="lvarchar"   length="1000"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar"   length="2" defaultvalue="'1'"></fieldinfo>
+			<fieldinfo fieldname="NOTICEPARA" typename="lvarchar"   length="1000"></fieldinfo>
+			<fieldinfo fieldname="MAXID" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="URLMODEL" typename="lvarchar"   length="1000"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+	<tablename>
+	    <!-- 表名 -->
+	    <name>TM_HORIZON_EVENT_RECORD</name>
+	    <!-- 主键名称 -->
+	    <pkname>PK_TM_HORIZON_EVENT_REC</pkname>
+		<!-- 主键，格式如(ID,NAME) -->
+		<pk>(ID)</pk>   
+		<!-- 字段列表 -->
+		<fieldinfos>
+			<!-- 字段属性 -->
+			<fieldinfo fieldname="ID" typename="varchar"   length="32" isnull="0"></fieldinfo>
+			<fieldinfo fieldname="PID" typename="varchar"   length="10"></fieldinfo>
+			<fieldinfo fieldname="EVENTTIME" typename="varchar"   length="50"></fieldinfo>
+			<fieldinfo fieldname="EVT_DESCRIPTION" typename="lvarchar"   length="1000"></fieldinfo>
+			<fieldinfo fieldname="SUBTYPE" typename="varchar" length="50"></fieldinfo>
+			<fieldinfo fieldname="STATUS" typename="varchar"   length="2"></fieldinfo>
+			<fieldinfo fieldname="URL" typename="lvarchar"   length="1000"></fieldinfo>
+		</fieldinfos>
+	</tablename>
+</tableinfo>

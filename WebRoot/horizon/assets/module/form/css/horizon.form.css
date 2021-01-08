@@ -1,0 +1,536 @@
+body {background-color: white;}
+.pointer {
+    cursor: pointer !important;
+}
+#edui_fixedlayer{
+    z-index: 1000!important;
+}
+.form-control {height: auto;}
+.form-horizontal .form-group {
+    min-height: 39px;
+}
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+    line-height: normal;
+}
+textarea, input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"]
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+    padding-bottom: 5px;
+    height: 34px;
+}
+.input-icon input {
+    padding-left: 24px;
+}
+textarea {
+    resize: none;
+}
+.graphic .input-icon {
+    text-align: left;
+}
+.graphic .input-icon > .ace-icon {
+    display: none;
+}
+.graphic .input-icon input,
+.graphic .input-icon select,
+.graphic .input-icon > .chosen-container-single .chosen-single,
+.graphic .input-icon > .chosen-container-multi .chosen-choices {
+    padding-left: 6px;
+}
+.graphic .form-graphic-itemdiv {
+    min-height: 0;
+    text-align: left;
+}
+.graphic .help-block {
+    text-align: left;
+}
+.graphic .form-graphic-itemdiv .body .text {
+    min-height: 24px;
+    line-height: 24px;
+    cursor: pointer;
+}
+.graphic .form-graphic-itemdiv .body .text:after {
+    display: none;
+}
+.graphic .form-graphic-itemdiv .body .text:hover {
+    color: #6FB3E0;
+}
+.graphic .help-block+ .form-graphic-itemdiv .body .text {
+    color: #E08374;
+}
+.graphic .help-block+ .form-graphic-itemdiv .body .text:hover {
+    color: #E08374;
+}
+.graphic .form-graphic-itemdiv .body .tools {
+    bottom: 0;
+}
+.graphic .form-graphic-itemdiv .body .text.hidden+ .tools {
+    bottom: -24px;
+}
+.graphic .opinion-dialogs {
+    padding: 0 0 5px;
+}
+.graphic .opinion-dialogs .itemdiv {
+    min-height: 0;
+    display: block;
+}
+.graphic .opinion-dialogs .itemdiv:before,
+.graphic .opinion-dialogs > .itemdiv > .line {
+    display: none;
+}
+.graphic .opinion-dialogs .itemdiv .body {
+    margin: 0;
+}
+.graphic .opinion-dialogs .itemdiv .body .text {
+    min-height: 24px;
+    line-height: 24px;
+    padding: 0;
+    margin: 0;
+}
+.graphic .opinion-dialogs .itemdiv > .body > .text:after {
+    display: none;
+}
+.graphic .wysiwyg-editor {
+    height: 150px;
+}
+.graphic .ace-attachment .file-des .filename {
+    text-align: left;
+}
+.graphic .form-read-lable {
+    border-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+    background: none;
+    min-height: auto;
+}
+.base-form .widget-body .wysiwyg-editor {
+    border-width: 1px;
+}
+.base-form .chosen-container-single,
+.base-form .chosen-container-multi {
+    width: 100% !important;
+}
+.base-form .chosen-container-single .chosen-single {
+    border-radius: 0;
+}
+.base-form .chosen-container > .chosen-single,
+[class*="chosen-container"] > .chosen-single {
+    line-height: 28px;
+    height: 32px;
+    box-shadow: none;
+    background: none repeat scroll 0 0 #FAFAFA;
+}
+.base-form .chosen-container-single .chosen-drop {
+    border-radius: 0;
+    border-bottom: 3px solid #4492C9;
+    border-color: #4492C9;
+}
+/*.subtable-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+}*/
+.subtable > thead > tr > th,
+.subtable > tfoot > tr > th,
+.subtable > tbody > tr > td {
+    vertical-align: middle;
+    min-width: 100px;
+}
+.subtable > thead > tr > th:last-child,
+.subtable > tfoot > tr > th:last-child,
+.subtable > tbody > tr > td:last-child {
+    min-width: 30px;
+    max-width: 50px;
+    width: 30px;
+}
+td{
+	padding: 5px 5px;
+}
+.form-print-label{
+    white-space: pre-wrap;
+}
+.ace-file-input, .ace-file-input .ace-file-container {height: 34px;}
+.ace-file-input .ace-file-container:before,
+.ace-file-input .ace-file-container .ace-icon {line-height: 26px;}
+.ace-attachment {
+    display: none;
+    font-size: 13px;
+    height: 34px;
+    min-width: 160px;
+}
+.ace-attachment .file-des .filename {
+    max-width: 90%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.ace-attachment .file-des .filename i {width:20px}
+.ace-attachment .file-des .filename img {
+	width: 34px;
+	height: 29px;
+    border: 1px solid #AAA;
+    padding: 1px;
+    background-color: #FFF;
+    margin-right: 4px
+}
+.ace-attachment .progress {
+    height:6px;
+    border-radius: 3px;
+    margin-top: 11px;
+    margin-bottom: 0;
+}
+.ace-attachment .handle {
+    white-space: nowrap;
+}
+.input-icon.form-control,
+.ace-spinner.form-control,
+.checkbox.form-control,
+.radio.form-control,
+.ace-file-input.form-control,
+.form-control.no-border
+{
+    border: none;
+}
+.form-control.input-mini.spinbox-input {
+    height: 34px;
+}
+.ace-spinner.form-control > .input-group > .spinbox-buttons > .btn {
+    height: 16.5px;
+}
+.form-control[data-type='org'] {cursor: pointer;}
+label {margin-bottom: 0;}
+.input-icon > .ace-icon {color: #478FCA}
+.has-error .wysiwyg-editor {border: 1px solid #f2a696;}
+.has-error .wysiwyg-toolbar {background-color: #f2a696;}
+.has-error .radio, .has-error .checkbox {color: #D16E6C;}
+.has-error .ace-file-input .ace-file-container {border: 1px solid #f2a696;}
+.has-error .ace-file-input .ace-file-container .ace-icon,
+.has-error .ace-file-input .ace-file-container.selected .ace-file-name .ace-icon {background: #f2a696;}
+.has-error .ace-file-input .ace-icon,
+.has-error .input-group-btn .btn-opinion .ace-icon{
+    color: #fff;
+}
+.has-error .edui-default .edui-editor { border: 1px solid #f2a696; }
+
+.textarea-opinion, .btn-opinion {
+    height: 49px !important;
+}
+.btn-opinion .ace-icon {
+    color: #478FCA;
+}
+.opinion-dialogs {
+    padding: 0 0 9px 0;
+    text-align: left;
+}
+.opinion-showothers-btn{
+    border-radius: 100%;
+    position: absolute;
+    top: 6px;
+    left: 9px;
+}
+.form-group > .opinion-showothers-btn {
+    left: 0;
+}
+.form-group.relative > .opinion-showothers-btn {
+    left: -3px;
+}
+.opinion-dialog-load {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    text-align: center;
+    opacity: 0.6;
+}
+.opinion-dialogs .itemdiv:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    bottom: -10px;
+    border-width: 0;
+    background-color: #DDD;
+    width: 2px;
+    max-width: 2px;
+}
+.opinion-dialogs > .itemdiv.dialogdiv {padding-bottom: 5px;}
+.opinion-dialogs > .itemdiv.dialogdiv > .body {margin-right: 0;}
+.opinion-dialogs > .itemdiv > .line {
+    display: inline-block;
+    width: 42px;
+    position: absolute;
+    left: 0;
+}
+.opinion-dialogs > .itemdiv > .line .timeline-indicator {
+    font-size: 0;
+    height: 12px;
+    line-height: 12px;
+    width: 12px;
+    border-width: 1px !important;
+    background-color: #FFFFFF !important;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    opacity: 1;
+    border-radius: 100%;
+    display: inline-block;
+    padding: 0;
+}
+.opinion-dialogs > .itemdiv > .body {
+    margin-left: 25px;
+}
+.opinion-dialogs > .itemdiv > .body > .name {
+    margin-top: 3px;
+    text-align: right;
+}
+.opinion-dialogs > .itemdiv > .body > .text {
+    word-break: break-all;
+}
+.sign-container:empty {
+    padding: 0;
+}
+.sign-container {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    min-height: 34px;
+}
+.sign-container .sign {
+    line-height: 22px;
+}
+.tag-input-style + .chosen-container-multi .chosen-choices li.search-choice {
+    padding: 4px 20px 4px 5px;
+}
+.tag-input-style + .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+    line-height: 22px;
+}
+.chosen-container-multi .chosen-choices {
+    background-image: none;
+    border-color: #D5D5D5;
+}
+.btn-manual-number, .btn-manual-number:focus,
+.btn-opinion,.btn-opinion:focus {
+    background-color: #6FB3E0 !important;
+    border-color: #6FB3E0;
+}
+.btn-manual-number:hover,
+.btn-manual-number:active,
+.btn-manual-number.dropdown-toggle,
+.btn-opinion:hover,
+.btn-opinion:active,
+.btn-opinion.dropdown-toggle
+{
+    background-color: #4f99c6 !important;
+    border-color: #6fb3e0;
+}
+.form-group.has-error .control-label,
+.has-error .control-label {color: #393939}
+.has-error .btn-manual-number,
+.has-error .btn-manual-number:focus,
+.has-error .btn-opinion,
+.has-error .btn-opinion:focus {
+    background-color: #D68273 !important;
+    border-color: #D68273;
+}
+.has-error .btn-manual-number:hover,
+.has-error .btn-manual-number:active,
+.has-error .btn-manual-number.dropdown-toggle,
+.has-error .btn-opinion:hover,
+.has-error .btn-opinion:active,
+.has-error .btn-opinion.dropdown-toggle
+{
+    background-color: #c26464 !important;
+    border-color: #D68273;
+}
+.has-error .chosen-choices {
+    border-color: #F2A696;
+    color: #D68273;
+}
+
+.form-actions {
+    display: block;
+    background-color: #F5F5F5;
+    border-top: 1px solid #E5E5E5;
+    margin: 0 -20px;
+    padding: 3px;
+}
+.form-actions > div {
+    text-align: center !important;
+}
+.form-actions > div > .btn {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+.form-read-lable {
+    min-height: 34px;
+    word-break: break-all;
+    white-space: pre-wrap;
+    position: relative;
+}
+/*.radio.form-control label, .checkbox.form-control label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100px;
+}*/
+.radio label input,
+.checkbox label input {
+    margin: 2px 5px 0 0;
+}
+
+@media (min-width: 768px) {
+    .page-content{
+        margin-bottom:57px;
+    }
+    .form-actions {
+        display: block;
+        background-color: #F5F5F5;
+        border-top: 1px solid #E5E5E5;
+        margin: 0;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+    }
+    .form-actions > div {
+        text-align: right !important;
+    }
+}
+.wysiwyg-editor font{
+    font-family: initial;
+}
+.no-skin #cboxOverlay {
+	background-color: #000;
+}
+
+#cboxWrapper #cboxContent {
+	overflow: visible;
+	border: 0;
+}
+#cboxContent #cboxNext,
+#cboxContent #cboxPrevious,
+#cboxContent #cboxClose {
+  background: none;
+  text-indent: 0;
+  width: 26px;
+  height: 26px;
+  line-height: 22px;
+  padding: 0 4px;
+  text-align: center;
+  border: 2px solid #999;
+  border-radius: 16px;
+  color: #666;
+  font-size: 12px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+#cboxContent #cboxClose {
+	background-color: #000;
+    border: 2px solid #FFF;
+  	border-radius: 32px;
+  	color: #FFF;
+  	font-size: 21px;
+  	height: 28px;
+  	width: 28px;
+  	padding-bottom: 2px;
+  	margin-left: 0;
+  	right: -14px;
+  	top: -14px;
+}
+.print .opinion-showothers-btn {
+    display: none;
+}
+.iconpicker-popover .search-control {
+	margin: 0;
+}
+.popover-content {
+    padding: 0;
+}
+.opinion-menu {
+	z-index: 1000;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 14px;
+    background-color: #ffffff;
+}
+.opinion-menu > li:hover{
+    background: #efefef;
+    color: #444444;
+}
+.opinion-menu > li{
+     padding: 5px 10px;
+ }   
+.opinion-menu > li > a{
+    color: #333333;
+}
+.opinion-menu > li > a:hover{
+    text-decoration: none;
+}
+.graphic-edit .form-control,
+.graphic-edit .input-group,
+.graphic-edit .input-group-btn,
+.graphic-edit .input-group-btn > .btn-manual-number,
+.graphic-edit .sign-btn-container,
+.graphic-edit .sign-btn-container > [data-action="sign"] {
+     height:inherit !important;
+     line-height: inherit !important;
+}
+.graphic-edit .form-control:not[textarea]{
+	max-height: 34px;
+}
+.graphic-edit .sign-btn-container,
+.graphic-edit .sign-btn-container > [data-action="sign"],
+.graphic-edit input[data-type="text"],
+.graphic-edit input[data-type="org"],
+.graphic-edit input[data-type="manual-number"],
+.graphic-edit .input-group-btn > .btn-manual-number {
+	max-height: 34px;
+}
+.graphic-edit .chosen-single > span {
+    max-height: 28px;
+}
+.graphic-edit .form-group .input-group-btn{
+    vertical-align: top;
+}
+.graphic-edit .form-control.input-mini.spinbox-input {
+    max-height: 34px;
+}
+.graphic-edit button.btn:active {
+    top: 0px;
+}
+.graphic-edit [class*="chosen-container"] > .chosen-single,
+.graphic-edit [class*="chosen-container"],
+.graphic-edit .chosen-choices,
+.graphic-edit .search-field,
+.graphic-edit .search-field > input,
+.graphic-edit .search-choice {
+	height:inherit !important;
+	 max-height: 32px;
+}
+.graphic-edit .chosen-container-multi .chosen-choices {
+	overflow-y: auto;
+}
+.graphic-edit .form-group {
+	min-height: 0;
+}
+.graphic-edit .form-group > .input-group > .textarea-opinion {
+    height: 49px !important;
+}
